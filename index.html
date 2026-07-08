@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UltraTech 开发日志</title>
+  <meta name="description" content="UltraTech Forge 1.20.1 模组设计文档、开发日志与系统路线图。">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav">
+      <img src="./assets/ultratech_logo.png" alt="UltraTech" class="logo">
+      <div class="nav-links">
+        <a href="#updates">最近更新</a>
+        <a href="#systems">系统模块</a>
+        <a href="#docs">文档</a>
+        <a href="#status">构建状态</a>
+      </div>
+    </nav>
+    <section class="hero-copy">
+      <p class="eyebrow">Forge 1.20.1 / UltraTech Development Journal</p>
+      <h1>UltraTech 模组开发日志与设计档案</h1>
+      <p class="lead">用于集中展示航天探索、古法工业、高粱生物塑料、无线能量网络、动力机械与多环境部署系统的规划文档、开发记录和阶段验收。</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#docs">查看文档</a>
+        <a class="button" href="https://github.com/" target="_blank" rel="noreferrer">GitHub Pages</a>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section id="updates" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Recent Updates</p>
+        <h2>最近更新</h2>
+      </div>
+      <div class="timeline">
+        <article>
+          <time>2026-07-08</time>
+          <h3>古法工业与高粱生物塑料系统</h3>
+          <p>提取 ASDUST 古法工业系统，迁移 CreativeCraft 高粱、蓝莓、金盏花贴图资源，并为 UltraTech 生成独立的古法与高粱生物塑料工业链。</p>
+        </article>
+        <article>
+          <time>2026-07-07</time>
+          <h3>航天器模块化与星图标记终端</h3>
+          <p>补充航天器模块化组件、跨星系预置模板、舰船部件装配台、航天器命名终端、航天器回收港和星图标记终端。</p>
+        </article>
+        <article>
+          <time>2026-07-06</time>
+          <h3>水车、风车与动力输出轴打磨</h3>
+          <p>围绕水车占位、流体驱动、风车输出轴、SU 管道连接和工业贴图进行了多轮重构与视觉校准。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="systems" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Systems</p>
+        <h2>核心系统模块</h2>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <strong>航天探索</strong>
+          <p>月球、火星、水星、金星、谷神星、灶神星、外层星体与创造星图直达体系。</p>
+        </article>
+        <article class="card">
+          <strong>探测器与中继</strong>
+          <p>七级探测器、七级信号中继、不可虚拟升级、真实发射与持久化监视。</p>
+        </article>
+        <article class="card">
+          <strong>多环境部署</strong>
+          <p>机器人群、部署终端、监视终端、算力/能量缓存与按等级线程执行。</p>
+        </article>
+        <article class="card">
+          <strong>古法工业</strong>
+          <p>砂浆、黄土、石灰、陶器、砖坯、矿粉与粗炼青铜的早期工业模块。</p>
+        </article>
+        <article class="card">
+          <strong>高粱生物塑料</strong>
+          <p>高粱种植、燃料乙醇、乙烯衍生、纤维素醋酸酯、生物塑料零件。</p>
+        </article>
+        <article class="card">
+          <strong>动力机械</strong>
+          <p>水车、风车、蒸汽锅炉、汽轮机、斯特林发动机和 SU 输出轴。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="docs" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Documents</p>
+        <h2>设计文档</h2>
+      </div>
+      <div class="doc-list">
+        <a href="./ULTRATECH_ANCIENT_AND_SORGHUM_INDUSTRY_REPORT_2026-07-08.md">
+          <span>2026-07-08</span>
+          <strong>古法工业与高粱生物塑料系统报告</strong>
+          <em>ASDUST / CreativeCraft 提取与 UltraTech 实现说明</em>
+        </a>
+        <a href="./ULTRATECH_ROADMAP_2026-07-07.md">
+          <span>2026-07-07</span>
+          <strong>UltraTech 当日路线图</strong>
+          <em>航天器、星图、终端网络与部署系统</em>
+        </a>
+        <a href="./ULTRATECH_PROJECT_INVENTORY.md">
+          <span>Inventory</span>
+          <strong>项目总览清单</strong>
+          <em>当前模块、资源、系统与待打磨事项</em>
+        </a>
+      </div>
+    </section>
+
+    <section id="status" class="section status">
+      <div>
+        <p class="eyebrow">Build</p>
+        <h2>构建状态</h2>
+        <p>最近一次本地验证：<code>runData</code> 通过，<code>build</code> 通过。站点为纯静态页面，可直接部署到 GitHub Pages 的 main 分支根目录。</p>
+      </div>
+      <div class="status-panel">
+        <span class="lamp"></span>
+        <strong>Ready for Pages</strong>
+        <small>main / root</small>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>UltraTech Static Blog</span>
+    <button id="toTop" type="button">返回顶部</button>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
