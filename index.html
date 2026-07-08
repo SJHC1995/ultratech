@@ -21,11 +21,11 @@
     <section class="hero-copy">
       <p class="eyebrow">Forge 1.20.1 / UltraTech Development Journal</p>
       <h1>UltraTech 模组开发日志与设计档案</h1>
-      <p class="lead">用于集中展示航天探索、古法工业、高粱生物塑料、无线能量网络、动力机械与多环境部署系统的规划文档、开发记录和阶段验收。</p>
+      <p class="lead">集中展示航天探索、工业机器、无线网络、古法工业、生物材料、精密加工和后续美术打磨计划。</p>
       <div class="hero-actions">
         <a class="button primary" href="#docs">查看文档</a>
-        <a class="button" href="https://gitee.com/asdust1/ultra-tech/" target="_blank" rel="noreferrer">Gitee 仓库</a>
-        <a class="button" href="https://github.com/" target="_blank" rel="noreferrer">GitHub Pages</a>
+        <a class="button" href="https://gitee.com/asdust1/ultra-tech/" target="_blank" rel="noreferrer">Gitee 仓库入口</a>
+        <a class="button" href="https://github.com/SJHC1995/ultratech" target="_blank" rel="noreferrer">GitHub 仓库</a>
       </div>
     </section>
   </header>
@@ -39,18 +39,23 @@
       <div class="timeline">
         <article>
           <time>2026-07-08</time>
+          <h3>GeckoLib 3D 星际航行动画与 CDK 音频</h3>
+          <p>航行动画整体切换为 GeckoLib 3D 场景，末段围绕目标星球留下轨道痕迹并贴近星球。CDK 音频已改为英文资源名，兑换码保留中文。</p>
+        </article>
+        <article>
+          <time>2026-07-08</time>
+          <h3>中后期 14-23 阶段精密制造</h3>
+          <p>新增 45 台中后期精密制造机器、84 个材料、14 个流体，并补齐配方、贴图、模型、掉落和本地化闭环。</p>
+        </article>
+        <article>
+          <time>2026-07-08</time>
           <h3>古法工业与高粱生物塑料系统</h3>
-          <p>提取 ASDUST 古法工业系统，迁移 CreativeCraft 高粱、蓝莓、金盏花贴图资源，并为 UltraTech 生成独立的古法与高粱生物塑料工业链。</p>
+          <p>整理 ASDUST / CreativeCraft 参考内容，为 UltraTech 拆分古法工业与高粱生物塑料工业模块。</p>
         </article>
         <article>
           <time>2026-07-07</time>
           <h3>航天器模块化与星图标记终端</h3>
           <p>补充航天器模块化组件、跨星系预置模板、舰船部件装配台、航天器命名终端、航天器回收港和星图标记终端。</p>
-        </article>
-        <article>
-          <time>2026-07-06</time>
-          <h3>水车、风车与动力输出轴打磨</h3>
-          <p>围绕水车占位、流体驱动、风车输出轴、SU 管道连接和工业贴图进行了多轮重构与视觉校准。</p>
         </article>
       </div>
     </section>
@@ -63,23 +68,23 @@
       <div class="grid">
         <article class="card">
           <strong>航天探索</strong>
-          <p>月球、火星、水星、金星、谷神星、灶神星、外层星体与创造星图直达体系。</p>
-        </article>
-        <article class="card">
-          <strong>探测器与中继</strong>
-          <p>七级探测器、七级信号中继、不可虚拟升级、真实发射与持久化监视。</p>
+          <p>星图、导航台、探测器、中继站、创造星图直达、外层星体维度和 GeckoLib 航行动画。</p>
         </article>
         <article class="card">
           <strong>多环境部署</strong>
-          <p>机器人群、部署终端、监视终端、算力/能量缓存与按等级线程执行。</p>
+          <p>部署终端、监视终端、机器人集群、算力与能量请求、星球中继门槛和计划状态流转。</p>
+        </article>
+        <article class="card">
+          <strong>精密制造</strong>
+          <p>14-23 阶段 CNC、半导体、纳米材料、量子器件和未来加工机器链路。</p>
         </article>
         <article class="card">
           <strong>古法工业</strong>
-          <p>砂浆、黄土、石灰、陶器、砖坯、矿粉与粗炼青铜的早期工业模块。</p>
+          <p>砂浆、黄土、石灰、陶器、砖坯、矿粉和早期手工加工模块。</p>
         </article>
         <article class="card">
-          <strong>高粱生物塑料</strong>
-          <p>高粱种植、燃料乙醇、乙烯衍生、纤维素醋酸酯、生物塑料零件。</p>
+          <strong>植物工业</strong>
+          <p>高粱、生物塑料、橡胶树、油棕、蓖麻、剑麻、霍霍巴等独立产业线。</p>
         </article>
         <article class="card">
           <strong>动力机械</strong>
@@ -94,20 +99,25 @@
         <h2>设计文档</h2>
       </div>
       <div class="doc-list">
+        <a href="./ULTRATECH_ROADMAP_2026-07-08.md">
+          <span>2026-07-08</span>
+          <strong>GeckoLib 3D 航行动画、CDK 音频与美术质量计划</strong>
+          <em>记录今天的航行动画重做、音频命名、兑换码和贴图质量门槛。</em>
+        </a>
         <a href="./ULTRATECH_ANCIENT_AND_SORGHUM_INDUSTRY_REPORT_2026-07-08.md">
           <span>2026-07-08</span>
           <strong>古法工业与高粱生物塑料系统报告</strong>
-          <em>ASDUST / CreativeCraft 提取与 UltraTech 实现说明</em>
+          <em>ASDUST / CreativeCraft 提取与 UltraTech 实现说明。</em>
         </a>
         <a href="./ULTRATECH_ROADMAP_2026-07-07.md">
           <span>2026-07-07</span>
           <strong>UltraTech 当日路线图</strong>
-          <em>航天器、星图、终端网络与部署系统</em>
+          <em>航天器、星图、终端网络与部署系统。</em>
         </a>
         <a href="./ULTRATECH_PROJECT_INVENTORY.md">
           <span>Inventory</span>
           <strong>项目总览清单</strong>
-          <em>当前模块、资源、系统与待打磨事项</em>
+          <em>当前模块、资源、系统与待打磨事项。</em>
         </a>
       </div>
     </section>
@@ -116,7 +126,7 @@
       <div>
         <p class="eyebrow">Build</p>
         <h2>构建状态</h2>
-        <p>最近一次本地验证：<code>runData</code> 通过，<code>build</code> 通过。站点为纯静态页面，可直接部署到 GitHub Pages 的 main 分支根目录。</p>
+        <p>最近一次本地验证：<code>compileJava</code> 已通过。涉及 GUI、模型、动画和声音资源的改动仍需继续执行 <code>build</code> 与 <code>runClient</code>。</p>
       </div>
       <div class="status-panel">
         <span class="lamp"></span>

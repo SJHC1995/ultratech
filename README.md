@@ -1,19 +1,7 @@
 # UltraTech Static Blog
 
-UltraTech 模组的独立静态博客页面，用于展示设计文档与开发日志。
+UltraTech 静态开发日志与规划页面。
 
-## 本地预览
-
-直接打开 `index.html` 即可预览。
-
-## GitHub Pages
-
-仓库设置：
-
-- Repository: `ultratech`
-- Branch: `main`
-- Folder: `/ (root)`
-
-启用路径：
-
-`Settings -> Pages -> Build and deployment -> Deploy from a branch -> main / root`
+- 当前重点：GeckoLib 3D 星际航行动画、CDK 音频整理、精密制造与航天系统打磨。
+- 仓库入口：[Gitee UltraTech](https://gitee.com/asdust1/ultra-tech/)
+- Pages 部署：`main` 分支根目录。
