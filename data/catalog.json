@@ -1,13 +1,13 @@
 {
-    "generatedAt":  "2026-07-12 19:13:16 +08:00",
+    "generatedAt":  "2026-07-12 20:19:54 +08:00",
     "source":  "Forge source and DataGen resource snapshot",
     "stats":  {
-                  "entries":  4770,
+                  "entries":  4777,
                   "stageMachines":  34,
                   "processMachines":  222,
                   "fluids":  141,
-                  "blocks":  649,
-                  "items":  3724,
+                  "blocks":  655,
+                  "items":  3725,
                   "worlds":  10
               },
     "entries":  [
@@ -1549,6 +1549,66 @@
                         "type":  "block",
                         "status":  "registered",
                         "nameEn":  "Multi Environment Assembly Robot Cluster Monitor Terminal",
+                        "relationKey":  "block-blocks"
+                    },
+                    {
+                        "stage":  null,
+                        "nameZh":  "多方块高炉控制器",
+                        "id":  "multiblock_blast_furnace_controller",
+                        "category":  "blocks",
+                        "type":  "block",
+                        "status":  "registered",
+                        "nameEn":  "Multiblock Blast Furnace Controller",
+                        "relationKey":  "block-blocks"
+                    },
+                    {
+                        "stage":  null,
+                        "nameZh":  "多方块能量端口",
+                        "id":  "multiblock_energy_port",
+                        "category":  "blocks",
+                        "type":  "block",
+                        "status":  "registered",
+                        "nameEn":  "Multiblock Energy Port",
+                        "relationKey":  "block-blocks"
+                    },
+                    {
+                        "stage":  null,
+                        "nameZh":  "多方块流体输出端口",
+                        "id":  "multiblock_fluid_output_port",
+                        "category":  "blocks",
+                        "type":  "block",
+                        "status":  "registered",
+                        "nameEn":  "Multiblock Fluid Output Port",
+                        "relationKey":  "block-blocks"
+                    },
+                    {
+                        "stage":  null,
+                        "nameZh":  "多方块流体端口",
+                        "id":  "multiblock_fluid_port",
+                        "category":  "blocks",
+                        "type":  "block",
+                        "status":  "registered",
+                        "nameEn":  "Multiblock Fluid Port",
+                        "relationKey":  "block-blocks"
+                    },
+                    {
+                        "stage":  null,
+                        "nameZh":  "多方块物品输入端口",
+                        "id":  "multiblock_item_input_port",
+                        "category":  "blocks",
+                        "type":  "block",
+                        "status":  "registered",
+                        "nameEn":  "Multiblock Item Input Port",
+                        "relationKey":  "block-blocks"
+                    },
+                    {
+                        "stage":  null,
+                        "nameZh":  "多方块物品输出端口",
+                        "id":  "multiblock_item_output_port",
+                        "category":  "blocks",
+                        "type":  "block",
+                        "status":  "registered",
+                        "nameEn":  "Multiblock Item Output Port",
                         "relationKey":  "block-blocks"
                     },
                     {
@@ -44709,6 +44769,16 @@
                         "type":  "item",
                         "status":  "registered",
                         "nameEn":  "Drill Bit",
+                        "relationKey":  "item-tools"
+                    },
+                    {
+                        "stage":  null,
+                        "nameZh":  "多方块装配手",
+                        "id":  "multiblock_assembly_wrench",
+                        "category":  "tools",
+                        "type":  "item",
+                        "status":  "registered",
+                        "nameEn":  "Multiblock Assembly Wrench",
                         "relationKey":  "item-tools"
                     },
                     {

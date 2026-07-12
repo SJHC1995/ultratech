@@ -183,3 +183,5 @@ $catalog = [ordered]@{
 $json = $catalog | ConvertTo-Json -Depth 7
 [System.IO.File]::WriteAllText((Join-Path $dataRoot 'catalog.json'), $json, [System.Text.UTF8Encoding]::new($false))
 Write-Host "Wrote $($entries.Count) catalog entries and $($worlds.Count) worlds."
+
+& (Join-Path $PSScriptRoot 'build-wiki.ps1') -SourceRoot $SourceRoot
