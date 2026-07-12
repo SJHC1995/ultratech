@@ -26,7 +26,7 @@ UltraTech 的航天 3D 场景、飞船模型和动画使用 GeckoLib。`mods.tom
 software.bernie.geckolib:geckolib-forge-1.20.1:4.8.4
 ```
 
-Demo JAR 不将 GeckoLib 打包进模组文件。安装时应把 UltraTech 与匹配的 GeckoLib Forge JAR 一同放入实例的 `mods` 文件夹。
+Demo JAR 不将 GeckoLib 合并进模组文件。博客提供的 `UltraTech-Demo-2026-07-12.zip` 已包含两份独立 JAR；解压后应将它们一同放入实例的 `mods` 文件夹。
 
 ## 验证记录
 
