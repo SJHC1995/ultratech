@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="UltraTech Forge 1.20.1 模组的设计文档、开发日志、Demo 构建说明与系统路线图。">
   <title>UltraTech 开发日志</title>
-  <meta name="description" content="UltraTech Forge 1.20.1 模组设计文档、开发日志与系统路线图。">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -12,20 +12,20 @@
     <nav class="nav">
       <img src="./assets/ultratech_logo.png" alt="UltraTech" class="logo">
       <div class="nav-links">
-        <a href="#updates">最近更新</a>
-        <a href="#systems">系统模块</a>
+        <a href="#updates">更新</a>
+        <a href="#systems">系统</a>
         <a href="#docs">文档</a>
-        <a href="#status">构建状态</a>
+        <a href="#demo">Demo</a>
       </div>
     </nav>
     <section class="hero-copy">
-      <p class="eyebrow">Forge 1.20.1 / UltraTech Development Journal</p>
-      <h1>UltraTech 模组开发日志与设计档案</h1>
-      <p class="lead">集中展示航天探索、工业机器、无线网络、古法工业、生物材料、精密加工和后续美术打磨计划。</p>
+      <p class="eyebrow">Forge 1.20.1 / Development Journal</p>
+      <h1>UltraTech</h1>
+      <p class="lead">从古法手工、机械动力、化工与矿物加工，延伸至核工业、聚变、航天探索和高阶计算的工业模组开发档案。</p>
       <div class="hero-actions">
-        <a class="button primary" href="#docs">查看文档</a>
-        <a class="button" href="https://gitee.com/asdust1/ultra-tech/" target="_blank" rel="noreferrer">Gitee 仓库入口</a>
+        <a class="button primary" href="#demo">查看 Demo 说明</a>
         <a class="button" href="https://github.com/SJHC1995/ultratech" target="_blank" rel="noreferrer">GitHub 仓库</a>
+        <a class="button" href="https://gitee.com/asdust1/ultra-tech/" target="_blank" rel="noreferrer">Gitee 仓库</a>
       </div>
     </section>
   </header>
@@ -33,29 +33,24 @@
   <main>
     <section id="updates" class="section">
       <div class="section-head">
-        <p class="eyebrow">Recent Updates</p>
-        <h2>最近更新</h2>
+        <p class="eyebrow">2026-07-12</p>
+        <h2>聚变阶段 Demo</h2>
       </div>
       <div class="timeline">
         <article>
-          <time>2026-07-08</time>
-          <h3>GeckoLib 3D 星际航行动画与 CDK 音频</h3>
-          <p>航行动画整体切换为 GeckoLib 3D 场景，末段围绕目标星球留下轨道痕迹并贴近星球。CDK 音频已改为英文资源名，兑换码保留中文。</p>
+          <time>Stage 19-24</time>
+          <h3>六台聚变时代核心机器完成独立逻辑</h3>
+          <p>熔盐堆、氘聚变堆、氦聚变堆、质子加速器、托卡马克环和激光聚变室已不再复用通用阶段机行为，分别具备燃料验证、FE 输入输出、寿命/温度/磁场/脉冲指标与 GUI 状态显示。</p>
         </article>
         <article>
-          <time>2026-07-08</time>
-          <h3>中后期 14-23 阶段精密制造</h3>
-          <p>新增 45 台中后期精密制造机器、84 个材料、14 个流体，并补齐配方、贴图、模型、掉落和本地化闭环。</p>
+          <time>GeckoLib 4.8.4</time>
+          <h3>星际航行继续使用 GeckoLib 3D 场景</h3>
+          <p>飞船、轨道状态和航行场景以 GeckoLib 为运行时依赖。Demo 包不内置第三方 Mod；安装时需与 GeckoLib Forge 4.8.4 一同放入 mods 目录。</p>
         </article>
         <article>
-          <time>2026-07-08</time>
-          <h3>古法工业与高粱生物塑料系统</h3>
-          <p>整理 ASDUST / CreativeCraft 参考内容，为 UltraTech 拆分古法工业与高粱生物塑料工业模块。</p>
-        </article>
-        <article>
-          <time>2026-07-07</time>
-          <h3>航天器模块化与星图标记终端</h3>
-          <p>补充航天器模块化组件、跨星系预置模板、舰船部件装配台、航天器命名终端、航天器回收港和星图标记终端。</p>
+          <time>Validation</time>
+          <h3>Demo 构建通过</h3>
+          <p>本次发布以 Forge 47.4.4、Java 17 进行构建验证。语言 JSON、编译和差异空白检查均已通过。</p>
         </article>
       </div>
     </section>
@@ -63,75 +58,76 @@
     <section id="systems" class="section">
       <div class="section-head">
         <p class="eyebrow">Systems</p>
-        <h2>核心系统模块</h2>
+        <h2>当前主线</h2>
       </div>
       <div class="grid">
         <article class="card">
-          <strong>航天探索</strong>
-          <p>星图、导航台、探测器、中继站、创造星图直达、外层星体维度和 GeckoLib 航行动画。</p>
+          <strong>古法与植物工业</strong>
+          <p>陶瓷、传统冶炼、手工加工，以及高粱、橡胶、油棕、蓖麻、剑麻和霍霍巴等独立产业线。</p>
         </article>
         <article class="card">
-          <strong>多环境部署</strong>
-          <p>部署终端、监视终端、机器人集群、算力与能量请求、星球中继门槛和计划状态流转。</p>
+          <strong>矿物与石油</strong>
+          <p>铁、铜、铝、硅、非铁金属、氯碱、贵金属伴生与石油化工的阶段化加工链。</p>
+        </article>
+        <article class="card">
+          <strong>能源跃迁</strong>
+          <p>SU 机械能、蒸汽、内燃、电力、裂变和聚变，按阶段逐步建立真实输入输出与维护约束。</p>
+        </article>
+        <article class="card">
+          <strong>航天探索</strong>
+          <p>星图、探测器、轨道设施、土星气态巨行星观测模式，以及 GeckoLib 3D 航行动画。</p>
         </article>
         <article class="card">
           <strong>精密制造</strong>
-          <p>14-23 阶段 CNC、半导体、纳米材料、量子器件和未来加工机器链路。</p>
+          <p>CNC、半导体、纳米材料与量子器件制造链，为阶段 14 之后的高阶部件提供独立供给。</p>
         </article>
         <article class="card">
-          <strong>古法工业</strong>
-          <p>砂浆、黄土、石灰、陶器、砖坯、矿粉和早期手工加工模块。</p>
+          <strong>美术重构</strong>
+          <p>持续按创造栏与机器类别重绘 64×64 工业贴图，消除同质化占位符并补全中文键值。</p>
         </article>
-        <article class="card">
-          <strong>植物工业</strong>
-          <p>高粱、生物塑料、橡胶树、油棕、蓖麻、剑麻、霍霍巴等独立产业线。</p>
-        </article>
-        <article class="card">
-          <strong>动力机械</strong>
-          <p>水车、风车、蒸汽锅炉、汽轮机、斯特林发动机和 SU 输出轴。</p>
-        </article>
+      </div>
+    </section>
+
+    <section id="demo" class="section status">
+      <div>
+        <p class="eyebrow">Demo Build</p>
+        <h2>安装要求</h2>
+        <p>将 UltraTech Demo JAR、Forge 1.20.1 和 GeckoLib Forge 4.8.4 放在同一实例中。项目声明 GeckoLib 为强制依赖；JEI 与 The One Probe 为可选依赖。</p>
+        <p>运行环境：Minecraft 1.20.1、Forge 47.4.4、Java 17。完整安装、验证范围和已知边界见本次规划文档。</p>
+      </div>
+      <div class="status-panel">
+        <span class="lamp"></span>
+        <strong>Demo Build Ready</strong>
+        <small>Forge 47.4.4 / GeckoLib 4.8.4</small>
       </div>
     </section>
 
     <section id="docs" class="section">
       <div class="section-head">
         <p class="eyebrow">Documents</p>
-        <h2>设计文档</h2>
+        <h2>设计与发布文档</h2>
       </div>
       <div class="doc-list">
+        <a href="./ULTRATECH_ROADMAP_2026-07-12.md">
+          <span>2026-07-12</span>
+          <strong>聚变阶段 Demo 发布与后续规划</strong>
+          <em>记录阶段 19-24 独立机器逻辑、GeckoLib 依赖、Demo 安装要求与下一步验收项。</em>
+        </a>
         <a href="./ULTRATECH_ROADMAP_2026-07-08.md">
           <span>2026-07-08</span>
-          <strong>GeckoLib 3D 航行动画、CDK 音频与美术质量计划</strong>
-          <em>记录今天的航行动画重做、音频命名、兑换码和贴图质量门槛。</em>
+          <strong>GeckoLib 3D 航行、音频与美术质量计划</strong>
+          <em>航行动画、兑换码音频和贴图质量门槛。</em>
         </a>
         <a href="./ULTRATECH_ANCIENT_AND_SORGHUM_INDUSTRY_REPORT_2026-07-08.md">
           <span>2026-07-08</span>
-          <strong>古法工业与高粱生物塑料系统报告</strong>
-          <em>ASDUST / CreativeCraft 提取与 UltraTech 实现说明。</em>
-        </a>
-        <a href="./ULTRATECH_ROADMAP_2026-07-07.md">
-          <span>2026-07-07</span>
-          <strong>UltraTech 当日路线图</strong>
-          <em>航天器、星图、终端网络与部署系统。</em>
+          <strong>古法工业与高粱产业链报告</strong>
+          <em>ASDUST / CreativeCraft 参考流程的模块化实现说明。</em>
         </a>
         <a href="./ULTRATECH_PROJECT_INVENTORY.md">
           <span>Inventory</span>
-          <strong>项目总览清单</strong>
-          <em>当前模块、资源、系统与待打磨事项。</em>
+          <strong>项目清单</strong>
+          <em>当前内容、阶段机器和待补齐项目的归档快照。</em>
         </a>
-      </div>
-    </section>
-
-    <section id="status" class="section status">
-      <div>
-        <p class="eyebrow">Build</p>
-        <h2>构建状态</h2>
-        <p>最近一次本地验证：<code>compileJava</code> 已通过。涉及 GUI、模型、动画和声音资源的改动仍需继续执行 <code>build</code> 与 <code>runClient</code>。</p>
-      </div>
-      <div class="status-panel">
-        <span class="lamp"></span>
-        <strong>Ready for Pages</strong>
-        <small>main / root</small>
       </div>
     </section>
   </main>

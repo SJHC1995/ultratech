@@ -1,7 +1,10 @@
 # UltraTech Static Blog
 
-UltraTech 静态开发日志与规划页面。
+UltraTech 的 GitHub Pages 开发日志与设计文档。
 
-- 当前重点：GeckoLib 3D 星际航行动画、CDK 音频整理、精密制造与航天系统打磨。
-- 仓库入口：[Gitee UltraTech](https://gitee.com/asdust1/ultra-tech/)
-- Pages 部署：`main` 分支根目录。
+- 最新文档：`ULTRATECH_ROADMAP_2026-07-12.md`
+- Demo 环境：Minecraft 1.20.1、Forge 47.4.4、Java 17
+- 强制依赖：GeckoLib Forge 4.8.4
+- 代码仓库：[GitHub](https://github.com/SJHC1995/ultratech) / [Gitee](https://gitee.com/asdust1/ultra-tech/)
+
+Pages 使用 `main` 分支根目录部署。
