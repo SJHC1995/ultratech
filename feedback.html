@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UltraTech 反馈与社区</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./portal.css">
+</head>
+<body data-page="feedback">
+  <header class="site-header">
+    <nav class="site-nav">
+      <a class="site-brand" href="./index.html"><img src="./assets/ultratech_logo.png" alt="UltraTech"></a>
+      <div class="site-links">
+        <a href="./index.html" data-i18n="home"></a><a href="./updates.html" data-i18n="updates"></a><a href="./versions.html" data-i18n="versions"></a><a href="./wiki.html" data-i18n="wiki"></a><a href="./tech-tree.html" data-i18n="tech"></a><a href="./worlds.html" data-i18n="worlds"></a><a href="./recipes.html" data-i18n="recipes"></a><a href="./dashboard.html" data-i18n="dashboard"></a><a href="./feedback.html" aria-current="page" data-i18n="feedback"></a>
+      </div>
+      <select id="languageToggle" class="language-toggle" aria-label="Language"><option value="zh">中文</option><option value="en">English</option></select>
+    </nav>
+  </header>
+  <main class="portal-main">
+    <section class="page-heading"><div><p class="eyebrow">Community and Feedback</p><h1 data-i18n="feedback"></h1><p>填写表单后会带着标题、类型与内容跳转到 GitHub 新建 Issue 页面；不会把信息发送到第三方服务。</p></div></section>
+    <section class="detail-layout">
+      <article class="panel"><h2>提交反馈</h2><form id="feedbackForm" class="feedback-form">
+        <select name="feedbackType"><option value="Bug">Bug</option><option value="Suggestion">Suggestion</option><option value="Balance">Balance</option><option value="Artwork">Artwork</option><option value="Community Showcase">Community Showcase</option></select>
+        <input name="feedbackTitle" type="text" required placeholder="标题">
+        <textarea name="feedbackBody" placeholder="复现步骤、建议内容、截图或作品链接"></textarea>
+        <button class="link-button primary" type="submit" data-i18n="submit"></button>
+      </form></article>
+      <aside class="panel"><h2>社区展示</h2><p>玩家作品、攻略、截图和视频可通过“Community Showcase”类型提交。页面只展示经过整理并明确授权公开的内容；当前尚未归档展示条目。</p><a class="link-button" href="https://github.com/SJHC1995/ultratech/issues" target="_blank" rel="noreferrer">浏览 GitHub Issues</a></aside>
+    </section>
+  </main>
+  <footer><span>UltraTech Static Blog</span><a class="button" href="./wiki.html" data-i18n="wiki"></a></footer>
+  <script src="./portal.js"></script>
+</body>
+</html>

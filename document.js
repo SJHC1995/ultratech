@@ -1,11 +1,3 @@
-const allowedDocuments = new Set([
-  "ULTRATECH_ROADMAP_2026-07-12.md",
-  "ULTRATECH_ROADMAP_2026-07-08.md",
-  "ULTRATECH_ROADMAP_2026-07-07.md",
-  "ULTRATECH_ANCIENT_AND_SORGHUM_INDUSTRY_REPORT_2026-07-08.md",
-  "ULTRATECH_PROJECT_INVENTORY.md"
-]);
-
 const content = document.getElementById("markdownContent");
 const documentPath = document.getElementById("documentPath");
 const requestedFile = new URLSearchParams(window.location.search).get("file");
@@ -23,7 +15,16 @@ function formatInline(value) {
   let result = escapeHtml(value);
   result = result.replace(/`([^`]+)`/g, "<code>$1</code>");
   result = result.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
-  result = result.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, "<a href=\"$2\" target=\"_blank\" rel=\"noreferrer\">$1</a>");
+  result = result.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, href) => {
+    const target = href.replaceAll("&amp;", "&").trim();
+    if (/^https?:\/\//.test(target)) {
+      return `<a href="${target}" target="_blank" rel="noreferrer">${label}</a>`;
+    }
+    if (/^[A-Za-z0-9._-]+\.md$/.test(target.replace(/^\.\//, ""))) {
+      return `<a href="./document.html?file=docs/${encodeURIComponent(target.replace(/^\.\//, ""))}">${label}</a>`;
+    }
+    return label;
+  });
   return result;
 }
 
@@ -146,7 +147,7 @@ function renderMarkdown(markdown) {
 }
 
 async function loadDocument() {
-  if (!requestedFile || !allowedDocuments.has(requestedFile)) {
+  if (!requestedFile || !/^docs\/[A-Za-z0-9._-]+\.md$/.test(requestedFile)) {
     document.title = "UltraTech 文档未找到";
     documentPath.textContent = "无效的文档地址";
     content.innerHTML = "<p class=\"document-error\">未找到请求的文档。请从首页文档列表进入。</p>";

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>UltraTech Development Updates</title>
+    <link>https://sjhc1995.github.io/ultratech/</link>
+    <description>UltraTech Forge 1.20.1 development journal and documentation archive.</description>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 12 Jul 2026 11:00:00 GMT</lastBuildDate>
+    <item>
+      <title>聚变阶段 Demo 发布与规划</title>
+      <link>https://sjhc1995.github.io/ultratech/document.html?file=docs%2FULTRATECH_ROADMAP_2026-07-12.md</link>
+      <guid>https://sjhc1995.github.io/ultratech/docs/ULTRATECH_ROADMAP_2026-07-12.md</guid>
+      <pubDate>Sun, 12 Jul 2026 11:00:00 GMT</pubDate>
+      <description>阶段 19-24 聚变机器逻辑、Demo 构建与后续验证计划。</description>
+    </item>
+    <item>
+      <title>UltraTech 资产清单</title>
+      <link>https://sjhc1995.github.io/ultratech/document.html?file=docs%2FULTRATECH_INVENTORY_2026-07-12.md</link>
+      <guid>https://sjhc1995.github.io/ultratech/docs/ULTRATECH_INVENTORY_2026-07-12.md</guid>
+      <pubDate>Sun, 12 Jul 2026 10:30:00 GMT</pubDate>
+      <description>当前机器、物品、方块、流体、维度与缺口的项目快照。</description>
+    </item>
+    <item>
+      <title>贴图重构计划</title>
+      <link>https://sjhc1995.github.io/ultratech/document.html?file=docs%2FULTRATECH_TEXTURE_REWORK_PLAN_2026-07-09.md</link>
+      <guid>https://sjhc1995.github.io/ultratech/docs/ULTRATECH_TEXTURE_REWORK_PLAN_2026-07-09.md</guid>
+      <pubDate>Thu, 09 Jul 2026 05:00:00 GMT</pubDate>
+      <description>工业资源贴图的批次化重绘与验收计划。</description>
+    </item>
+  </channel>
+</rss>
