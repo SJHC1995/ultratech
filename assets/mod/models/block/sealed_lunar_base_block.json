@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "ultratech:block/sealed_lunar_base_block"
+  }
+}

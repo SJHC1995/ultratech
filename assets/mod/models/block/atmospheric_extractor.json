@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/atmospheric_extractor_bottom",
+    "side": "ultratech:block/atmospheric_extractor",
+    "top": "ultratech:block/atmospheric_extractor_top"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/petroleum_polypropylene_kettle_bottom",
+    "side": "ultratech:block/petroleum_polypropylene_kettle",
+    "top": "ultratech:block/petroleum_polypropylene_kettle_top"
+  }
+}

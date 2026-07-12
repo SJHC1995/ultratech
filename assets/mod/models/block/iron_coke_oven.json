@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/iron_coke_oven_bottom",
+    "side": "ultratech:block/iron_coke_oven",
+    "top": "ultratech:block/iron_coke_oven_top"
+  }
+}

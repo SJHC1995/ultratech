@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/petroleum_catalytic_reformer_bottom",
+    "side": "ultratech:block/petroleum_catalytic_reformer",
+    "top": "ultratech:block/petroleum_catalytic_reformer_top"
+  }
+}

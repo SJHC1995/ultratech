@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/hydrogen_reduction_furnace_bottom",
+    "side": "ultratech:block/hydrogen_reduction_furnace",
+    "top": "ultratech:block/hydrogen_reduction_furnace_top"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/phosphate_acidulation_tank_bottom",
+    "side": "ultratech:block/phosphate_acidulation_tank",
+    "top": "ultratech:block/phosphate_acidulation_tank_top"
+  }
+}

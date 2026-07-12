@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "ultratech:block/industrial_steel_block",
+    "side": "ultratech:block/industrial_steel_block",
+    "top": "ultratech:block/industrial_steel_block"
+  }
+}

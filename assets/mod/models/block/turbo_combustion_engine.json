@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottom"
+        },
+        "east": {
+          "texture": "#right"
+        },
+        "north": {
+          "texture": "#front"
+        },
+        "south": {
+          "texture": "#back"
+        },
+        "up": {
+          "texture": "#top"
+        },
+        "west": {
+          "texture": "#left"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ]
+    }
+  ],
+  "textures": {
+    "back": "ultratech:block/turbo_combustion_engine_back",
+    "bottom": "ultratech:block/turbo_combustion_engine_bottom",
+    "front": "ultratech:block/turbo_combustion_engine",
+    "left": "ultratech:block/turbo_combustion_engine_left",
+    "particle": "ultratech:block/turbo_combustion_engine",
+    "right": "ultratech:block/turbo_combustion_engine_right",
+    "top": "ultratech:block/turbo_combustion_engine_top"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/superconducting_film_deposition_system_bottom",
+    "side": "ultratech:block/superconducting_film_deposition_system",
+    "top": "ultratech:block/superconducting_film_deposition_system_top"
+  }
+}

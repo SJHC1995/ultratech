@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/mineral_flotation_cell_bottom",
+    "side": "ultratech:block/mineral_flotation_cell",
+    "top": "ultratech:block/mineral_flotation_cell_top"
+  }
+}

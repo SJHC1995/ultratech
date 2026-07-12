@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/quantum_beam_etcher_bottom",
+    "side": "ultratech:block/quantum_beam_etcher",
+    "top": "ultratech:block/quantum_beam_etcher_top"
+  }
+}

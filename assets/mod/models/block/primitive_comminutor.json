@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/primitive_comminutor_bottom",
+    "side": "ultratech:block/primitive_comminutor",
+    "top": "ultratech:block/primitive_comminutor_top"
+  }
+}

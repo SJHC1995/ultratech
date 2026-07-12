@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/topological_matter_synthesis_furnace_bottom",
+    "side": "ultratech:block/topological_matter_synthesis_furnace",
+    "top": "ultratech:block/topological_matter_synthesis_furnace_top"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/mbe_growth_system_bottom",
+    "side": "ultratech:block/mbe_growth_system",
+    "top": "ultratech:block/mbe_growth_system_top"
+  }
+}

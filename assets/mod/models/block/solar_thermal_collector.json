@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottom"
+        },
+        "east": {
+          "texture": "#right"
+        },
+        "north": {
+          "texture": "#front"
+        },
+        "south": {
+          "texture": "#back"
+        },
+        "up": {
+          "texture": "#top"
+        },
+        "west": {
+          "texture": "#left"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ]
+    }
+  ],
+  "textures": {
+    "back": "ultratech:block/solar_thermal_collector_back",
+    "bottom": "ultratech:block/solar_thermal_collector_bottom",
+    "front": "ultratech:block/solar_thermal_collector",
+    "left": "ultratech:block/solar_thermal_collector_left",
+    "particle": "ultratech:block/solar_thermal_collector",
+    "right": "ultratech:block/solar_thermal_collector_right",
+    "top": "ultratech:block/solar_thermal_collector_top"
+  }
+}

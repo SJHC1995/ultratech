@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/liquefaction_reactor_bottom",
+    "side": "ultratech:block/liquefaction_reactor",
+    "top": "ultratech:block/liquefaction_reactor_top"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/aluminum_molten_salt_cell_bottom",
+    "side": "ultratech:block/aluminum_molten_salt_cell",
+    "top": "ultratech:block/aluminum_molten_salt_cell_top"
+  }
+}

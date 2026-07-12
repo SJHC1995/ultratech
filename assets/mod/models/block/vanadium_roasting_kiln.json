@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/vanadium_roasting_kiln_bottom",
+    "side": "ultratech:block/vanadium_roasting_kiln",
+    "top": "ultratech:block/vanadium_roasting_kiln_top"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/cvd_furnace_bottom",
+    "side": "ultratech:block/cvd_furnace",
+    "top": "ultratech:block/cvd_furnace_top"
+  }
+}

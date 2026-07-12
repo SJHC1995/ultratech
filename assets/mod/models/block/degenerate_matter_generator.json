@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottom"
+        },
+        "east": {
+          "texture": "#right"
+        },
+        "north": {
+          "texture": "#front"
+        },
+        "south": {
+          "texture": "#back"
+        },
+        "up": {
+          "texture": "#top"
+        },
+        "west": {
+          "texture": "#left"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ]
+    }
+  ],
+  "textures": {
+    "back": "ultratech:block/degenerate_matter_generator_back",
+    "bottom": "ultratech:block/degenerate_matter_generator_bottom",
+    "front": "ultratech:block/degenerate_matter_generator",
+    "left": "ultratech:block/degenerate_matter_generator_left",
+    "particle": "ultratech:block/degenerate_matter_generator",
+    "right": "ultratech:block/degenerate_matter_generator_right",
+    "top": "ultratech:block/degenerate_matter_generator_top"
+  }
+}

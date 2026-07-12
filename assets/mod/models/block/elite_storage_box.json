@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/elite_storage_box_bottom",
+    "side": "ultratech:block/elite_storage_box",
+    "top": "ultratech:block/elite_storage_box_top"
+  }
+}

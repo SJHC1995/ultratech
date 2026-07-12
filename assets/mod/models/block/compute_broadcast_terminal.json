@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "ultratech:block/compute_broadcast_terminal"
+  }
+}

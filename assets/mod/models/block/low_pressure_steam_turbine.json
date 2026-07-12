@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/low_pressure_steam_turbine_bottom",
+    "side": "ultratech:block/low_pressure_steam_turbine",
+    "top": "ultratech:block/low_pressure_steam_turbine_top"
+  }
+}

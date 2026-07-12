@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/self_assembly_nano_reactor_bottom",
+    "side": "ultratech:block/self_assembly_nano_reactor",
+    "top": "ultratech:block/self_assembly_nano_reactor_top"
+  }
+}

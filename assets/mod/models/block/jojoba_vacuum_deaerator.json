@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/jojoba_vacuum_deaerator_bottom",
+    "side": "ultratech:block/jojoba_vacuum_deaerator",
+    "top": "ultratech:block/jojoba_vacuum_deaerator_top"
+  }
+}

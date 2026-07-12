@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/alkali_treatment_tank_bottom",
+    "side": "ultratech:block/alkali_treatment_tank",
+    "top": "ultratech:block/alkali_treatment_tank_top"
+  }
+}

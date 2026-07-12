@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/petroleum_drilling_platform_bottom",
+    "side": "ultratech:block/petroleum_drilling_platform",
+    "top": "ultratech:block/petroleum_drilling_platform_top"
+  }
+}

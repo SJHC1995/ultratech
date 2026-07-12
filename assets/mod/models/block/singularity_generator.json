@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottom"
+        },
+        "east": {
+          "texture": "#right"
+        },
+        "north": {
+          "texture": "#front"
+        },
+        "south": {
+          "texture": "#back"
+        },
+        "up": {
+          "texture": "#top"
+        },
+        "west": {
+          "texture": "#left"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ]
+    }
+  ],
+  "textures": {
+    "back": "ultratech:block/singularity_generator_back",
+    "bottom": "ultratech:block/singularity_generator_bottom",
+    "front": "ultratech:block/singularity_generator",
+    "left": "ultratech:block/singularity_generator_left",
+    "particle": "ultratech:block/singularity_generator",
+    "right": "ultratech:block/singularity_generator_right",
+    "top": "ultratech:block/singularity_generator_top"
+  }
+}

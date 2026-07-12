@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/palm_refining_tower_bottom",
+    "side": "ultratech:block/palm_refining_tower",
+    "top": "ultratech:block/palm_refining_tower_top"
+  }
+}

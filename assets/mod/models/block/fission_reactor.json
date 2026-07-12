@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottom"
+        },
+        "east": {
+          "texture": "#right"
+        },
+        "north": {
+          "texture": "#front"
+        },
+        "south": {
+          "texture": "#back"
+        },
+        "up": {
+          "texture": "#top"
+        },
+        "west": {
+          "texture": "#left"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ]
+    }
+  ],
+  "textures": {
+    "back": "ultratech:block/fission_reactor_back",
+    "bottom": "ultratech:block/fission_reactor_bottom",
+    "front": "ultratech:block/fission_reactor",
+    "left": "ultratech:block/fission_reactor_left",
+    "particle": "ultratech:block/fission_reactor",
+    "right": "ultratech:block/fission_reactor_right",
+    "top": "ultratech:block/fission_reactor_top"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/sorghum_harvester_bottom",
+    "side": "ultratech:block/sorghum_harvester",
+    "top": "ultratech:block/sorghum_harvester_top"
+  }
+}

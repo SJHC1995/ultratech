@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/kroll_reduction_vessel_bottom",
+    "side": "ultratech:block/kroll_reduction_vessel",
+    "top": "ultratech:block/kroll_reduction_vessel_top"
+  }
+}

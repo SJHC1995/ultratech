@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/sisal_rope_maker_bottom",
+    "side": "ultratech:block/sisal_rope_maker",
+    "top": "ultratech:block/sisal_rope_maker_top"
+  }
+}

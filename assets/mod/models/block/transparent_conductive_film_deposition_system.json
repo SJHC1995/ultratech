@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/transparent_conductive_film_deposition_system_bottom",
+    "side": "ultratech:block/transparent_conductive_film_deposition_system",
+    "top": "ultratech:block/transparent_conductive_film_deposition_system_top"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/sisal_decorticator_bottom",
+    "side": "ultratech:block/sisal_decorticator",
+    "top": "ultratech:block/sisal_decorticator_top"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/mineral_shaking_table_bottom",
+    "side": "ultratech:block/mineral_shaking_table",
+    "top": "ultratech:block/mineral_shaking_table_top"
+  }
+}

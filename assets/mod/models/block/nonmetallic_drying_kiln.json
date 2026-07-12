@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/nonmetallic_drying_kiln_bottom",
+    "side": "ultratech:block/nonmetallic_drying_kiln",
+    "top": "ultratech:block/nonmetallic_drying_kiln_top"
+  }
+}

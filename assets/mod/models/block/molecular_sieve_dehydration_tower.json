@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/molecular_sieve_dehydration_tower_bottom",
+    "side": "ultratech:block/molecular_sieve_dehydration_tower",
+    "top": "ultratech:block/molecular_sieve_dehydration_tower_top"
+  }
+}

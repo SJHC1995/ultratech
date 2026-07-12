@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/tungsten_alkali_digestion_reactor_bottom",
+    "side": "ultratech:block/tungsten_alkali_digestion_reactor",
+    "top": "ultratech:block/tungsten_alkali_digestion_reactor_top"
+  }
+}

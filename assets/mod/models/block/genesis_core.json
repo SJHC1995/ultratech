@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottom"
+        },
+        "east": {
+          "texture": "#right"
+        },
+        "north": {
+          "texture": "#front"
+        },
+        "south": {
+          "texture": "#back"
+        },
+        "up": {
+          "texture": "#top"
+        },
+        "west": {
+          "texture": "#left"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ]
+    }
+  ],
+  "textures": {
+    "back": "ultratech:block/genesis_core_back",
+    "bottom": "ultratech:block/genesis_core_bottom",
+    "front": "ultratech:block/genesis_core",
+    "left": "ultratech:block/genesis_core_left",
+    "particle": "ultratech:block/genesis_core",
+    "right": "ultratech:block/genesis_core_right",
+    "top": "ultratech:block/genesis_core_top"
+  }
+}

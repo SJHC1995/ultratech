@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/titanium_chlorination_furnace_bottom",
+    "side": "ultratech:block/titanium_chlorination_furnace",
+    "top": "ultratech:block/titanium_chlorination_furnace_top"
+  }
+}

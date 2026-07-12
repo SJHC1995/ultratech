@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottom"
+        },
+        "east": {
+          "texture": "#right"
+        },
+        "north": {
+          "texture": "#front"
+        },
+        "south": {
+          "texture": "#back"
+        },
+        "up": {
+          "texture": "#top"
+        },
+        "west": {
+          "texture": "#left"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ]
+    }
+  ],
+  "textures": {
+    "back": "ultratech:block/low_pressure_boiler_back",
+    "bottom": "ultratech:block/low_pressure_boiler_bottom",
+    "front": "ultratech:block/low_pressure_boiler",
+    "left": "ultratech:block/low_pressure_boiler_left",
+    "particle": "ultratech:block/low_pressure_boiler",
+    "right": "ultratech:block/low_pressure_boiler_right",
+    "top": "ultratech:block/low_pressure_boiler_top"
+  }
+}

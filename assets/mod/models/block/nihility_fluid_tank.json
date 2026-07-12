@@ -1,0 +1,171 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottom"
+        },
+        "east": {
+          "texture": "#tank"
+        },
+        "north": {
+          "texture": "#tank"
+        },
+        "south": {
+          "texture": "#tank"
+        },
+        "up": {
+          "texture": "#top"
+        },
+        "west": {
+          "texture": "#tank"
+        }
+      },
+      "from": [
+        2,
+        0,
+        2
+      ],
+      "to": [
+        14,
+        16,
+        14
+      ]
+    },
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottom"
+        },
+        "east": {
+          "texture": "#tank"
+        },
+        "north": {
+          "texture": "#tank"
+        },
+        "south": {
+          "texture": "#tank"
+        },
+        "up": {
+          "texture": "#top"
+        },
+        "west": {
+          "texture": "#tank"
+        }
+      },
+      "from": [
+        1,
+        0,
+        1
+      ],
+      "to": [
+        3,
+        16,
+        3
+      ]
+    },
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottom"
+        },
+        "east": {
+          "texture": "#tank"
+        },
+        "north": {
+          "texture": "#tank"
+        },
+        "south": {
+          "texture": "#tank"
+        },
+        "up": {
+          "texture": "#top"
+        },
+        "west": {
+          "texture": "#tank"
+        }
+      },
+      "from": [
+        13,
+        0,
+        1
+      ],
+      "to": [
+        15,
+        16,
+        3
+      ]
+    },
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottom"
+        },
+        "east": {
+          "texture": "#tank"
+        },
+        "north": {
+          "texture": "#tank"
+        },
+        "south": {
+          "texture": "#tank"
+        },
+        "up": {
+          "texture": "#top"
+        },
+        "west": {
+          "texture": "#tank"
+        }
+      },
+      "from": [
+        1,
+        0,
+        13
+      ],
+      "to": [
+        3,
+        16,
+        15
+      ]
+    },
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottom"
+        },
+        "east": {
+          "texture": "#tank"
+        },
+        "north": {
+          "texture": "#tank"
+        },
+        "south": {
+          "texture": "#tank"
+        },
+        "up": {
+          "texture": "#top"
+        },
+        "west": {
+          "texture": "#tank"
+        }
+      },
+      "from": [
+        13,
+        0,
+        13
+      ],
+      "to": [
+        15,
+        16,
+        15
+      ]
+    }
+  ],
+  "textures": {
+    "bottom": "ultratech:block/nihility_fluid_tank_bottom",
+    "particle": "ultratech:block/nihility_fluid_tank",
+    "tank": "ultratech:block/nihility_fluid_tank",
+    "top": "ultratech:block/nihility_fluid_tank_top"
+  }
+}

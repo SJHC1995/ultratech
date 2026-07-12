@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/advanced_research_terminal_bottom",
+    "side": "ultratech:block/advanced_research_terminal",
+    "top": "ultratech:block/advanced_research_terminal_top"
+  }
+}

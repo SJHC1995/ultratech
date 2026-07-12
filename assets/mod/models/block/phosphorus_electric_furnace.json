@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/phosphorus_electric_furnace_bottom",
+    "side": "ultratech:block/phosphorus_electric_furnace",
+    "top": "ultratech:block/phosphorus_electric_furnace_top"
+  }
+}

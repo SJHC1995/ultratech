@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/rare_earth_precipitation_kiln_bottom",
+    "side": "ultratech:block/rare_earth_precipitation_kiln",
+    "top": "ultratech:block/rare_earth_precipitation_kiln_top"
+  }
+}

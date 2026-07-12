@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottom"
+        },
+        "east": {
+          "texture": "#right"
+        },
+        "north": {
+          "texture": "#front"
+        },
+        "south": {
+          "texture": "#back"
+        },
+        "up": {
+          "texture": "#top"
+        },
+        "west": {
+          "texture": "#left"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ]
+    }
+  ],
+  "textures": {
+    "back": "ultratech:block/ac_substation_tower_back",
+    "bottom": "ultratech:block/ac_substation_tower_bottom",
+    "front": "ultratech:block/ac_substation_tower",
+    "left": "ultratech:block/ac_substation_tower_left",
+    "particle": "ultratech:block/ac_substation_tower",
+    "right": "ultratech:block/ac_substation_tower_right",
+    "top": "ultratech:block/ac_substation_tower_top"
+  }
+}

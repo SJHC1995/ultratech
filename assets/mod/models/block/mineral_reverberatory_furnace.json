@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/mineral_reverberatory_furnace_bottom",
+    "side": "ultratech:block/mineral_reverberatory_furnace",
+    "top": "ultratech:block/mineral_reverberatory_furnace_top"
+  }
+}

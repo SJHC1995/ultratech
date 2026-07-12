@@ -1,0 +1,107 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#side"
+        },
+        "east": {
+          "texture": "#side"
+        },
+        "north": {
+          "texture": "#end"
+        },
+        "south": {
+          "texture": "#end"
+        },
+        "up": {
+          "texture": "#side"
+        },
+        "west": {
+          "texture": "#side"
+        }
+      },
+      "from": [
+        1,
+        5,
+        5
+      ],
+      "to": [
+        15,
+        11,
+        11
+      ]
+    },
+    {
+      "faces": {
+        "down": {
+          "texture": "#mount"
+        },
+        "east": {
+          "texture": "#mount"
+        },
+        "north": {
+          "texture": "#mount"
+        },
+        "south": {
+          "texture": "#mount"
+        },
+        "up": {
+          "texture": "#mount"
+        },
+        "west": {
+          "texture": "#mount"
+        }
+      },
+      "from": [
+        0,
+        3,
+        3
+      ],
+      "to": [
+        4,
+        13,
+        13
+      ]
+    },
+    {
+      "faces": {
+        "down": {
+          "texture": "#mount"
+        },
+        "east": {
+          "texture": "#mount"
+        },
+        "north": {
+          "texture": "#mount"
+        },
+        "south": {
+          "texture": "#mount"
+        },
+        "up": {
+          "texture": "#mount"
+        },
+        "west": {
+          "texture": "#mount"
+        }
+      },
+      "from": [
+        12,
+        3,
+        3
+      ],
+      "to": [
+        16,
+        13,
+        13
+      ]
+    }
+  ],
+  "textures": {
+    "end": "ultratech:block/kinetic_output_shaft_end",
+    "mount": "ultratech:block/kinetic_output_shaft_mount",
+    "particle": "ultratech:block/kinetic_output_shaft_side",
+    "side": "ultratech:block/kinetic_output_shaft_side"
+  }
+}

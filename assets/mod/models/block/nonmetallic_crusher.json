@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/nonmetallic_crusher_bottom",
+    "side": "ultratech:block/nonmetallic_crusher",
+    "top": "ultratech:block/nonmetallic_crusher_top"
+  }
+}

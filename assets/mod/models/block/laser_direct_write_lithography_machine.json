@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/laser_direct_write_lithography_machine_bottom",
+    "side": "ultratech:block/laser_direct_write_lithography_machine",
+    "top": "ultratech:block/laser_direct_write_lithography_machine_top"
+  }
+}

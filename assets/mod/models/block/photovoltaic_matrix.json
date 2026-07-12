@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottom"
+        },
+        "east": {
+          "texture": "#right"
+        },
+        "north": {
+          "texture": "#front"
+        },
+        "south": {
+          "texture": "#back"
+        },
+        "up": {
+          "texture": "#top"
+        },
+        "west": {
+          "texture": "#left"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ]
+    }
+  ],
+  "textures": {
+    "back": "ultratech:block/photovoltaic_matrix_back",
+    "bottom": "ultratech:block/photovoltaic_matrix_bottom",
+    "front": "ultratech:block/photovoltaic_matrix",
+    "left": "ultratech:block/photovoltaic_matrix_left",
+    "particle": "ultratech:block/photovoltaic_matrix",
+    "right": "ultratech:block/photovoltaic_matrix_right",
+    "top": "ultratech:block/photovoltaic_matrix_top"
+  }
+}

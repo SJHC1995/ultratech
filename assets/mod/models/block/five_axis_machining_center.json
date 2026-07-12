@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/five_axis_machining_center_bottom",
+    "side": "ultratech:block/five_axis_machining_center",
+    "top": "ultratech:block/five_axis_machining_center_top"
+  }
+}

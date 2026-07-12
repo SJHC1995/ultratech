@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottom"
+        },
+        "east": {
+          "texture": "#right"
+        },
+        "north": {
+          "texture": "#front"
+        },
+        "south": {
+          "texture": "#back"
+        },
+        "up": {
+          "texture": "#top"
+        },
+        "west": {
+          "texture": "#left"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ]
+    }
+  ],
+  "textures": {
+    "back": "ultratech:block/star_chart_marker_terminal_back",
+    "bottom": "ultratech:block/star_chart_marker_terminal_bottom",
+    "front": "ultratech:block/star_chart_marker_terminal",
+    "left": "ultratech:block/star_chart_marker_terminal_left",
+    "particle": "ultratech:block/star_chart_marker_terminal",
+    "right": "ultratech:block/star_chart_marker_terminal_right",
+    "top": "ultratech:block/star_chart_marker_terminal_top"
+  }
+}

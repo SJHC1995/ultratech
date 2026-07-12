@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/time_crystal_growth_furnace_bottom",
+    "side": "ultratech:block/time_crystal_growth_furnace",
+    "top": "ultratech:block/time_crystal_growth_furnace_top"
+  }
+}

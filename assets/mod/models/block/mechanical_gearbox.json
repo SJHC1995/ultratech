@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/mechanical_gearbox_axis",
+    "side": "ultratech:block/mechanical_gearbox",
+    "top": "ultratech:block/mechanical_gearbox_axis"
+  }
+}

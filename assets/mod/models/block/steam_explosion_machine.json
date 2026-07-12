@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/steam_explosion_machine_bottom",
+    "side": "ultratech:block/steam_explosion_machine",
+    "top": "ultratech:block/steam_explosion_machine_top"
+  }
+}

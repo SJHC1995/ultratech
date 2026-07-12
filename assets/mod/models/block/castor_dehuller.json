@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/castor_dehuller_bottom",
+    "side": "ultratech:block/castor_dehuller",
+    "top": "ultratech:block/castor_dehuller_top"
+  }
+}

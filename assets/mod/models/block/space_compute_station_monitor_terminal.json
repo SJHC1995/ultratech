@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottom"
+        },
+        "east": {
+          "texture": "#right"
+        },
+        "north": {
+          "texture": "#front"
+        },
+        "south": {
+          "texture": "#back"
+        },
+        "up": {
+          "texture": "#top"
+        },
+        "west": {
+          "texture": "#left"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ]
+    }
+  ],
+  "textures": {
+    "back": "ultratech:block/space_compute_station_monitor_terminal_back",
+    "bottom": "ultratech:block/space_compute_station_monitor_terminal_bottom",
+    "front": "ultratech:block/space_compute_station_monitor_terminal",
+    "left": "ultratech:block/space_compute_station_monitor_terminal_left",
+    "particle": "ultratech:block/space_compute_station_monitor_terminal",
+    "right": "ultratech:block/space_compute_station_monitor_terminal_right",
+    "top": "ultratech:block/space_compute_station_monitor_terminal_top"
+  }
+}

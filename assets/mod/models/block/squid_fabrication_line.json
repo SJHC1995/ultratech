@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/squid_fabrication_line_bottom",
+    "side": "ultratech:block/squid_fabrication_line",
+    "top": "ultratech:block/squid_fabrication_line_top"
+  }
+}

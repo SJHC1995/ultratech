@@ -1,0 +1,45 @@
+{
+  "credit": "UltraTech modified water wheel mesh. Geometry was heavily rescaled and rethemed from Immersive Engineering watermill proportions; texture is original UltraTech procedural industrial wet oak.",
+  "loader": "forge:obj",
+  "flip_v": true,
+  "model": "ultratech:models/block/water_wheel/ultratech_water_wheel.obj",
+  "textures": {
+    "particle": "ultratech:block/water_wheel/ultratech_water_wheel"
+  },
+  "display": {
+    "gui": {
+      "rotation": [30, 225, 0],
+      "translation": [0, 0, 0],
+      "scale": [0.18, 0.18, 0.18]
+    },
+    "ground": {
+      "rotation": [0, 0, 0],
+      "translation": [0, 2, 0],
+      "scale": [0.075, 0.075, 0.075]
+    },
+    "fixed": {
+      "translation": [0, 0, 0],
+      "scale": [0.18, 0.18, 0.18]
+    },
+    "thirdperson_righthand": {
+      "rotation": [75, 45, 0],
+      "translation": [0, 1.5, 0],
+      "scale": [0.052, 0.052, 0.052]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [75, 45, 0],
+      "translation": [0, 1.5, 0],
+      "scale": [0.052, 0.052, 0.052]
+    },
+    "firstperson_righthand": {
+      "rotation": [0, 135, 0],
+      "translation": [0, 1.5, -1],
+      "scale": [0.038, 0.038, 0.038]
+    },
+    "firstperson_lefthand": {
+      "rotation": [0, 225, 0],
+      "translation": [0, 1.5, -1],
+      "scale": [0.038, 0.038, 0.038]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/chlor_alkali_hydrochloric_acid_tower_bottom",
+    "side": "ultratech:block/chlor_alkali_hydrochloric_acid_tower",
+    "top": "ultratech:block/chlor_alkali_hydrochloric_acid_tower_top"
+  }
+}

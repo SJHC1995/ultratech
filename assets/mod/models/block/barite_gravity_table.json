@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/barite_gravity_table_bottom",
+    "side": "ultratech:block/barite_gravity_table",
+    "top": "ultratech:block/barite_gravity_table_top"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/kaolin_bleaching_separator_bottom",
+    "side": "ultratech:block/kaolin_bleaching_separator",
+    "top": "ultratech:block/kaolin_bleaching_separator_top"
+  }
+}

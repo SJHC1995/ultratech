@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/primitive_mortar_workbench_bottom",
+    "side": "ultratech:block/primitive_mortar_workbench",
+    "top": "ultratech:block/primitive_mortar_workbench_top"
+  }
+}

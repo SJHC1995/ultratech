@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/aluminum_precipitation_tank_bottom",
+    "side": "ultratech:block/aluminum_precipitation_tank",
+    "top": "ultratech:block/aluminum_precipitation_tank_top"
+  }
+}

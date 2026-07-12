@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/magnesite_sintering_kiln_bottom",
+    "side": "ultratech:block/magnesite_sintering_kiln",
+    "top": "ultratech:block/magnesite_sintering_kiln_top"
+  }
+}

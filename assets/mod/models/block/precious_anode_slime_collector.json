@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/precious_anode_slime_collector_bottom",
+    "side": "ultratech:block/precious_anode_slime_collector",
+    "top": "ultratech:block/precious_anode_slime_collector_top"
+  }
+}

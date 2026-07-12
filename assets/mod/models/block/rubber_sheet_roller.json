@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/rubber_sheet_roller_bottom",
+    "side": "ultratech:block/rubber_sheet_roller",
+    "top": "ultratech:block/rubber_sheet_roller_top"
+  }
+}

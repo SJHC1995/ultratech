@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/chlor_alkali_salt_crusher_bottom",
+    "side": "ultratech:block/chlor_alkali_salt_crusher",
+    "top": "ultratech:block/chlor_alkali_salt_crusher_top"
+  }
+}

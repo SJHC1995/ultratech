@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/starch_separator_bottom",
+    "side": "ultratech:block/starch_separator",
+    "top": "ultratech:block/starch_separator_top"
+  }
+}

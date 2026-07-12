@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/aluminum_ingot_caster_bottom",
+    "side": "ultratech:block/aluminum_ingot_caster",
+    "top": "ultratech:block/aluminum_ingot_caster_top"
+  }
+}

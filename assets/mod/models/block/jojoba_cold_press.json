@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/jojoba_cold_press_bottom",
+    "side": "ultratech:block/jojoba_cold_press",
+    "top": "ultratech:block/jojoba_cold_press_top"
+  }
+}

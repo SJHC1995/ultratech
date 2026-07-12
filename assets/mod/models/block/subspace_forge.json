@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/subspace_forge_bottom",
+    "side": "ultratech:block/subspace_forge",
+    "top": "ultratech:block/subspace_forge_top"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottom"
+        },
+        "east": {
+          "texture": "#right"
+        },
+        "north": {
+          "texture": "#front"
+        },
+        "south": {
+          "texture": "#back"
+        },
+        "up": {
+          "texture": "#top"
+        },
+        "west": {
+          "texture": "#left"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ]
+    }
+  ],
+  "textures": {
+    "back": "ultratech:block/nihility_engine_back",
+    "bottom": "ultratech:block/nihility_engine_bottom",
+    "front": "ultratech:block/nihility_engine",
+    "left": "ultratech:block/nihility_engine_left",
+    "particle": "ultratech:block/nihility_engine",
+    "right": "ultratech:block/nihility_engine_right",
+    "top": "ultratech:block/nihility_engine_top"
+  }
+}

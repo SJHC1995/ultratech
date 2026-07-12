@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/saccharification_tank_bottom",
+    "side": "ultratech:block/saccharification_tank",
+    "top": "ultratech:block/saccharification_tank_top"
+  }
+}
