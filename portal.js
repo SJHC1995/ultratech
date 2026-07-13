@@ -26,6 +26,7 @@ const UI = {
 };
 
 const DOCUMENTS = [
+  ["2026-07-13", "ULTRATECH_ROADMAP_2026-07-13.md", "星际航行视觉迭代与演示发布", "Spaceflight visual iteration and demo release", "roadmap"],
   ["2026-07-12", "ULTRATECH_ROADMAP_2026-07-12.md", "聚变阶段 Demo 发布与规划", "Fusion-stage demo release and plan", "release"],
   ["2026-07-12", "ULTRATECH_INVENTORY_2026-07-12.md", "项目资产清单", "Project asset inventory", "inventory"],
   ["2026-07-09", "ULTRATECH_ICON_REDRAW_BATCH_PLAN_2026-07-09.md", "图标重绘批次计划", "Icon redraw batch plan", "art"],
