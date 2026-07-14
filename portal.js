@@ -26,6 +26,7 @@ const UI = {
 };
 
 const DOCUMENTS = [
+  ["2026-07-14", "ULTRATECH_SPACE_RUINS_AND_SUPERCONDUCTING_FACTORY_2026-07-14.md", "太空遗迹与超导工厂实装记录", "Space ruins and superconducting factory implementation", "systems"],
   ["2026-07-13", "ULTRATECH_ROADMAP_2026-07-13.md", "星际航行视觉迭代与演示发布", "Spaceflight visual iteration and demo release", "roadmap"],
   ["2026-07-12", "ULTRATECH_ROADMAP_2026-07-12.md", "聚变阶段 Demo 发布与规划", "Fusion-stage demo release and plan", "release"],
   ["2026-07-12", "ULTRATECH_INVENTORY_2026-07-12.md", "项目资产清单", "Project asset inventory", "inventory"],
@@ -57,6 +58,8 @@ const VERSION_RECORDS = [
 ];
 
 const TASKS = [
+  { status: "in_progress", priority: "P0", zh: "在生存存档逐座验收超导工厂多方块结构、端口和断供状态", en: "Validate superconducting factory multiblocks, ports, and supply-loss states in a survival save.", doc: "ULTRATECH_SPACE_RUINS_AND_SUPERCONDUCTING_FACTORY_2026-07-14.md" },
+  { status: "planned", priority: "P1", zh: "覆盖六类星球遗迹的扫描、标记、挖掘和研究终端解锁流程", en: "Cover scan, marker, excavation, and analysis-terminal unlock flows for all six planetary ruin types.", doc: "ULTRATECH_SPACE_RUINS_AND_SUPERCONDUCTING_FACTORY_2026-07-14.md" },
   { status: "in_progress", priority: "P0", zh: "阶段 19-24 聚变机器进行 runClient 输入、断料与 FE 网络验收", en: "Validate stage 19-24 fusion machines in runClient with input loss and FE-network cases.", doc: "ULTRATECH_ROADMAP_2026-07-12.md" },
   { status: "planned", priority: "P1", zh: "为阶段 19-24 编写 GameTest 或最小集成测试", en: "Add GameTest or minimum integration coverage for stages 19-24.", doc: "ULTRATECH_ROADMAP_2026-07-12.md" },
   { status: "in_progress", priority: "P1", zh: "继续清理创造栏占位贴图与错误本地化", en: "Continue creative-tab texture and localization cleanup.", doc: "ULTRATECH_ROADMAP_2026-07-12.md" },

@@ -5,7 +5,14 @@
     <link>https://sjhc1995.github.io/ultratech/</link>
     <description>UltraTech Forge 1.20.1 development journal and documentation archive.</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 12 Jul 2026 11:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2026 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>太空遗迹与超导工厂实装记录</title>
+      <link>https://sjhc1995.github.io/ultratech/document.html?file=docs%2FULTRATECH_SPACE_RUINS_AND_SUPERCONDUCTING_FACTORY_2026-07-14.md</link>
+      <guid>https://sjhc1995.github.io/ultratech/docs/ULTRATECH_SPACE_RUINS_AND_SUPERCONDUCTING_FACTORY_2026-07-14.md</guid>
+      <pubDate>Tue, 14 Jul 2026 12:00:00 GMT</pubDate>
+      <description>六星球遗迹探索系统与五座超导工厂多方块建筑的实际实现、数据生成和验证记录。</description>
+    </item>
     <item>
       <title>聚变阶段 Demo 发布与规划</title>
       <link>https://sjhc1995.github.io/ultratech/document.html?file=docs%2FULTRATECH_ROADMAP_2026-07-12.md</link>
