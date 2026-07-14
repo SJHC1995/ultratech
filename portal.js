@@ -64,6 +64,29 @@ const TASKS = [
   { status: "done", priority: "P2", zh: "从 Forge 源码与 DataGen 资源快照生成静态百科目录", en: "Generate the static catalog from Forge source and DataGen resource snapshots.", doc: "ULTRATECH_INVENTORY_2026-07-12.md" }
 ];
 
+const PROCESS_MODULE_LABELS = {
+  aluminum: { zh: "铝工业", en: "Aluminum Industry" },
+  castor: { zh: "蓖麻工业", en: "Castor Industry" },
+  chlorAlkali: { zh: "氯碱化工", en: "Chlor-Alkali Chemistry" },
+  copper: { zh: "铜工业", en: "Copper Industry" },
+  dispersed: { zh: "分散金属", en: "Dispersed Metals" },
+  iron: { zh: "铁系工业", en: "Iron Industry" },
+  jojoba: { zh: "霍霍巴工业", en: "Jojoba Industry" },
+  nonferrous: { zh: "有色金属", en: "Nonferrous Metals" },
+  nonmetallic: { zh: "非金属矿物", en: "Nonmetallic Minerals" },
+  oilPalm: { zh: "油棕工业", en: "Oil Palm Industry" },
+  petroleum: { zh: "石油工业", en: "Petroleum Industry" },
+  precious: { zh: "贵金属", en: "Precious Metals" },
+  precision: { zh: "精密制造", en: "Precision Manufacturing" },
+  primitive: { zh: "古法工业", en: "Primitive Industry" },
+  rareEarth: { zh: "稀土工业", en: "Rare Earth Industry" },
+  refractory: { zh: "耐火材料", en: "Refractory Materials" },
+  rubber: { zh: "橡胶工业", en: "Rubber Industry" },
+  silicon: { zh: "硅工业", en: "Silicon Industry" },
+  sisal: { zh: "剑麻工业", en: "Sisal Industry" },
+  sorghum: { zh: "高粱工业", en: "Sorghum Industry" }
+};
+
 let language = localStorage.getItem("ultratech-language") || "zh";
 let catalogPromise;
 
@@ -73,6 +96,10 @@ function text(key) {
 
 function display(entry) {
   return language === "en" ? entry.nameEn : entry.nameZh;
+}
+
+function processModuleLabel(module) {
+  return PROCESS_MODULE_LABELS[module]?.[language] || module;
 }
 
 function statusLabel(status) {
@@ -280,7 +307,11 @@ function initRecipes() {
   catalog().then((data) => {
     const processes = data.entries.filter((entry) => entry.type === "process_machine");
     const modules = [...new Set(processes.map((entry) => entry.category))].sort();
-    select.innerHTML = modules.map((module) => `<option value="${escapeHtml(module)}">${escapeHtml(module)}</option>`).join("");
+    const renderOptions = () => {
+      const selectedModule = select.value;
+      select.innerHTML = modules.map((module) => `<option value="${escapeHtml(module)}">${escapeHtml(processModuleLabel(module))}</option>`).join("");
+      select.value = modules.includes(selectedModule) ? selectedModule : modules[0];
+    };
     const render = () => {
       const chain = processes.filter((entry) => entry.category === select.value);
       target.innerHTML = chain.map((entry, index) => `<article class="chain-step">
@@ -291,7 +322,11 @@ function initRecipes() {
       </article>`).join("");
     };
     select.addEventListener("change", render);
-    document.addEventListener("ultratech-language", render);
+    document.addEventListener("ultratech-language", () => {
+      renderOptions();
+      render();
+    });
+    renderOptions();
     render();
   });
 }
