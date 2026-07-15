@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/pine_adhesive_reactor_bottom",
+    "side": "ultratech:block/pine_adhesive_reactor",
+    "top": "ultratech:block/pine_adhesive_reactor_top"
+  }
+}

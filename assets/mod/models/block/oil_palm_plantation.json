@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/oil_palm_plantation_bottom",
+    "side": "ultratech:block/oil_palm_plantation",
+    "top": "ultratech:block/oil_palm_plantation_top"
+  }
+}

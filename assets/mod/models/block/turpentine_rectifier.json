@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/turpentine_rectifier_bottom",
+    "side": "ultratech:block/turpentine_rectifier",
+    "top": "ultratech:block/turpentine_rectifier_top"
+  }
+}

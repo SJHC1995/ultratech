@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/eucommia_refiner_bottom",
+    "side": "ultratech:block/eucommia_refiner",
+    "top": "ultratech:block/eucommia_refiner_top"
+  }
+}

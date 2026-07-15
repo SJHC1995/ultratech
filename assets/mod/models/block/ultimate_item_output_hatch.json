@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/ultimate_machine_casing",
+    "side": "ultratech:block/ultimate_item_output_hatch",
+    "top": "ultratech:block/ultimate_machine_casing"
+  }
+}

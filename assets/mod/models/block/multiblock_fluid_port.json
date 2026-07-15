@@ -1,6 +1,8 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube_bottom_top",
   "textures": {
-    "all": "ultratech:block/industrial_steel_block"
+    "bottom": "ultratech:block/industrial_steel_block",
+    "side": "ultratech:block/multiblock_fluid_port",
+    "top": "ultratech:block/industrial_steel_block"
   }
 }

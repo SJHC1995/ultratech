@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/lacquer_paint_mixer_bottom",
+    "side": "ultratech:block/lacquer_paint_mixer",
+    "top": "ultratech:block/lacquer_paint_mixer_top"
+  }
+}

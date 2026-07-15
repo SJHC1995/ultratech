@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/basic_machine_casing",
+    "side": "ultratech:block/basic_fluid_output_hatch",
+    "top": "ultratech:block/basic_machine_casing"
+  }
+}

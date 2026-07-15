@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/organic_electrosynthesis_reactor_bottom",
+    "side": "ultratech:block/organic_electrosynthesis_reactor",
+    "top": "ultratech:block/organic_electrosynthesis_reactor_top"
+  }
+}

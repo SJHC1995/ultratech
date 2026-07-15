@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/palm_digester_tank_bottom",
+    "side": "ultratech:block/palm_digester_tank",
+    "top": "ultratech:block/palm_digester_tank_top"
+  }
+}

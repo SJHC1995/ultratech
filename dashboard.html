@@ -19,12 +19,12 @@
     </nav>
   </header>
   <main class="portal-main">
-    <section class="page-heading"><div><p class="eyebrow">Development Metrics</p><h1 data-i18n="dashboard"></h1><p>统计由当前源码与 DataGen 资源快照生成。网页不伪造云端 CI 状态：当前仓库未配置可读取的 Forge CI workflow，因此构建结果以发布文档中的本地验证记录为准。</p></div></section>
+    <section class="page-heading"><div><p class="eyebrow">Development Metrics</p><h1 data-i18n="dashboard"></h1><p>统计由当前 Forge 源码与 DataGen 资源快照生成，已随 Demo 2.0 更新。GitHub Actions Forge CI 会读取公开的 Gitee 源码并执行编译、DataGen 与构建；发布包仍以本地完整验证结果为准。</p></div></section>
     <section id="dashboardMetrics" class="metrics"></section>
     <section class="data-grid">
-      <article class="panel"><h2>构建状态</h2><p><span class="status-badge" data-status="implemented">2026-07-12 本地 build 通过</span></p><p>Forge 47.4.4 / Minecraft 1.20.1 / Java 17。公开 CI 徽章将在模组源码镜像接入 GitHub Actions 后自动替换。</p><a class="link-button" href="https://github.com/SJHC1995/ultratech/actions" target="_blank" rel="noreferrer">GitHub Actions</a></article>
+      <article class="panel"><h2>构建状态</h2><p><span class="status-badge" data-status="implemented">2026-07-15 Demo 2.0 本地 build 通过</span></p><p>Forge 47.4.4 / Minecraft 1.20.1 / Java 17。Forge CI 已接入 GitHub Actions：每次 Pages 推送会拉取 Gitee 源码并执行 <code>compileJava</code>、<code>runData</code> 和 <code>build</code>，随后保留 JAR 构件 14 天。</p><p><a href="https://github.com/SJHC1995/ultratech/actions/workflows/forge-ci.yml" target="_blank" rel="noreferrer"><img src="https://github.com/SJHC1995/ultratech/actions/workflows/forge-ci.yml/badge.svg" alt="Forge CI"></a></p><a class="link-button" href="https://github.com/SJHC1995/ultratech/actions/workflows/forge-ci.yml" target="_blank" rel="noreferrer">查看 Forge CI</a></article>
       <article class="panel"><h2>问题追踪器</h2><p>将路线图中明确的待办整理为可筛选看板：游戏内验收、资源闭环、土星轨道视觉与自动化验证。</p><a class="link-button" href="./tracker.html">打开任务看板</a></article>
-      <article class="panel"><h2>数据生成</h2><p>静态网页不能安全调用本机脚本；这里提供可复制的本地数据生成命令，不暴露公网 Webhook。</p><div class="command-box"><code>powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\build-catalog.ps1</code><button class="copy-button" type="button" data-copy-command="powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\build-catalog.ps1" data-i18n="copy"></button></div><a class="link-button" href="./scripts/build-catalog.ps1" download>下载数据生成脚本</a></article>
+      <article class="panel"><h2>数据生成</h2><p>静态网页不会开放公网 Webhook；本地生成脚本读取 Forge 源码和 DataGen 资源，然后刷新百科目录、页面导航与本看板的统计数据。</p><div class="command-box"><code>powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\build-catalog.ps1 -SourceRoot C:\ultratech</code><button class="copy-button" type="button" data-copy-command="powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\build-catalog.ps1 -SourceRoot C:\ultratech" data-i18n="copy"></button></div><a class="link-button" href="./scripts/build-catalog.ps1" download>下载数据生成脚本</a></article>
     </section>
   </main>
   <footer><span>UltraTech Static Blog</span><a class="button" href="./updates.html" data-i18n="updates"></a></footer>

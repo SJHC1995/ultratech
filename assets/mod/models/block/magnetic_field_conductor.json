@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "ultratech:block/magnetic_field_conductor"
+  }
+}

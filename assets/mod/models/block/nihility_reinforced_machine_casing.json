@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "ultratech:block/nihility_reinforced_machine_casing"
+  }
+}

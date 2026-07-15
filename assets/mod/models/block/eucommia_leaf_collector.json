@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/eucommia_leaf_collector_bottom",
+    "side": "ultratech:block/eucommia_leaf_collector",
+    "top": "ultratech:block/eucommia_leaf_collector_top"
+  }
+}

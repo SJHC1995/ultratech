@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/lacquer_refining_kettle_bottom",
+    "side": "ultratech:block/lacquer_refining_kettle",
+    "top": "ultratech:block/lacquer_refining_kettle_top"
+  }
+}

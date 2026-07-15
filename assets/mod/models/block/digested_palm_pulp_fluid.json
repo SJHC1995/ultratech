@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "all": "ultratech:block/fluid/digested_palm_pulp_still"
+  }
+}
