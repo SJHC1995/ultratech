@@ -1,0 +1,57 @@
+name: Forge CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-forge-source:
+    name: Build Forge 1.20.1 source
+    runs-on: windows-latest
+    steps:
+      - name: Check out Pages repository
+        uses: actions/checkout@v4
+
+      - name: Check out public UltraTech source from Gitee
+        shell: pwsh
+        run: git clone --depth 1 https://gitee.com/asdust1/ultra-tech.git forge-source
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: gradle
+          cache-dependency-path: forge-source/**/*.gradle*
+
+      - name: Configure Gradle cache
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Compile Forge source
+        shell: pwsh
+        working-directory: forge-source
+        run: .\gradlew.bat compileJava --no-daemon
+
+      - name: Generate data resources
+        shell: pwsh
+        working-directory: forge-source
+        run: .\gradlew.bat runData --no-daemon
+
+      - name: Build release JAR
+        shell: pwsh
+        working-directory: forge-source
+        run: .\gradlew.bat build --no-daemon
+
+      - name: Upload Forge JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: ultratech-forge-jar
+          path: forge-source/build/libs/*.jar
+          if-no-files-found: error
+          retention-days: 14

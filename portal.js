@@ -26,6 +26,7 @@ const UI = {
 };
 
 const DOCUMENTS = [
+  ["2026-07-15", "ULTRATECH_DEMO_2.0.0_2026-07-15.md", "Demo 2.0.0：电化学工业发布说明", "Demo 2.0.0: electrochemistry release notes", "release"],
   ["2026-07-14", "ULTRATECH_SPACE_RUINS_AND_SUPERCONDUCTING_FACTORY_2026-07-14.md", "太空遗迹与超导工厂实装记录", "Space ruins and superconducting factory implementation", "systems"],
   ["2026-07-13", "ULTRATECH_ROADMAP_2026-07-13.md", "星际航行视觉迭代与演示发布", "Spaceflight visual iteration and demo release", "roadmap"],
   ["2026-07-12", "ULTRATECH_ROADMAP_2026-07-12.md", "聚变阶段 Demo 发布与规划", "Fusion-stage demo release and plan", "release"],
@@ -48,12 +49,22 @@ const DOCUMENTS = [
 
 const VERSION_RECORDS = [
   {
+    version: "2.0.0 Demo",
+    date: "2026-07-15",
+    status: "current",
+    zh: "电化学工业 Demo：电解、表面处理、精细化学与 3x3x3 熔盐电解炉，附带 GeckoLib 4.8.4。",
+    en: "Electrochemistry demo with electrolysis, surface treatment, fine chemistry, and the 3x3x3 molten-salt electrolytic furnace.",
+    file: "./downloads/UltraTech-Demo-2.0.0-2026-07-15.zip",
+    doc: "ULTRATECH_DEMO_2.0.0_2026-07-15.md"
+  },
+  {
     version: "1.0.0 Demo",
     date: "2026-07-12",
-    status: "current",
-    zh: "当前公开 Demo 包，包含 UltraTech JAR 与匹配的 GeckoLib 4.8.4。",
-    en: "Current public demo package with UltraTech and matching GeckoLib 4.8.4.",
-    file: "./downloads/UltraTech-Demo-2026-07-12.zip"
+    status: "archived",
+    zh: "历史公开 Demo 包，包含 UltraTech JAR 与匹配的 GeckoLib 4.8.4。",
+    en: "Archived public demo package with UltraTech and matching GeckoLib 4.8.4.",
+    file: "./downloads/UltraTech-Demo-2026-07-12.zip",
+    doc: "ULTRATECH_ROADMAP_2026-07-12.md"
   }
 ];
 
@@ -212,9 +223,9 @@ function initVersions() {
   const target = document.getElementById("versionResults");
   const render = () => {
     target.innerHTML = VERSION_RECORDS.map((record) => `<article class="version-card">
-      <div class="tag-row"><span class="tag">${record.date}</span><span class="status-badge" data-status="implemented">${text("current")}</span></div>
+      <div class="tag-row"><span class="tag">${record.date}</span><span class="status-badge" data-status="${record.status === "current" ? "implemented" : "deprecated"}">${record.status === "current" ? text("current") : text("archived")}</span></div>
       <h2>${record.version}</h2><p>${escapeHtml(language === "en" ? record.en : record.zh)}</p>
-      <div class="card-actions"><a class="link-button primary" href="${record.file}" download>${text("download")}</a><a class="link-button" href="${documentHref("ULTRATECH_ROADMAP_2026-07-12.md")}">${text("openDoc")}</a></div>
+      <div class="card-actions"><a class="link-button primary" href="${record.file}" download>${text("download")}</a><a class="link-button" href="${documentHref(record.doc)}">${text("openDoc")}</a></div>
     </article>`).join("");
   };
   document.addEventListener("ultratech-language", render);

@@ -13,6 +13,7 @@
     <nav class="nav">
       <img src="./assets/ultratech_logo.png" alt="UltraTech" class="logo">
       <div class="nav-links">
+        <a href="https://github.com/SJHC1995/ultratech/actions/workflows/forge-ci.yml" target="_blank" rel="noreferrer"><img src="https://github.com/SJHC1995/ultratech/actions/workflows/forge-ci.yml/badge.svg" alt="Forge CI"></a>
         <a href="#updates">更新</a>
         <a href="#systems">系统</a>
         <a href="#docs">文档</a>
@@ -34,24 +35,24 @@
   <main>
     <section id="updates" class="section">
       <div class="section-head">
-        <p class="eyebrow">2026-07-12</p>
-        <h2>聚变阶段 Demo</h2>
+        <p class="eyebrow">2026-07-15</p>
+        <h2>电化学工业 Demo 2.0</h2>
       </div>
       <div class="timeline">
         <article>
-          <time>Stage 19-24</time>
-          <h3>六台聚变时代核心机器完成独立逻辑</h3>
-          <p>熔盐堆、氘聚变堆、氦聚变堆、质子加速器、托卡马克环和激光聚变室已不再复用通用阶段机行为，分别具备燃料验证、FE 输入输出、寿命/温度/磁场/脉冲指标与 GUI 状态显示。</p>
+          <time>Electrochemistry</time>
+          <h3>电解、表面处理与精细化学进入 Demo 2.0</h3>
+          <p>水电解、氯碱、电镀、阳极氧化、电渗析和有机电合成已接入工业过程配方系统；金属盐溶液、纯化水、烧碱与电镀件形成新的阶段化加工链。</p>
         </article>
         <article>
-          <time>GeckoLib 4.8.4</time>
-          <h3>星际航行继续使用 GeckoLib 3D 场景</h3>
-          <p>飞船、轨道状态和航行场景以 GeckoLib 为运行时依赖。Demo 压缩包已包含匹配版本的 GeckoLib；解压后将 mods 目录中的两个 JAR 一同放入实例。</p>
+          <time>3x3x3 Multiblock</time>
+          <h3>熔盐电解炉改为独立多方块</h3>
+          <p>高温熔盐电解不再使用通用单方块逻辑，精英级外壳、透风口与电路板共同组成专用 3x3x3 结构。</p>
         </article>
         <article>
           <time>Validation</time>
-          <h3>Demo 构建通过</h3>
-          <p>本次发布以 Forge 47.4.4、Java 17 进行构建验证。语言 JSON、编译和差异空白检查均已通过。</p>
+          <h3>Demo 2.0 构建通过</h3>
+          <p>本次发布以 Forge 47.4.4、Java 17 进行编译、DataGen、构建和客户端资源加载验证。</p>
         </article>
       </div>
     </section>
@@ -111,7 +112,7 @@
         <p>下载并解压 Demo 压缩包后，将其中 mods 目录的 UltraTech Demo JAR 与 GeckoLib Forge 4.8.4 一同放入同一实例。项目声明 GeckoLib 为强制依赖；JEI 与 The One Probe 为可选依赖。</p>
         <p>运行环境：Minecraft 1.20.1、Forge 47.4.4、Java 17。完整安装、验证范围和已知边界见本次规划文档。</p>
         <div class="hero-actions">
-          <a class="button primary" href="./downloads/UltraTech-Demo-2026-07-12.zip" download>下载 Demo 压缩包</a>
+          <a class="button primary" href="./downloads/UltraTech-Demo-2.0.0-2026-07-15.zip" download>下载 Demo 2.0 压缩包</a>
           <a class="button" href="./downloads/geckolib-forge-1.20.1-4.8.4.jar" download>下载 GeckoLib 4.8.4</a>
         </div>
       </div>
@@ -128,6 +129,11 @@
         <h2>设计与发布文档</h2>
       </div>
       <div class="doc-list">
+        <a href="./document.html?file=docs%2FULTRATECH_DEMO_2.0.0_2026-07-15.md">
+          <span>2026-07-15</span>
+          <strong>Demo 2.0.0：电化学工业发布说明</strong>
+          <em>记录电解、表面处理、精细化学、熔盐电解多方块与构建验证范围。</em>
+        </a>
         <a href="./document.html?file=docs%2FULTRATECH_ROADMAP_2026-07-13.md">
           <span>2026-07-13</span>
           <strong>星际航行视觉迭代与演示发布</strong>
