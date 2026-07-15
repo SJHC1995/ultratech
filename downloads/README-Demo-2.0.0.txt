@@ -9,7 +9,7 @@ Requirements
 
 Installation
 1. Open the mods folder in a Forge 1.20.1 instance.
-2. Copy both JAR files from this archive's mods folder into that mods folder.
+2. Copy both JAR files from this archive into that mods folder.
 3. Launch Minecraft.
 
 Included files

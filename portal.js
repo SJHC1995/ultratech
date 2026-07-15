@@ -26,6 +26,7 @@ const UI = {
 };
 
 const DOCUMENTS = [
+  ["2026-07-15", "ULTRATECH_MIDGAME_INDUSTRY_2026-07-15.md", "阶段 10-22 中后期工业基础实装记录", "Stage 10-22 midgame industry implementation", "systems"],
   ["2026-07-15", "ULTRATECH_DEMO_2.0.0_2026-07-15.md", "Demo 2.0.0：电化学工业发布说明", "Demo 2.0.0: electrochemistry release notes", "release"],
   ["2026-07-14", "ULTRATECH_SPACE_RUINS_AND_SUPERCONDUCTING_FACTORY_2026-07-14.md", "太空遗迹与超导工厂实装记录", "Space ruins and superconducting factory implementation", "systems"],
   ["2026-07-13", "ULTRATECH_ROADMAP_2026-07-13.md", "星际航行视觉迭代与演示发布", "Spaceflight visual iteration and demo release", "roadmap"],
@@ -52,8 +53,8 @@ const VERSION_RECORDS = [
     version: "2.0.0 Demo",
     date: "2026-07-15",
     status: "current",
-    zh: "电化学工业 Demo：电解、表面处理、精细化学与 3x3x3 熔盐电解炉，附带 GeckoLib 4.8.4。",
-    en: "Electrochemistry demo with electrolysis, surface treatment, fine chemistry, and the 3x3x3 molten-salt electrolytic furnace.",
+    zh: "Demo 2.0.0：电化学工业与阶段 10-22 中后期工业基础，包含核燃料、复材、制冷、工业气体、聚变燃料、氦-3 和超级合金。",
+    en: "Demo 2.0.0 with electrochemistry and the stage 10-22 midgame industry foundation, including nuclear fuel, composites, refrigeration, industrial gases, fusion fuel, helium-3, and superalloys.",
     file: "./downloads/UltraTech-Demo-2.0.0-2026-07-15.zip",
     doc: "ULTRATECH_DEMO_2.0.0_2026-07-15.md"
   },

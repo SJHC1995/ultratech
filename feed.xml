@@ -5,7 +5,14 @@
     <link>https://sjhc1995.github.io/ultratech/</link>
     <description>UltraTech Forge 1.20.1 development journal and documentation archive.</description>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 15 Jul 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jul 2026 08:12:00 GMT</lastBuildDate>
+    <item>
+      <title>阶段 10-22 中后期工业基础实装记录</title>
+      <link>https://sjhc1995.github.io/ultratech/document.html?file=docs%2FULTRATECH_MIDGAME_INDUSTRY_2026-07-15.md</link>
+      <guid>https://sjhc1995.github.io/ultratech/docs/ULTRATECH_MIDGAME_INDUSTRY_2026-07-15.md</guid>
+      <pubDate>Wed, 15 Jul 2026 08:12:00 GMT</pubDate>
+      <description>132 台中后期工业机器、核燃料辐射 GUI、工业多方块校验及阶段化配方链已接入 Demo 2.0。</description>
+    </item>
     <item>
       <title>UltraTech Demo 2.0.0：电化学工业发布</title>
       <link>https://sjhc1995.github.io/ultratech/document.html?file=docs%2FULTRATECH_DEMO_2.0.0_2026-07-15.md</link>
