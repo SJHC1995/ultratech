@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/hydrogen_liquefier_bottom",
+    "side": "ultratech:block/hydrogen_liquefier",
+    "top": "ultratech:block/hydrogen_liquefier_top"
+  }
+}

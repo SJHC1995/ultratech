@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/molecular_sieve_ion_exchange_tank_bottom",
+    "side": "ultratech:block/molecular_sieve_ion_exchange_tank",
+    "top": "ultratech:block/molecular_sieve_ion_exchange_tank_top"
+  }
+}

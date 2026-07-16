@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/plutonium_conversion_furnace_bottom",
+    "side": "ultratech:block/plutonium_conversion_furnace",
+    "top": "ultratech:block/plutonium_conversion_furnace_top"
+  }
+}

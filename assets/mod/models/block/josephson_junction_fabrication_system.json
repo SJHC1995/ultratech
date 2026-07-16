@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/josephson_junction_fabrication_system_bottom",
+    "side": "ultratech:block/josephson_junction_fabrication_system",
+    "top": "ultratech:block/josephson_junction_fabrication_system_top"
+  }
+}

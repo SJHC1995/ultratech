@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/compressed_air_water_separator_bottom",
+    "side": "ultratech:block/compressed_air_water_separator",
+    "top": "ultratech:block/compressed_air_water_separator_top"
+  }
+}

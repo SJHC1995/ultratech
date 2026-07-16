@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/fusion_fuel_injector_bottom",
+    "side": "ultratech:block/fusion_fuel_injector",
+    "top": "ultratech:block/fusion_fuel_injector_top"
+  }
+}

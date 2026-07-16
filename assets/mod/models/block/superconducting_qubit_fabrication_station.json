@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/superconducting_qubit_fabrication_station_bottom",
+    "side": "ultratech:block/superconducting_qubit_fabrication_station",
+    "top": "ultratech:block/superconducting_qubit_fabrication_station_top"
+  }
+}

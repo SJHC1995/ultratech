@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/heat_setting_machine_bottom",
+    "side": "ultratech:block/heat_setting_machine",
+    "top": "ultratech:block/heat_setting_machine_top"
+  }
+}

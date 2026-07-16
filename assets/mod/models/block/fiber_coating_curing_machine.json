@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/fiber_coating_curing_machine_bottom",
+    "side": "ultratech:block/fiber_coating_curing_machine",
+    "top": "ultratech:block/fiber_coating_curing_machine_top"
+  }
+}

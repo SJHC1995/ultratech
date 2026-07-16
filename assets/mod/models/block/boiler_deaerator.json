@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/boiler_deaerator_bottom",
+    "side": "ultratech:block/boiler_deaerator",
+    "top": "ultratech:block/boiler_deaerator_top"
+  }
+}

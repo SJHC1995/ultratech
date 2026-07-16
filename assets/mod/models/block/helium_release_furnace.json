@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/helium_release_furnace_bottom",
+    "side": "ultratech:block/helium_release_furnace",
+    "top": "ultratech:block/helium_release_furnace_top"
+  }
+}

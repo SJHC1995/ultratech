@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/rubber_hose_crimper_bottom",
+    "side": "ultratech:block/rubber_hose_crimper",
+    "top": "ultratech:block/rubber_hose_crimper_top"
+  }
+}

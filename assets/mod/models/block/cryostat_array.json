@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/cryostat_array_bottom",
+    "side": "ultratech:block/cryostat_array",
+    "top": "ultratech:block/cryostat_array_top"
+  }
+}

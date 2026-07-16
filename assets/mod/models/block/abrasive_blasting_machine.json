@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/abrasive_blasting_machine_bottom",
+    "side": "ultratech:block/abrasive_blasting_machine",
+    "top": "ultratech:block/abrasive_blasting_machine_top"
+  }
+}

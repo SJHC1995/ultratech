@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/powder_sintering_furnace_bottom",
+    "side": "ultratech:block/powder_sintering_furnace",
+    "top": "ultratech:block/powder_sintering_furnace_top"
+  }
+}

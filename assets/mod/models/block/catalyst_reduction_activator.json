@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/catalyst_reduction_activator_bottom",
+    "side": "ultratech:block/catalyst_reduction_activator",
+    "top": "ultratech:block/catalyst_reduction_activator_top"
+  }
+}

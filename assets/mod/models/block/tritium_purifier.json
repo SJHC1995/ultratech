@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/tritium_purifier_bottom",
+    "side": "ultratech:block/tritium_purifier",
+    "top": "ultratech:block/tritium_purifier_top"
+  }
+}

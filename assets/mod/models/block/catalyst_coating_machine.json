@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/catalyst_coating_machine_bottom",
+    "side": "ultratech:block/catalyst_coating_machine",
+    "top": "ultratech:block/catalyst_coating_machine_top"
+  }
+}

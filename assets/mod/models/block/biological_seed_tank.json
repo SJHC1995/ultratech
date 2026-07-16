@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/biological_seed_tank_bottom",
+    "side": "ultratech:block/biological_seed_tank",
+    "top": "ultratech:block/biological_seed_tank_top"
+  }
+}

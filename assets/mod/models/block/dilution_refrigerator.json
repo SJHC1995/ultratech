@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/dilution_refrigerator_bottom",
+    "side": "ultratech:block/dilution_refrigerator",
+    "top": "ultratech:block/dilution_refrigerator_top"
+  }
+}

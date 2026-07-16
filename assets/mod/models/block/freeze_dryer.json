@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/freeze_dryer_bottom",
+    "side": "ultratech:block/freeze_dryer",
+    "top": "ultratech:block/freeze_dryer_top"
+  }
+}

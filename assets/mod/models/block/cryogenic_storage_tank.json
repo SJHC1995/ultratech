@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/cryogenic_storage_tank_bottom",
+    "side": "ultratech:block/cryogenic_storage_tank",
+    "top": "ultratech:block/cryogenic_storage_tank_top"
+  }
+}

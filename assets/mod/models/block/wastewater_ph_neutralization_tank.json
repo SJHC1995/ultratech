@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/wastewater_ph_neutralization_tank_bottom",
+    "side": "ultratech:block/wastewater_ph_neutralization_tank",
+    "top": "ultratech:block/wastewater_ph_neutralization_tank_top"
+  }
+}

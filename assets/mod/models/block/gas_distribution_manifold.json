@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/gas_distribution_manifold_bottom",
+    "side": "ultratech:block/gas_distribution_manifold",
+    "top": "ultratech:block/gas_distribution_manifold_top"
+  }
+}

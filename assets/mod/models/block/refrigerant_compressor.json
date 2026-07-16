@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/refrigerant_compressor_bottom",
+    "side": "ultratech:block/refrigerant_compressor",
+    "top": "ultratech:block/refrigerant_compressor_top"
+  }
+}

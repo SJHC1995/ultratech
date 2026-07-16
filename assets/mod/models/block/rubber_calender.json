@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/rubber_calender_bottom",
+    "side": "ultratech:block/rubber_calender",
+    "top": "ultratech:block/rubber_calender_top"
+  }
+}

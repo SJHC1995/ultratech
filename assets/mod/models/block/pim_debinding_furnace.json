@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/pim_debinding_furnace_bottom",
+    "side": "ultratech:block/pim_debinding_furnace",
+    "top": "ultratech:block/pim_debinding_furnace_top"
+  }
+}

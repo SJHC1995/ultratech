@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/quantum_communication_module_assembler_bottom",
+    "side": "ultratech:block/quantum_communication_module_assembler",
+    "top": "ultratech:block/quantum_communication_module_assembler_top"
+  }
+}

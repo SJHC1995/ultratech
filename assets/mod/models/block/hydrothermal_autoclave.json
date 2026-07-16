@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/hydrothermal_autoclave_bottom",
+    "side": "ultratech:block/hydrothermal_autoclave",
+    "top": "ultratech:block/hydrothermal_autoclave_top"
+  }
+}

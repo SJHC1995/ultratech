@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/powder_mixer_bottom",
+    "side": "ultratech:block/powder_mixer",
+    "top": "ultratech:block/powder_mixer_top"
+  }
+}

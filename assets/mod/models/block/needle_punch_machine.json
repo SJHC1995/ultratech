@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/needle_punch_machine_bottom",
+    "side": "ultratech:block/needle_punch_machine",
+    "top": "ultratech:block/needle_punch_machine_top"
+  }
+}

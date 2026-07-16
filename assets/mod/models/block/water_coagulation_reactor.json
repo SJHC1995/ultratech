@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/water_coagulation_reactor_bottom",
+    "side": "ultratech:block/water_coagulation_reactor",
+    "top": "ultratech:block/water_coagulation_reactor_top"
+  }
+}

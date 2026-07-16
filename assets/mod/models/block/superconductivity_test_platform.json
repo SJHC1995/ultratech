@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/superconductivity_test_platform_bottom",
+    "side": "ultratech:block/superconductivity_test_platform",
+    "top": "ultratech:block/superconductivity_test_platform_top"
+  }
+}

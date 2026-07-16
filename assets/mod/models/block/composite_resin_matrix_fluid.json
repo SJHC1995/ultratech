@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "all": "ultratech:block/fluid/composite_resin_matrix_still"
+  }
+}

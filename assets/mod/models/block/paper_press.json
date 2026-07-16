@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/paper_press_bottom",
+    "side": "ultratech:block/paper_press",
+    "top": "ultratech:block/paper_press_top"
+  }
+}

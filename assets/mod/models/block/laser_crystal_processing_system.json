@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/laser_crystal_processing_system_bottom",
+    "side": "ultratech:block/laser_crystal_processing_system",
+    "top": "ultratech:block/laser_crystal_processing_system_top"
+  }
+}

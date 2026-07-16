@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/water_quality_monitoring_station_bottom",
+    "side": "ultratech:block/water_quality_monitoring_station",
+    "top": "ultratech:block/water_quality_monitoring_station_top"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/glass_annealing_furnace_bottom",
+    "side": "ultratech:block/glass_annealing_furnace",
+    "top": "ultratech:block/glass_annealing_furnace_top"
+  }
+}

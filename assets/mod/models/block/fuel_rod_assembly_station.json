@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/fuel_rod_assembly_station_bottom",
+    "side": "ultratech:block/fuel_rod_assembly_station",
+    "top": "ultratech:block/fuel_rod_assembly_station_top"
+  }
+}

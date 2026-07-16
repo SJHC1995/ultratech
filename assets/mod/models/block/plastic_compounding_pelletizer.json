@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/plastic_compounding_pelletizer_bottom",
+    "side": "ultratech:block/plastic_compounding_pelletizer",
+    "top": "ultratech:block/plastic_compounding_pelletizer_top"
+  }
+}

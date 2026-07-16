@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/mox_fuel_assembly_machine_bottom",
+    "side": "ultratech:block/mox_fuel_assembly_machine",
+    "top": "ultratech:block/mox_fuel_assembly_machine_top"
+  }
+}

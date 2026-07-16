@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/microwave_radar_station_bottom",
+    "side": "ultratech:block/microwave_radar_station",
+    "top": "ultratech:block/microwave_radar_station_top"
+  }
+}

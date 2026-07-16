@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/culture_medium_sterilizer_bottom",
+    "side": "ultratech:block/culture_medium_sterilizer",
+    "top": "ultratech:block/culture_medium_sterilizer_top"
+  }
+}

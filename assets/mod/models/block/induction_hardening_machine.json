@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/induction_hardening_machine_bottom",
+    "side": "ultratech:block/induction_hardening_machine",
+    "top": "ultratech:block/induction_hardening_machine_top"
+  }
+}

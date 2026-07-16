@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/cast_film_machine_bottom",
+    "side": "ultratech:block/cast_film_machine",
+    "top": "ultratech:block/cast_film_machine_top"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/mixed_bed_ion_exchanger_bottom",
+    "side": "ultratech:block/mixed_bed_ion_exchanger",
+    "top": "ultratech:block/mixed_bed_ion_exchanger_top"
+  }
+}

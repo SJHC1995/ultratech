@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/rubber_final_mill_bottom",
+    "side": "ultratech:block/rubber_final_mill",
+    "top": "ultratech:block/rubber_final_mill_top"
+  }
+}

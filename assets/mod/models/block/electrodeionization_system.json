@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/electrodeionization_system_bottom",
+    "side": "ultratech:block/electrodeionization_system",
+    "top": "ultratech:block/electrodeionization_system_top"
+  }
+}

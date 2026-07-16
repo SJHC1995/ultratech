@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/traveling_wave_tube_bottom",
+    "side": "ultratech:block/traveling_wave_tube",
+    "top": "ultratech:block/traveling_wave_tube_top"
+  }
+}

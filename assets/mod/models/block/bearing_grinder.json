@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/bearing_grinder_bottom",
+    "side": "ultratech:block/bearing_grinder",
+    "top": "ultratech:block/bearing_grinder_top"
+  }
+}

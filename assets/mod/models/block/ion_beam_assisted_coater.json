@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/ion_beam_assisted_coater_bottom",
+    "side": "ultratech:block/ion_beam_assisted_coater",
+    "top": "ultratech:block/ion_beam_assisted_coater_top"
+  }
+}

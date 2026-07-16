@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/psa_gas_separator_bottom",
+    "side": "ultratech:block/psa_gas_separator",
+    "top": "ultratech:block/psa_gas_separator_top"
+  }
+}

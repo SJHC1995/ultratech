@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/thermal_controller_bottom",
+    "side": "ultratech:block/thermal_controller",
+    "top": "ultratech:block/thermal_controller_top"
+  }
+}

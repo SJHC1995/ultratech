@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/microwave_coaxial_line_fabricator_bottom",
+    "side": "ultratech:block/microwave_coaxial_line_fabricator",
+    "top": "ultratech:block/microwave_coaxial_line_fabricator_top"
+  }
+}

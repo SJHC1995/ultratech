@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/optical_centering_edging_machine_bottom",
+    "side": "ultratech:block/optical_centering_edging_machine",
+    "top": "ultratech:block/optical_centering_edging_machine_top"
+  }
+}

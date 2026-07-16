@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/gear_grinding_machine_bottom",
+    "side": "ultratech:block/gear_grinding_machine",
+    "top": "ultratech:block/gear_grinding_machine_top"
+  }
+}

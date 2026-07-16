@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/creative_infinite_enriched_helium3_gas_tank_bottom",
+    "side": "ultratech:block/creative_infinite_enriched_helium3_gas_tank",
+    "top": "ultratech:block/creative_infinite_enriched_helium3_gas_tank_top"
+  }
+}

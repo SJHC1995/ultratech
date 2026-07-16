@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/seal_vulcanizer_bottom",
+    "side": "ultratech:block/seal_vulcanizer",
+    "top": "ultratech:block/seal_vulcanizer_top"
+  }
+}

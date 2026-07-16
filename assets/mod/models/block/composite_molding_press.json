@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/composite_molding_press_bottom",
+    "side": "ultratech:block/composite_molding_press",
+    "top": "ultratech:block/composite_molding_press_top"
+  }
+}

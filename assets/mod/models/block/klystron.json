@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/klystron_bottom",
+    "side": "ultratech:block/klystron",
+    "top": "ultratech:block/klystron_top"
+  }
+}

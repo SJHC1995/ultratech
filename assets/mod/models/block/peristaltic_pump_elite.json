@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottom"
+        },
+        "east": {
+          "texture": "#right"
+        },
+        "north": {
+          "texture": "#front"
+        },
+        "south": {
+          "texture": "#back"
+        },
+        "up": {
+          "texture": "#top"
+        },
+        "west": {
+          "texture": "#left"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ]
+    }
+  ],
+  "textures": {
+    "back": "ultratech:block/peristaltic_pump_elite_back",
+    "bottom": "ultratech:block/peristaltic_pump_elite_bottom",
+    "front": "ultratech:block/peristaltic_pump_elite",
+    "left": "ultratech:block/peristaltic_pump_elite_left",
+    "particle": "ultratech:block/peristaltic_pump_elite",
+    "right": "ultratech:block/peristaltic_pump_elite_right",
+    "top": "ultratech:block/peristaltic_pump_elite_top"
+  }
+}

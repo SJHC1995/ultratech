@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/creative_infinite_uranium_plutonium_nitrate_solution_tank_bottom",
+    "side": "ultratech:block/creative_infinite_uranium_plutonium_nitrate_solution_tank",
+    "top": "ultratech:block/creative_infinite_uranium_plutonium_nitrate_solution_tank_top"
+  }
+}

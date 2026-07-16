@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/optical_glass_cutter_bottom",
+    "side": "ultratech:block/optical_glass_cutter",
+    "top": "ultratech:block/optical_glass_cutter_top"
+  }
+}

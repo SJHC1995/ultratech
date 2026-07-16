@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/silicon_ion_implanter_bottom",
+    "side": "ultratech:block/silicon_ion_implanter",
+    "top": "ultratech:block/silicon_ion_implanter_top"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottom"
+        },
+        "east": {
+          "texture": "#right"
+        },
+        "north": {
+          "texture": "#front"
+        },
+        "south": {
+          "texture": "#back"
+        },
+        "up": {
+          "texture": "#top"
+        },
+        "west": {
+          "texture": "#left"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ]
+    }
+  ],
+  "textures": {
+    "back": "ultratech:block/fluid_distributor_6_back",
+    "bottom": "ultratech:block/fluid_distributor_6_bottom",
+    "front": "ultratech:block/fluid_distributor_6",
+    "left": "ultratech:block/fluid_distributor_6_left",
+    "particle": "ultratech:block/fluid_distributor_6",
+    "right": "ultratech:block/fluid_distributor_6_right",
+    "top": "ultratech:block/fluid_distributor_6_top"
+  }
+}

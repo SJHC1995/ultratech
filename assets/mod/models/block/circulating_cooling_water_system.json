@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/circulating_cooling_water_system_bottom",
+    "side": "ultratech:block/circulating_cooling_water_system",
+    "top": "ultratech:block/circulating_cooling_water_system_top"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/superalloy_precision_casting_system_bottom",
+    "side": "ultratech:block/superalloy_precision_casting_system",
+    "top": "ultratech:block/superalloy_precision_casting_system_top"
+  }
+}

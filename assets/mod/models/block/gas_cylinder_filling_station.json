@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/gas_cylinder_filling_station_bottom",
+    "side": "ultratech:block/gas_cylinder_filling_station",
+    "top": "ultratech:block/gas_cylinder_filling_station_top"
+  }
+}

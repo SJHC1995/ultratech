@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/creative_infinite_pneumatic_clean_air_tank_bottom",
+    "side": "ultratech:block/creative_infinite_pneumatic_clean_air_tank",
+    "top": "ultratech:block/creative_infinite_pneumatic_clean_air_tank_top"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/catalyst_acid_regeneration_tank_bottom",
+    "side": "ultratech:block/catalyst_acid_regeneration_tank",
+    "top": "ultratech:block/catalyst_acid_regeneration_tank_top"
+  }
+}

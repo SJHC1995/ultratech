@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/uranium_gas_centrifuge_bottom",
+    "side": "ultratech:block/uranium_gas_centrifuge",
+    "top": "ultratech:block/uranium_gas_centrifuge_top"
+  }
+}

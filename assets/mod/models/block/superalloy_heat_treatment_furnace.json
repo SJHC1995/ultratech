@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/superalloy_heat_treatment_furnace_bottom",
+    "side": "ultratech:block/superalloy_heat_treatment_furnace",
+    "top": "ultratech:block/superalloy_heat_treatment_furnace_top"
+  }
+}

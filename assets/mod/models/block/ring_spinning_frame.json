@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/ring_spinning_frame_bottom",
+    "side": "ultratech:block/ring_spinning_frame",
+    "top": "ultratech:block/ring_spinning_frame_top"
+  }
+}

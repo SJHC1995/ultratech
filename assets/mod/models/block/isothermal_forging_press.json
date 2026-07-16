@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/isothermal_forging_press_bottom",
+    "side": "ultratech:block/isothermal_forging_press",
+    "top": "ultratech:block/isothermal_forging_press_top"
+  }
+}

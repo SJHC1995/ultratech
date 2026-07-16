@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/pulp_washer_screen_bottom",
+    "side": "ultratech:block/pulp_washer_screen",
+    "top": "ultratech:block/pulp_washer_screen_top"
+  }
+}

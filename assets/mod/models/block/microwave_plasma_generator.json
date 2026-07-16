@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/microwave_plasma_generator_bottom",
+    "side": "ultratech:block/microwave_plasma_generator",
+    "top": "ultratech:block/microwave_plasma_generator_top"
+  }
+}

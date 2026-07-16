@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/spent_fuel_shear_bottom",
+    "side": "ultratech:block/spent_fuel_shear",
+    "top": "ultratech:block/spent_fuel_shear_top"
+  }
+}

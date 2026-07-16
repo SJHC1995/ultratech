@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/absorption_chiller_bottom",
+    "side": "ultratech:block/absorption_chiller",
+    "top": "ultratech:block/absorption_chiller_top"
+  }
+}

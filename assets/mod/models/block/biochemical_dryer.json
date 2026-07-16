@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/biochemical_dryer_bottom",
+    "side": "ultratech:block/biochemical_dryer",
+    "top": "ultratech:block/biochemical_dryer_top"
+  }
+}

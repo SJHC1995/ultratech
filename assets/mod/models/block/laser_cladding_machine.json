@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/laser_cladding_machine_bottom",
+    "side": "ultratech:block/laser_cladding_machine",
+    "top": "ultratech:block/laser_cladding_machine_top"
+  }
+}

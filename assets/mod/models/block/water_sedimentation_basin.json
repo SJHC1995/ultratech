@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/water_sedimentation_basin_bottom",
+    "side": "ultratech:block/water_sedimentation_basin",
+    "top": "ultratech:block/water_sedimentation_basin_top"
+  }
+}

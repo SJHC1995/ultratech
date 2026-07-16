@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/superalloy_coating_machine_bottom",
+    "side": "ultratech:block/superalloy_coating_machine",
+    "top": "ultratech:block/superalloy_coating_machine_top"
+  }
+}

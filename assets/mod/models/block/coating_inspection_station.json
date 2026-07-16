@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/coating_inspection_station_bottom",
+    "side": "ultratech:block/coating_inspection_station",
+    "top": "ultratech:block/coating_inspection_station_top"
+  }
+}

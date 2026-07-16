@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/compressed_air_dewpoint_meter_bottom",
+    "side": "ultratech:block/compressed_air_dewpoint_meter",
+    "top": "ultratech:block/compressed_air_dewpoint_meter_top"
+  }
+}

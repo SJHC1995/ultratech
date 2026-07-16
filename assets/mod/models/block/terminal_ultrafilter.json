@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/terminal_ultrafilter_bottom",
+    "side": "ultratech:block/terminal_ultrafilter",
+    "top": "ultratech:block/terminal_ultrafilter_top"
+  }
+}

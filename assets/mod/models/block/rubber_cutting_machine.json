@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/rubber_cutting_machine_bottom",
+    "side": "ultratech:block/rubber_cutting_machine",
+    "top": "ultratech:block/rubber_cutting_machine_top"
+  }
+}

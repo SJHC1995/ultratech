@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/pneumatic_precision_filter_bottom",
+    "side": "ultratech:block/pneumatic_precision_filter",
+    "top": "ultratech:block/pneumatic_precision_filter_top"
+  }
+}

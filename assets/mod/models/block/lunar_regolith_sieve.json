@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "ultratech:block/lunar_regolith_sieve_bottom",
+    "side": "ultratech:block/lunar_regolith_sieve",
+    "top": "ultratech:block/lunar_regolith_sieve_top"
+  }
+}
