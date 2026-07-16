@@ -26,6 +26,7 @@ const UI = {
 };
 
 const DOCUMENTS = [
+  ["2026-07-16", "ULTRATECH_RESEARCH_TERMINAL_REWORK_2026-07-16.md", "研究终端界面重构记录", "Research terminal interface rework", "design"],
   ["2026-07-15", "ULTRATECH_SCIFI_MEGASTRUCTURES_2026-07-15.md", "科幻工业链 2.0：五座终局巨构实装记录", "Sci-fi industrial chain 2.0: five terminal megastructures", "systems"],
   ["2026-07-15", "ULTRATECH_MIDGAME_INDUSTRY_2026-07-15.md", "阶段 10-22 中后期工业基础实装记录", "Stage 10-22 midgame industry implementation", "systems"],
   ["2026-07-15", "ULTRATECH_DEMO_2.0.0_2026-07-15.md", "Demo 2.0.0：电化学工业发布说明", "Demo 2.0.0: electrochemistry release notes", "release"],

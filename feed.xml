@@ -5,7 +5,14 @@
     <link>https://sjhc1995.github.io/ultratech/</link>
     <description>UltraTech Forge 1.20.1 development journal and documentation archive.</description>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 15 Jul 2026 11:30:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 16 Jul 2026 14:10:00 GMT</lastBuildDate>
+    <item>
+      <title>研究终端界面重构记录</title>
+      <link>https://sjhc1995.github.io/ultratech/document.html?file=docs%2FULTRATECH_RESEARCH_TERMINAL_REWORK_2026-07-16.md</link>
+      <guid>https://sjhc1995.github.io/ultratech/docs/ULTRATECH_RESEARCH_TERMINAL_REWORK_2026-07-16.md</guid>
+      <pubDate>Thu, 16 Jul 2026 14:10:00 GMT</pubDate>
+      <description>研究终端改为无槽位专用界面，接入蜂窝状态列表、FLOPS 门控解码监视器、算力不足错误态与运行时语言合并。</description>
+    </item>
     <item>
       <title>科幻工业链 2.0：五座终局巨构实装记录</title>
       <link>https://sjhc1995.github.io/ultratech/document.html?file=docs%2FULTRATECH_SCIFI_MEGASTRUCTURES_2026-07-15.md</link>
