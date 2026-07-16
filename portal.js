@@ -26,6 +26,7 @@ const UI = {
 };
 
 const DOCUMENTS = [
+  ["2026-07-15", "ULTRATECH_SCIFI_MEGASTRUCTURES_2026-07-15.md", "科幻工业链 2.0：五座终局巨构实装记录", "Sci-fi industrial chain 2.0: five terminal megastructures", "systems"],
   ["2026-07-15", "ULTRATECH_MIDGAME_INDUSTRY_2026-07-15.md", "阶段 10-22 中后期工业基础实装记录", "Stage 10-22 midgame industry implementation", "systems"],
   ["2026-07-15", "ULTRATECH_DEMO_2.0.0_2026-07-15.md", "Demo 2.0.0：电化学工业发布说明", "Demo 2.0.0: electrochemistry release notes", "release"],
   ["2026-07-14", "ULTRATECH_SPACE_RUINS_AND_SUPERCONDUCTING_FACTORY_2026-07-14.md", "太空遗迹与超导工厂实装记录", "Space ruins and superconducting factory implementation", "systems"],
@@ -70,6 +71,7 @@ const VERSION_RECORDS = [
 ];
 
 const TASKS = [
+  { status: "in_progress", priority: "P0", zh: "在生存存档逐座验收五座终局巨构的框架、端口、冷却和断供状态", en: "Validate frames, ports, cooling, and supply-loss states for all five terminal megastructures in a survival save.", doc: "ULTRATECH_SCIFI_MEGASTRUCTURES_2026-07-15.md" },
   { status: "in_progress", priority: "P0", zh: "在生存存档逐座验收超导工厂多方块结构、端口和断供状态", en: "Validate superconducting factory multiblocks, ports, and supply-loss states in a survival save.", doc: "ULTRATECH_SPACE_RUINS_AND_SUPERCONDUCTING_FACTORY_2026-07-14.md" },
   { status: "planned", priority: "P1", zh: "覆盖六类星球遗迹的扫描、标记、挖掘和研究终端解锁流程", en: "Cover scan, marker, excavation, and analysis-terminal unlock flows for all six planetary ruin types.", doc: "ULTRATECH_SPACE_RUINS_AND_SUPERCONDUCTING_FACTORY_2026-07-14.md" },
   { status: "in_progress", priority: "P0", zh: "阶段 19-24 聚变机器进行 runClient 输入、断料与 FE 网络验收", en: "Validate stage 19-24 fusion machines in runClient with input loss and FE-network cases.", doc: "ULTRATECH_ROADMAP_2026-07-12.md" },

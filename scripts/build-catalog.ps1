@@ -37,7 +37,12 @@ function Block-Category([string]$id) {
     return 'blocks'
 }
 
-$langFile = Join-Path $SourceRoot 'src\main\resources\assets\ultratech\lang\zh_cn.json'
+$generatedLangFile = Join-Path $SourceRoot 'src\generated\resources\assets\ultratech\lang\zh_cn.json'
+$langFile = if (Test-Path -LiteralPath $generatedLangFile) {
+    $generatedLangFile
+} else {
+    Join-Path $SourceRoot 'src\main\resources\assets\ultratech\lang\zh_cn.json'
+}
 $names = @{}
 if (Test-Path -LiteralPath $langFile) {
     Get-Content -LiteralPath $langFile -Encoding UTF8 | ForEach-Object {

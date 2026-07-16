@@ -95,6 +95,7 @@ function Get-LangName([hashtable]$Names, [string]$Id, [string]$Kind, [string]$Fa
 }
 
 function Get-GenericCategory([string]$Id, [string]$Type) {
+    if ($Id -match '^(quantum_compression_workshop|spacetime_rift_stabilizer|matter_reconstruction_tower|hyperdimensional_energy_well|stargate_array)$') { return '机器百科' }
     if ($Id -match '(rubber|oil_palm|castor|sisal|jojoba)') { return '工业植物' }
     if ($Id -match '(starship|space_|spacecraft|planet|probe|relay|satellite|solar_wing|space_suit|astronaut|rocket|orbital)') { return '航天系统' }
     if ($Id -match '(research|compute|processor|memory|wireless|data_|terminal)') { return '研究系统' }
@@ -104,6 +105,7 @@ function Get-GenericCategory([string]$Id, [string]$Type) {
 }
 
 function Get-GenericSubcategory([string]$Id, [string]$Type, [string]$Category) {
+    if ($Category -eq '机器百科') { return '阶段 28-30 终局巨构' }
     if ($Category -eq '工业植物') { return '产业链部件' }
     if ($Category -eq '航天系统') { return '航天器与轨道设施' }
     if ($Category -eq '研究系统') { return '研究与算力网络' }
@@ -201,7 +203,13 @@ function Add-RecipeReferences([hashtable]$Pages, [string]$RecipeRoot) {
     }
 }
 
-$lang = Get-LangMap (Join-Path $SourceRoot 'src\main\resources\assets\ultratech\lang\zh_cn.json')
+$generatedLangFile = Join-Path $SourceRoot 'src\generated\resources\assets\ultratech\lang\zh_cn.json'
+$langFile = if (Test-Path -LiteralPath $generatedLangFile) {
+    $generatedLangFile
+} else {
+    Join-Path $SourceRoot 'src\main\resources\assets\ultratech\lang\zh_cn.json'
+}
+$lang = Get-LangMap $langFile
 $catalogPath = Join-Path $siteRoot 'data\catalog.json'
 if (-not (Test-Path -LiteralPath $catalogPath)) {
     & (Join-Path $PSScriptRoot 'build-catalog.ps1') -SourceRoot $SourceRoot
