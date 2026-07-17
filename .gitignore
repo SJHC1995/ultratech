@@ -1,2 +1,5 @@
 .DS_Store
 Thumbs.db
+server/data/
+server/*.log
+server-*.log

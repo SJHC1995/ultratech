@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottom"
+        },
+        "east": {
+          "texture": "#right"
+        },
+        "north": {
+          "texture": "#front"
+        },
+        "south": {
+          "texture": "#back"
+        },
+        "up": {
+          "texture": "#top"
+        },
+        "west": {
+          "texture": "#left"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ]
+    }
+  ],
+  "textures": {
+    "back": "ultratech:block/topological_defect_mine_back",
+    "bottom": "ultratech:block/topological_defect_mine_bottom",
+    "front": "ultratech:block/topological_defect_mine",
+    "left": "ultratech:block/topological_defect_mine_left",
+    "particle": "ultratech:block/topological_defect_mine",
+    "right": "ultratech:block/topological_defect_mine_right",
+    "top": "ultratech:block/topological_defect_mine_top"
+  }
+}

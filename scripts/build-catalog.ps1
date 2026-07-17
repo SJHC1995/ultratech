@@ -14,6 +14,17 @@ function Convert-JavaEscapes([string]$value) {
         })
 }
 
+function Add-LangFile([hashtable]$Names, [string]$Path) {
+    if (-not (Test-Path -LiteralPath $Path)) { return }
+    Get-Content -LiteralPath $Path -Encoding UTF8 | ForEach-Object {
+        $match = [regex]::Match($_, '^\s*"(?<kind>item|block)\.ultratech\.(?<id>[^"]+)"\s*:\s*"(?<name>[^"]*)"')
+        if ($match.Success) {
+            $Names["$($match.Groups['kind'].Value):$($match.Groups['id'].Value)"] =
+                Convert-JavaEscapes $match.Groups['name'].Value
+        }
+    }
+}
+
 function Friendly-Name([string]$id) {
     return (Get-Culture).TextInfo.ToTitleCase(($id -replace '_', ' '))
 }
@@ -37,22 +48,9 @@ function Block-Category([string]$id) {
     return 'blocks'
 }
 
-$generatedLangFile = Join-Path $SourceRoot 'src\generated\resources\assets\ultratech\lang\zh_cn.json'
-$langFile = if (Test-Path -LiteralPath $generatedLangFile) {
-    $generatedLangFile
-} else {
-    Join-Path $SourceRoot 'src\main\resources\assets\ultratech\lang\zh_cn.json'
-}
 $names = @{}
-if (Test-Path -LiteralPath $langFile) {
-    Get-Content -LiteralPath $langFile -Encoding UTF8 | ForEach-Object {
-        $match = [regex]::Match($_, '^\s*"(?<kind>item|block)\.ultratech\.(?<id>[^"]+)"\s*:\s*"(?<name>[^"]*)"')
-        if ($match.Success) {
-            $names["$($match.Groups['kind'].Value):$($match.Groups['id'].Value)"] =
-                Convert-JavaEscapes $match.Groups['name'].Value
-        }
-    }
-}
+Add-LangFile $names (Join-Path $SourceRoot 'src\main\resources\assets\ultratech\lang\zh_cn.json')
+Add-LangFile $names (Join-Path $SourceRoot 'src\generated\resources\assets\ultratech\lang\zh_cn.json')
 
 $entries = [System.Collections.Generic.List[object]]::new()
 $machineIds = [System.Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)

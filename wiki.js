@@ -22,6 +22,7 @@ class WikiPage {
       dependencies: [],
       status: "registered",
       type: "entry",
+      dossier: null,
       details: {},
       sourcePath: null,
       assetStatus: { item: false, block: false, model: false }
@@ -59,6 +60,16 @@ const statusLabel = (status) => ({
   planned: "规划中",
   deprecated: "已废弃"
 }[status] || status);
+const typeLabel = (type) => ({
+  stage_machine: "阶段机器",
+  process_machine: "工艺机器",
+  multiblock: "多方块机械",
+  tech_representative: "技术代表机",
+  fluid: "工业流体",
+  block: "方块",
+  item: "物品",
+  entry: "资料条目"
+}[type] || type);
 
 const isFavorite = (id) => state.favorites.has(id);
 const saveFavorites = () => localStorage.setItem("ultratech-wiki-favorites", JSON.stringify([...state.favorites]));
@@ -136,11 +147,15 @@ function renderMarkdown(markdown) {
 
 function card(page) {
   return `<article class="wiki-result">
-    <span class="wiki-badge wiki-status-${escapeHtml(page.status)}">${escapeHtml(statusLabel(page.status))}</span>
-    ${page.stage !== null ? `<span class="wiki-badge">阶段 ${page.stage}</span>` : ""}
+    <div class="wiki-card-meta">
+      <span class="wiki-badge wiki-status-${escapeHtml(page.status)}">${escapeHtml(statusLabel(page.status))}</span>
+      <span class="wiki-badge wiki-type-${escapeHtml(page.type)}">${escapeHtml(typeLabel(page.type))}</span>
+      ${page.stage !== null ? `<span class="wiki-badge">阶段 ${page.stage}</span>` : ""}
+    </div>
     <h2><a href="${pageHref(page.id)}">${escapeHtml(page.title)}</a></h2>
+    ${page.titleEn && page.titleEn !== page.title ? `<p class="wiki-card-alias">${escapeHtml(page.titleEn)}</p>` : ""}
     <p><code>ultratech:${escapeHtml(page.id)}</code></p>
-    <p>${escapeHtml(page.summary)}</p>
+    <p class="wiki-card-summary">${escapeHtml(page.summary)}</p>
   </article>`;
 }
 
@@ -148,35 +163,41 @@ function renderOverview() {
   const url = new URL(location.href);
   const category = url.searchParams.get("category");
   const subcategory = url.searchParams.get("subcategory");
+  const type = url.searchParams.get("type");
   state.activeCategory = category;
   renderCategoryNav(category);
   const filtered = state.pages.filter((page) => {
     const haystack = `${page.id} ${page.title} ${page.titleEn} ${page.category} ${page.subcategory} ${page.tags.join(" ")}`.toLowerCase();
     return (!category || page.category === category)
       && (!subcategory || page.subcategory === subcategory)
+      && (!type || page.type === type)
       && (!state.query || haystack.includes(state.query));
   }).sort(pageOrder);
   const quality = state.data.quality || {};
   const favorites = state.pages.filter((page) => isFavorite(page.id));
-  const overview = !state.query && !category ? `<section class="wiki-quality-strip">
-    <div><span>已索引页面</span><strong>${state.data.stats.pages.toLocaleString()}</strong></div>
-    <div><span>镜像资源</span><strong>${(quality.indexedAssets || 0).toLocaleString()}</strong></div>
-    <div><span>配方关联</span><strong>${(quality.recipeLinkedPages || 0).toLocaleString()}</strong></div>
-    <div><span>无预览条目</span><strong>${(quality.pagesWithoutPreview || 0).toLocaleString()}</strong></div>
+  const overview = !state.query && !category && !type ? `<section class="wiki-quality-strip">
+    <div><span>已索引条目</span><strong>${state.data.stats.pages.toLocaleString()}</strong><small>机器、材料、流体与方块</small></div>
+    <div><span>已镜像资源</span><strong>${(quality.indexedAssets || 0).toLocaleString()}</strong><small>贴图与模型可直接预览</small></div>
+    <div><span>配方关联</span><strong>${(quality.recipeLinkedPages || 0).toLocaleString()}</strong><small>点击可继续追踪上下游</small></div>
+    <div><span>系统分类</span><strong>${state.data.categories.length.toLocaleString()}</strong><small>按工业路线组织浏览</small></div>
   </section>
   ${favorites.length ? `<section class="wiki-favorites"><div class="wiki-list-heading"><h2>收藏条目</h2><span>${favorites.length}</span></div><div class="wiki-results">${favorites.slice(0, 12).map(card).join("")}</div></section>` : ""}
   <section class="wiki-overview-grid">
     ${state.data.categories.map((entry) => `<article class="wiki-overview-card">
       <h2>${escapeHtml(entry.name)}</h2>
-      <p>${entry.count.toLocaleString()} 个自动索引条目</p>
-      <a href="./wiki.html?category=${encodeURIComponent(entry.name)}">浏览分类</a>
+      <p>${entry.count.toLocaleString()} 个可追踪条目</p>
+      <a href="./wiki.html?category=${encodeURIComponent(entry.name)}">进入资料库</a>
     </article>`).join("")}
-  </section>` : "";
-  const title = category ? `${category}${subcategory ? ` / ${subcategory}` : ""}` : "全部条目";
+  </section>
+  <section class="wiki-landing-note"><strong>工业档案已混编收录。</strong><span>主线机器、技术代表机和多方块机械共用一个档案总集；类型标签与搜索可帮助你继续筛选。</span></section>` : "";
+  const title = type === "multiblock"
+    ? "多方块档案"
+    : category ? `${category}${subcategory ? ` / ${subcategory}` : ""}` : "全部条目";
   const visible = filtered.slice(0, 180);
-  app.innerHTML = `${overview}<section class="wiki-list-heading"><h2>${escapeHtml(title)}</h2><span>${filtered.length.toLocaleString()} 个结果${filtered.length > visible.length ? "，显示前 180 项" : ""}</span></section>
-    <section class="wiki-results">${visible.length ? visible.map(card).join("") : '<p class="wiki-empty">没有匹配的条目。</p>'}</section>`;
-  stats.textContent = `共 ${state.pages.length.toLocaleString()} 个页面`;
+  const showResults = Boolean(category || subcategory || type || state.query);
+  app.innerHTML = `${overview}${showResults ? `<section class="wiki-list-heading"><h2>${escapeHtml(title)}</h2><span>${filtered.length.toLocaleString()} 个结果${filtered.length > visible.length ? "，显示前 180 项" : ""}</span></section>
+    <section class="wiki-results">${visible.length ? visible.map(card).join("") : '<p class="wiki-empty">没有匹配的条目。</p>'}</section>` : ""}`;
+  stats.textContent = `索引 ${state.pages.length.toLocaleString()} 项`;
 }
 
 function sidebar(page) {
@@ -360,13 +381,13 @@ function initModelPreview(page) {
 function renderDetail(page) {
   state.activeCategory = page.category;
   renderCategoryNav(page.category);
-  stats.textContent = `阶段 ${page.stage ?? "—"} · ${page.category}`;
+  stats.textContent = `${typeLabel(page.type)} · 阶段 ${page.stage ?? "—"} · ${page.category}`;
   const details = Object.entries(page.details || {}).filter(([, value]) => typeof value !== "object");
   app.innerHTML = `<section class="wiki-detail-layout">
     ${sidebar(page)}
     <article class="wiki-article">
       <nav class="wiki-breadcrumbs"><a href="./wiki.html">首页</a><span>›</span><a href="./wiki.html?category=${encodeURIComponent(page.category)}">${escapeHtml(page.category)}</a><span>›</span><a href="./wiki.html?category=${encodeURIComponent(page.category)}&subcategory=${encodeURIComponent(page.subcategory)}">${escapeHtml(page.subcategory)}</a><span>›</span><span>${escapeHtml(page.title)}</span></nav>
-      <header class="wiki-headline"><div><span class="wiki-badge wiki-status-${escapeHtml(page.status)}">${escapeHtml(statusLabel(page.status))}</span>${page.stage !== null ? `<span class="wiki-badge">阶段 ${page.stage}</span>` : ""}<h1>${escapeHtml(page.title)}</h1><p class="wiki-subtitle">${escapeHtml(page.titleEn || page.id)}</p></div>${actionButtons(page)}</header>
+      <header class="wiki-headline"><div><span class="wiki-badge wiki-status-${escapeHtml(page.status)}">${escapeHtml(statusLabel(page.status))}</span><span class="wiki-badge wiki-type-${escapeHtml(page.type)}">${escapeHtml(typeLabel(page.type))}</span>${page.stage !== null ? `<span class="wiki-badge">阶段 ${page.stage}</span>` : ""}${page.dossier ? `<p class="wiki-dossier-label">${escapeHtml(page.dossier.label || "工业称号")}</p><h2 class="wiki-dossier-title">${escapeHtml(page.dossier.title)}</h2>` : ""}<h1>${escapeHtml(page.title)}</h1><p class="wiki-subtitle">${escapeHtml(page.titleEn || page.id)}</p></div>${actionButtons(page)}</header>
       <section class="wiki-asset-grid">${previewImage("物品贴图", page.itemTexture, "wiki-item-preview")}${previewImage("方块贴图", page.blockTexture, "wiki-block-preview")}${modelPreview(page)}</section>
       <section class="wiki-panel wiki-content">${renderMarkdown(page.content)}</section>
       ${details.length || page.sourcePath ? `<section class="wiki-panel wiki-details"><h2>条目参数</h2><div class="wiki-details-grid">${details.map(([label, value]) => field(label, value)).join("")}${page.sourcePath ? field("sourcePath", page.sourcePath) : ""}</div></section>` : ""}
@@ -381,7 +402,13 @@ function renderDetail(page) {
 }
 
 async function init() {
-  const response = await fetch("./data/wiki-pages.json", { cache: "no-cache" });
+  let response;
+  try {
+    response = await fetch("./api/wiki-pages", { cache: "no-cache" });
+    if (!response.ok) throw new Error(`Admin API HTTP ${response.status}`);
+  } catch {
+    response = await fetch("./data/wiki-pages.json", { cache: "no-cache" });
+  }
   if (!response.ok) throw new Error(`Wiki data HTTP ${response.status}`);
   state.data = await response.json();
   state.pages = state.data.pages.map((page) => new WikiPage(page)).sort(pageOrder);

@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottom"
+        },
+        "east": {
+          "texture": "#right"
+        },
+        "north": {
+          "texture": "#front"
+        },
+        "south": {
+          "texture": "#back"
+        },
+        "up": {
+          "texture": "#top"
+        },
+        "west": {
+          "texture": "#left"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ]
+    }
+  ],
+  "textures": {
+    "back": "ultratech:block/spacetime_weaving_loom_back",
+    "bottom": "ultratech:block/spacetime_weaving_loom_bottom",
+    "front": "ultratech:block/spacetime_weaving_loom",
+    "left": "ultratech:block/spacetime_weaving_loom_left",
+    "particle": "ultratech:block/spacetime_weaving_loom",
+    "right": "ultratech:block/spacetime_weaving_loom_right",
+    "top": "ultratech:block/spacetime_weaving_loom_top"
+  }
+}

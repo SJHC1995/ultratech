@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottom"
+        },
+        "east": {
+          "texture": "#right"
+        },
+        "north": {
+          "texture": "#front"
+        },
+        "south": {
+          "texture": "#back"
+        },
+        "up": {
+          "texture": "#top"
+        },
+        "west": {
+          "texture": "#left"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ]
+    }
+  ],
+  "textures": {
+    "back": "ultratech:block/parallel_universe_bridgehead_back",
+    "bottom": "ultratech:block/parallel_universe_bridgehead_bottom",
+    "front": "ultratech:block/parallel_universe_bridgehead",
+    "left": "ultratech:block/parallel_universe_bridgehead_left",
+    "particle": "ultratech:block/parallel_universe_bridgehead",
+    "right": "ultratech:block/parallel_universe_bridgehead_right",
+    "top": "ultratech:block/parallel_universe_bridgehead_top"
+  }
+}

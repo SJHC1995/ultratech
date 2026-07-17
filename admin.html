@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="UltraTech 资料库内容管理与规划文档发布工具。">
+  <title>UltraTech 管理控制台</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./site-nav.css">
+  <link rel="stylesheet" href="./admin.css?v=20260717-visitor-sync">
+</head>
+<body class="admin-body">
+  <main class="admin-shell">
+    <section class="admin-heading">
+      <div>
+        <p class="admin-kicker">CONTENT CONTROL</p>
+        <h1>资料库管理控制台</h1>
+        <p>游客仅浏览公开资料。管理员可维护百科文案、发布规划文档并管理多设备账号授权。</p>
+      </div>
+      <div class="admin-identity-area"><div id="adminIdentity" class="admin-identity">游客浏览模式</div><button id="logoutButton" type="button" class="admin-quiet-button" hidden>退出授权</button></div>
+    </section>
+
+    <section id="adminLogin" class="admin-login" aria-labelledby="adminLoginTitle">
+      <div>
+        <p class="admin-kicker">AUTHORIZATION</p>
+        <h2 id="adminLoginTitle">管理员授权</h2>
+        <p>输入管理名单工具签发的 100 位访问码。访问码不会被保存到网页端。</p>
+      </div>
+      <form id="adminLoginForm" class="admin-login-form">
+        <label>访问码<input id="accessCode" name="accessCode" autocomplete="off" spellcheck="false" placeholder="UT1-…"></label>
+        <label>本机名称<input id="deviceLabel" name="deviceLabel" maxlength="48" placeholder="例如：工作室主机"></label>
+        <button type="submit">进入编辑模式</button>
+      </form>
+      <p id="adminLoginMessage" class="admin-message" role="status"></p>
+    </section>
+
+    <section id="visitorWorkspace" class="visitor-workspace" hidden>
+      <div>
+        <p class="admin-kicker">VISITOR PROFILE</p>
+        <h2 id="visitorName">游客</h2>
+        <p>此账号处于只读浏览模式，可查看公开百科、工业档案和公开规划文档。</p>
+      </div>
+      <dl>
+        <div><dt>账号 ID</dt><dd id="visitorId">—</dd></div>
+        <div><dt>已授权设备</dt><dd id="visitorDevices">—</dd></div>
+      </dl>
+      <a class="visitor-browse-button" href="./wiki.html?category=工业档案">浏览工业档案</a>
+    </section>
+
+    <section id="adminWorkspace" class="admin-workspace" hidden>
+      <div class="admin-tabs" role="tablist" aria-label="管理功能">
+        <button type="button" role="tab" aria-selected="true" data-admin-tab="wiki">百科文案</button>
+        <button type="button" role="tab" aria-selected="false" data-admin-tab="documents">规划文档</button>
+        <button type="button" role="tab" aria-selected="false" data-admin-tab="accounts">授权名单</button>
+        <button type="button" role="tab" aria-selected="false" data-admin-tab="sync">发布同步</button>
+      </div>
+
+      <section class="admin-pane" data-admin-pane="wiki">
+        <div class="admin-pane-head">
+          <div><h2>百科文案</h2><p>编辑摘要、正文和检索标签。保存后，管理服务会覆盖同 ID 的静态生成文案。</p></div>
+          <label class="admin-search">搜索条目<input id="wikiEditorSearch" type="search" placeholder="中文名、英文名或注册名"></label>
+        </div>
+        <div class="admin-wiki-layout">
+          <aside id="wikiEditorList" class="admin-list" aria-label="百科条目列表"></aside>
+          <form id="wikiEditorForm" class="admin-editor">
+            <div class="admin-editor-title"><strong id="editorTitle">选择一个条目</strong><code id="editorId">ultratech:—</code></div>
+            <label>中文名称<input id="editorName" maxlength="80" required></label>
+            <label>摘要<textarea id="editorSummary" rows="3" maxlength="280" required></textarea></label>
+            <label>正文（Markdown）<textarea id="editorContent" rows="16" maxlength="40000" required></textarea></label>
+            <label>标签（使用逗号分隔）<input id="editorTags" maxlength="400"></label>
+            <div class="admin-actions"><button id="wikiSave" type="submit">保存文案</button><span id="wikiEditorMessage" class="admin-message" role="status"></span></div>
+          </form>
+        </div>
+      </section>
+
+      <section class="admin-pane" data-admin-pane="documents" hidden>
+        <div class="admin-pane-head"><div><h2>更新规划文档</h2><p>发布 Markdown 格式的公开或私有规划文档。公开文档会在资料站点的文档列表中显示。</p></div></div>
+        <form id="documentForm" class="admin-document-form">
+          <label>文档标题<input id="documentTitle" maxlength="120" required placeholder="例如：UltraTech 0.4.0 工业链规划"></label>
+          <label>可见性<select id="documentVisibility"><option value="public">公开给游客</option><option value="private">仅管理员</option></select></label>
+          <label>上传 Markdown / TXT<input id="documentFile" type="file" accept=".md,.markdown,.txt,text/markdown,text/plain"></label>
+          <label>文档正文<textarea id="documentContent" rows="16" maxlength="1900000" required placeholder="# 更新规划&#10;&#10;在此粘贴内容，或通过上方选择本地 Markdown 文件。"></textarea></label>
+          <div class="admin-actions"><button type="submit">发布规划文档</button><span id="documentMessage" class="admin-message" role="status"></span></div>
+        </form>
+        <div class="admin-document-list"><h3>已发布文档</h3><div id="adminDocumentList"></div></div>
+      </section>
+
+      <section class="admin-pane" data-admin-pane="accounts" hidden>
+        <div class="admin-pane-head"><div><h2>授权名单</h2><p>账号 ID 为 10 位数字；管理员/游客标识由服务端角色决定。Unicode 隐式标记只用于管理工具中的名单显示，不能作为权限凭据。</p></div></div>
+        <div class="admin-account-layout">
+          <form id="accountForm" class="admin-account-form">
+            <h3>签发访问码</h3>
+            <label>显示名称<input id="accountName" maxlength="48" required placeholder="例如：测试玩家 A"></label>
+            <label>账号角色<select id="accountRole"><option value="visitor">游客</option><option value="admin">管理员</option></select></label>
+            <label>设备上限<input id="accountMaxDevices" type="number" min="1" max="32" value="3" required></label>
+            <button type="submit">创建账号并显示访问码</button>
+            <p id="accountCreateMessage" class="admin-message" role="status"></p>
+            <textarea id="accountCreatedCode" rows="4" readonly placeholder="创建成功后，100 位访问码只在这里显示一次。"></textarea>
+          </form>
+          <section class="admin-account-list"><div class="admin-list-title"><h3>所有账号</h3><button id="refreshAccounts" type="button" class="admin-quiet-button">刷新</button></div><div id="accountList"></div></section>
+        </div>
+      </section>
+
+      <section class="admin-pane" data-admin-pane="sync" hidden>
+        <div class="admin-pane-head"><div><h2>发布到 GitHub</h2><p>将本机已保存的百科文案覆盖和公开规划文档导出到版本库，提交并推送到 GitHub。访问令牌与 Git 凭据不进入网页。</p></div></div>
+        <div class="admin-sync-panel">
+          <div><strong>同步内容</strong><span>公开规划文档、百科编辑覆盖、静态资料库索引</span></div>
+          <button id="githubSyncButton" type="button">同步 GitHub</button>
+        </div>
+        <pre id="githubSyncOutput" class="admin-sync-output">等待管理员发起同步。</pre>
+      </section>
+    </section>
+  </main>
+  <footer class="admin-footer"><span>UltraTech 管理服务 · 只读游客模式 / 授权编辑模式</span><a href="./wiki.html">返回资料库</a></footer>
+  <script src="./site-nav.js"></script>
+  <script src="./admin.js?v=20260717-visitor-sync"></script>
+</body>
+</html>

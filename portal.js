@@ -26,6 +26,7 @@ const UI = {
 };
 
 const DOCUMENTS = [
+  ["2026-07-17", "ULTRATECH_LANGUAGE_COVERAGE_2026-07-17.md", "全语言键审计与本地化覆盖报告", "Full language-key audit and localization coverage", "localization"],
   ["2026-07-16", "ULTRATECH_RESEARCH_TERMINAL_REWORK_2026-07-16.md", "研究终端界面重构记录", "Research terminal interface rework", "design"],
   ["2026-07-15", "ULTRATECH_SCIFI_MEGASTRUCTURES_2026-07-15.md", "科幻工业链 2.0：五座终局巨构实装记录", "Sci-fi industrial chain 2.0: five terminal megastructures", "systems"],
   ["2026-07-15", "ULTRATECH_MIDGAME_INDUSTRY_2026-07-15.md", "阶段 10-22 中后期工业基础实装记录", "Stage 10-22 midgame industry implementation", "systems"],

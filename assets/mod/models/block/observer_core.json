@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottom"
+        },
+        "east": {
+          "texture": "#right"
+        },
+        "north": {
+          "texture": "#front"
+        },
+        "south": {
+          "texture": "#back"
+        },
+        "up": {
+          "texture": "#top"
+        },
+        "west": {
+          "texture": "#left"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ]
+    }
+  ],
+  "textures": {
+    "back": "ultratech:block/observer_core_back",
+    "bottom": "ultratech:block/observer_core_bottom",
+    "front": "ultratech:block/observer_core",
+    "left": "ultratech:block/observer_core_left",
+    "particle": "ultratech:block/observer_core",
+    "right": "ultratech:block/observer_core_right",
+    "top": "ultratech:block/observer_core_top"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottom"
+        },
+        "east": {
+          "texture": "#right"
+        },
+        "north": {
+          "texture": "#front"
+        },
+        "south": {
+          "texture": "#back"
+        },
+        "up": {
+          "texture": "#top"
+        },
+        "west": {
+          "texture": "#left"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ]
+    }
+  ],
+  "textures": {
+    "back": "ultratech:block/laminar_spacetime_compressor_back",
+    "bottom": "ultratech:block/laminar_spacetime_compressor_bottom",
+    "front": "ultratech:block/laminar_spacetime_compressor",
+    "left": "ultratech:block/laminar_spacetime_compressor_left",
+    "particle": "ultratech:block/laminar_spacetime_compressor",
+    "right": "ultratech:block/laminar_spacetime_compressor_right",
+    "top": "ultratech:block/laminar_spacetime_compressor_top"
+  }
+}

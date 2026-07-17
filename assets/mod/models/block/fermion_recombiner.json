@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:block/block",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#bottom"
+        },
+        "east": {
+          "texture": "#right"
+        },
+        "north": {
+          "texture": "#front"
+        },
+        "south": {
+          "texture": "#back"
+        },
+        "up": {
+          "texture": "#top"
+        },
+        "west": {
+          "texture": "#left"
+        }
+      },
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ]
+    }
+  ],
+  "textures": {
+    "back": "ultratech:block/fermion_recombiner_back",
+    "bottom": "ultratech:block/fermion_recombiner_bottom",
+    "front": "ultratech:block/fermion_recombiner",
+    "left": "ultratech:block/fermion_recombiner_left",
+    "particle": "ultratech:block/fermion_recombiner",
+    "right": "ultratech:block/fermion_recombiner_right",
+    "top": "ultratech:block/fermion_recombiner_top"
+  }
+}
