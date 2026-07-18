@@ -5,7 +5,14 @@
     <link>https://sjhc1995.github.io/ultratech/</link>
     <description>UltraTech Forge 1.20.1 development journal and documentation archive.</description>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 17 Jul 2026 13:20:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 18 Jul 2026 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>研究时长校准与终端实际倒计时</title>
+      <link>https://sjhc1995.github.io/ultratech/document.html?file=docs%2FULTRATECH_RESEARCH_DURATION_CALIBRATION_2026-07-18.md</link>
+      <guid>https://sjhc1995.github.io/ultratech/docs/ULTRATECH_RESEARCH_DURATION_CALIBRATION_2026-07-18.md</guid>
+      <pubDate>Sat, 18 Jul 2026 12:00:00 GMT</pubDate>
+      <description>研究成本加入二十分钟算力预算下限，处理器写入严格受 FloPS/t 限制；最低算力需求提高、单核产出下调。</description>
+    </item>
     <item>
       <title>全语言键审计与本地化覆盖报告</title>
       <link>https://sjhc1995.github.io/ultratech/document.html?file=docs%2FULTRATECH_LANGUAGE_COVERAGE_2026-07-17.md</link>
