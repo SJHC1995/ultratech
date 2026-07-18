@@ -26,7 +26,7 @@ const UI = {
 };
 
 const DOCUMENTS = [
-  ["2026-07-18", "ULTRATECH_RESEARCH_DURATION_CALIBRATION_2026-07-18.md", "研究时长校准与终端实际倒计时", "Research duration calibration and live terminal ETA", "design"],
+  ["2026-07-18", "ULTRATECH_RESEARCH_DURATION_CALIBRATION_2026-07-18.md", "研究算力校准与处理器限速", "Research compute calibration and processor rate limits", "design"],
   ["2026-07-17", "ULTRATECH_LANGUAGE_COVERAGE_2026-07-17.md", "全语言键审计与本地化覆盖报告", "Full language-key audit and localization coverage", "localization"],
   ["2026-07-16", "ULTRATECH_RESEARCH_TERMINAL_REWORK_2026-07-16.md", "研究终端界面重构记录", "Research terminal interface rework", "design"],
   ["2026-07-15", "ULTRATECH_SCIFI_MEGASTRUCTURES_2026-07-15.md", "科幻工业链 2.0：五座终局巨构实装记录", "Sci-fi industrial chain 2.0: five terminal megastructures", "systems"],
