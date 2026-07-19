@@ -7,6 +7,13 @@
     <language>zh-CN</language>
     <lastBuildDate>Sun, 19 Jul 2026 12:00:00 GMT</lastBuildDate>
     <item>
+      <title>算力请求身份化与广播仲裁</title>
+      <link>https://sjhc1995.github.io/ultratech/document.html?file=docs%2FULTRATECH_COMPUTE_REQUEST_IDENTITY_2026-07-19.md</link>
+      <guid>https://sjhc1995.github.io/ultratech/docs/ULTRATECH_COMPUTE_REQUEST_IDENTITY_2026-07-19.md</guid>
+      <pubDate>Sun, 19 Jul 2026 15:30:00 GMT</pubDate>
+      <description>研究、蓝图、航天、无线能量、机器人与巨构算力请求改为带八位 UUID 的来源记录；超额只拉黑当前请求，旧匿名队列迁移时清除。</description>
+    </item>
+    <item>
       <title>工业重构 VI：双路线配方与统一能源账本</title>
       <link>https://sjhc1995.github.io/ultratech/document.html?file=docs%2FULTRATECH_INDUSTRIAL_RECONSTRUCTION_VI_2026-07-19.md</link>
       <guid>https://sjhc1995.github.io/ultratech/docs/ULTRATECH_INDUSTRIAL_RECONSTRUCTION_VI_2026-07-19.md</guid>

@@ -26,6 +26,8 @@ const UI = {
 };
 
 const DOCUMENTS = [
+  ["2026-07-19", "ULTRATECH_COMPUTE_REQUEST_IDENTITY_2026-07-19.md", "算力请求身份化与广播仲裁", "Compute request identity and broadcast arbitration", "systems"],
+  ["2026-07-19", "ULTRATECH_COMPUTE_REQUEST_IDENTITY_PLAN_2026-07-19.md", "算力请求身份化实施与验收规划", "Compute request identity implementation and acceptance plan", "design"],
   ["2026-07-19", "ULTRATECH_INDUSTRIAL_RECONSTRUCTION_VI_2026-07-19.md", "工业重构 VI：双路线配方与统一能源账本", "Industrial reconstruction VI: dual routes and a unified energy ledger", "systems"],
   ["2026-07-18", "ULTRATECH_RESEARCH_DURATION_CALIBRATION_2026-07-18.md", "研究算力校准与处理器限速", "Research compute calibration and processor rate limits", "design"],
   ["2026-07-17", "ULTRATECH_LANGUAGE_COVERAGE_2026-07-17.md", "全语言键审计与本地化覆盖报告", "Full language-key audit and localization coverage", "localization"],
