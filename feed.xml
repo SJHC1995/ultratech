@@ -5,7 +5,14 @@
     <link>https://sjhc1995.github.io/ultratech/</link>
     <description>UltraTech Forge 1.20.1 development journal and documentation archive.</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 18 Jul 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jul 2026 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>工业重构 VI：双路线配方与统一能源账本</title>
+      <link>https://sjhc1995.github.io/ultratech/document.html?file=docs%2FULTRATECH_INDUSTRIAL_RECONSTRUCTION_VI_2026-07-19.md</link>
+      <guid>https://sjhc1995.github.io/ultratech/docs/ULTRATECH_INDUSTRIAL_RECONSTRUCTION_VI_2026-07-19.md</guid>
+      <pubDate>Sun, 19 Jul 2026 12:00:00 GMT</pubDate>
+      <description>六组工业链引入可选双路线，内部 IEU 能源账本校验 2.5 倍供能余量、十分钟缓冲与十倍能源世代跃迁。</description>
+    </item>
     <item>
       <title>研究算力校准与处理器限速</title>
       <link>https://sjhc1995.github.io/ultratech/document.html?file=docs%2FULTRATECH_RESEARCH_DURATION_CALIBRATION_2026-07-18.md</link>
