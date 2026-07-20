@@ -5,7 +5,21 @@
     <link>https://sjhc1995.github.io/ultratech/</link>
     <description>UltraTech Forge 1.20.1 development journal and documentation archive.</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 19 Jul 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2026 13:30:00 GMT</lastBuildDate>
+    <item>
+      <title>开发日志：让前期探索进入研究主线</title>
+      <link>https://sjhc1995.github.io/ultratech/document.html?file=docs%2FBLOG_2026-07-20_KNOWLEDGE_BOOK_RESEARCH_LOOP.md</link>
+      <guid>https://sjhc1995.github.io/ultratech/docs/BLOG_2026-07-20_KNOWLEDGE_BOOK_RESEARCH_LOOP.md</guid>
+      <pubDate>Mon, 20 Jul 2026 13:30:00 GMT</pubDate>
+      <description>前期知识碎片可写入空白知识书；右键记录个人知识，扫描仪将知识书转化为下一阶段研究成本的 5% 算力缓存。</description>
+    </item>
+    <item>
+      <title>前期知识书研究闭环与后续规划</title>
+      <link>https://sjhc1995.github.io/ultratech/document.html?file=docs%2FULTRATECH_ROADMAP_2026-07-20.md</link>
+      <guid>https://sjhc1995.github.io/ultratech/docs/ULTRATECH_ROADMAP_2026-07-20.md</guid>
+      <pubDate>Mon, 20 Jul 2026 13:15:00 GMT</pubDate>
+      <description>研究请求刷新语义、主线研究筛选与知识书扫描进度已完成第一轮闭环，并列出下一阶段设施目标与手测验收项。</description>
+    </item>
     <item>
       <title>算力请求身份化与广播仲裁</title>
       <link>https://sjhc1995.github.io/ultratech/document.html?file=docs%2FULTRATECH_COMPUTE_REQUEST_IDENTITY_2026-07-19.md</link>

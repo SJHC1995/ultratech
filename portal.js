@@ -26,7 +26,8 @@ const UI = {
 };
 
 const DOCUMENTS = [
-  ["2026-07-19", "ULTRATECH_COMPUTE_REQUEST_IDENTITY_2026-07-19.md", "算力请求身份化与广播仲裁", "Compute request identity and broadcast arbitration", "systems"],
+  ["2026-07-20", "BLOG_2026-07-20_KNOWLEDGE_BOOK_RESEARCH_LOOP.md", "开发日志：让前期探索进入研究主线", "Development log: bringing early exploration into the research mainline", "blog"],
+  ["2026-07-20", "ULTRATECH_ROADMAP_2026-07-20.md", "前期知识书研究闭环与后续规划", "Early knowledge-book research loop and next-step roadmap", "roadmap"],  ["2026-07-19", "ULTRATECH_COMPUTE_REQUEST_IDENTITY_2026-07-19.md", "算力请求身份化与广播仲裁", "Compute request identity and broadcast arbitration", "systems"],
   ["2026-07-19", "ULTRATECH_COMPUTE_REQUEST_IDENTITY_PLAN_2026-07-19.md", "算力请求身份化实施与验收规划", "Compute request identity implementation and acceptance plan", "design"],
   ["2026-07-19", "ULTRATECH_INDUSTRIAL_RECONSTRUCTION_VI_2026-07-19.md", "工业重构 VI：双路线配方与统一能源账本", "Industrial reconstruction VI: dual routes and a unified energy ledger", "systems"],
   ["2026-07-18", "ULTRATECH_RESEARCH_DURATION_CALIBRATION_2026-07-18.md", "研究算力校准与处理器限速", "Research compute calibration and processor rate limits", "design"],
