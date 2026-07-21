@@ -20,16 +20,6 @@
 
   <main class="document-main">
     <div class="document-layout">
-      <aside id="documentTocPanel" class="document-toc-panel" aria-label="本文目录">
-        <div class="document-toc-heading">
-          <div><p class="eyebrow">On this page</p><h2>本文目录</h2></div>
-          <span id="documentTocCount">加载中</span>
-        </div>
-        <label class="document-toc-search-label" for="documentTocSearch">筛选标题</label>
-        <input id="documentTocSearch" class="document-toc-search" type="search" placeholder="搜索本页标题">
-        <nav id="documentToc" class="document-toc" aria-label="文档标题目录"></nav>
-        <p id="documentTocEmpty" class="document-toc-empty" hidden>没有匹配的标题。</p>
-      </aside>
       <section class="document-shell">
         <div class="document-meta">
           <p class="eyebrow">UltraTech Documentation</p>
@@ -39,6 +29,16 @@
           <p class="loading">正在读取 Markdown 文档。</p>
         </article>
       </section>
+      <aside id="documentTocPanel" class="document-toc-panel" aria-label="本文目录">
+        <div class="document-toc-heading">
+          <div><p class="eyebrow">Outline</p><h2>本文目录</h2></div>
+          <span id="documentTocCount">加载中</span>
+        </div>
+        <label class="document-toc-search-label" for="documentTocSearch">筛选标题</label>
+        <input id="documentTocSearch" class="document-toc-search" type="search" placeholder="筛选标题">
+        <nav id="documentToc" class="document-toc" aria-label="文档标题目录"></nav>
+        <p id="documentTocEmpty" class="document-toc-empty" hidden>没有匹配的标题。</p>
+      </aside>
     </div>
   </main>
 
