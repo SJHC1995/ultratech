@@ -1,4 +1,12 @@
 (() => {
+  if (!document.querySelector('link[rel~="icon"]')) {
+    const favicon = document.createElement("link");
+    favicon.rel = "icon";
+    favicon.type = "image/svg+xml";
+    favicon.href = "./assets/favicon.svg?v=20260721-1";
+    document.head.append(favicon);
+  }
+
   const current = (location.pathname.split("/").pop() || "index.html").toLowerCase();
   const links = [
     { label: "首页", href: "index.html" },
