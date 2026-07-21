@@ -26,6 +26,7 @@ const UI = {
 };
 
 const DOCUMENTS = [
+  ["2026-07-21", "ULTRATECH_256_PACK_INDUSTRIAL_CHAIN_REPORT_2026-07-21.md", "256 包原创工业链研究报告", "256-pack original industrial-chain study", "design"],
   ["2026-07-20", "BLOG_2026-07-20_KNOWLEDGE_BOOK_RESEARCH_LOOP.md", "开发日志：让前期探索进入研究主线", "Development log: bringing early exploration into the research mainline", "blog"],
   ["2026-07-20", "ULTRATECH_ROADMAP_2026-07-20.md", "前期知识书研究闭环与后续规划", "Early knowledge-book research loop and next-step roadmap", "roadmap"],  ["2026-07-19", "ULTRATECH_COMPUTE_REQUEST_IDENTITY_2026-07-19.md", "算力请求身份化与广播仲裁", "Compute request identity and broadcast arbitration", "systems"],
   ["2026-07-19", "ULTRATECH_COMPUTE_REQUEST_IDENTITY_PLAN_2026-07-19.md", "算力请求身份化实施与验收规划", "Compute request identity implementation and acceptance plan", "design"],
