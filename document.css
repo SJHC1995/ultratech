@@ -345,7 +345,7 @@
   background: rgba(5, 9, 13, .45);
 }
 
-@media (max-width: 980px) {
+@media (max-width: 720px) {
   .document-layout {
     display: flex;
     flex-direction: column;
