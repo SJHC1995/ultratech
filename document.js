@@ -5,6 +5,7 @@ const documentToc = document.getElementById("documentToc");
 const documentTocCount = document.getElementById("documentTocCount");
 const documentTocSearch = document.getElementById("documentTocSearch");
 const documentTocEmpty = document.getElementById("documentTocEmpty");
+const documentBackToTop = document.getElementById("documentBackToTop");
 const requestedFile = new URLSearchParams(window.location.search).get("file");
 
 function escapeHtml(value) {
@@ -250,4 +251,16 @@ async function loadDocument() {
   }
 }
 
+function setupBackToTop() {
+  const refresh = () => {
+    documentBackToTop.classList.toggle("is-visible", window.scrollY > 420);
+  };
+  documentBackToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+  window.addEventListener("scroll", refresh, { passive: true });
+  refresh();
+}
+
+setupBackToTop();
 loadDocument();
