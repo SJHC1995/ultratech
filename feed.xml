@@ -5,7 +5,21 @@
     <link>https://sjhc1995.github.io/ultratech/</link>
     <description>UltraTech Forge 1.20.1 development journal and documentation archive.</description>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 21 Jul 2026 09:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jul 2026 12:30:00 GMT</lastBuildDate>
+    <item>
+      <title>P0-P4 优先级评分模式卡：257 个整合包样本</title>
+      <link>https://sjhc1995.github.io/ultratech/document.html?file=docs%2FULTRATECH_P0_P4_PRIORITY_SCORECARDS_257_PACKS_2026-07-21.md</link>
+      <guid>https://sjhc1995.github.io/ultratech/docs/ULTRATECH_P0_P4_PRIORITY_SCORECARDS_257_PACKS_2026-07-21.md</guid>
+      <pubDate>Tue, 21 Jul 2026 12:30:00 GMT</pubDate>
+      <description>257 个整合包样本按 P0-P4 进行原创优先级重构；P0 表示研究优先级，热度、难度与证据置信度分别记录。</description>
+    </item>
+    <item>
+      <title>P0-P4 评分重构的工业链论述</title>
+      <link>https://sjhc1995.github.io/ultratech/document.html?file=docs%2FULTRATECH_P0_P4_PRIORITY_SAMPLING_THESIS_2026-07-21.md</link>
+      <guid>https://sjhc1995.github.io/ultratech/docs/ULTRATECH_P0_P4_PRIORITY_SAMPLING_THESIS_2026-07-21.md</guid>
+      <pubDate>Tue, 21 Jul 2026 12:29:00 GMT</pubDate>
+      <description>解释公开维护、Issue、视频覆盖、结构难度与恢复设计如何映射到 UltraTech 的既有工业路线和验收场景。</description>
+    </item>
     <item>
       <title>256 包原创工业链研究报告</title>
       <link>https://sjhc1995.github.io/ultratech/document.html?file=docs%2FULTRATECH_256_PACK_INDUSTRIAL_CHAIN_REPORT_2026-07-21.md</link>
