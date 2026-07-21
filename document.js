@@ -1,5 +1,10 @@
 const content = document.getElementById("markdownContent");
 const documentPath = document.getElementById("documentPath");
+const documentTocPanel = document.getElementById("documentTocPanel");
+const documentToc = document.getElementById("documentToc");
+const documentTocCount = document.getElementById("documentTocCount");
+const documentTocSearch = document.getElementById("documentTocSearch");
+const documentTocEmpty = document.getElementById("documentTocEmpty");
 const requestedFile = new URLSearchParams(window.location.search).get("file");
 
 function escapeHtml(value) {
@@ -168,11 +173,56 @@ function renderMarkdown(markdown) {
   return html.join("\n");
 }
 
+function buildDocumentToc() {
+  const headings = Array.from(content.querySelectorAll("h1, h2, h3, h4"));
+  if (!headings.length) {
+    documentTocPanel.hidden = true;
+    return;
+  }
+
+  documentTocPanel.hidden = false;
+  documentTocCount.textContent = `${headings.length} 个标题`;
+  documentToc.innerHTML = headings.map((heading) => {
+    const level = Number(heading.tagName.slice(1));
+    return `<a class="document-toc-link toc-level-${level}" href="#${encodeURIComponent(heading.id)}" data-toc-target="${escapeHtml(heading.id)}">${escapeHtml(heading.textContent)}</a>`;
+  }).join("");
+
+  const links = Array.from(documentToc.querySelectorAll(".document-toc-link"));
+  const setCurrent = (id) => {
+    links.forEach((link) => link.classList.toggle("is-current", link.dataset.tocTarget === id));
+  };
+
+  links.forEach((link) => {
+    link.addEventListener("click", () => setCurrent(link.dataset.tocTarget));
+  });
+
+  documentTocSearch.value = "";
+  documentTocSearch.oninput = () => {
+    const query = documentTocSearch.value.trim().toLocaleLowerCase();
+    let matches = 0;
+    links.forEach((link) => {
+      const visible = !query || link.textContent.toLocaleLowerCase().includes(query);
+      link.hidden = !visible;
+      if (visible) matches += 1;
+    });
+    documentTocEmpty.hidden = matches !== 0;
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    const active = entries
+      .filter((entry) => entry.isIntersecting)
+      .sort((left, right) => left.boundingClientRect.top - right.boundingClientRect.top)[0];
+    if (active) setCurrent(active.target.id);
+  }, { rootMargin: "-12% 0px -74% 0px", threshold: 0 });
+  headings.forEach((heading) => observer.observe(heading));
+}
+
 async function loadDocument() {
   if (!requestedFile || !/^docs\/[A-Za-z0-9._-]+\.md$/.test(requestedFile)) {
     document.title = "UltraTech 文档未找到";
     documentPath.textContent = "无效的文档地址";
     content.innerHTML = "<p class=\"document-error\">未找到请求的文档。请从首页文档列表进入。</p>";
+    documentTocPanel.hidden = true;
     return;
   }
 
@@ -184,6 +234,7 @@ async function loadDocument() {
     }
     const markdown = await response.text();
     content.innerHTML = renderMarkdown(markdown);
+    buildDocumentToc();
     const heading = content.querySelector("h1");
     if (heading) {
       document.title = `${heading.textContent} | UltraTech`;
@@ -195,6 +246,7 @@ async function loadDocument() {
   } catch (error) {
     document.title = "UltraTech 文档加载失败";
     content.innerHTML = `<p class="document-error">文档无法加载：${escapeHtml(error.message)}</p>`;
+    documentTocPanel.hidden = true;
   }
 }
 
