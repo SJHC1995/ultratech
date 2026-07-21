@@ -366,6 +366,16 @@
   gap: 10px;
 }
 
+.portal-section {
+  margin-top: 34px;
+}
+
+.portal-section h2 {
+  margin: 0 0 14px;
+  color: var(--text);
+  font-size: clamp(22px, 3vw, 30px);
+}
+
 .feed-list a {
   display: flex;
   justify-content: space-between;

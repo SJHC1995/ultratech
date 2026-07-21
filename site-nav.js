@@ -16,7 +16,7 @@
       children: [
         { label: "更新日志", href: "updates.html" },
         { label: "历史模组版本", href: "versions.html" },
-        { label: "文档知识库", href: "document.html" },
+        { label: "文档目录", href: "archive.html" },
         { label: "开发看板", href: "dashboard.html" },
         { label: "管理控制台", href: "admin.html" }
       ]

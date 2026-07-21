@@ -26,6 +26,7 @@ const UI = {
 };
 
 const DOCUMENTS = [
+  ["2026-07-21", "ULTRA_TECH_PAPER.md", "从玩家到开发者：工业模组包社区的生态、冲突与演进——以 UltraTech 为例", "From player to developer: the ecosystem, conflicts and evolution of industrial modpack communities", "paper"],
   ["2026-07-21", "ULTRATECH_P0_P4_PRIORITY_SCORECARDS_257_PACKS_2026-07-21.md", "P0-P4 优先级评分模式卡：257 个整合包样本", "P0-P4 priority scorecards: 257 modpack samples", "design"],
   ["2026-07-21", "ULTRATECH_P0_P4_PRIORITY_SAMPLING_THESIS_2026-07-21.md", "P0-P4 评分重构的工业链论述", "P0-P4 industrial-chain scoring thesis", "design"],
   ["2026-07-21", "ULTRATECH_256_PACK_INDUSTRIAL_CHAIN_REPORT_2026-07-21.md", "256 包原创工业链研究报告", "256-pack original industrial-chain study", "design"],

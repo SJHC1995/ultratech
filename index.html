@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="UltraTech Forge 1.20.1 模组的设计文档、开发日志、Demo 构建说明与系统路线图。">
+  <meta name="description" content="UltraTech Forge 1.20.1 的最新开发更新与文档入口。">
   <title>UltraTech 开发日志</title>
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./site-nav.css">
@@ -12,295 +12,52 @@
   <header class="hero">
     <nav class="nav">
       <img src="./assets/ultratech_logo.png" alt="UltraTech" class="logo">
-      <div class="nav-links">
-        <a href="https://github.com/SJHC1995/ultratech/actions/workflows/forge-ci.yml" target="_blank" rel="noreferrer"><img src="https://github.com/SJHC1995/ultratech/actions/workflows/forge-ci.yml/badge.svg" alt="Forge CI"></a>
-        <a href="#updates">更新</a>
-        <a href="#systems">系统</a>
-        <a href="#docs">文档</a>
-        <a href="#demo">Demo</a>
-      </div>
     </nav>
     <section class="hero-copy">
       <p class="eyebrow">Forge 1.20.1 / Development Journal</p>
       <h1>UltraTech</h1>
-      <p class="lead">从古法手工、机械动力、化工与矿物加工，延伸至核工业、聚变、航天探索和高阶计算的工业模组开发档案。</p>
+      <p class="lead">工业模组开发档案：从机械、热工与电网，走向研究、巨构与终局循环。</p>
       <div class="hero-actions">
-        <a class="button primary" href="#demo">查看 Demo 说明</a>
+        <a class="button primary" href="#latest">最新更新</a>
+        <a class="button" href="./archive.html">文档目录</a>
         <a class="button" href="https://github.com/SJHC1995/ultratech" target="_blank" rel="noreferrer">GitHub 仓库</a>
-        <a class="button" href="https://gitee.com/asdust1/ultra-tech/" target="_blank" rel="noreferrer">Gitee 仓库</a>
       </div>
     </section>
   </header>
 
   <main>
-    <section id="updates" class="section">
+    <section id="latest" class="section">
       <div class="section-head">
-        <p class="eyebrow">2026-07-21</p>
-        <h2>256 包原创工业链研究报告</h2>
+        <p class="eyebrow">Latest / 2026-07-21</p>
+        <h2>从玩家到开发者：257 包工业社区研究论文</h2>
+        <p class="lead">首页只保留本次最新更新；历史日志、版本与全部设计文档已归入文档目录和更新归档。</p>
       </div>
       <div class="timeline">
         <article>
-          <time>Public Pattern Study</time>
-          <h3>256 个公开样本浓缩为可验证的原创设计规则</h3>
-          <p>报告只保留工业节奏、自动化出口、消费者、持续约束、副产物去向、停机恢复和下一目标等原创聚合结论；不包含第三方配方、任务原文、脚本、标识、数值或资产。</p>
+          <time>Long-form Paper</time>
+          <h3>工业模组包社区的生态、冲突与演进</h3>
+          <p>以“我们”的老玩家视角和“我”的开发者视角，原创分析 257 个研究单元中的节奏、自动化、维护、恢复、命名与社区反馈主题。正文不复制第三方配方、任务、脚本、评论或资源。</p>
+          <a class="button primary" href="./document.html?file=docs%2FULTRA_TECH_PAPER.md">阅读论文</a>
         </article>
         <article>
-          <time>Existing System Mapping</time>
-          <h3>结论只服务于现有工业体系</h3>
-          <p>研究映射回既有 30 阶段、17 条工业路线、19 个配方原型和 6 个里程碑，不创建平行工业体系，也不改变 700 小时基线。</p>
+          <time>Research Boundary</time>
+          <h3>研究结论只服务于现有 UltraTech 体系</h3>
+          <p>论文与评分卡均映射回既有 30 阶段、17 条工业路线、19 个配方原型与 6 个里程碑；不重做 700 小时基线，也不建立平行工业体系。</p>
+          <a class="button" href="./document.html?file=docs%2FULTRATECH_P0_P4_PRIORITY_SCORECARDS_257_PACKS_2026-07-21.md">查看评分模式卡</a>
         </article>
-        <article>
-          <time>Blog Archive</time>
-          <h3>完整报告归档到站点文档</h3>
-          <p>43 万余字报告作为博客资源由静态文档阅读器加载，不随模组 JAR 或游戏资源包发布。</p>
-        </article>
-        <article>
-          <time>P0-P4 Calibration</time>
-          <h3>全量评分卡与配套论述完成归档</h3>
-          <p>257 个整合包样本按 P0-P4 重构为超过 100 万字的原创评分模式卡；另附超过 10 万字的评分方法与工业链论述。P0 代表本轮研究优先级，不伪装为单一热度榜。</p>
-        </article>
-      </div>
-      <div class="section-head">
-        <p class="eyebrow">2026-07-20</p>
-        <h2>前期知识书接入研究主线</h2>
-      </div>
-      <div class="timeline">
-        <article>
-          <time>Knowledge Book</time>
-          <h3>碎片被写成可携带、可学习的知识书</h3>
-          <p>研究木桌现在用八张同阶段知识碎片与空白知识书写出带具体主题的知识书。玩家可右键把主题记录到个人知识库，书本可保留为收藏或后续工业资料。</p>
-        </article>
-        <article>
-          <time>Scanner Terminal</time>
-          <h3>早期探索可转化为后续研究进度</h3>
-          <p>扫描仪终端可消耗知识书，把下一阶段主线研究成本的 5%% 写入研究算力缓存；缓存满时会拒绝消耗，阶段 5+ 的深空研究数据解码路径保持不变。</p>
-        </article>
-        <article>
-          <time>Research UX</time>
-          <h3>主线筛选与可追溯算力请求同步落地</h3>
-          <p>研究终端默认优先显示主线阶段，部署与运行时校验改为按来源刷新算力缺口，避免界面刷新重复累加同一台机器的 FloPS 请求。</p>
-        </article>
-      </div>
-      <div class="section-head">
-        <p class="eyebrow">2026-07-18</p>
-        <h2>研究算力校准与处理器限速</h2>
-      </div>
-      <div class="timeline">
-        <article>
-          <time>Research Timing</time>
-          <h3>全部研究重标定为最短二十分钟</h3>
-          <p>研究成本加入“最低算力 × 24,000 tick”的预算下限。单处理器写入严格受自身 FloPS/t 限制，常规算力链不再能把任何研究在二十分钟内瞬间结算。</p>
-        </article>
-        <article>
-          <time>Terminal State</time>
-          <h3>处理器产出成为真实工业瓶颈</h3>
-          <p>算力终端现在严格受处理器声明的 FloPS/t 限制，不能再把一整笔研究请求一次性写满。最低算力需求提高，单核处理器数值下调，研究速度由工厂规模而不是缓存漏洞决定。</p>
-        </article>
-        <article>
-          <time>Localization Audit</time>
-          <h3>中文语言文件完成结构扫描</h3>
-          <p>zh_cn.json 通过解析、键值覆盖与编码异常扫描。本轮保持展示文案不变，把研究节奏调整与本地化重写拆开，避免互相干扰。</p>
-        </article>
-      </div>
-      <div class="section-head">
-        <p class="eyebrow">2026-07-15</p>
-        <h2>终局巨构与中后期工业扩展</h2>
-      </div>
-      <div class="timeline">
-        <article>
-          <time>Stage 28-30</time>
-          <h3>五座可进入的终局科幻巨构</h3>
-          <p>量子压缩工坊、时空裂隙稳定器、物质解析再构塔、超维度能量井和星门阵列已接入实际多方块结构；它们使用液氦冷却、仓室物流、FE 网络和逐座解锁的终局链条。</p>
-        </article>
-        <article>
-          <time>Stage 10-22</time>
-          <h3>132 台中后期工业机器接入 Demo 2.0</h3>
-          <p>核燃料、陶瓷、复合材料、表面工程、粉末冶金、包装、硅基半导体、生化、制冷、工业气体、聚变燃料、氦-3 与超级合金已形成可加工的阶段化链条。</p>
-        </article>
-        <article>
-          <time>Nuclear / Multiblock</time>
-          <h3>核燃料辐射 GUI 与工业多方块校验</h3>
-          <p>铀与钚工艺设备新增辐射剂量、屏蔽完整度和安全状态读数；高温烧结、HIP、热泵、月球采矿、VIM、VAR 与 ESR 使用 DataGen 多方块结构定义。</p>
-        </article>
-        <article>
-          <time>Validation</time>
-          <h3>Demo 2.0 最新构建通过</h3>
-          <p>本轮以 Forge 47.4.4、Java 17 完成编译、DataGen、构建和客户端注册/资源加载冒烟测试；下载包已同步刷新。</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="flight-demo" class="section media-showcase">
-      <div class="section-head">
-        <p class="eyebrow">In-Game Capture</p>
-        <h2>星际航行实机演示</h2>
-        <p class="lead">GeckoLib 3D 飞船、速度联动星空与深空航行界面的实机剪辑。</p>
-      </div>
-      <figure class="flight-video">
-        <video controls playsinline preload="metadata"
-               poster="./assets/media/starship-flight-demo-poster.jpg">
-          <source src="./assets/media/starship-flight-demo.mp4" type="video/mp4">
-          Your browser does not support embedded video.
-        </video>
-      </figure>
-    </section>
-
-    <section id="systems" class="section">
-      <div class="section-head">
-        <p class="eyebrow">Systems</p>
-        <h2>当前主线</h2>
-      </div>
-      <div class="grid">
-        <article class="card">
-          <strong>古法与植物工业</strong>
-          <p>陶瓷、传统冶炼、手工加工，以及高粱、橡胶、油棕、蓖麻、剑麻和霍霍巴等独立产业线。</p>
-        </article>
-        <article class="card">
-          <strong>矿物与石油</strong>
-          <p>铁、铜、铝、硅、非铁金属、氯碱、贵金属伴生与石油化工的阶段化加工链。</p>
-        </article>
-        <article class="card">
-          <strong>能源跃迁</strong>
-          <p>SU 机械能、蒸汽、内燃、电力、裂变和聚变，按阶段逐步建立真实输入输出与维护约束。</p>
-        </article>
-        <article class="card">
-          <strong>航天探索</strong>
-          <p>星图、探测器、轨道设施、土星气态巨行星观测模式，以及 GeckoLib 3D 航行动画。</p>
-        </article>
-        <article class="card">
-          <strong>精密制造</strong>
-          <p>CNC、半导体、纳米材料与量子器件制造链，为阶段 14 之后的高阶部件提供独立供给。</p>
-        </article>
-        <article class="card">
-          <strong>美术重构</strong>
-          <p>持续按创造栏与机器类别重绘 64×64 工业贴图，消除同质化占位符并补全中文键值。</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="demo" class="section status">
-      <div>
-        <p class="eyebrow">Demo Build</p>
-        <h2>安装要求</h2>
-        <p>下载并解压 Demo 压缩包后，将其中的 UltraTech Demo JAR 与 GeckoLib Forge 4.8.4 一同放入同一实例的 mods 目录。项目声明 GeckoLib 为强制依赖；JEI 与 The One Probe 为可选依赖。</p>
-        <p>运行环境：Minecraft 1.20.1、Forge 47.4.4、Java 17。完整安装、验证范围和已知边界见本次规划文档。</p>
-        <div class="hero-actions">
-          <a class="button primary" href="./downloads/UltraTech-Demo-2.0.0-2026-07-15.zip" download>下载 Demo 2.0 压缩包</a>
-          <a class="button" href="./downloads/geckolib-forge-1.20.1-4.8.4.jar" download>下载 GeckoLib 4.8.4</a>
-        </div>
-      </div>
-      <div class="status-panel">
-        <span class="lamp"></span>
-        <strong>Demo Build Ready</strong>
-        <small>Forge 47.4.4 / GeckoLib 4.8.4</small>
-      </div>
-    </section>
-
-    <section id="docs" class="section">
-      <div class="section-head">
-        <p class="eyebrow">Documents</p>
-        <h2>设计与发布文档</h2>
-      </div>
-      <div class="doc-list">
-        <a href="./document.html?file=docs%2FULTRATECH_P0_P4_PRIORITY_SCORECARDS_257_PACKS_2026-07-21.md">
-          <span>2026-07-21</span>
-          <strong>P0-P4 优先级评分模式卡：257 个整合包样本</strong>
-          <em>超过 100 万字的原创评分卡；P0 覆盖 GTNH、GTQT、NovaEngineering、StellarTech，并单列 HyperNet 研究结构伴随源。</em>
-        </a>
-        <a href="./document.html?file=docs%2FULTRATECH_P0_P4_PRIORITY_SAMPLING_THESIS_2026-07-21.md">
-          <span>2026-07-21</span>
-          <strong>P0-P4 评分重构的工业链论述</strong>
-          <em>超过 10 万字，说明热度、难度、公开证据与开发优先级如何映射回现有工业体系。</em>
-        </a>
-        <a href="./document.html?file=docs%2FULTRATECH_256_PACK_INDUSTRIAL_CHAIN_REPORT_2026-07-21.md">
-          <span>2026-07-21</span>
-          <strong>256 包原创工业链研究报告</strong>
-          <em>256 个公开样本的原创聚合分析；映射既有 17 条工业路线与 6 个里程碑，不包含第三方可复用内容。</em>
-        </a>
-        <a href="./document.html?file=docs%2FBLOG_2026-07-20_KNOWLEDGE_BOOK_RESEARCH_LOOP.md">
-          <span>2026-07-20</span>
-          <strong>开发日志：让前期探索进入研究主线</strong>
-          <em>记录知识碎片写书、右键学习、扫描仪数字化 5%% 研究进度，以及研究终端主线筛选。</em>
-        </a>
-        <a href="./document.html?file=docs%2FULTRATECH_ROADMAP_2026-07-20.md">
-          <span>2026-07-20</span>
-          <strong>前期知识书研究闭环与后续规划</strong>
-          <em>记录本轮研究体验闭环、验证证据、手测边界与下一阶段核心设施目标。</em>
-        </a>        <a href="./document.html?file=docs%2FULTRATECH_RESEARCH_DURATION_CALIBRATION_2026-07-18.md">
-          <span>2026-07-18</span>
-          <strong>研究算力校准与处理器限速</strong>
-          <em>记录全研究条目的 20 分钟最低时长、实时 tick 进度、暂停恢复行为与中文语言结构扫描。</em>
-        </a>
-        <a href="./document.html?file=docs%2FULTRATECH_LANGUAGE_COVERAGE_2026-07-17.md">
-          <span>2026-07-17</span>
-          <strong>全语言键审计与本地化覆盖报告</strong>
-          <em>记录全注册物品语言扫描、运行时键审计、双语零遗漏检查，以及本轮 DataGen 与 JAR 验证。</em>
-        </a>
-        <a href="./document.html?file=docs%2FULTRATECH_RESEARCH_TERMINAL_REWORK_2026-07-16.md">
-          <span>2026-07-16</span>
-          <strong>研究终端界面重构记录</strong>
-          <em>记录无槽位专用终端、蜂窝状态列表、FLOPS 门控解码监视器、算力不足错误态与构建验证。</em>
-        </a>
-        <a href="./document.html?file=docs%2FULTRATECH_SCIFI_MEGASTRUCTURES_2026-07-15.md">
-          <span>2026-07-15</span>
-          <strong>科幻工业链 2.0：五座终局巨构实装记录</strong>
-          <em>记录五座 30 格以上可进入巨构的建造框架、冷却、能量回馈、顺序解锁与构建验证。</em>
-        </a>
-        <a href="./document.html?file=docs%2FULTRATECH_MIDGAME_INDUSTRY_2026-07-15.md">
-          <span>2026-07-15</span>
-          <strong>阶段 10-22 中后期工业基础实装记录</strong>
-          <em>记录 132 台工业机器、核燃料辐射 GUI、多方块设施、配方闭合与构建验证。</em>
-        </a>
-        <a href="./document.html?file=docs%2FULTRATECH_DEMO_2.0.0_2026-07-15.md">
-          <span>2026-07-15</span>
-          <strong>Demo 2.0.0：电化学工业发布说明</strong>
-          <em>记录电解、表面处理、精细化学、熔盐电解多方块与构建验证范围。</em>
-        </a>
-        <a href="./document.html?file=docs%2FULTRATECH_SPACE_RUINS_AND_SUPERCONDUCTING_FACTORY_2026-07-14.md">
-          <span>2026-07-14</span>
-          <strong>太空遗迹与超导工厂实装记录</strong>
-          <em>记录六类星球遗迹探索系统、考古工具，以及五座超导工厂多方块建筑的实现与验证。</em>
-        </a>
-        <a href="./document.html?file=docs%2FULTRATECH_ROADMAP_2026-07-13.md">
-          <span>2026-07-13</span>
-          <strong>星际航行视觉迭代与演示发布</strong>
-          <em>记录五推进器飞船、航行时间轴、速度读数、星空流速与博客演示视频的本轮更新。</em>
-        </a>
-        <a href="./document.html?file=docs%2FULTRATECH_ROADMAP_2026-07-12.md">
-          <span>2026-07-12</span>
-          <strong>聚变阶段 Demo 发布与后续规划</strong>
-          <em>记录阶段 19-24 独立机器逻辑、GeckoLib 依赖、Demo 安装要求与下一步验收项。</em>
-        </a>
-        <a href="./document.html?file=docs%2FULTRATECH_ROADMAP_2026-07-08.md">
-          <span>2026-07-08</span>
-          <strong>GeckoLib 3D 航行、音频与美术质量计划</strong>
-          <em>航行动画、兑换码音频和贴图质量门槛。</em>
-        </a>
-        <a href="./document.html?file=docs%2FULTRATECH_ANCIENT_AND_SORGHUM_INDUSTRY_REPORT_2026-07-08.md">
-          <span>2026-07-08</span>
-          <strong>古法工业与高粱产业链报告</strong>
-          <em>ASDUST / CreativeCraft 参考流程的模块化实现说明。</em>
-        </a>
-        <a href="./document.html?file=docs%2FULTRATECH_PROJECT_INVENTORY.md">
-          <span>Inventory</span>
-          <strong>项目清单</strong>
-          <em>当前内容、阶段机器和待补齐项目的归档快照。</em>
-        </a>
       </div>
     </section>
 
     <section class="section">
       <div class="section-head">
-        <p class="eyebrow">Portal</p>
-        <h2>项目门户</h2>
+        <p class="eyebrow">Archive</p>
+        <h2>按用途进入资料</h2>
       </div>
       <div class="grid">
-        <a class="card" href="./updates.html"><strong>历史更新文档</strong><p>按日期、类型与关键字归档和检索全部路线图、报告与资产计划。</p></a>
-        <a class="card" href="./versions.html"><strong>历史模组版本</strong><p>集中展示实际发布的安装包与对应验证说明。</p></a>
-        <a class="card" href="./wiki.html"><strong>模组百科</strong><p>搜索当前源码快照中的机器、物品、方块、流体与状态。</p></a>
-        <a class="card" href="./tech-tree.html"><strong>30 阶段科技树</strong><p>按阶段浏览核心机器并进入关联百科条目。</p></a>
-        <a class="card" href="./worlds.html"><strong>星球与维度</strong><p>查看天体解锁门槛、探测器等级与土星轨道规则。</p></a>
-        <a class="card" href="./dashboard.html"><strong>开发看板</strong><p>读取数据快照、构建记录、任务看板与本地数据生成入口。</p></a>
+        <a class="card" href="./archive.html"><strong>文档目录</strong><p>按研究、规划、研究系统、Demo、工业路线与历史快照分类浏览。</p></a>
+        <a class="card" href="./updates.html"><strong>更新归档</strong><p>按日期、标签与关键字检索全部公开文档。</p></a>
+        <a class="card" href="./wiki.html"><strong>模组百科</strong><p>浏览当前源码快照中的机器、物品、方块、流体与状态。</p></a>
+        <a class="card" href="./tech-tree.html"><strong>30 阶段科技树</strong><p>按阶段查看核心机器，并进入关联百科条目。</p></a>
       </div>
     </section>
   </main>
