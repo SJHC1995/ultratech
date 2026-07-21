@@ -11,6 +11,23 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
+function headingSlug(value, usedIds) {
+  const base = value
+    .replace(/[`*_]/g, "")
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9\u4e00-\u9fff]+/g, "-")
+    .replace(/^-+|-+$/g, "") || "section";
+  let id = base;
+  let suffix = 2;
+  while (usedIds.has(id)) {
+    id = `${base}-${suffix}`;
+    suffix += 1;
+  }
+  usedIds.add(id);
+  return id;
+}
+
 function formatInline(value) {
   let result = escapeHtml(value);
   result = result.replace(/`([^`]+)`/g, "<code>$1</code>");
@@ -19,6 +36,9 @@ function formatInline(value) {
     const target = href.replaceAll("&amp;", "&").trim();
     if (/^https?:\/\//.test(target)) {
       return `<a href="${target}" target="_blank" rel="noreferrer">${label}</a>`;
+    }
+    if (/^#[A-Za-z0-9\u4e00-\u9fff_-]+$/.test(target)) {
+      return `<a href="${target}">${label}</a>`;
     }
     if (/^[A-Za-z0-9._-]+\.md$/.test(target.replace(/^\.\//, ""))) {
       return `<a href="./document.html?file=docs/${encodeURIComponent(target.replace(/^\.\//, ""))}">${label}</a>`;
@@ -44,6 +64,7 @@ function isTableDivider(line) {
 function renderMarkdown(markdown) {
   const lines = markdown.replace(/\r\n/g, "\n").split("\n");
   const html = [];
+  const usedHeadingIds = new Set();
   let index = 0;
 
   while (index < lines.length) {
@@ -70,7 +91,8 @@ function renderMarkdown(markdown) {
     if (/^#{1,4}\s+/.test(line)) {
       const match = /^(#{1,4})\s+(.+)$/.exec(line);
       const level = match[1].length;
-      html.push(`<h${level}>${formatInline(match[2])}</h${level}>`);
+      const id = headingSlug(match[2], usedHeadingIds);
+      html.push(`<h${level} id="${id}">${formatInline(match[2])}</h${level}>`);
       index += 1;
       continue;
     }
@@ -165,6 +187,10 @@ async function loadDocument() {
     const heading = content.querySelector("h1");
     if (heading) {
       document.title = `${heading.textContent} | UltraTech`;
+    }
+    if (location.hash) {
+      const targetId = decodeURIComponent(location.hash.slice(1));
+      requestAnimationFrame(() => document.getElementById(targetId)?.scrollIntoView());
     }
   } catch (error) {
     document.title = "UltraTech 文档加载失败";

@@ -193,6 +193,22 @@
   text-underline-offset: 3px;
 }
 
+.markdown-body h2#目录 + ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+  gap: 8px 18px;
+  margin: 0 0 30px;
+  padding: 18px 22px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: rgba(5, 12, 18, .52);
+  list-style: none;
+}
+
+.markdown-body h2#目录 + ul li {
+  margin: 0;
+}
+
 .loading,
 .document-error {
   padding: 24px;
