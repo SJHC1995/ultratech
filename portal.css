@@ -90,6 +90,13 @@
   color: var(--muted);
 }
 
+.page-heading .archive-word-count {
+  margin-top: 14px;
+  color: var(--accent);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+
 .metrics {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
