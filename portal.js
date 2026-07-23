@@ -27,6 +27,7 @@ const UI = {
 
 const DOCUMENTS = [
   ["2026-07-23", "ULTRATECH_FULL_RECIPE_RECONSTRUCTION_PLAN.md", "全量配方重构方案：257 包结构与真实工业流程证据", "Full recipe reconstruction plan: 257-pack patterns and real industrial-process evidence", "design"],
+  ["2026-07-23", "ULTRATECH_ASTRAL_RESEARCH_EXPANSION_PLAN_2026-07-23.md", "200 条研究扩展：星辉叙事与科魔结合规划", "200-research expansion: Astral narrative and magitech integration plan", "research"],
   ["2026-07-21", "ULTRATECH_MODPACK_100_BENCHMARK_AND_WORKBENCH_2026-07-21.md", "100 包基准研究与可复现工作台", "100-pack benchmark study and reproducible workbench", "research"],
   ["2026-07-21", "ULTRATECH_P0_MODPACK_RESEARCH_ARGUMENT_2026-07-21.md", "P0 样本评级与工业链优化：相关论述", "P0 sample assessment and industrial-chain optimization argument", "research"],
   ["2026-07-21", "ULTRATECH_P0_PRIORITY_MODPACK_OPTION_CARDS_2026-07-21.md", "P0 重点整合包：原创工业选项卡", "P0 priority modpacks: original industrial option cards", "research"],

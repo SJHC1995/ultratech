@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-23T12:13:58.309Z",
+  "generatedAt": "2026-07-23T12:18:01.398Z",
   "documents": [
     {
       "source": "docs/BLOG_2026-07-20_KNOWLEDGE_BOOK_RESEARCH_LOOP.md",
@@ -62,6 +62,11 @@
     },
     {
       "source": "docs/ULTRATECH_ANCIENT_AND_SORGHUM_INDUSTRY_REPORT_2026-07-08.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_ASTRAL_RESEARCH_EXPANSION_PLAN_2026-07-23.md",
       "language": "zh-CN",
       "translations": {}
     },
