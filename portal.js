@@ -27,6 +27,9 @@ const UI = {
 
 const DOCUMENTS = [
   ["2026-07-23", "ULTRATECH_FULL_RECIPE_RECONSTRUCTION_PLAN.md", "全量配方重构方案：257 包结构与真实工业流程证据", "Full recipe reconstruction plan: 257-pack patterns and real industrial-process evidence", "design"],
+  ["2026-07-21", "ULTRATECH_MODPACK_100_BENCHMARK_AND_WORKBENCH_2026-07-21.md", "100 包基准研究与可复现工作台", "100-pack benchmark study and reproducible workbench", "research"],
+  ["2026-07-21", "ULTRATECH_P0_MODPACK_RESEARCH_ARGUMENT_2026-07-21.md", "P0 样本评级与工业链优化：相关论述", "P0 sample assessment and industrial-chain optimization argument", "research"],
+  ["2026-07-21", "ULTRATECH_P0_PRIORITY_MODPACK_OPTION_CARDS_2026-07-21.md", "P0 重点整合包：原创工业选项卡", "P0 priority modpacks: original industrial option cards", "research"],
   ["2026-07-21", "ULTRA_TECH_PAPER.md", "从玩家到开发者：工业模组包社区的生态、冲突与演进——以 UltraTech 为例", "From player to developer: the ecosystem, conflicts and evolution of industrial modpack communities", "paper"],
   ["2026-07-21", "ULTRATECH_P0_P4_PRIORITY_SCORECARDS_257_PACKS_2026-07-21.md", "P0-P4 优先级评分模式卡：257 个整合包样本", "P0-P4 priority scorecards: 257 modpack samples", "design"],
   ["2026-07-21", "ULTRATECH_P0_P4_PRIORITY_SAMPLING_THESIS_2026-07-21.md", "P0-P4 评分重构的工业链论述", "P0-P4 industrial-chain scoring thesis", "design"],
@@ -48,6 +51,12 @@ const DOCUMENTS = [
   ["2026-07-09", "ULTRATECH_TEXTURE_REWORK_PLAN_2026-07-09.md", "贴图重构计划", "Texture rework plan", "art"],
   ["2026-07-08", "ULTRATECH_ROADMAP_2026-07-08.md", "航行、音频与美术质量计划", "Flight, audio and art quality plan", "roadmap"],
   ["2026-07-08", "ULTRATECH_ANCIENT_AND_SORGHUM_INDUSTRY_REPORT_2026-07-08.md", "古法工业与高粱产业链报告", "Ancient industry and sorghum report", "design"],
+  ["2026-07-20", "BLOG_2026-07-20_KNOWLEDGE_BOOK_RESEARCH_LOOP.md", "知识书—扫描—研究终端闭环开发日志", "Knowledge book, scanning and research terminal loop development log", "research"],
+  ["2026-07-19", "MODPACK_SAMPLE_RESEARCH.md", "整合包样本研究边界与 100 包覆盖说明", "Modpack sample-research boundary and 100-pack coverage", "research"],
+  ["2026-07-19", "ULTRATECH_INDUSTRIAL_SYSTEM_INTEGRATION_MASTER.md", "工业系统整合总表：路线交接与恢复语义", "Industrial-system integration master: route handoffs and recovery semantics", "systems"],
+  ["2026-07-18", "RECIPE_ARCHETYPE_LIBRARY.md", "配方原型库：批量、自动化与回收契约", "Recipe archetype library: batch, automation and recovery contracts", "design"],
+  ["2026-07-18", "PROGRESSION_QUALITY_CONTRACT.md", "进度质量契约", "Progression quality contract", "design"],
+  ["2026-07-18", "PROGRESSION_ACCEPTANCE_MILESTONES.md", "六里程碑手工验收路线", "Six-milestone manual acceptance routes", "verification"],
   ["2026-07-07", "ULTRATECH_ROADMAP_2026-07-07.md", "阶段路线图", "Stage roadmap", "roadmap"],
   ["2026-07-06", "ULTRATECH_ROADMAP_2026-07-06.md", "阶段路线图", "Stage roadmap", "roadmap"],
   ["2026-07-05", "ULTRATECH_ROADMAP_2026-07-05.md", "阶段路线图", "Stage roadmap", "roadmap"],
