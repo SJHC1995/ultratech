@@ -6,6 +6,7 @@ const documentTocCount = document.getElementById("documentTocCount");
 const documentTocSearch = document.getElementById("documentTocSearch");
 const documentTocEmpty = document.getElementById("documentTocEmpty");
 const documentBackToTop = document.getElementById("documentBackToTop");
+const documentWordCount = document.getElementById("documentWordCount");
 const requestedFile = new URLSearchParams(window.location.search).get("file");
 
 function escapeHtml(value) {
@@ -218,6 +219,17 @@ function buildDocumentToc() {
   headings.forEach((heading) => observer.observe(heading));
 }
 
+function updateDocumentWordCount() {
+  if (!documentWordCount) {
+    return;
+  }
+
+  const characterCount = content.textContent.replace(/\s+/g, "").length;
+  documentWordCount.textContent = characterCount >= 10000
+    ? `本文约 ${(characterCount / 10000).toFixed(1)} 万字`
+    : `字数：${characterCount}`;
+}
+
 async function loadDocument() {
   if (!requestedFile || !/^docs\/[A-Za-z0-9._-]+\.md$/.test(requestedFile)) {
     document.title = "UltraTech 文档未找到";
@@ -236,6 +248,7 @@ async function loadDocument() {
     const markdown = await response.text();
     content.innerHTML = renderMarkdown(markdown);
     buildDocumentToc();
+    updateDocumentWordCount();
     const heading = content.querySelector("h1");
     if (heading) {
       document.title = `${heading.textContent} | UltraTech`;
@@ -248,6 +261,7 @@ async function loadDocument() {
     document.title = "UltraTech 文档加载失败";
     content.innerHTML = `<p class="document-error">文档无法加载：${escapeHtml(error.message)}</p>`;
     documentTocPanel.hidden = true;
+    updateDocumentWordCount();
   }
 }
 
