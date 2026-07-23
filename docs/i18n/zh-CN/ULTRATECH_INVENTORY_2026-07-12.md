@@ -1,60 +1,58 @@
-<!-- ultratech-i18n: {"source":"docs/ULTRATECH_INVENTORY_2026-07-12.md","sourceSha256":"e843632c529ca4d8c38cd98ed74bd0774efc5831fa21d6a72e5dd612aaeebd5d","sourceLanguage":"en","targetLanguage":"zh-CN","generatedAt":"2026-07-23T11:25:06.977Z","model":"zero-token-google-reviewed-draft"} -->
+<!-- ultratech-i18n: {"source":"docs/ULTRATECH_INVENTORY_2026-07-12.md","sourceSha256":"e843632c529ca4d8c38cd98ed74bd0774efc5831fa21d6a72e5dd612aaeebd5d","sourceLanguage":"en","targetLanguage":"zh-CN","generatedAt":"2026-07-23T11:25:06.977Z","model":"manual-review-in-progress"} -->
 
 
-# UltraTech资产盘点 - 2026-07-12
+# UltraTech 资产盘点 - 2026-07-12
 
 ## 范围和方法
 
-静态审核范围： `C:\ultratech`，Forge 1.20.1，基础包
+静态审计范围：`C:\ultratech`，Forge 1.20.1，基础包
 `com.halfsword.ultratech`。
 
 此报告不会修改游戏代码或资源。它区分了四种
 以前很容易混淆的不同状态：
 
-- `✅ 已实现`：由此处检查的所需运行时路径注册和支持。
-- `⚠️ 部分实现`：通过共享/通用路径注册和使用，但是
-  专用逻辑、配方或验证路径不完整。
+- `✅ 已实现`：所需运行时路径已经注册并受支持。
+- `⚠️ 部分实现`：已通过共享/通用路径注册并使用，但专用逻辑、配方或
+  验证路径尚不完整。
 - `❌ 未实现`：缺少必需的伴随资产或处理定义。
 - `📋 仅设计`：仅定义为数据/设计元数据，没有可用的运行时路径。
 
-该项目使用大型动态注册族。商品库存为
-因此列为精确的注册公式加上源枚举/表和
-生成的资产计数，而不是复制 4,558 个几乎相同的行。
-对于项目 ID `x`，其显示名称为 `item.ultratech.x` 在 `zh_cn.json`;
-所有这样检查的键都存在。
+项目使用大型动态注册族。因此物品清单会列出精确的注册公式、源枚举/表
+和生成资产数量，而不是重复 4,558 行几乎相同的内容。对于物品 ID `x`，
+其显示名称键为 `zh_cn.json` 中的 `item.ultratech.x`；所有已检查键
+均存在。
 
 ## 执行摘要
 
 | 区域 | 静态结果 | 地位 |
 |---|---:|---|
-| 项目型号 | 4,558 个独特的物品模型； 0 直接 `layer0` 纹理缺失 | ✅ |
+| 物品模型 | 4,558 个唯一物品模型；直接 `layer0` 贴图缺失数为 0 | ✅ |
 | 块状态 | 935 个独特的方块状态 | ✅ |
-| 块模型 | 1,098 个型号；扫描时缺少 35 个参考面部纹理 | ⚠️ |
+| 方块模型 | 1,098 个模型；扫描时有 35 个被引用的表面贴图缺失 | ⚠️ |
 | 工业流体 | 141 个流体定义，全部带有源/流/块/桶注册路径 | ✅ |
-| 舞台机械 | 34 跨阶段 1-30 | ⚠️ |
-| 工业加工机器 | 222个，共享BE/菜单/屏幕，296个工艺配方 | ⚠️ |
+| 阶段机器 | 34 台，覆盖阶段 1-30 | ⚠️ |
+| 工业过程机器 | 222 台，共享 BE/菜单/屏幕，具有 296 个工艺配方 | ⚠️ |
 | 具有工艺配方的工业机器 | 218 / 222 | ⚠️98.2% |
 | 菜单类型/客户端屏幕绑定 | 33 / 33 | ✅ |
 | 语言键 | `zh_cn` 6,888； `en_us` 6,888；按键设置相同 | ✅ |
-| 方面 | 14 个已注册的 JSON 维度，每个维度都绑定到一个生成器编解码器 | ✅ |
+| 维度 | 14 个已注册 JSON 维度，每个都绑定生成器编解码器 | ✅ |
 | 矿石和石油世界生成 | Datagen 配置/放置的功能和生物群系修改器存在 | ✅ |
 
-## 1. 登记项目
+## 1. 注册物品
 
-### 1.1 库存结构
+### 1.1 物品清单结构
 
-`ModItems` 有 134 个明确的唯一直接注册加上动态家族
-注册。生成的资源审计发现 4,558 个项目模型，每个
-选中的项目/块显示键解析为中文。
+`ModItems` 包含 134 个明确的唯一直接注册，另加动态家族注册。生成资源
+审计发现 4,558 个物品模型；每个已抽查物品/方块的显示键都能解析为中文。
 
-| 类别 | 注册来源和具体模式 | 地位 |
+| 类别 | 注册来源与具体模式 | 状态 |
 |---|---|---|
 | 基础材料 | 显性原矿石、锭、金块、粉末、板材、棒材、线材、食品/农作物产出和早期机械零件 | ✅ |
-| 天然金属 | `NativeMetal`： `raw_<metal>`, `<metal>_ingot`, `<metal>_block`, 特定宿主矿石 | ✅ |
+| 天然金属 | `NativeMetal`：`raw_<metal>`、`<metal>_ingot`、`<metal>_block` 与特定母岩矿石 | ✅ |
 | 合金 | `AlloyMaterial` 和 `AlloyComponent`：每种合金的组件设置变体 | ✅ |
 | 电路板 | `CircuitTier` x `CircuitComponent` 通过 `CIRCUIT_ITEMS` | ✅ |
-| 动力核心 | `PowerCoreType` x `PowerLevel` 通过 `POWER_CORE_ITEMS` | ✅ |
-| 电机、传动装置、线圈 | `TransmissionComponent`, `CoilMaterial` x `CoilForm`, `WindingInsulation`, `MagneticCoreMaterial` | ✅ |
+| 动力核心 | `PowerCoreType` × `PowerLevel`，通过 `POWER_CORE_ITEMS` 注册 | ✅ |
+| 电机、传动与线圈 | `TransmissionComponent`、`CoilMaterial` × `CoilForm`、`WindingInsulation`、`MagneticCoreMaterial` | ✅ |
 | 外壳和框架 | `CasingMaterial` x `CasingFunction`, `StructureFrameTier` | ✅ |
 | 紧固件和密封件 | `FastenerMaterial` x `FastenerType`, `SealMaterial` x `PressureLevel`, `ConnectorVariant` | ✅ |
 | 流体设备 | `FluidContainerMaterial`， 全部 `IndustrialFluid` 容器变体， `FluidPipeMaterial`, `FluidPumpTier` | ✅ |

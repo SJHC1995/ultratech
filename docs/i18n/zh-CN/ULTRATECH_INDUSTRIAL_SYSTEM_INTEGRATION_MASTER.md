@@ -1,68 +1,62 @@
-<!-- ultratech-i18n: {"source":"docs/ULTRATECH_INDUSTRIAL_SYSTEM_INTEGRATION_MASTER.md","sourceSha256":"08cdb8ebbad8fd9d46c5c496fdef057234efef04a91f2d8dc6736ded51fce613","sourceLanguage":"en","targetLanguage":"zh-CN","generatedAt":"2026-07-23T11:24:08.914Z","model":"zero-token-google-reviewed-draft"} -->
+<!-- ultratech-i18n: {"source":"docs/ULTRATECH_INDUSTRIAL_SYSTEM_INTEGRATION_MASTER.md","sourceSha256":"08cdb8ebbad8fd9d46c5c496fdef057234efef04a91f2d8dc6736ded51fce613","sourceLanguage":"en","targetLanguage":"zh-CN","generatedAt":"2026-07-23T11:24:08.914Z","model":"manual-review-in-progress"} -->
 
 
-# UltraTech 工业系统集成总体规划
+# UltraTech 工业系统集成总规划
 
 ## 状态和范围
 
-本文件定义了 UltraTech 现有的物流合同
-工业系统。二十个标记的切换按照生成的方式实现
-食谱和链接元数据；元数据还推动 JEI 路线卡、研究
-终端推荐、材料工具提示、机器状态图标和
-第一路线推进钩子。
+本文件定义 UltraTech 既有工业系统之间的物流契约。二十个已标记的
+衔接点通过生成的配方与链接元数据实现；这些元数据还驱动 JEI 路线卡、
+研究终端推荐、材料提示、机器状态图标以及首条路线的进度钩子。
 
-本文档使用现有的 UltraTech ID 和名称（只要它们已经存在）
-挂号的。 `1x` 表示一个接口项单元并且 `1000 mB` 表示一桶
-接口单元。这些是计划批次单位，不能替代
-规范生成的配方数量。现有配方 JSON 仍然是源
-准确的游戏内输入、输出、FE 和时间值的真实性。
+文中会优先使用已经注册的 UltraTech ID 与名称。`1x` 表示一个物品
+接口单位，`1000 mB` 表示一桶流体接口单位。这些只是规划用批次单位，
+不能替代规范生成的配方数量。现有配方 JSON 仍是准确游戏内输入、输出、
+FE 与时间数值的唯一事实来源。
 
-## 螺旋式递进合约
+## 螺旋式进度契约
 
-每个实现的切换也有一个生成的 `spiral_progression` 合同。
-它将一条新的连锁店变成了工厂改造：每个合同至少指定两个
-遗留部件、瓶颈、突破、相邻的辅助模块和
-穿越奖励。该模块放置在兼容的舞台机器旁边。它
-将机器切换至**辅助模式**，产量提高20%；这
-奇点改造将阶段 1-5 作为终端反馈回路提高了 1000 倍。
+每个已实现的衔接点还会生成一份 `spiral_progression` 契约。它会将
+新产业链转化为工厂改造：每份契约至少列出两个旧时代部件、一个瓶颈、
+一项突破、相邻的辅助模块和跨越奖励。模块放置在兼容的阶段机器旁，
+会将机器切换到**辅助模式**并提高 20% 产出；奇点改造则将阶段 1-5
+的产出提高 1000 倍，作为终局反馈回路。
 
-| 链接阶段 | 旧零件保留作为批量输入 | 瓶颈->突破 | 辅助模块 | 穿越奖励 |
+| 衔接阶段 | 保留为批量输入的旧部件 | 瓶颈 → 突破 | 辅助模块 | 跨越奖励 |
 |---|---|---|---|---|
-| 1-4 | `wooden_gear` + `wooden_frame` | 扭矩 -> 变速箱扭矩 | 机械辅助 | 机械遗留升级 |
-| 5-8 | `copper_pipe` + `safety_valve` | 蒸汽压力->高压预热 | 热预热器 | Steam旧版升级 |
-| 9-12 | `steel_pressure_vessel` + `pressure_gauge` | 燃料吞吐量->稳定燃烧 | 燃烧稳定剂 | 燃烧遗留升级 |
-| 13-20日 | `copper_wire` + `basic_circuit` | 电网不稳定 -> 监管电网 | 电网调节器 | 网格遗留升级 |
-| 21-29日 | `steel_pressure_vessel` + `copper_pipe` | 低温热泄漏 -> 冷却剂再循环 | 低温再循环 | 低温传统升级 |
-| 30 | `wooden_gear` + `copper_pipe` | 终端密度 -> 奇点改造 | 奇点改造 | 奇点遗留升级 |
+| 1-4 | `wooden_gear` + `wooden_frame` | 扭矩 → 齿轮箱扭矩 | 机械辅助模块 | 机械旧时代升级 |
+| 5-8 | `copper_pipe` + `safety_valve` | 蒸汽压力 → 高压预热 | 热能预热器 | 蒸汽旧时代升级 |
+| 9-12 | `steel_pressure_vessel` + `pressure_gauge` | 燃料吞吐量 → 稳定燃烧 | 燃烧稳定器 | 燃烧旧时代升级 |
+| 13-20 | `copper_wire` + `basic_circuit` | 电网失稳 → 受控电网 | 电网调节器 | 电网旧时代升级 |
+| 21-29 | `steel_pressure_vessel` + `copper_pipe` | 低温热泄漏 → 冷却剂再循环 | 低温再循环模块 | 低温旧时代升级 |
+| 30 | `wooden_gear` + `copper_pipe` | 终端密度 → 奇点改造 | 奇点改造模块 | 奇点旧时代升级 |
 
-以下链接继承上面的相应行，因此所有二十个链接都保留
-两部分遗留配方合同： `biomass_pulp`, `fusion_fuel`,
+以下衔接点继承上表对应行，因此全部二十个衔接点都保留双部件的旧时代
+配方契约：`biomass_pulp`, `fusion_fuel`,
 `tree_extract_chemicals`, `tannin_water_treatment`,
 `palm_biodiesel_logistics`, `rubber_pressure_seal`, `chlorine_pvc`,
 `caustic_pulp_alumina`, `gas_catalyst`, `ceramic_electronics`,
 `nano_specialty_materials`, `silicon_quantum`, `optics_precision`,
 `fusion_first_wall`, `powder_precision_parts`, `ruins_research`,
-`helium3_fusion`, `superconducting_containment`, `scifi_cosmic_machine`， 和
+`helium3_fusion`, `superconducting_containment`, `scifi_cosmic_machine` 和
 `final_cosmic_projects`。
 
-每个链接的首次完成仍然可以通过其现有的发现
-推进、JEI路线卡和研究终端推荐。现在的杰伊
-还将规划的辅助模块渲染在路线卡上。模块食谱
-始终包含两个先前时代的核心组件；每一个都是永久性的改造，
-不是消耗品升级。这保留了旧机房作为有用的
-支撑层而不是废料堆。
+每个衔接点的首次完成仍可通过既有进度、JEI 路线卡和研究终端推荐发现。
+JEI 还会在路线卡上渲染规划中的辅助模块。模块配方始终包含两个前一
+时代的核心部件；它们都是永久改造，而不是消耗品升级。这样旧机房会继续
+作为有价值的支撑层，而不是变成废料堆。
 
-传奇：
+图例：
 
 - `[E]` 现有已注册的项目、流体、机器或系统路径。
-- `[G]` 所需的积分间隙。这只是一个提案，必须作为提案添加
-  稍后实施过程中的配方、标签或中间体。
-- `[Done]` 使用生成的食谱实施集成合同，并且，其中
-  需要，运行时输入接受。
+- `[G]` 所需的集成缺口。它只是提案，必须在后续实施中作为配方、标签
+  或中间体加入。
+- `[Done]` 已实现的集成契约：具有生成的配方，并在需要时支持运行时输入
+  接受。
 - `->` 物质或能量流。
 - `=>` 研究或进展门。
 
-## 1. 整个系统流程
+## 1. 全系统流程
 
 ```text
 Vanilla gathering and surface crops
