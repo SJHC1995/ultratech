@@ -3,3 +3,5 @@ Thumbs.db
 server/data/
 server/*.log
 server-*.log
+node_modules/
+scripts/__pycache__/

@@ -1,0 +1,242 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-23T11:29:04.839Z",
+  "documents": [
+    {
+      "source": "docs/BLOG_2026-07-20_KNOWLEDGE_BOOK_RESEARCH_LOOP.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/EDITORIAL_PUBLISHING.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/MINECRAFT_INDUSTRIAL_MODPACK_ECOLOGY_257_LONGFORM.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/MODPACK_SAMPLE_RESEARCH.md",
+      "language": "en",
+      "translations": {
+        "zh-CN": "docs/i18n/zh-CN/MODPACK_SAMPLE_RESEARCH.md"
+      }
+    },
+    {
+      "source": "docs/PROGRESSION_ACCEPTANCE_MILESTONES.md",
+      "language": "en",
+      "translations": {
+        "zh-CN": "docs/i18n/zh-CN/PROGRESSION_ACCEPTANCE_MILESTONES.md"
+      }
+    },
+    {
+      "source": "docs/PROGRESSION_QUALITY_CONTRACT.md",
+      "language": "en",
+      "translations": {
+        "zh-CN": "docs/i18n/zh-CN/PROGRESSION_QUALITY_CONTRACT.md"
+      }
+    },
+    {
+      "source": "docs/README.md",
+      "language": "mixed",
+      "translations": {}
+    },
+    {
+      "source": "docs/RECIPE_ARCHETYPE_LIBRARY.md",
+      "language": "en",
+      "translations": {
+        "zh-CN": "docs/i18n/zh-CN/RECIPE_ARCHETYPE_LIBRARY.md"
+      }
+    },
+    {
+      "source": "docs/ULTRA_TECH_PAPER.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_256_PACK_INDUSTRIAL_CHAIN_REPORT_2026-07-21.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_ANCIENT_AND_SORGHUM_INDUSTRY_REPORT_2026-07-08.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_COMPUTE_REQUEST_IDENTITY_2026-07-19.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_COMPUTE_REQUEST_IDENTITY_PLAN_2026-07-19.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_DEMO_2.0.0_2026-07-15.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_FULL_RECIPE_RECONSTRUCTION_PLAN.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_ICON_REDRAW_BATCH_PLAN_2026-07-09.md",
+      "language": "en",
+      "translations": {
+        "zh-CN": "docs/i18n/zh-CN/ULTRATECH_ICON_REDRAW_BATCH_PLAN_2026-07-09.md"
+      }
+    },
+    {
+      "source": "docs/ULTRATECH_INDUSTRIAL_RECONSTRUCTION_VI_2026-07-19.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_INDUSTRIAL_SYSTEM_INTEGRATION_MASTER.md",
+      "language": "en",
+      "translations": {
+        "zh-CN": "docs/i18n/zh-CN/ULTRATECH_INDUSTRIAL_SYSTEM_INTEGRATION_MASTER.md"
+      }
+    },
+    {
+      "source": "docs/ULTRATECH_INVENTORY_2026-07-12.md",
+      "language": "en",
+      "translations": {
+        "zh-CN": "docs/i18n/zh-CN/ULTRATECH_INVENTORY_2026-07-12.md"
+      }
+    },
+    {
+      "source": "docs/ULTRATECH_LANGUAGE_COVERAGE_2026-07-17.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_MIDGAME_INDUSTRY_2026-07-15.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_MODPACK_100_BENCHMARK_AND_WORKBENCH_2026-07-21.md",
+      "language": "en",
+      "translations": {
+        "zh-CN": "docs/i18n/zh-CN/ULTRATECH_MODPACK_100_BENCHMARK_AND_WORKBENCH_2026-07-21.md"
+      }
+    },
+    {
+      "source": "docs/ULTRATECH_OVERALL_PLAN_2026-07-01.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_P0_MODPACK_RESEARCH_ARGUMENT_2026-07-21.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_P0_P4_PRIORITY_SAMPLING_THESIS_2026-07-21.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_P0_P4_PRIORITY_SCORECARDS_257_PACKS_2026-07-21.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_P0_PRIORITY_MODPACK_OPTION_CARDS_2026-07-21.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_PROJECT_INVENTORY.md",
+      "language": "mixed",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_RESEARCH_DURATION_CALIBRATION_2026-07-18.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_RESEARCH_TERMINAL_REWORK_2026-07-16.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_ROADMAP_2026-07-02.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_ROADMAP_2026-07-03.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_ROADMAP_2026-07-04.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_ROADMAP_2026-07-05.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_ROADMAP_2026-07-06.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_ROADMAP_2026-07-07.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_ROADMAP_2026-07-08_LOCAL_SNAPSHOT.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_ROADMAP_2026-07-08.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_ROADMAP_2026-07-12_LOCAL_SNAPSHOT.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_ROADMAP_2026-07-12.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_ROADMAP_2026-07-13.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_SCIFI_MEGASTRUCTURES_2026-07-15.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_SPACE_RUINS_AND_SUPERCONDUCTING_FACTORY_2026-07-14.md",
+      "language": "zh-CN",
+      "translations": {}
+    },
+    {
+      "source": "docs/ULTRATECH_TEXTURE_REWORK_PLAN_2026-07-09.md",
+      "language": "zh-CN",
+      "translations": {}
+    }
+  ]
+}

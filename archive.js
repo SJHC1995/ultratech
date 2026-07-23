@@ -1,4 +1,5 @@
 const archiveWordCount = document.getElementById("archiveWordCount");
+const archiveTranslationCount = document.getElementById("archiveTranslationCount");
 
 function archiveDocumentFiles() {
   return [...new Set(
@@ -48,8 +49,32 @@ async function updateArchiveWordCount() {
   archiveWordCount.textContent = `${formatArchiveCount(total)} · 已统计 ${completed.length}/${files.length} 篇归档文档${failed ? `，${failed} 篇加载失败` : ""}。`;
 }
 
+async function updateArchiveTranslationCount() {
+  if (!archiveTranslationCount) {
+    return;
+  }
+
+  archiveTranslationCount.textContent = "正在读取文档语言与译文清单。";
+  const response = await fetch("./docs/i18n/manifest.json", { cache: "no-cache" });
+  if (!response.ok) {
+    throw new Error(`manifest: HTTP ${response.status}`);
+  }
+
+  const manifest = await response.json();
+  const documents = Array.isArray(manifest.documents) ? manifest.documents : [];
+  const englishCount = documents.filter((document) => document.language === "en").length;
+  const translatedCount = documents.filter((document) => document.translations && Object.keys(document.translations).length > 0).length;
+  archiveTranslationCount.textContent = `已生成译文 ${translatedCount} 篇 · 英文原文 ${englishCount} 篇。`;
+}
+
 updateArchiveWordCount().catch(() => {
   if (archiveWordCount) {
     archiveWordCount.textContent = "归档总字数暂时无法统计，请刷新后重试。";
+  }
+});
+
+updateArchiveTranslationCount().catch(() => {
+  if (archiveTranslationCount) {
+    archiveTranslationCount.textContent = "英文文档与译文数量暂时无法统计，请刷新后重试。";
   }
 });

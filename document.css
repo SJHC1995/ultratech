@@ -161,6 +161,34 @@
   background: rgba(6, 12, 18, .78);
 }
 
+.document-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.document-language-label,
+.document-language-status {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.document-language-select {
+  min-height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 6px 8px;
+  color: var(--text);
+  background: #0b131a;
+  font: inherit;
+}
+
+.document-language-status {
+  margin: -6px 0 14px;
+}
+
 .document-meta .eyebrow {
   margin: 0;
 }

@@ -7,7 +7,17 @@ const documentTocSearch = document.getElementById("documentTocSearch");
 const documentTocEmpty = document.getElementById("documentTocEmpty");
 const documentBackToTop = document.getElementById("documentBackToTop");
 const documentWordCount = document.getElementById("documentWordCount");
+const documentLanguage = document.getElementById("documentLanguage");
+const documentLanguageStatus = document.getElementById("documentLanguageStatus");
 const requestedFile = new URLSearchParams(window.location.search).get("file");
+const requestedLanguage = new URLSearchParams(window.location.search).get("lang") || "source";
+const translationHeader = /^<!--\s*ultratech-i18n:\s*\{.*?\}\s*-->\s*/s;
+const sourceDocumentPath = /^docs\/(?!i18n\/)(?:[A-Za-z0-9_-]+\/)*[A-Za-z0-9._-]+\.md$/;
+
+const localeNames = {
+  en: "English",
+  "zh-CN": "简体中文"
+};
 
 function escapeHtml(value) {
   return value
@@ -230,8 +240,63 @@ function updateDocumentWordCount() {
     : `字数：${characterCount}`;
 }
 
+async function loadTranslationManifest() {
+  try {
+    const response = await fetch("./docs/i18n/manifest.json", { cache: "no-cache" });
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+    const manifest = await response.json();
+    return Array.isArray(manifest.documents) ? manifest : { documents: [] };
+  } catch {
+    return { documents: [] };
+  }
+}
+
+function translationFor(documentEntry, locale) {
+  return documentEntry?.translations?.[locale] || null;
+}
+
+function setLanguageSelector(documentEntry, activeLanguage) {
+  if (!documentLanguage) {
+    return;
+  }
+
+  const sourceLanguage = documentEntry?.language || "source";
+  const availableTranslations = Object.keys(documentEntry?.translations || {});
+  const options = [
+    { value: "source", label: `原文${sourceLanguage === "source" ? "" : `（${localeNames[sourceLanguage] || sourceLanguage}）`}` },
+    ...availableTranslations.map((locale) => ({ value: locale, label: localeNames[locale] || locale }))
+  ];
+  documentLanguage.innerHTML = options.map((option) => `<option value="${escapeHtml(option.value)}">${escapeHtml(option.label)}</option>`).join("");
+  documentLanguage.value = activeLanguage;
+  documentLanguage.onchange = () => {
+    const url = new URL(window.location.href);
+    if (documentLanguage.value === "source") {
+      url.searchParams.delete("lang");
+    } else {
+      url.searchParams.set("lang", documentLanguage.value);
+    }
+    window.location.assign(url);
+  };
+}
+
+function updateLanguageStatus(documentEntry, activeLanguage, translated) {
+  if (!documentLanguageStatus) {
+    return;
+  }
+  const sourceLanguage = documentEntry?.language;
+  if (!sourceLanguage) {
+    documentLanguageStatus.textContent = "未找到语言清单，正在显示原文。";
+  } else if (translated) {
+    documentLanguageStatus.textContent = `正在阅读 ${localeNames[activeLanguage] || activeLanguage} 译文；原文语言：${localeNames[sourceLanguage] || sourceLanguage}。`;
+  } else {
+    documentLanguageStatus.textContent = `正在阅读原文（${localeNames[sourceLanguage] || sourceLanguage}）。`;
+  }
+}
+
 async function loadDocument() {
-  if (!requestedFile || !/^docs\/[A-Za-z0-9._-]+\.md$/.test(requestedFile)) {
+  if (!requestedFile || !sourceDocumentPath.test(requestedFile)) {
     document.title = "UltraTech 文档未找到";
     documentPath.textContent = "无效的文档地址";
     content.innerHTML = "<p class=\"document-error\">未找到请求的文档。请从首页文档列表进入。</p>";
@@ -241,12 +306,19 @@ async function loadDocument() {
 
   documentPath.textContent = requestedFile;
   try {
-    const response = await fetch(`./${requestedFile}`, { cache: "no-cache" });
+    const manifest = await loadTranslationManifest();
+    const documentEntry = manifest.documents.find((entry) => entry.source === requestedFile);
+    const translatedFile = requestedLanguage === "source" ? null : translationFor(documentEntry, requestedLanguage);
+    const activeLanguage = translatedFile ? requestedLanguage : "source";
+    setLanguageSelector(documentEntry, activeLanguage);
+    updateLanguageStatus(documentEntry, activeLanguage, Boolean(translatedFile));
+
+    const response = await fetch(`./${translatedFile || requestedFile}`, { cache: "no-cache" });
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}`);
     }
     const markdown = await response.text();
-    content.innerHTML = renderMarkdown(markdown);
+    content.innerHTML = renderMarkdown(markdown.replace(translationHeader, ""));
     buildDocumentToc();
     updateDocumentWordCount();
     const heading = content.querySelector("h1");

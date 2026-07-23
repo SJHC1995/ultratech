@@ -19,8 +19,15 @@
             <p class="eyebrow">UltraTech Documentation</p>
             <span id="documentPath">正在加载文档</span>
           </div>
-          <a class="document-archive-link" href="./archive.html">返回文档目录</a>
+          <div class="document-actions">
+            <label class="document-language-label" for="documentLanguage">阅读语言</label>
+            <select id="documentLanguage" class="document-language-select" aria-label="阅读语言">
+              <option value="source">原文</option>
+            </select>
+            <a class="document-archive-link" href="./archive.html">返回文档目录</a>
+          </div>
         </div>
+        <p id="documentLanguageStatus" class="document-language-status" aria-live="polite"></p>
         <article id="markdownContent" class="markdown-body" aria-live="polite">
           <p class="loading">正在读取 Markdown 文档。</p>
         </article>
@@ -46,7 +53,7 @@
 
   <button id="documentBackToTop" class="document-back-to-top" type="button" aria-label="返回文档顶部和目录">↑ 返回顶部</button>
 
-  <script src="./document.js?v=20260723-word-count-1"></script>
+  <script src="./document.js?v=20260723-i18n-1"></script>
   <script src="./site-nav.js"></script>
 </body>
 </html>
