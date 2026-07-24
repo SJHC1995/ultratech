@@ -875,4 +875,5 @@
 .\scripts\generate-recipe-reconstruction-ledger.ps1
 .\scripts\generate-recipe-reconstruction-ledger.ps1 -VerifyOnly
 .\scripts\verify-recipe-reconstruction-inventory.ps1
+.\scripts\verify-recipe-machine-alternatives.ps1
 ```
