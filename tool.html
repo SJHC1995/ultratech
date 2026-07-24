@@ -3,25 +3,88 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="UltraTech 开发归档与维护工具入口。">
+  <meta name="description" content="UltraTech 开发工具、资源生产工具与可下载发布包。">
   <title>UltraTech 开发工具</title>
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./portal.css">
   <link rel="stylesheet" href="./site-nav.css">
+  <style>
+    .tool-hero-actions, .tool-download-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .tool-hero-actions .link-button { margin: 0; }
+    .tool-download-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 16px; }
+    .tool-download-card { border: 1px solid var(--line, #2c4356); border-radius: 10px; padding: 20px; background: rgba(8, 15, 22, .72); }
+    .tool-download-card h3 { margin: 0 0 8px; }
+    .tool-download-card p { min-height: 68px; }
+    .tool-download-card code { display: block; margin-top: 12px; overflow-wrap: anywhere; font-size: 12px; }
+    .tool-note { margin-top: 18px; border-left: 4px solid #67d8f5; padding: 13px 16px; background: rgba(103, 216, 245, .08); }
+    .tool-feature-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); gap: 14px; margin: 0; padding: 0; list-style: none; }
+    .tool-feature-list li { border: 1px solid var(--line, #2c4356); border-radius: 8px; padding: 15px; background: rgba(8, 15, 22, .55); }
+    .tool-feature-list strong { display: block; margin-bottom: 7px; }
+  </style>
 </head>
 <body>
   <header class="site-header"></header>
   <main class="portal-main">
     <section class="page-heading">
       <div>
-        <p class="eyebrow">Development Archive</p>
+        <p class="eyebrow">Development Tools / Downloads</p>
         <h1>开发工具入口</h1>
-        <p>面向 UltraTech 开发、验收、资料维护与公开归档的快捷入口；玩家文档仍在文档目录中浏览。</p>
+        <p>公开部署 UltraTech 的本地开发与资源生产工具。当前已收录 <strong>UltraTexture Studio</strong>，提供 Windows 可执行文件、源码包和 MCP 配置示例下载。</p>
+        <div class="tool-hero-actions">
+          <a class="link-button primary" href="#ultratexture-studio">下载 UltraTexture Studio</a>
+          <a class="link-button" href="#development-tools">查看其他开发入口</a>
+        </div>
       </div>
       <a class="link-button" href="./archive.html">返回文档目录</a>
     </section>
 
     <section class="portal-section">
+      <h2 id="ultratexture-studio">UltraTexture Studio</h2>
+      <p>面向 Minecraft 资源包、批量拼图和 MC GUI 草图的本地图像工作台。程序不会托管或赠送上游图像服务；使用者在本机设置自己的 API Key、Base URL、模型、代理与 User-Agent。</p>
+      <ul class="tool-feature-list">
+        <li><strong>文生图与图生图</strong>兼容 OpenAI 风格图像接口，也提供精简 JSON 兼容模式。</li>
+        <li><strong>MC 像素贴图</strong>支持 16×16、32×32、64×64 目标尺寸，并使用最近邻输出 PNG。</li>
+        <li><strong>批量与拼图</strong>一次处理最多 25 条描述，支持 CSV / JSON 导入、网格与边框。</li>
+        <li><strong>本地 MCP Bridge</strong>提供 <code>/generate</code>、<code>/generate_texture</code>、<code>/generate_batch</code>、<code>/generate_grid</code> 与 <code>/docs</code>。</li>
+      </ul>
+    </section>
+
+    <section class="portal-section">
+      <h2>下载与校验</h2>
+      <div class="tool-download-grid">
+        <article class="tool-download-card">
+          <p class="eyebrow">Current Windows Build · 2026-07-24</p>
+          <h3>UltraTexture Studio</h3>
+          <p>当前主发布包，适用于 Windows 10/11；启动后先在“设置”中配置自己的图像 API。</p>
+          <div class="tool-download-actions">
+            <a class="link-button primary" href="./downloads/tools/UltraTextureStudio-2026-07-24.exe" download>下载 EXE（约 71.5 MB）</a>
+          </div>
+          <code>SHA-256: 576526E7E7A76F8589B11520080E1F0047E0880893DEB60AE55C3EB46615BCC9</code>
+        </article>
+        <article class="tool-download-card">
+          <p class="eyebrow">Source Package · 2026-07-24</p>
+          <h3>完整源码与构建脚本</h3>
+          <p>包含 Python 源码、依赖清单、图标、MCP 示例、README 与 Windows 打包脚本；不包含缓存、日志和构建中间物。</p>
+          <div class="tool-download-actions">
+            <a class="link-button primary" href="./downloads/tools/UltraTextureStudio-source-2026-07-24.zip" download>下载源码 ZIP</a>
+            <a class="link-button" href="./downloads/tools/UltraTextureStudio-mcp.json.example" download>下载 MCP 示例</a>
+          </div>
+          <code>SHA-256: 9AC165E7F3E86D36494E4799152B1D7FB1B93CD7F8D166C7435A0808E0FE3E22</code>
+        </article>
+        <article class="tool-download-card">
+          <p class="eyebrow">Legacy Compatibility Build</p>
+          <h3>ImageStudio（旧版）</h3>
+          <p>保留旧命名的历史构建，供已有工作流回退使用；新安装与新反馈请优先使用 UltraTexture Studio 主发布包。</p>
+          <div class="tool-download-actions">
+            <a class="link-button" href="./downloads/tools/ImageStudio-legacy-2026-07-24.exe" download>下载旧版 EXE（约 47.5 MB）</a>
+          </div>
+          <code>SHA-256: A44570EAD3CDA12F1487EC0C6929385AFF1CAE8DD06D359531E3B84A3AAA1C30</code>
+        </article>
+      </div>
+      <p class="tool-note">安全提示：Windows 可能会对未签名的本地开发工具显示安全提示。请只从本页下载，并在运行前核对 SHA-256；图像生成请求、配置、历史与日志均由工具在本机保存和处理。</p>
+    </section>
+
+    <section id="development-tools" class="portal-section">
       <h2>开发归档与维护</h2>
       <div class="grid">
         <a class="card" href="./dashboard.html"><strong>开发看板</strong><p>查看当前源码快照的内容规模、状态与开发指标。</p></a>
