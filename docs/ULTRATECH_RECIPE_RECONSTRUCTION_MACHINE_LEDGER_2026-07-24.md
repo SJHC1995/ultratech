@@ -734,8 +734,8 @@
 | ``rubber_compound_mixer`` | ``ultratech:iron_bolt`` | `rubber/mixed_rubber` → ultratech:rubber_seal x2, ultratech:rubber_conveyor_belt | 8 | `biobased_industry` (alternative_route, recovery_outlet, renewable_supply) | biomass_and_black_liquor_recovery |
 | ``rubber_seed_oil_press`` | ``ultratech:steel_rod`` | `rubber/seed_oil` → ultratech:rubber_seed_oil 250 mB | 8 | `biobased_industry` (alternative_route, recovery_outlet, renewable_supply) | biomass_and_black_liquor_recovery |
 | ``rubber_sheet_roller`` | ``ultratech:steel_rod`` | `rubber/pressed_latex_sheet` → ultratech:pressed_latex_sheet | 8 | `biobased_industry` (alternative_route, recovery_outlet, renewable_supply) | biomass_and_black_liquor_recovery |
-| ``rubber_smokehouse`` | ``ultratech:iron_bolt`` | `rubber/smoked_rubber_sheet` → ultratech:smoked_rubber_sheet | 8 | `biobased_industry` (alternative_route, recovery_outlet, renewable_supply) | biomass_and_black_liquor_recovery |
-| ``rubber_vulcanization_tank`` | ``ultratech:copper_pipe`` | `rubber/industrial_rubber` → ultratech:industrial_rubber | 8 | `biobased_industry` (alternative_route, recovery_outlet, renewable_supply) | biomass_and_black_liquor_recovery |
+| ``rubber_smokehouse`` | ``ultratech:iron_bolt`` | `route_variants/biobased/biochar_smoked_rubber_sheet` → ultratech:smoked_rubber_sheet<br>`rubber/smoked_rubber_sheet` → ultratech:smoked_rubber_sheet | 8 | `biobased_industry` (alternative_route, recovery_outlet, renewable_supply) | biomass_and_black_liquor_recovery |
+| ``rubber_vulcanization_tank`` | ``ultratech:copper_pipe`` | `route_variants/biobased/synthetic_industrial_rubber` → ultratech:industrial_rubber<br>`rubber/industrial_rubber` → ultratech:industrial_rubber | 8 | `biobased_industry` (alternative_route, recovery_outlet, renewable_supply) | biomass_and_black_liquor_recovery |
 
 ### SILICON_INDUSTRY（20 台）
 
@@ -779,9 +779,9 @@
 
 | 机器 | 构造功能件（F） | 运行工艺与产出 | 阶段 | 路线 / 证据标签 | 恢复出口 |
 |---|---|---|---|---|---|
-| ``activation_furnace`` | ``ultratech:steel_rod`` | `sorghum/activated_carbon` → ultratech:activated_carbon | 8 | `biobased_industry` (alternative_route, recovery_outlet, renewable_supply) | biomass_and_black_liquor_recovery |
+| ``activation_furnace`` | ``ultratech:steel_rod`` | `route_variants/biobased/charcoal_activated_carbon_recovery` → ultratech:activated_carbon<br>`sorghum/activated_carbon` → ultratech:activated_carbon | 8 | `biobased_industry` (alternative_route, recovery_outlet, renewable_supply) | biomass_and_black_liquor_recovery |
 | ``alkali_treatment_tank`` | ``ultratech:copper_pipe`` | `sorghum/cellulose_slurry` → ultratech:cellulose_slurry, ultratech:lignin | 8 | `biobased_industry` (alternative_route, recovery_outlet, renewable_supply) | biomass_and_black_liquor_recovery |
-| ``bioplastic_molder`` | ``ultratech:steel_rod`` | `sorghum/bioplastic_part` → ultratech:bioplastic_part | 8 | `biobased_industry` (alternative_route, recovery_outlet, renewable_supply) | biomass_and_black_liquor_recovery |
+| ``bioplastic_molder`` | ``ultratech:steel_rod`` | `route_variants/biobased/direct_cellulose_acetate_molding` → ultratech:bioplastic_part<br>`sorghum/bioplastic_part` → ultratech:bioplastic_part | 8 | `biobased_industry` (alternative_route, recovery_outlet, renewable_supply) | biomass_and_black_liquor_recovery |
 | ``bleaching_system`` | ``ultratech:iron_bolt`` | `sorghum/high_purity_cellulose` → ultratech:high_purity_cellulose | 8 | `biobased_industry` (alternative_route, recovery_outlet, renewable_supply) | biomass_and_black_liquor_recovery |
 | ``esterification_reactor`` | ``ultratech:copper_pipe`` | `sorghum/cellulose_acetate` → ultratech:cellulose_acetate | 8 | `biobased_industry` (alternative_route, recovery_outlet, renewable_supply) | biomass_and_black_liquor_recovery |
 | ``ethylene_glycol_line`` | ``ultratech:iron_bolt`` | `sorghum/antifreeze` → ultratech:antifreeze | 8 | `biobased_industry` (alternative_route, recovery_outlet, renewable_supply) | biomass_and_black_liquor_recovery |
