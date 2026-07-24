@@ -8,6 +8,12 @@
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./portal.css">
   <link rel="stylesheet" href="./site-nav.css">
+  <style>
+    .tool-release-grid { grid-template-columns: minmax(0, 1fr); max-width: 900px; }
+    .tool-release-grid .version-card { min-height: 0; padding: 24px; }
+    .tool-release-grid .version-card > p { max-width: 760px; font-size: 15px; line-height: 1.75; }
+    .tool-introduction { max-width: 900px; }
+  </style>
 </head>
 <body>
   <header class="site-header"></header>
@@ -21,7 +27,7 @@
       <a class="link-button" href="./archive.html">返回文档目录</a>
     </section>
 
-    <section class="version-grid" aria-label="最新工具发布">
+    <section class="version-grid tool-release-grid" aria-label="最新工具发布">
       <article class="version-card">
         <div class="tag-row">
           <span class="tag">2026-07-24</span>
@@ -43,7 +49,7 @@
       </article>
     </section>
 
-    <section class="panel" style="margin-top: 18px">
+    <section class="panel tool-introduction" style="margin-top: 18px">
       <h2>工具介绍</h2>
       <p>UltraTexture Studio 支持文生图、图生图、MC 像素贴图、批量生成、拼图与本地 MCP Bridge。程序不会提供或托管图像模型服务；启动后请在“设置”中填写自己的 API Key、Base URL、模型、代理与 User-Agent。</p>
       <p>Windows 可能会对未签名的本地开发工具显示安全提示。请仅从本页下载，并在运行前核对上方 SHA-256。图像请求、配置、历史与日志均保存在本机。</p>
