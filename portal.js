@@ -26,6 +26,8 @@ const UI = {
 };
 
 const DOCUMENTS = [
+  ["2026-07-24", "BLOG_2026-07-24_FUSION_ASSEMBLY_AND_CLIENT_COMPATIBILITY.md", "融合组装基础设施与扩展客户端联调", "Fusion assembly infrastructure and extended-client compatibility validation", "systems"],
+  ["2026-07-24", "ULTRATECH_EXTENDED_AGRICULTURE_FUSION_CATALOG.md", "Extended Crafting × Mystical Agriculture：512 项融合产物目录", "Extended Crafting × Mystical Agriculture: 512 fusion-product catalog", "design"],
   ["2026-07-23", "ULTRATECH_FULL_RECIPE_RECONSTRUCTION_PLAN.md", "全量配方重构方案：257 包结构与真实工业流程证据", "Full recipe reconstruction plan: 257-pack patterns and real industrial-process evidence", "design"],
   ["2026-07-23", "ULTRATECH_ASTRAL_RESEARCH_EXPANSION_PLAN_2026-07-23.md", "200 条研究扩展：星辉叙事与科魔结合规划", "200-research expansion: Astral narrative and magitech integration plan", "research"],
   ["2026-07-21", "ULTRATECH_MODPACK_100_BENCHMARK_AND_WORKBENCH_2026-07-21.md", "100 包基准研究与可复现工作台", "100-pack benchmark study and reproducible workbench", "research"],

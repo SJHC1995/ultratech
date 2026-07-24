@@ -5,7 +5,21 @@
     <link>https://sjhc1995.github.io/ultratech/</link>
     <description>UltraTech Forge 1.20.1 development journal and documentation archive.</description>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 21 Jul 2026 12:45:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jul 2026 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>融合组装基础设施与扩展客户端联调</title>
+      <link>https://sjhc1995.github.io/ultratech/document.html?file=docs%2FBLOG_2026-07-24_FUSION_ASSEMBLY_AND_CLIENT_COMPATIBILITY.md</link>
+      <guid>https://sjhc1995.github.io/ultratech/docs/BLOG_2026-07-24_FUSION_ASSEMBLY_AND_CLIENT_COMPATIBILITY.md</guid>
+      <pubDate>Fri, 24 Jul 2026 12:00:00 GMT</pubDate>
+      <description>Extended Crafting × Mystical Agriculture 融合家族新增 512 项数据驱动内容，并接入 L2–L8 分级工作台、精密组装线、工业装配机和研究档案门禁。</description>
+    </item>
+    <item>
+      <title>Extended Crafting × Mystical Agriculture：512 项融合产物目录</title>
+      <link>https://sjhc1995.github.io/ultratech/document.html?file=docs%2FULTRATECH_EXTENDED_AGRICULTURE_FUSION_CATALOG.md</link>
+      <guid>https://sjhc1995.github.io/ultratech/docs/ULTRATECH_EXTENDED_AGRICULTURE_FUSION_CATALOG.md</guid>
+      <pubDate>Fri, 24 Jul 2026 11:55:00 GMT</pubDate>
+      <description>公开汇总 512 项原创融合产物的分类、用途、阶段、研究映射、设施归属与外部模组输入边界。</description>
+    </item>
     <item>
       <title>从玩家到开发者：工业模组包社区的生态、冲突与演进——以 UltraTech 为例</title>
       <link>https://sjhc1995.github.io/ultratech/document.html?file=docs%2FULTRA_TECH_PAPER.md</link>
