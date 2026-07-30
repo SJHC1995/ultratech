@@ -1,7 +1,7 @@
 {
-  "version": "1.3.1",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.3.1/UltraTextureStudio.exe",
-  "sha256": "6d042e7d879c4481574a0ca2eb524eabc07053ecee8fa5e2d19308ed6db1d4bf",
-  "notes": "OTA 更新清单已固定到 UltraTech 官方 GitHub Pages 地址；设置页面中的官方 OTA 路径设为只读，旧配置会自动迁移到官方路径，避免更新来源被本地配置重定向。",
+  "version": "1.4.0",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.0/UltraTextureStudio.exe",
+  "sha256": "74868b374572a67e064c3a109a90fa99956ca007c2bc75ec7274cce509000432",
+  "notes": "完整安装版：恢复横向工作区导航，新增更新日志、现代安装向导、开始菜单和可选桌面快捷方式；安装时可检测并注册 Codex MCP。官方 OTA 地址继续锁定并执行 SHA-256 校验。",
   "published_at": "2026-07-30"
 }
