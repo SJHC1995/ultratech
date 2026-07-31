@@ -1,16 +1,16 @@
 {
-  "published_at": "2026-07-31",
   "patches": [
     {
-      "from_version": "1.4.9",
-      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.10/UltraTextureStudio-1.4.9-patch.zip",
-      "sha256": "c32be1d288e5c2b4aa7aeeb4336d91f846bb2ad1046eb201616836b7a9666b6a"
+      "from_version": "1.4.10",
+      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.00/UltraTextureStudio-1.4.10-patch.zip",
+      "sha256": "24f2422cf619a092541063b575558d6311f2ee602c20b6782f9ff278e5d7671a"
     }
   ],
-  "notes": "主工作区极简重构：隐藏重复菜单/工具栏，参数布局升级为双列字段，小窗口模式可滚动；English 界面与 MCP 状态文案完整统一。",
-  "sha256": "abfc8454443a8331b519bf3f8fd414c7252e67c1e114f5b1ee7c2cd13099f55f",
-  "installer_sha256": "7e9602030f37aa7fa50235ec5d56258cdf7fb61fd44778f6585472c5d83cc15a",
-  "version": "1.4.10",
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.10/UltraTextureStudio-Setup-1.4.10.exe",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.10/UltraTextureStudio.exe"
+  "sha256": "835b502a9b5ed5f738875cc912ef3f41b86f28d6c39846708c5218caf42af004",
+  "notes": "默认文生图页重构：描述、生成参数与大号生成按钮无需滚动即可同时可见；API 提示词预览改为按需展开。设置新增“关于软件”选项卡，集中提供版本、更新、日志与工具页入口。",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.00/UltraTextureStudio.exe",
+  "version": "1.5.00",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.00/UltraTextureStudio-Setup-1.5.00.exe",
+  "published_at": "2026-07-31",
+  "installer_sha256": "38719ad4a1219f1d1f8ada0d0de0abb5591ad95f3d7e92151f5eb43b6211e667"
 }
