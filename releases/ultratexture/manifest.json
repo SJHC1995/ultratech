@@ -1,16 +1,16 @@
 {
-  "sha256": "9086e1f6137530947e3bf79cc8c7e203d00f3a8d45c109a6652fb02bcef04e1d",
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.8/UltraTextureStudio-Setup-1.4.8.exe",
-  "version": "1.4.8",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.9/UltraTextureStudio.exe",
+  "sha256": "807b18a2031ad713dcea71c7de082d9aa05f613f417181cf61ee8f84a1e84123",
+  "installer_sha256": "05e60a63c691a4cfa255218edabab63784f35e1d49468c0e1a0a27367e3e7d7b",
+  "notes": "预览体验与工作区层级升级：图片预览标题采用主题自适应图标；空预览提供简体中文 / English、浅色 / 深色四种极简几何作品。重构品牌区、预览舞台与缩略图区留白，预览素材会随窗口尺寸自动适配，消除突兀裁切。提供从 v1.4.8 升级的精确增量补丁。",
   "published_at": "2026-07-31",
-  "notes": "UI 与 OTA 底层升级：更新中心采用现代化确认界面；大文件支持自适应多线程分段下载、三次重试、续传范围校验、原子补丁解压与结果回执。恢复从 v1.4.7 升级的精确增量补丁，未匹配版本自动回退完整 Setup。模式导航左右按钮已升级为浅色/深色主题自适应图标。",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.8/UltraTextureStudio.exe",
+  "version": "1.4.9",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.9/UltraTextureStudio-Setup-1.4.9.exe",
   "patches": [
     {
-      "from_version": "1.4.7",
-      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.8/UltraTextureStudio-1.4.7-patch.zip",
-      "sha256": "2fdb977bcffd7366774b90a8a82631254a258d26d20fcad53be45f59e644f35f"
+      "from_version": "1.4.8",
+      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.9/UltraTextureStudio-1.4.8-patch.zip",
+      "sha256": "7266e935bfb0499505af46ab3128fb8a53734eaf8a38c0a88288fa06fecca991"
     }
-  ],
-  "installer_sha256": "616d962bfa15f691943639bb232db4b93307ccf646b00d1420aede5b9f3ac812"
+  ]
 }
