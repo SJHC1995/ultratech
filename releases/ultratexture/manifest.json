@@ -1,16 +1,16 @@
 {
-  "sha256": "24aa0e1468de2f68cc2bf239da6a79d025cc75073d692bfb4b7d91f881543949",
-  "version": "1.4.2",
+  "installer_sha256": "4f6b26fa5c9a938de25ce3020eb3f5323ae171cbc845b01ceec09566c75910fc",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.4/UltraTextureStudio.exe",
   "published_at": "2026-07-31",
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.2/UltraTextureStudio-Setup-1.4.2.exe",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.4/UltraTextureStudio-Setup-1.4.4.exe",
+  "version": "1.4.4",
   "patches": [
     {
-      "from_version": "1.4.1",
-      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.2/UltraTextureStudio-1.4.1-patch.zip",
-      "sha256": "57d6cbb927ae11bd311336dd8e24f39d30927d20dc78e602d43c7fb748b3c63e"
+      "from_version": "1.4.2",
+      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.4/UltraTextureStudio-1.4.2-patch.zip",
+      "sha256": "c15a00585903e8d08627025131bf4b4fa004752bb9b25efb38c7dec00b8e22ca"
     }
   ],
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.2/UltraTextureStudio.exe",
-  "notes": "现代图标与极简导航升级：加入浅色/深色自适应的设置、更新、主题和语言图标；模式切换改为胶囊式横向滑动栏。",
-  "installer_sha256": "113e267b2346297e07faf60689d2f99c2047076c9a685a885f91912680818616"
+  "sha256": "f562e06a706969c44f18b00023aea11474f0d1803d232915454bf3be4b78e83e",
+  "notes": "更新体验优化：检查更新只需一次确认，完整安装器会主动置顶显示；OTA 支持断点续传与缓存复用，增量补丁应用更快。新增始终可见的模式横向滑动条与 OTA 更新频道阅读器。"
 }
