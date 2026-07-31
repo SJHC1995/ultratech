@@ -1,10 +1,10 @@
 {
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.5/UltraTextureStudio.exe",
-  "notes": "更新体验修复：点击“现在更新”后立即进入下载动画。已临时停用 v1.4.4 的增量补丁通道，受影响版本会自动改用完整安装包，确保升级完成。",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.7/UltraTextureStudio-Setup-1.4.7.exe",
+  "installer_sha256": "5a5cddb017c7d479dbf2ed383da096c6d5b8757dfe866f303e04c9fa64307eb7",
+  "sha256": "ba3e7bd40294211c80876e07feabeb0fa8d3408cb76e2139b506208e302233c4",
+  "version": "1.4.7",
   "patches": [],
-  "installer_sha256": "f134cceb7dc4031a88fcc72c4af88ec4c7f8637f20bbe9064008e3c6f4f0ae3e",
-  "version": "1.4.5",
+  "notes": "更新器稳定性过渡版：补丁安装现会等待应用进程完全退出并保留诊断日志。本版本使用完整安装包更新，确保所有用户先获得可靠补丁器；v1.4.8 将恢复精确版本增量补丁。",
   "published_at": "2026-07-31",
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.5/UltraTextureStudio-Setup-1.4.5.exe",
-  "sha256": "da0fa9c1c64f9dabdc63bb0242ed28dc26fd80291f527ec96661bff9ba365d9b"
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.7/UltraTextureStudio.exe"
 }
