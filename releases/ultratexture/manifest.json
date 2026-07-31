@@ -1,7 +1,16 @@
 {
-  "version": "1.4.0",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.0/UltraTextureStudio.exe",
-  "sha256": "74868b374572a67e064c3a109a90fa99956ca007c2bc75ec7274cce509000432",
-  "notes": "完整安装版：恢复横向工作区导航，新增更新日志、现代安装向导、开始菜单和可选桌面快捷方式；安装时可检测并注册 Codex MCP。官方 OTA 地址继续锁定并执行 SHA-256 校验。",
-  "published_at": "2026-07-30"
+  "patches": [
+    {
+      "from_version": "1.4.0",
+      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.1/UltraTextureStudio-1.4.0-patch.zip",
+      "sha256": "dfaa217d0d560dc5a04be1cbf7f5d613fecd2c7d349e9907ff4e9b2ead268077"
+    }
+  ],
+  "installer_sha256": "067633003c856fd17195b3ad7b591a55f0a4a0d63298d5014940cccb1fc51a6f",
+  "published_at": "2026-07-31",
+  "version": "1.4.1",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.1/UltraTextureStudio-Setup-1.4.1.exe",
+  "notes": "界面与设置页进一步精简；新增官方一键发布、精确版本增量补丁和完整 Setup.exe 回退更新。",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.1/UltraTextureStudio.exe",
+  "sha256": "417c5717ed124ceedd014df21d8891491e74501bcfa0c29478375060e80264af"
 }
