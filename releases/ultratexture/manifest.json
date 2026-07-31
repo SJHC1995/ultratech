@@ -1,21 +1,16 @@
 {
-  "sha256": "d06b9fb68820c8541fe309c016e96f96bca09b61e34fedddec9cfe658e05fcc2",
-  "version": "1.5.01",
-  "published_at": "2026-07-31",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.01/UltraTextureStudio.exe",
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.01/UltraTextureStudio-Setup-1.5.01.exe",
   "patches": [
     {
-      "from_version": "1.4.10",
-      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.01/UltraTextureStudio-1.4.10-patch.zip",
-      "sha256": "e1e5acd621c5d14df3021147da9320f8cc0078b24b68478f1676b242d6263fc0"
-    },
-    {
-      "from_version": "1.5.00",
-      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.01/UltraTextureStudio-1.5.00-patch.zip",
-      "sha256": "f3a4a719e27aa1e0da16f4c5c6255eac9b45f44bf50111f877ac207c1888e2f8"
+      "from_version": "1.5.01",
+      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.02/UltraTextureStudio-1.5.01-patch.zip",
+      "sha256": "14412aee38501ad77f8330437f0aa7ddf6cf8f81b9da8ceb7b188335050688ed"
     }
   ],
-  "notes": "修复图生图页窄宽度下的选择图片按钮超界；输入框右键菜单汉化；顶栏空间收紧，并精简安装依赖。支持从 v1.4.10 和 v1.5.00 升级的增量补丁。",
-  "installer_sha256": "7c8bd36f338838cda84d686af4ec5aef3fb9bcac1bb78caa69e71a005e658b5d"
+  "published_at": "2026-07-31",
+  "version": "1.5.02",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.02/UltraTextureStudio.exe",
+  "installer_sha256": "ab609a2311f3396d525f3d90c441df3f9a30c0be423713f5bcc74649c95b7625",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.02/UltraTextureStudio-Setup-1.5.02.exe",
+  "notes": "更新时立即显示置顶“正在更新”窗口并自动拉起前台安装器；修复多行输入框右键菜单汉化；简体中文模式完整恢复主界面文案。",
+  "sha256": "46e7ccf6b7a2b8f605f8783c2f16820a48891f93c164465485f114c7489c4b22"
 }
