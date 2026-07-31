@@ -1,16 +1,16 @@
 {
-  "installer_sha256": "4f6b26fa5c9a938de25ce3020eb3f5323ae171cbc845b01ceec09566c75910fc",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.4/UltraTextureStudio.exe",
-  "published_at": "2026-07-31",
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.4/UltraTextureStudio-Setup-1.4.4.exe",
-  "version": "1.4.4",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.5/UltraTextureStudio.exe",
+  "notes": "更新体验修复：点击“现在更新”后立即进入下载动画，修复确认弹窗嵌套事件循环导致需要再次点击检查更新的问题。",
   "patches": [
     {
-      "from_version": "1.4.2",
-      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.4/UltraTextureStudio-1.4.2-patch.zip",
-      "sha256": "c15a00585903e8d08627025131bf4b4fa004752bb9b25efb38c7dec00b8e22ca"
+      "from_version": "1.4.4",
+      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.5/UltraTextureStudio-1.4.4-patch.zip",
+      "sha256": "a478427877b4a465e6286764b1068186f986314b71dad3c5b776abc69b279b3f"
     }
   ],
-  "sha256": "f562e06a706969c44f18b00023aea11474f0d1803d232915454bf3be4b78e83e",
-  "notes": "更新体验优化：检查更新只需一次确认，完整安装器会主动置顶显示；OTA 支持断点续传与缓存复用，增量补丁应用更快。新增始终可见的模式横向滑动条与 OTA 更新频道阅读器。"
+  "installer_sha256": "f134cceb7dc4031a88fcc72c4af88ec4c7f8637f20bbe9064008e3c6f4f0ae3e",
+  "version": "1.4.5",
+  "published_at": "2026-07-31",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.5/UltraTextureStudio-Setup-1.4.5.exe",
+  "sha256": "da0fa9c1c64f9dabdc63bb0242ed28dc26fd80291f527ec96661bff9ba365d9b"
 }
