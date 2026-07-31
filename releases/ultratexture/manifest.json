@@ -1,16 +1,16 @@
 {
+  "notes": "新增 MC 动态长贴图：16/32/64/128 单帧宽度、Frames 帧数与纵向 PNG 导出；更新任务支持预约，当前生成结束后自动检查、下载并安装；更新交接自动关闭应用并停止 MCP，不再要求手动关窗。",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.03/UltraTextureStudio.exe",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.03/UltraTextureStudio-Setup-1.5.03.exe",
+  "installer_sha256": "db196742971eeea7d5af918c29937d7aa3b67463a613d0088b66e1491445ecf4",
+  "published_at": "2026-07-31",
+  "version": "1.5.03",
+  "sha256": "041831942d9514277f83b36c5d7a68e2903ac7f3289af462ef2b685b749458be",
   "patches": [
     {
-      "from_version": "1.5.01",
-      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.02/UltraTextureStudio-1.5.01-patch.zip",
-      "sha256": "14412aee38501ad77f8330437f0aa7ddf6cf8f81b9da8ceb7b188335050688ed"
+      "from_version": "1.5.02",
+      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.03/UltraTextureStudio-1.5.02-patch.zip",
+      "sha256": "ff2c7c118f648f6914aab1df680f1428dad3ee6bc49261e1d5a3619590a8f9f8"
     }
-  ],
-  "published_at": "2026-07-31",
-  "version": "1.5.02",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.02/UltraTextureStudio.exe",
-  "installer_sha256": "ab609a2311f3396d525f3d90c441df3f9a30c0be423713f5bcc74649c95b7625",
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.02/UltraTextureStudio-Setup-1.5.02.exe",
-  "notes": "更新时立即显示置顶“正在更新”窗口并自动拉起前台安装器；修复多行输入框右键菜单汉化；简体中文模式完整恢复主界面文案。",
-  "sha256": "46e7ccf6b7a2b8f605f8783c2f16820a48891f93c164465485f114c7489c4b22"
+  ]
 }
