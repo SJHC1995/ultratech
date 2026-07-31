@@ -1,16 +1,16 @@
 {
+  "sha256": "24aa0e1468de2f68cc2bf239da6a79d025cc75073d692bfb4b7d91f881543949",
+  "version": "1.4.2",
+  "published_at": "2026-07-31",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.2/UltraTextureStudio-Setup-1.4.2.exe",
   "patches": [
     {
-      "from_version": "1.4.0",
-      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.1/UltraTextureStudio-1.4.0-patch.zip",
-      "sha256": "c653db382d46af535d8b2ee088bbaa956b582867332571339c6cf24da961c140"
+      "from_version": "1.4.1",
+      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.2/UltraTextureStudio-1.4.1-patch.zip",
+      "sha256": "57d6cbb927ae11bd311336dd8e24f39d30927d20dc78e602d43c7fb748b3c63e"
     }
   ],
-  "installer_sha256": "067633003c856fd17195b3ad7b591a55f0a4a0d63298d5014940cccb1fc51a6f",
-  "published_at": "2026-07-31",
-  "version": "1.4.1",
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.1/UltraTextureStudio-Setup-1.4.1.exe",
-  "notes": "界面与设置页进一步精简；新增官方一键发布、精确版本增量补丁和完整 Setup.exe 回退更新。",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.1/UltraTextureStudio.exe",
-  "sha256": "417c5717ed124ceedd014df21d8891491e74501bcfa0c29478375060e80264af"
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.2/UltraTextureStudio.exe",
+  "notes": "现代图标与极简导航升级：加入浅色/深色自适应的设置、更新、主题和语言图标；模式切换改为胶囊式横向滑动栏。",
+  "installer_sha256": "113e267b2346297e07faf60689d2f99c2047076c9a685a885f91912680818616"
 }
