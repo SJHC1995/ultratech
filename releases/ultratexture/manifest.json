@@ -1,10 +1,16 @@
 {
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.7/UltraTextureStudio-Setup-1.4.7.exe",
-  "installer_sha256": "5a5cddb017c7d479dbf2ed383da096c6d5b8757dfe866f303e04c9fa64307eb7",
-  "sha256": "ba3e7bd40294211c80876e07feabeb0fa8d3408cb76e2139b506208e302233c4",
-  "version": "1.4.7",
-  "patches": [],
-  "notes": "更新器稳定性过渡版：补丁安装现会等待应用进程完全退出并保留诊断日志。本版本使用完整安装包更新，确保所有用户先获得可靠补丁器；v1.4.8 将恢复精确版本增量补丁。",
+  "sha256": "9086e1f6137530947e3bf79cc8c7e203d00f3a8d45c109a6652fb02bcef04e1d",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.8/UltraTextureStudio-Setup-1.4.8.exe",
+  "version": "1.4.8",
   "published_at": "2026-07-31",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.7/UltraTextureStudio.exe"
+  "notes": "UI 与 OTA 底层升级：更新中心采用现代化确认界面；大文件支持自适应多线程分段下载、三次重试、续传范围校验、原子补丁解压与结果回执。恢复从 v1.4.7 升级的精确增量补丁，未匹配版本自动回退完整 Setup。模式导航左右按钮已升级为浅色/深色主题自适应图标。",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.8/UltraTextureStudio.exe",
+  "patches": [
+    {
+      "from_version": "1.4.7",
+      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.8/UltraTextureStudio-1.4.7-patch.zip",
+      "sha256": "2fdb977bcffd7366774b90a8a82631254a258d26d20fcad53be45f59e644f35f"
+    }
+  ],
+  "installer_sha256": "616d962bfa15f691943639bb232db4b93307ccf646b00d1420aede5b9f3ac812"
 }
