@@ -9,8 +9,13 @@
       "from_version": "1.4.10",
       "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.01/UltraTextureStudio-1.4.10-patch.zip",
       "sha256": "e1e5acd621c5d14df3021147da9320f8cc0078b24b68478f1676b242d6263fc0"
+    },
+    {
+      "from_version": "1.5.00",
+      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.01/UltraTextureStudio-1.5.00-patch.zip",
+      "sha256": "f3a4a719e27aa1e0da16f4c5c6255eac9b45f44bf50111f877ac207c1888e2f8"
     }
   ],
-  "notes": "修复图生图页窄宽度下的选择图片按钮超界；输入框右键菜单汉化；顶栏空间收紧，并精简安装依赖。支持从 v1.4.10 升级的增量补丁。",
+  "notes": "修复图生图页窄宽度下的选择图片按钮超界；输入框右键菜单汉化；顶栏空间收紧，并精简安装依赖。支持从 v1.4.10 和 v1.5.00 升级的增量补丁。",
   "installer_sha256": "7c8bd36f338838cda84d686af4ec5aef3fb9bcac1bb78caa69e71a005e658b5d"
 }
