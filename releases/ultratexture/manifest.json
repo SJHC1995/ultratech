@@ -1,13 +1,7 @@
 {
   "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.5/UltraTextureStudio.exe",
-  "notes": "更新体验修复：点击“现在更新”后立即进入下载动画，修复确认弹窗嵌套事件循环导致需要再次点击检查更新的问题。",
-  "patches": [
-    {
-      "from_version": "1.4.4",
-      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.4.5/UltraTextureStudio-1.4.4-patch.zip",
-      "sha256": "a478427877b4a465e6286764b1068186f986314b71dad3c5b776abc69b279b3f"
-    }
-  ],
+  "notes": "更新体验修复：点击“现在更新”后立即进入下载动画。已临时停用 v1.4.4 的增量补丁通道，受影响版本会自动改用完整安装包，确保升级完成。",
+  "patches": [],
   "installer_sha256": "f134cceb7dc4031a88fcc72c4af88ec4c7f8637f20bbe9064008e3c6f4f0ae3e",
   "version": "1.4.5",
   "published_at": "2026-07-31",
