@@ -1,16 +1,16 @@
 {
+  "notes": "性能优化：批量历史单事务、拼图流式合成、预览自适应缩放，进一步降低内存和卡顿。",
+  "published_at": "2026-08-01",
+  "sha256": "84439c37bd36794db22878b7737d6572569e044d07a3216765b52f5f0b6bfd38",
+  "installer_sha256": "96e3a9a3409457d45928917dfccc186d8c4d52453e4875febd445445d238d17b",
   "patches": [
     {
-      "from_version": "1.5.07",
-      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.08/UltraTextureStudio-1.5.07-patch.zip",
-      "sha256": "05115023fc3119a598190840f70235a33368fbfa87e515be2657129e61457dc1"
+      "from_version": "1.5.08",
+      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.09/UltraTextureStudio-1.5.08-patch.zip",
+      "sha256": "4e006ac9594361c22ad47755aeb0bdd81de47ed46a41e77e0f212fb785e522a7"
     }
   ],
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.08/UltraTextureStudio-Setup-1.5.08.exe",
-  "sha256": "f039b7918fb6720b79c12ffc4fd075da261fb05d28db5862d300774d48340cea",
-  "installer_sha256": "e779a47d26a8af73a49924fd85ad8acac12155f0be278e97d62b6e1f2fa70335",
-  "published_at": "2026-08-01",
-  "notes": "性能优化：历史、MCP 心跳、图片预览与导入导出全部异步化，降低界面卡顿。",
-  "version": "1.5.08",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.08/UltraTextureStudio.exe"
+  "version": "1.5.09",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.09/UltraTextureStudio.exe",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.09/UltraTextureStudio-Setup-1.5.09.exe"
 }
