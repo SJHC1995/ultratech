@@ -1,16 +1,10 @@
 {
+  "notes": "全新 MCP 生成的 3D 图标与预览空间画面；中文保留“随心所想 / 随心所动”。OTA 统一改为完整 Setup 覆盖安装，后台并行检索旧版本并加速下载，设置页新增旧版本清理工具。",
+  "patches": [],
+  "sha256": "af464698b85450366c146beb2ea0b164e63755689d55194acc578da7f40efefe",
   "published_at": "2026-08-01",
-  "installer_sha256": "42ca3424be56a506aa12d080b1415c2a0b85c5c16ed08c3a754effb1b0b6c72c",
-  "sha256": "bc8237bf275a687712e575ec1ab52685bc8076a20e28871e05a33f7445ebee27",
-  "notes": "OTA 更新全面改为非阻塞状态机与独立进度窗口；检查、确认、下载、校验和安装交接均不会使主窗口未响应。",
-  "version": "1.5.04",
-  "patches": [
-    {
-      "from_version": "1.5.03",
-      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.04/UltraTextureStudio-1.5.03-patch.zip",
-      "sha256": "a92d4df1c50cbee2508707658763a379b6320880d2cb1b6a0176670b9efb2fe3"
-    }
-  ],
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.04/UltraTextureStudio-Setup-1.5.04.exe",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.04/UltraTextureStudio.exe"
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.05/UltraTextureStudio-Setup-1.5.05.exe",
+  "version": "1.5.05",
+  "installer_sha256": "80f8a97df09a47242926d03d3b3c99367f4b7572cc79998761683aeeb771bea2",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.05/UltraTextureStudio.exe"
 }
