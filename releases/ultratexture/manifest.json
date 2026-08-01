@@ -1,10 +1,16 @@
 {
-  "notes": "全新 MCP 生成的 3D 图标与预览空间画面；中文保留“随心所想 / 随心所动”。OTA 统一改为完整 Setup 覆盖安装，后台并行检索旧版本并加速下载，设置页新增旧版本清理工具。",
-  "patches": [],
-  "sha256": "af464698b85450366c146beb2ea0b164e63755689d55194acc578da7f40efefe",
+  "sha256": "223553c9cce691cf4d1a5845186dfc5cdbd353b0a73cde6dc77f9ef7e44982a1",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.06/UltraTextureStudio-Setup-1.5.06.exe",
+  "version": "1.5.06",
   "published_at": "2026-08-01",
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.05/UltraTextureStudio-Setup-1.5.05.exe",
-  "version": "1.5.05",
-  "installer_sha256": "80f8a97df09a47242926d03d3b3c99367f4b7572cc79998761683aeeb771bea2",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.05/UltraTextureStudio.exe"
+  "patches": [
+    {
+      "from_version": "1.5.05",
+      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.06/UltraTextureStudio-1.5.05-patch.zip",
+      "sha256": "54582022c5641d82b59776d8ccb7a1d9aa2fe47d4953fd62653df465b30e3539"
+    }
+  ],
+  "installer_sha256": "98154936be0f9930fd65b35392cdb73aabdfea25926ba0b392de45af73d4a078",
+  "notes": "OTA 底层重构：恢复精确版本增量补丁，补丁优先、完整 Setup 自动回退；旧版本扫描、下载和补丁解压均采用后台并发任务，补丁携带安全删除清单，避免旧程序文件残留。",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.06/UltraTextureStudio.exe"
 }
