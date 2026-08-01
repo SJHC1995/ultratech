@@ -1,16 +1,16 @@
 {
-  "installer_sha256": "1cde9e29682912713b34226726bb6363749dcb6d86ebc7da83a1ef30fc9f1344",
-  "version": "1.5.07",
   "patches": [
     {
-      "from_version": "1.5.06",
-      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.07/UltraTextureStudio-1.5.06-patch.zip",
-      "sha256": "0ab94b6f967c5d4d7908b3afd13eded650811f8d8d15e6de2d6c502956309243"
+      "from_version": "1.5.07",
+      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.08/UltraTextureStudio-1.5.07-patch.zip",
+      "sha256": "05115023fc3119a598190840f70235a33368fbfa87e515be2657129e61457dc1"
     }
   ],
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.07/UltraTextureStudio-Setup-1.5.07.exe",
-  "sha256": "5bacd634160d0f81860926133071b6258457844cebd9a18a63fadeb269c0b82e",
-  "notes": "修复 OTA 更新窗口未响应：进度背压与主线程合帧刷新、低优先级更新协调、自适应并发、SHA-256 分段可视化校验；保留 1.5.06→1.5.07 增量补丁和完整安装包回退。",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.08/UltraTextureStudio-Setup-1.5.08.exe",
+  "sha256": "f039b7918fb6720b79c12ffc4fd075da261fb05d28db5862d300774d48340cea",
+  "installer_sha256": "e779a47d26a8af73a49924fd85ad8acac12155f0be278e97d62b6e1f2fa70335",
   "published_at": "2026-08-01",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.07/UltraTextureStudio.exe"
+  "notes": "性能优化：历史、MCP 心跳、图片预览与导入导出全部异步化，降低界面卡顿。",
+  "version": "1.5.08",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.08/UltraTextureStudio.exe"
 }
