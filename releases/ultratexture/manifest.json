@@ -1,16 +1,16 @@
 {
-  "sha256": "223553c9cce691cf4d1a5845186dfc5cdbd353b0a73cde6dc77f9ef7e44982a1",
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.06/UltraTextureStudio-Setup-1.5.06.exe",
-  "version": "1.5.06",
-  "published_at": "2026-08-01",
+  "installer_sha256": "1cde9e29682912713b34226726bb6363749dcb6d86ebc7da83a1ef30fc9f1344",
+  "version": "1.5.07",
   "patches": [
     {
-      "from_version": "1.5.05",
-      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.06/UltraTextureStudio-1.5.05-patch.zip",
-      "sha256": "54582022c5641d82b59776d8ccb7a1d9aa2fe47d4953fd62653df465b30e3539"
+      "from_version": "1.5.06",
+      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.07/UltraTextureStudio-1.5.06-patch.zip",
+      "sha256": "0ab94b6f967c5d4d7908b3afd13eded650811f8d8d15e6de2d6c502956309243"
     }
   ],
-  "installer_sha256": "98154936be0f9930fd65b35392cdb73aabdfea25926ba0b392de45af73d4a078",
-  "notes": "OTA 底层重构：恢复精确版本增量补丁，补丁优先、完整 Setup 自动回退；旧版本扫描、下载和补丁解压均采用后台并发任务，补丁携带安全删除清单，避免旧程序文件残留。",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.06/UltraTextureStudio.exe"
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.07/UltraTextureStudio-Setup-1.5.07.exe",
+  "sha256": "5bacd634160d0f81860926133071b6258457844cebd9a18a63fadeb269c0b82e",
+  "notes": "修复 OTA 更新窗口未响应：进度背压与主线程合帧刷新、低优先级更新协调、自适应并发、SHA-256 分段可视化校验；保留 1.5.06→1.5.07 增量补丁和完整安装包回退。",
+  "published_at": "2026-08-01",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.07/UltraTextureStudio.exe"
 }
