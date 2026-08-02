@@ -14,9 +14,9 @@
   "installer_sha256": "563b14f2d58ed859ba4e515f40f986501ea4811290a6b11b911d0db4bb090f34",
   "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.12/UltraTextureStudio.exe",
   "delivery": {
-    "channel": "stable",
+    "channel": "priority",
     "latest_version": "1.5.12",
     "emergency": false,
-    "bootstrap": true
+    "bootstrap": false
   }
 }
