@@ -1,22 +1,27 @@
 {
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.12/UltraTextureStudio-Setup-1.5.12.exe",
-  "sha256": "03d36982bf4394611c0e16b0dad4b611e734f881e46c9cc887fea3ed00930248",
-  "patches": [
-    {
-      "from_version": "1.5.11",
-      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.12/UltraTextureStudio-1.5.11-patch.zip",
-      "sha256": "f8e82c887c5fd1ac3c7b003f4282f6f7db6a9d16ef302074585b4537c74784a8"
-    }
-  ],
-  "notes": "新增在线兑换码、优先 OTA 通道、GitHub 账户头像、作者邮箱和反馈入口。",
-  "published_at": "2026-08-02",
-  "version": "1.5.12",
-  "installer_sha256": "563b14f2d58ed859ba4e515f40f986501ea4811290a6b11b911d0db4bb090f34",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.12/UltraTextureStudio.exe",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.6.0/UltraTextureStudio-Setup-1.6.0.exe",
   "delivery": {
     "channel": "priority",
-    "latest_version": "1.5.12",
+    "latest_version": "1.6.0",
     "emergency": false,
     "bootstrap": false
+  },
+  "installer_sha256": "68c202f1dd40c02fe6cd3fc0b9e08bb8ed6b6d2e929899aa3384b0d37f019494",
+  "sha256": "4d54ff65d51319889ede78b6fc7e68c2e5e387aaa28dcc0bc293ef4d6cfba193",
+  "published_at": "2026-08-02",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.6.0/UltraTextureStudio.exe",
+  "patches": [
+    {
+      "from_version": "1.5.06",
+      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.6.0/UltraTextureStudio-1.5.06-patch.zip",
+      "sha256": "1b108fed917f1f1af4f7f6a05f66add8c9dace50b7ae3a5484dfcd145b35fcdc"
+    }
+  ],
+  "version": "1.6.0",
+  "notes": "修复 MCP 动态重配、MC 动态长贴图实时尺寸更新，并升级 OTA 验签与恢复能力。",
+  "signature": {
+    "algorithm": "ed25519",
+    "key_id": "ultratexture-ed25519-2026-08-r2",
+    "value": "zbQEhpPkQefETX4VjkHvmoAvCBMPkeSq9gtDdqd/FvlhvejUE2O1CPvjidLC7o3/pwq94XAaitDbgseGisyWBw=="
   }
 }
