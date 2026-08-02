@@ -1,16 +1,16 @@
 {
+  "installer_sha256": "0e3450313695f917fa80f64778e206bc87d752108e43de4c9942f365c0c7d110",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.11/UltraTextureStudio-Setup-1.5.11.exe",
+  "notes": "紧急修复：OTA 完成回调统一切回 GUI 线程，避免更新时窗口未响应。",
+  "sha256": "aea89791b82775dc04ceb11c3a9b1358126919a9fc0797ff2045d245ee27d9a1",
+  "version": "1.5.11",
+  "published_at": "2026-08-02",
   "patches": [
     {
-      "from_version": "1.5.09",
-      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.10/UltraTextureStudio-1.5.09-patch.zip",
-      "sha256": "009370474ccd37825bc4a0421508fd37f65c8821dcb61c7a4e650a7210461d54"
+      "from_version": "1.5.10",
+      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.11/UltraTextureStudio-1.5.10-patch.zip",
+      "sha256": "784049a2f10c82a2d978dd8e452da388b68c1a49dafa873cc39243f8c1dcc7d6"
     }
   ],
-  "version": "1.5.10",
-  "sha256": "a8fb335dc6ebf00e50bdf77d4a00cb821d450b02db0beb7ad43a1d6c62df4470",
-  "published_at": "2026-08-02",
-  "notes": "成本修正：25 格拼图固定单次直出，GUI 与 MCP 不再逐条调用生图 API。",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.10/UltraTextureStudio.exe",
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.10/UltraTextureStudio-Setup-1.5.10.exe",
-  "installer_sha256": "055aaab3c3769d118affbd56e107d4a546eb179d32a3ce7df3d6d17da5f5015d"
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.5.11/UltraTextureStudio.exe"
 }
