@@ -1,27 +1,21 @@
 {
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.6.0/UltraTextureStudio-Setup-1.6.0.exe",
+  "published_at": "2026-08-03",
+  "patches": [],
+  "version": "1.6.1",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.6.1/UltraTextureStudio.exe",
   "delivery": {
     "channel": "stable",
-    "latest_version": "1.6.0",
-    "emergency": false,
-    "bootstrap": true
+    "latest_version": "1.6.1",
+    "emergency": true,
+    "bootstrap": false
   },
-  "installer_sha256": "68c202f1dd40c02fe6cd3fc0b9e08bb8ed6b6d2e929899aa3384b0d37f019494",
-  "sha256": "4d54ff65d51319889ede78b6fc7e68c2e5e387aaa28dcc0bc293ef4d6cfba193",
-  "published_at": "2026-08-02",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.6.0/UltraTextureStudio.exe",
-  "patches": [
-    {
-      "from_version": "1.5.06",
-      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.6.0/UltraTextureStudio-1.5.06-patch.zip",
-      "sha256": "1b108fed917f1f1af4f7f6a05f66add8c9dace50b7ae3a5484dfcd145b35fcdc"
-    }
-  ],
-  "version": "1.6.0",
-  "notes": "修复 MCP 动态重配、MC 动态长贴图实时尺寸更新，并升级 OTA 验签与恢复能力。",
+  "notes": "修复 UltraTexture Studio MCP 在兼容图像中转站发生提前断流、分块响应截断和长图板读取超时的问题；5×5 图板改为串行受控生成并增强传输重试。",
+  "sha256": "7c289f0f0012ac6069cdd41ef59909bf99bfc9719bcb5fa1b060eb1f1aaea3ba",
+  "installer_sha256": "83b3f90b2ebacf2a1f0e0acabdda1d0eba4a23e4778c8bb2744a609b6ede625b",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.6.1/UltraTextureStudio-Setup-1.6.1.exe",
   "signature": {
     "algorithm": "ed25519",
     "key_id": "ultratexture-ed25519-2026-08-r2",
-    "value": "WqmnLkNKOx1dZkvmnJt4WHEs/khmnKwCYUUVs7M7aLdoDV8nhnfEDM1CHxKxsNVvRNcs265cu2qriWvzCjB9BQ=="
+    "value": "U3WC0a56j754pSLMeZTdMJ1WoK/4Tl7wSa0xS/aSyhVRWXyt3kdeoBZVngYb3zmTtmjPxqTMhNoI6mbfXKhIDA=="
   }
 }
