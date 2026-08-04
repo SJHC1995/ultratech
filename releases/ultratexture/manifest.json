@@ -1,21 +1,22 @@
 {
-  "published_at": "2026-08-03",
   "patches": [],
-  "version": "1.6.1",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.6.1/UltraTextureStudio.exe",
+  "sha256": "ba70db101a2665a38cc7284165eea594b34ffaa3df6893908d137c6cd9b43e9a",
+  "notes": "部署官方拓展包；未安装拓展不显示工作模式或策略入口，并修复 MCP 独立进程自愈与客户端重构。",
+  "published_at": "2026-08-04",
+  "installer_sha256": "44854ec4f4f3fe35985466a01141eba515b636b89c1c200e3b4f10474532e89b",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.0/UltraTextureStudio.exe",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.0/UltraTextureStudio-Setup-1.7.0.exe",
+  "version": "1.7.0",
   "delivery": {
     "channel": "stable",
-    "latest_version": "1.6.1",
-    "emergency": true,
-    "bootstrap": false
+    "latest_version": "1.7.0",
+    "emergency": false,
+    "bootstrap": false,
+    "global": true
   },
-  "notes": "修复 UltraTexture Studio MCP 在兼容图像中转站发生提前断流、分块响应截断和长图板读取超时的问题；5×5 图板改为串行受控生成并增强传输重试。",
-  "sha256": "7c289f0f0012ac6069cdd41ef59909bf99bfc9719bcb5fa1b060eb1f1aaea3ba",
-  "installer_sha256": "83b3f90b2ebacf2a1f0e0acabdda1d0eba4a23e4778c8bb2744a609b6ede625b",
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.6.1/UltraTextureStudio-Setup-1.6.1.exe",
   "signature": {
     "algorithm": "ed25519",
-    "key_id": "ultratexture-ed25519-2026-08-r2",
-    "value": "U3WC0a56j754pSLMeZTdMJ1WoK/4Tl7wSa0xS/aSyhVRWXyt3kdeoBZVngYb3zmTtmjPxqTMhNoI6mbfXKhIDA=="
+    "key_id": "ultratexture-ed25519-2026-08-r3",
+    "value": "eVJNM+3qOesUeUfgeJ7tIfXTZB3xyO9ko5Kxx9mddh9itNWOGRnTVn8MbrwFNaacmhOZ9RV4ylE5xVcXmz67BQ=="
   }
 }
