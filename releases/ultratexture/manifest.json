@@ -1,22 +1,22 @@
 {
-  "notes": "修复拓展安装后未即时启用的问题：安装、更新、导入完成后自动启用并刷新主窗口对应工作模式。",
+  "version": "1.7.3",
   "patches": [],
-  "installer_sha256": "cfa1fec5a787d2e74e0e04ff03a15547c11abc9d878713b9e07b0c49183a44f2",
-  "version": "1.7.2",
-  "sha256": "e48e1e1b6086c565a0f14587e7ae9dde79e12acaa58880a03c56e2bd32d40c4d",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.2/UltraTextureStudio.exe",
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.2/UltraTextureStudio-Setup-1.7.2.exe",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.3/UltraTextureStudio-Setup-1.7.3.exe",
   "published_at": "2026-08-04",
+  "sha256": "6175b8b2e53eee2e7e143a1cc60b4a83e508c5e4c24324b5ac009e06fa027196",
+  "installer_sha256": "fb33f4047ef2ef3343132277e824805de14cc2476c4d2f7517b20639b84335d5",
   "delivery": {
     "channel": "stable",
-    "latest_version": "1.7.2",
+    "latest_version": "1.7.3",
     "emergency": false,
     "bootstrap": false,
     "global": true
   },
+  "notes": "修复本地模板改色点击生成无响应：恢复拓展策略数据收集适配器，并覆盖按钮到后台渲染和预览写入的端到端验证。",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.3/UltraTextureStudio.exe",
   "signature": {
     "algorithm": "ed25519",
     "key_id": "ultratexture-ed25519-2026-08-r3",
-    "value": "GKvyy0FokuQ8GHYrXVbsLUIouyXOpG91BtaRy01XJ2x82dLQUPiKn3UyHwy9T9+uYAOqReWHLywQwBdlETmQDA=="
+    "value": "P5096hglKcg+hF9s+dmBitdeb+ujTgJahQezcq5OgMT604sBQNDI4/3993swpq3PuUgt0UCZ/LecBz1D9VZCBA=="
   }
 }
