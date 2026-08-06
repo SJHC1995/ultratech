@@ -1,28 +1,22 @@
 {
-  "notes": "优化全部设置页的信息层级与视觉布局：API、费用、清理、系统修复和拓展管理均更清晰紧凑；新增文件扫描列表、彩色状态标签与一键修复入口。",
-  "installer_sha256": "80bca12417b4ea147d59357bd42d4e71bb6a518866bd2f7dc84532a85b19e1a2",
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.405/UltraTextureStudio-Setup-1.7.405.exe",
-  "version": "1.7.405",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.405/UltraTextureStudio.exe",
-  "sha256": "f0db8792cdbe986e99915473be98215fd6049bbc068074c3d6f4ebdfdc80c47b",
   "delivery": {
     "channel": "stable",
-    "latest_version": "1.7.405",
+    "latest_version": "1.7.500",
     "emergency": false,
     "bootstrap": false,
     "global": true
   },
-  "patches": [
-    {
-      "from_version": "1.7.403",
-      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.405/UltraTextureStudio-1.7.403-patch.zip",
-      "sha256": "b288703abc3c24782b1ea23dbeb7bb40c723143f3d14198b44410c546ad22706"
-    }
-  ],
-  "published_at": "2026-08-05",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.500/UltraTextureStudio.exe",
+  "published_at": "2026-08-06",
+  "patches": [],
+  "notes": "智能消耗提醒与费用估算升级：本地学习图片生成和 MCP 流式文本的历史用量，按五项 20 分维度给出综合负载和余额建议。设置中新增提醒及匿名统计预留开关；当前版本不会上传任何使用数据。MCP 增加 get_smart_usage_advice 与 /billing/smart-advice。",
+  "installer_sha256": "30a0c3975174587ba0df87820399af70b1b452b7e4e07b3593d8ea8a8d4da146",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.500/UltraTextureStudio-Setup-1.7.500.exe",
+  "version": "1.7.500",
+  "sha256": "22e9d954c8733338923bf7571e5965241351d1b808fefebb4ad54bf9d5076b6b",
   "signature": {
     "algorithm": "ed25519",
     "key_id": "ultratexture-ed25519-2026-08-r3",
-    "value": "zfFKf4X9svulfi3IinIdRFiHEmOoBGK4LaBND9NSvAHSWQsxbPas5/Ttm50zwYvylyDPCsy7tCyLAEzbeLncBA=="
+    "value": "slypwCBkzNjGsnRmJopCLaiZW6xapHALqEuQQ7TlCBYiEtQuvbZ82fTIzmr6Q1Aax5WDHvpPGr3ksCt48CYADg=="
   }
 }
