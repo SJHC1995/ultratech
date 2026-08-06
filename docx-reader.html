@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="UltraTexture Studio 产品说明书在线阅读">
+  <title>UltraTexture Studio 产品说明书</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./site-nav.css">
+  <link rel="stylesheet" href="./docx-reader.css?v=20260806-1">
+</head>
+<body class="docx-reader-page">
+  <header class="site-header"></header>
+  <main class="docx-reader-main">
+    <section class="docx-reader-hero">
+      <div>
+        <p class="eyebrow">Product Manual</p>
+        <h1 id="readerTitle">UltraTexture Studio 产品说明书</h1>
+        <p id="readerDescription">保留 Word 原始分页、表格、图片和版式的在线阅读器。</p>
+      </div>
+      <div class="docx-reader-actions">
+        <a id="docxDownload" class="link-button primary" href="./downloads/documents/UltraTextureStudio_v1.7.408_产品说明书.docx" download>下载 DOCX</a>
+        <button id="docxPrint" class="link-button" type="button">打印 / 另存为 PDF</button>
+        <a class="link-button" href="./tool.html">返回工具页</a>
+      </div>
+    </section>
+
+    <section class="docx-reader-notice" aria-live="polite">
+      <span id="readerStatus">正在加载 Word 文档并保留原始排版…</span>
+    </section>
+
+    <section class="docx-reader-stage" aria-label="Word 文档阅读区">
+      <article id="docxViewer" class="docx-viewer">
+        <p class="docx-loading">正在读取 DOCX…</p>
+      </article>
+    </section>
+  </main>
+  <footer>
+    <span>UltraTech Static Blog</span>
+    <a class="button" href="./tool.html">UltraTexture Studio</a>
+  </footer>
+
+  <script src="./vendor/jszip-3.10.1.min.js"></script>
+  <script src="./vendor/docx-preview-0.1.15.min.js"></script>
+  <script src="./docx-reader.js?v=20260806-1"></script>
+  <script src="./site-nav.js"></script>
+</body>
+</html>

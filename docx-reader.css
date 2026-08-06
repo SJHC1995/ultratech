@@ -1,0 +1,154 @@
+.docx-reader-page {
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, rgba(4, 8, 14, .92), rgba(5, 10, 17, .98)),
+    url("./assets/ultratech_promo_base.png") top center / cover fixed no-repeat,
+    var(--bg);
+}
+
+.docx-reader-main {
+  width: min(1380px, calc(100% - 32px));
+  margin: 0 auto 64px;
+}
+
+.docx-reader-hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 34px 0 14px;
+  padding: 26px 30px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(14, 29, 45, .94), rgba(8, 14, 22, .96));
+  box-shadow: 0 22px 52px rgba(0, 0, 0, .28);
+}
+
+.docx-reader-hero .eyebrow {
+  margin: 0 0 6px;
+}
+
+.docx-reader-hero h1 {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(28px, 4vw, 42px);
+}
+
+.docx-reader-hero p:not(.eyebrow) {
+  max-width: 700px;
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.docx-reader-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.docx-reader-actions .link-button {
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.docx-reader-notice {
+  display: flex;
+  align-items: center;
+  min-height: 46px;
+  margin-bottom: 14px;
+  padding: 0 16px;
+  border: 1px solid rgba(88, 216, 255, .28);
+  border-radius: 8px;
+  background: rgba(8, 27, 42, .66);
+  color: #b9d6e8;
+  font-size: 14px;
+}
+
+.docx-reader-stage {
+  min-height: 560px;
+  padding: 28px;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background:
+    linear-gradient(45deg, rgba(255, 255, 255, .025) 25%, transparent 25%) 0 0 / 18px 18px,
+    linear-gradient(-45deg, rgba(255, 255, 255, .025) 25%, transparent 25%) 0 0 / 18px 18px,
+    #0a1119;
+  box-shadow: 0 22px 56px rgba(0, 0, 0, .34);
+}
+
+.docx-viewer .docx-wrapper {
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+.docx-viewer .docx {
+  margin: 0 auto 28px !important;
+  box-shadow: 0 14px 42px rgba(0, 0, 0, .42);
+}
+
+.docx-loading,
+.docx-error {
+  margin: 0;
+  padding: 28px;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.docx-error {
+  color: #ffb7c2;
+}
+
+@media (max-width: 760px) {
+  .docx-reader-main {
+    width: min(100% - 20px, 1380px);
+  }
+
+  .docx-reader-hero {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 22px;
+  }
+
+  .docx-reader-actions {
+    justify-content: flex-start;
+  }
+
+  .docx-reader-stage {
+    padding: 12px;
+  }
+
+  .docx-viewer .docx {
+    transform-origin: top left;
+  }
+}
+
+@media print {
+  .site-header,
+  .docx-reader-hero,
+  .docx-reader-notice,
+  footer {
+    display: none !important;
+  }
+
+  .docx-reader-main,
+  .docx-reader-stage {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    border: 0;
+    box-shadow: none;
+    background: #fff;
+  }
+
+  .docx-viewer .docx {
+    margin: 0 auto !important;
+    box-shadow: none;
+  }
+}
