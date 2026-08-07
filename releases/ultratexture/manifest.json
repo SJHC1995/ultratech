@@ -1,22 +1,22 @@
 {
+  "version": "1.7.601",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.601/UltraTextureStudio.exe",
+  "sha256": "2c76367bf9de3fdfcbb3c9982764301ee54ade37c8681e11e719c37c674087bb",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.601/UltraTextureStudio-Setup-1.7.601.exe",
+  "installer_sha256": "696429644a9d58ab58e1b4d48325472b2374fc24d90d1256b7f8f913b2e45d74",
+  "notes": "精简实时账户区域：移除重复的今日合计条，钱包、订阅与可选合计统一显示在同一账户卡中；修复负额度展示与实时刷新。",
+  "published_at": "2026-08-07",
+  "patches": [],
   "delivery": {
     "channel": "stable",
-    "latest_version": "1.7.500",
+    "latest_version": "1.7.601",
     "emergency": false,
     "bootstrap": false,
     "global": true
   },
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.500/UltraTextureStudio.exe",
-  "published_at": "2026-08-06",
-  "patches": [],
-  "notes": "智能消耗提醒与费用估算升级：本地学习图片生成和 MCP 流式文本的历史用量，按五项 20 分维度给出综合负载和余额建议。设置中新增提醒及匿名统计预留开关；当前版本不会上传任何使用数据。MCP 增加 get_smart_usage_advice 与 /billing/smart-advice。",
-  "installer_sha256": "30a0c3975174587ba0df87820399af70b1b452b7e4e07b3593d8ea8a8d4da146",
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.500/UltraTextureStudio-Setup-1.7.500.exe",
-  "version": "1.7.500",
-  "sha256": "22e9d954c8733338923bf7571e5965241351d1b808fefebb4ad54bf9d5076b6b",
   "signature": {
     "algorithm": "ed25519",
     "key_id": "ultratexture-ed25519-2026-08-r3",
-    "value": "slypwCBkzNjGsnRmJopCLaiZW6xapHALqEuQQ7TlCBYiEtQuvbZ82fTIzmr6Q1Aax5WDHvpPGr3ksCt48CYADg=="
+    "value": "mj545HaNH4F694hTPEYbP3B9CQXwkwxmjQguyIsk2yS+MaB20kjDEl8D/kx0ZS7/T/9GSeIdOGtLUMIvpHvLAw=="
   }
 }
