@@ -1,22 +1,28 @@
 {
-  "version": "1.7.601",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.601/UltraTextureStudio.exe",
-  "sha256": "2c76367bf9de3fdfcbb3c9982764301ee54ade37c8681e11e719c37c674087bb",
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.601/UltraTextureStudio-Setup-1.7.601.exe",
-  "installer_sha256": "696429644a9d58ab58e1b4d48325472b2374fc24d90d1256b7f8f913b2e45d74",
-  "notes": "精简实时账户区域：移除重复的今日合计条，钱包、订阅与可选合计统一显示在同一账户卡中；修复负额度展示与实时刷新。",
-  "published_at": "2026-08-07",
-  "patches": [],
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.707/UltraTextureStudio-Setup-1.7.707.exe",
+  "sha256": "065373db570bc9a88741757800a21ab0da0cd91b2697e28c73945248328d041f",
+  "notes": "OTA 稳定性升级：断点续传会校验下载会话和来源标识；新增安装事务恢复、受限审计日志、补丁完整性验证与自动回退。新增历史总花费估算与生成时长数据库。",
   "delivery": {
     "channel": "stable",
-    "latest_version": "1.7.601",
+    "latest_version": "1.7.707",
     "emergency": false,
     "bootstrap": false,
     "global": true
   },
+  "version": "1.7.707",
+  "installer_sha256": "40c3ec5c46f4c335fe1f47cc057bd0f95bd4a4a00329cc5d5c78b512a97e8764",
+  "patches": [
+    {
+      "from_version": "1.7.706",
+      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.707/UltraTextureStudio-1.7.706-patch.zip",
+      "sha256": "e3b2514dbd6a927e69421b806767922aba94e325832e4790a3f10893f05daf0e"
+    }
+  ],
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.707/UltraTextureStudio.exe",
+  "published_at": "2026-08-12",
   "signature": {
     "algorithm": "ed25519",
     "key_id": "ultratexture-ed25519-2026-08-r3",
-    "value": "mj545HaNH4F694hTPEYbP3B9CQXwkwxmjQguyIsk2yS+MaB20kjDEl8D/kx0ZS7/T/9GSeIdOGtLUMIvpHvLAw=="
+    "value": "+Xr6yAsD4sd2HN5BthvAK0FveM9yzmKYpqRZgjPJ6X543+maRH09gjHSP1oDWglRTlGBaeRltK3Zu92R0dAwBA=="
   }
 }
