@@ -1,27 +1,27 @@
 {
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.707/UltraTextureStudio-Setup-1.7.707.exe",
-  "sha256": "065373db570bc9a88741757800a21ab0da0cd91b2697e28c73945248328d041f",
-  "notes": "OTA 稳定性升级：断点续传会校验下载会话和来源标识；新增安装事务恢复、受限审计日志、补丁完整性验证与自动回退。新增历史总花费估算与生成时长数据库。",
+  "published_at": "2026-08-12",
+  "sha256": "f5a91484541c0a89b2225f55c3d3aa6fdce5de597de51045a0a1f5b615a91632",
+  "notes": "完整安装包 OTA 自动安装：已确认更新后不再显示 Setup 向导，自动启用桌面快捷方式、Codex MCP、旧版本清理、旧版扫描，并保留 .cache 历史预览缓存。",
   "delivery": {
     "channel": "priority",
-    "latest_version": "1.7.707",
+    "latest_version": "1.7.708",
     "emergency": false,
     "bootstrap": false
   },
-  "version": "1.7.707",
-  "installer_sha256": "40c3ec5c46f4c335fe1f47cc057bd0f95bd4a4a00329cc5d5c78b512a97e8764",
+  "version": "1.7.708",
+  "installer_sha256": "e69e56c7ddcedf3995a3e5f990ac74c4b9cbc8312856e430eee7a1404457538f",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.708/UltraTextureStudio.exe",
   "patches": [
     {
-      "from_version": "1.7.706",
-      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.707/UltraTextureStudio-1.7.706-patch.zip",
-      "sha256": "e3b2514dbd6a927e69421b806767922aba94e325832e4790a3f10893f05daf0e"
+      "from_version": "1.7.707",
+      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.708/UltraTextureStudio-1.7.707-patch.zip",
+      "sha256": "10feb2f54b6f1630dd73cbb7aadbc6ea9129a56a53162a57d254abad547646d7"
     }
   ],
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.707/UltraTextureStudio.exe",
-  "published_at": "2026-08-12",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.708/UltraTextureStudio-Setup-1.7.708.exe",
   "signature": {
     "algorithm": "ed25519",
     "key_id": "ultratexture-ed25519-2026-08-r3",
-    "value": "z0huMGUn4w2I1pGBr0RCxYvACIYlGDb5h7vudZE+c1OgmLVD6+sywTK/a7UHfLeMF1MBJWUhKqRRYrgYB4x4BA=="
+    "value": "ZZTndUelWnQOYln+h8ZtQKuFkqtu6Vc/qlz/3egg2V+xuHUhOiVmrMQ5gbkGH92mh3OY3RUcefQocNdUPr6HAg=="
   }
 }
