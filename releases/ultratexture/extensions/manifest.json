@@ -1,4 +1,5 @@
 {
+  "format_version": 1,
   "extensions": [
     {
       "id": "business_promotion",
@@ -8,7 +9,7 @@
         "v1.0.0：合并海报设计和创意需求单工作流。",
         "拓展设置、版本和更新日志均可在应用内查看。"
       ],
-      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.711/business_promotion-v1.0.0.zip",
+      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.712/business_promotion-v1.0.0.zip",
       "sha256": "31035872b41315bd01ce2481e30979ba25b5e37f5a6ec070d2809a8418018d6c"
     },
     {
@@ -19,7 +20,7 @@
         "v1.0.0：提供自由模式工作流。",
         "扩展包可独立启用、禁用、导入和更新。"
       ],
-      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.711/free_mode-v1.0.0.zip",
+      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.712/free_mode-v1.0.0.zip",
       "sha256": "0b9cdddea315f7594cfe28d324e0dba2613da891a97aff8bec81d1d89f76508d"
     },
     {
@@ -30,14 +31,13 @@
         "v1.0.0：合并 MC 纹理、批量拼图、MC GUI 与本地模板改色。",
         "完整原版 item/block 贴图库由用户本地导入，不上传、不写入 Setup 安装包。"
       ],
-      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.711/minecraft_texture-v1.0.0.zip",
+      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.712/minecraft_texture-v1.0.0.zip",
       "sha256": "0bbf8acd1f2fad5340fa1ec31384fc0da88a3290c52b1eb7c53e4cba76e9e90a"
     }
   ],
-  "format_version": 1,
   "signature": {
     "algorithm": "ed25519",
     "key_id": "ultratexture-ed25519-2026-08-r3",
-    "value": "CuMsAkIjPL4QGiWBckVSISJMIKRsT7DO0wyZt2PC9S712wsJt+wS/RsStlHTcYkhz8C/Nc2xTNRqa9hFo5zwCw=="
+    "value": "E05hNWtAYgwVxWRu1KZ/IJjft2J/0Npf6f/dqg7SdGkIvxeORd0tiAJ+xHJGsz9DPV0JPYZMSv8a14IXTEmWAw=="
   }
 }

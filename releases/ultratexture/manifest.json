@@ -1,22 +1,22 @@
 {
-  "notes": "订阅到期状态优化、历史记录紧凑展示、设置页高级项折叠，并在自动更新完成后主动提示。",
-  "installer_sha256": "e2efad2b8dc354ecacc048cd18eebc4d8cad119df5f16f3198e07de985998b8b",
-  "version": "1.7.711",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.711/UltraTextureStudio.exe",
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.711/UltraTextureStudio-Setup-1.7.711.exe",
-  "sha256": "2ca43b5682b9b4ddccaa3b9db6751f1fc8e88048376c6266cede1d3e7f78c063",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.712/UltraTextureStudio-Setup-1.7.712.exe",
+  "installer_sha256": "879c172c1771962f295578deda3122f984257c339743e24ac630569163afc0e5",
   "published_at": "2026-08-13",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.712/UltraTextureStudio.exe",
+  "patches": [],
   "delivery": {
     "channel": "stable",
-    "latest_version": "1.7.711",
+    "latest_version": "1.7.712",
     "emergency": false,
     "bootstrap": false,
     "global": true
   },
-  "patches": [],
+  "notes": "MCP 独立桥接进程命名与后台优先级优化，降低后台 Agent/MCP 工作对主界面响应的影响。",
+  "sha256": "d90ca99d84a0a0d11f27eb4b6943cb2db7473266a4e6a3c0692b533cb0dea86d",
+  "version": "1.7.712",
   "signature": {
     "algorithm": "ed25519",
     "key_id": "ultratexture-ed25519-2026-08-r3",
-    "value": "x2k7vUzQ6+UkoMtpv9WUqrisNpKCRWdzk4+CQE28z5hclP7PpOn3RfELOnxbktrxqqRtxApvYYAU+0vMCqmyCw=="
+    "value": "ql1ELxLgasaA5T9tza0/54dVnmz/FCwCVzSxIhugVJfJ6cgjfrLdO5u/dwe76s5Lo2BymS3OllchKTHGJqHFCA=="
   }
 }
