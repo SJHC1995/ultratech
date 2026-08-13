@@ -1,28 +1,22 @@
 {
-  "patches": [
-    {
-      "from_version": "1.7.708",
-      "url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.709/UltraTextureStudio-1.7.708-patch.zip",
-      "sha256": "80af44b2e51a77ab3eafff05e4b947a160c7701abe97f1a52da037bc8d8248c0"
-    }
-  ],
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.709/UltraTextureStudio.exe",
-  "installer_sha256": "79d758dc91397f5a8d6218a5e5b2cec2b8a9e9585111c7fb7abd3a4f6866de06",
+  "notes": "订阅到期状态优化、历史记录紧凑展示、设置页高级项折叠，并在自动更新完成后主动提示。",
+  "installer_sha256": "e2efad2b8dc354ecacc048cd18eebc4d8cad119df5f16f3198e07de985998b8b",
+  "version": "1.7.711",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.711/UltraTextureStudio.exe",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.711/UltraTextureStudio-Setup-1.7.711.exe",
+  "sha256": "2ca43b5682b9b4ddccaa3b9db6751f1fc8e88048376c6266cede1d3e7f78c063",
+  "published_at": "2026-08-13",
   "delivery": {
     "channel": "stable",
-    "latest_version": "1.7.709",
+    "latest_version": "1.7.711",
     "emergency": false,
     "bootstrap": false,
     "global": true
   },
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.709/UltraTextureStudio-Setup-1.7.709.exe",
-  "notes": "前台挂机稳定性修复：历史刷新改为后台批量回执读取，前台无人操作会自动进入低唤醒轮询档；新增订阅充值时间与30/31天到期推算，订阅接口未提供额度且本地到期后明确提示已过期并不再计入余额。完整 OTA 继续自动安装并保留 .cache。",
-  "published_at": "2026-08-13",
-  "version": "1.7.709",
-  "sha256": "ff6c4daedea6a7e81ad6a7b00d9742bc486694b10fe8e36f1d95eed9f0bb252c",
+  "patches": [],
   "signature": {
     "algorithm": "ed25519",
     "key_id": "ultratexture-ed25519-2026-08-r3",
-    "value": "a/BC1vFaJEzm4s8mRdbBxCY2VcObaS3thTfesk1RNrsrhZoRpmN42P2w4P42qrP0rVn02xsjpLBX4HNJUHZ1DA=="
+    "value": "x2k7vUzQ6+UkoMtpv9WUqrisNpKCRWdzk4+CQE28z5hclP7PpOn3RfELOnxbktrxqqRtxApvYYAU+0vMCqmyCw=="
   }
 }
