@@ -1,19 +1,19 @@
 {
+  "installer_sha256": "958c700f3c6a585d805d0f838d02080a260495269fe49bfbafff5ef923dcee39",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.2.4/DeepSeek-Harness-Client-1.2.4-Portable.exe",
   "delivery": {
     "channel": "stable",
-    "latest_version": "1.2.3",
+    "latest_version": "1.2.4",
     "global": true
   },
-  "sha256": "52342a2abfa72f3f36d4663015685ae0c4ec14657dc228f9b318b57e9a43db77",
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.2.3/DeepSeek-Harness-Client-Setup-1.2.3.exe",
-  "notes": "修复兼容便携 EXE 的 OTA 交接：关闭主界面后等待旧进程退出、原子替换 EXE、自动重启并确认新版本启动。",
-  "installer_sha256": "d491e85e294571297eb2119757e9847aa3ca50371740842c7b96c790fcfccec9",
-  "version": "1.2.3",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.2.3/DeepSeek-Harness-Client-1.2.3-Portable.exe",
+  "version": "1.2.4",
   "published_at": "2026-08-14",
+  "notes": "隐藏工作区标题并强化空间层级；使用主题自适应图标；紧凑化更新状态；余额启动即查、回到前台即查；新增首次使用引导与实时网页主题/语言同步。",
+  "sha256": "2c6341ef895e7bc6006c0926e17bfa1fb6d896d1657f9d57d2f3b33fa8147fe4",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.2.4/DeepSeek-Harness-Client-Setup-1.2.4.exe",
   "signature": {
     "algorithm": "ed25519",
     "key_id": "ultratexture-ed25519-2026-08-r3",
-    "value": "1G/G4b95SayRI8DP6XRG4DO9zfw14B26Dl8B6DnGpAj54fsxWivVBPGqxrKBimSk2CPcESABIHKjDsH2ZYNSDg=="
+    "value": "vmlWahgSDMo8h6yJDWaJqC+/UE7yAV0CUrJvDc23ntZ3h5uAAajYVh2R3W4kpDZst6w0mVcYw5c8yU9xrXCqDw=="
   }
 }
