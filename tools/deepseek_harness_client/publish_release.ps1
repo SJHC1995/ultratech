@@ -95,7 +95,7 @@ if ($LASTEXITCODE -ne 0) { throw "GitHub Release 发布失败。" }
 $manifestPath = Join-Path $PagesWorktree "releases\deepseek-harness-client\manifest.json"
 New-Item -ItemType Directory -Force -Path (Split-Path -Parent $manifestPath) | Out-Null
 $manifest | ConvertTo-Json -Depth 8 | Set-Content -LiteralPath $manifestPath -Encoding utf8
-& git -C $PagesWorktree add -- releases/deepseek-harness-client/manifest.json
+& git -C $PagesWorktree add --sparse -- releases/deepseek-harness-client/manifest.json
 if ($LASTEXITCODE -ne 0) { throw "暂存 DeepSeek OTA 清单失败。" }
 if ((& git -C $PagesWorktree status --short)) {
   & git -C $PagesWorktree commit -m "feat: publish DeepSeek Harness Client v$Version"
@@ -108,3 +108,4 @@ Write-Output "发布完成：$tag"
 Write-Output "安装版：$setupPath"
 Write-Output "兼容 EXE：$portablePath"
 Write-Output "OTA 清单：$manifestPath"
+
