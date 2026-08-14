@@ -1,19 +1,19 @@
 {
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.2.7/DeepSeek-Harness-Client-1.2.7-Portable.exe",
+  "sha256": "7f8b43c5cd306b4591d47f37eb27d764e8122329d3f6e17c90dc8265f99c7160",
   "delivery": {
     "channel": "stable",
-    "latest_version": "1.2.5",
+    "latest_version": "1.2.7",
     "global": true
   },
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.2.5/DeepSeek-Harness-Client-1.2.5-Portable.exe",
-  "installer_sha256": "aac055717446c11aec950ea7f326a31fb8e110f82a009fd3a882933480676c24",
-  "notes": "修复自动安装交接：改用 Windows 计划任务启动独立更新程序，避免主程序退出后更新脚本被终止；隐藏工作区更新卡片，当前版本改为官网清单动态读取。",
-  "sha256": "c68ad5c2536760dc7e574488aacba6386b56e897a37df053cef389618cb3bd76",
-  "version": "1.2.5",
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.2.5/DeepSeek-Harness-Client-Setup-1.2.5.exe",
+  "version": "1.2.7",
   "published_at": "2026-08-14",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.2.7/DeepSeek-Harness-Client-Setup-1.2.7.exe",
+  "notes": "软件内运行环境自举：未检测到 Node.js/npx 时通过 winget 自动安装 Node.js LTS；随后自动下载并启动 DeepSeek Harness DSH Web。",
+  "installer_sha256": "04747cd94ec015056772dceed6e2893346e904124c586eeed0d39b40dd63ffe4",
   "signature": {
     "algorithm": "ed25519",
     "key_id": "ultratexture-ed25519-2026-08-r3",
-    "value": "vaVykmTDw8ErAsb8m1eeXGGAnQrCqynJvCJqPZd7SA+cFtOxy1GPDtSdes+B2UOqo77qY+09ab07xnFvx7Y6Aw=="
+    "value": "LvhfrBnSjc/zk2XfJr0Xj8Ek1pLVfyqizOZPSMPOEnmCMTaGNlGYnnV188SFPljcLYH2So5tRmms3AZERziWAQ=="
   }
 }
