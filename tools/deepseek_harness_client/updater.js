@@ -93,19 +93,28 @@ function isNewer(candidate, current) {
 
 function validateManifest(manifest, currentVersion) {
   verifyManifest(manifest);
-  const url = new URL(String(manifest.installer_url || ''));
-  if (url.protocol !== 'https:' || url.hostname !== 'github.com') {
+  const installerUrl = new URL(String(manifest.installer_url || ''));
+  const portableUrl = new URL(String(manifest.download_url || ''));
+  if (installerUrl.protocol !== 'https:' || installerUrl.hostname !== 'github.com') {
     throw new Error('更新安装包地址不在官方 GitHub 发布渠道，已拒绝下载。');
   }
-  const hash = String(manifest.installer_sha256 || '').toLowerCase();
-  if (!/^[a-f0-9]{64}$/.test(hash)) throw new Error('更新清单缺少有效 SHA-256 校验值。');
+  if (portableUrl.protocol !== 'https:' || portableUrl.hostname !== 'github.com') {
+    throw new Error('兼容便携 EXE 地址不在官方 GitHub 发布渠道，已拒绝下载。');
+  }
+  const installerSha256 = String(manifest.installer_sha256 || '').toLowerCase();
+  const portableSha256 = String(manifest.sha256 || '').toLowerCase();
+  if (!/^[a-f0-9]{64}$/.test(installerSha256) || !/^[a-f0-9]{64}$/.test(portableSha256)) {
+    throw new Error('更新清单缺少有效 SHA-256 校验值。');
+  }
   const version = String(manifest.version || '').trim();
   versionParts(version);
   return {
     available: isNewer(version, currentVersion),
     version,
-    installerUrl: url.toString(),
-    installerSha256: hash,
+    installerUrl: installerUrl.toString(),
+    installerSha256,
+    portableUrl: portableUrl.toString(),
+    portableSha256,
     notes: String(manifest.notes || '').trim(),
     publishedAt: String(manifest.published_at || '').trim(),
   };
@@ -171,6 +180,14 @@ class DeepSeekUpdater {
     this.pending = null;
   }
 
+  isPortable() {
+    return Boolean(process.env.PORTABLE_EXECUTABLE_FILE);
+  }
+
+  deliveryLabel() {
+    return this.isPortable() ? '兼容便携 EXE' : '安装版';
+  }
+
   report(state, detail, percent = 0, extra = {}) {
     this.notify({ state, detail, percent: Math.max(0, Math.min(100, Math.round(percent))), ...extra });
   }
@@ -194,17 +211,25 @@ class DeepSeekUpdater {
 
   async download(info) {
     const updates = updateDirectory(this.app);
-    const target = path.join(updates, `DeepSeek-Harness-Client-Setup-${info.version}.exe`);
+    const portable = this.isPortable();
+    const target = path.join(
+      updates,
+      portable
+        ? `DeepSeek-Harness-Client-${info.version}-Portable.exe`
+        : `DeepSeek-Harness-Client-Setup-${info.version}.exe`,
+    );
     const partial = `${target}.part`;
+    const downloadUrl = portable ? info.portableUrl : info.installerUrl;
+    const expectedSha256 = portable ? info.portableSha256 : info.installerSha256;
     if (fs.existsSync(target)) {
       const existing = crypto.createHash('sha256').update(fs.readFileSync(target)).digest('hex');
-      if (existing === info.installerSha256) return target;
+      if (existing === expectedSha256) return target;
       fs.rmSync(target, { force: true });
     }
     fs.rmSync(partial, { force: true });
-    this.report('downloading_update', `正在下载 v${info.version} 安装包…`, 0, { update: info });
+    this.report('downloading_update', `正在下载 v${info.version} ${this.deliveryLabel()}…`, 0, { update: info });
 
-    await requestUrl(info.installerUrl, (response, finalUrl) => new Promise((resolve, reject) => {
+    await requestUrl(downloadUrl, (response, finalUrl) => new Promise((resolve, reject) => {
       const final = new URL(finalUrl);
       if (final.protocol !== 'https:' || !isOfficialDownloadHost(final.hostname)) {
         response.resume();
@@ -229,13 +254,13 @@ class DeepSeekUpdater {
         received += chunk.length;
         hash.update(chunk);
         const percent = total ? (received / total) * 88 : 0;
-        this.report('downloading_update', `正在下载 v${info.version} 安装包…`, percent, { update: info });
+        this.report('downloading_update', `正在下载 v${info.version} ${this.deliveryLabel()}…`, percent, { update: info });
       });
       response.on('error', reject);
       output.on('error', reject);
       output.on('finish', () => {
         const actual = hash.digest('hex');
-        if (actual !== info.installerSha256) {
+        if (actual !== expectedSha256) {
           fs.rmSync(partial, { force: true });
           reject(new Error('安装包 SHA-256 校验失败，已删除不可信文件。'));
           return;
@@ -249,23 +274,30 @@ class DeepSeekUpdater {
     return target;
   }
 
-  install(info, installer) {
+  install(info, payload) {
     const updates = updateDirectory(this.app);
     const transactionId = crypto.randomBytes(16).toString('hex');
     const pendingPath = path.join(updates, 'pending-startup.json');
     const ackPath = path.join(updates, `startup-ack-${transactionId}.json`);
     const resultPath = path.join(updates, 'last-update-result.json');
     const scriptPath = path.join(updates, `install-${Date.now()}.ps1`);
+    const portable = this.isPortable();
+    const currentExecutable = portable
+      ? (process.env.PORTABLE_EXECUTABLE_FILE || this.app.getPath('exe'))
+      : process.execPath;
     atomicJsonWrite(pendingPath, {
       transaction_id: transactionId,
       target_version: info.version,
+      delivery: portable ? 'portable' : 'installer',
       created_at: Math.floor(Date.now() / 1000),
     });
 
     const quote = (value) => String(value).replace(/'/g, "''");
     const script = `$ErrorActionPreference = 'SilentlyContinue'
-$installer = '${quote(installer)}'
-$current = '${quote(process.execPath)}'
+$payload = '${quote(payload)}'
+$current = '${quote(currentExecutable)}'
+$parentPid = ${process.pid}
+$portable = ${portable ? '$true' : '$false'}
 $ack = '${quote(ackPath)}'
 $pending = '${quote(pendingPath)}'
 $result = '${quote(resultPath)}'
@@ -276,17 +308,34 @@ function Write-Result([string] $status, [string] $detail) {
   @{ status = $status; detail = $detail; target_version = $targetVersion; transaction_id = $transaction; timestamp = [DateTimeOffset]::UtcNow.ToUnixTimeSeconds() } | ConvertTo-Json -Compress | Set-Content -LiteralPath $tmp -Encoding utf8
   Move-Item -LiteralPath $tmp -Destination $result -Force
 }
-Start-Sleep -Milliseconds 600
-if (-not (Test-Path -LiteralPath $installer)) {
-  Write-Result 'failed' 'installer_missing'
+Start-Sleep -Milliseconds 700
+try { Wait-Process -Id $parentPid -Timeout 45 -ErrorAction Stop } catch {}
+if (-not (Test-Path -LiteralPath $payload)) {
+  Write-Result 'failed' 'update_payload_missing'
   if (Test-Path -LiteralPath $current) { Start-Process -FilePath $current | Out-Null }
   exit 2
 }
-$setup = Start-Process -FilePath $installer -ArgumentList @('/S') -Wait -PassThru
-if ($setup.ExitCode -ne 0) {
-  Write-Result 'failed' "installer_exit_$($setup.ExitCode)"
-  if (Test-Path -LiteralPath $current) { Start-Process -FilePath $current | Out-Null }
-  exit $setup.ExitCode
+if ($portable) {
+  $backup = "$current.previous"
+  try {
+    Remove-Item -LiteralPath $backup -Force -ErrorAction SilentlyContinue
+    Move-Item -LiteralPath $current -Destination $backup -Force
+    Move-Item -LiteralPath $payload -Destination $current -Force
+  } catch {
+    if ((-not (Test-Path -LiteralPath $current)) -and (Test-Path -LiteralPath $backup)) {
+      Move-Item -LiteralPath $backup -Destination $current -Force
+    }
+    Write-Result 'failed' 'portable_replace_failed'
+    if (Test-Path -LiteralPath $current) { Start-Process -FilePath $current | Out-Null }
+    exit 3
+  }
+} else {
+  $setup = Start-Process -FilePath $payload -ArgumentList @('/S') -Wait -PassThru
+  if ($setup.ExitCode -ne 0) {
+    Write-Result 'failed' "installer_exit_$($setup.ExitCode)"
+    if (Test-Path -LiteralPath $current) { Start-Process -FilePath $current | Out-Null }
+    exit $setup.ExitCode
+  }
 }
 if (Test-Path -LiteralPath $current) { Start-Process -FilePath $current | Out-Null }
 $deadline = [DateTime]::UtcNow.AddSeconds(${ACK_TIMEOUT_SECONDS})
@@ -302,6 +351,9 @@ while (([DateTime]::UtcNow -lt $deadline) -and (-not $acknowledged)) {
 }
 if ($acknowledged) {
   Write-Result 'success' 'startup_acknowledged'
+  if ($portable -and (Test-Path -LiteralPath "$current.previous")) {
+    Remove-Item -LiteralPath "$current.previous" -Force -ErrorAction SilentlyContinue
+  }
 } else {
   Write-Result 'failed' 'startup_ack_timeout'
 }

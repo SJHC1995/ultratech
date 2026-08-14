@@ -411,7 +411,12 @@ ipcMain.handle('install-update', async (_event, info) => {
   }
   const installer = await updater.download(updater.pending);
   updater.install(updater.pending, installer);
-  setTimeout(() => app.quit(), 450);
+  // Keep the hand-off state visible briefly, then force a clean exit so the
+  // external updater can reliably replace the running EXE before relaunching.
+  setTimeout(() => {
+    stopBackend();
+    app.exit(0);
+  }, 1_200);
   return { accepted: true };
 });
 ipcMain.handle('get-previous-update-result', () => updater.consumeResult());
