@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const http = require('http');
 const https = require('https');
-const { spawn } = require('child_process');
+const { spawn, spawnSync } = require('child_process');
 const { DeepSeekUpdater } = require('./updater');
 
 const SERVICE_HOST = '127.0.0.1';
@@ -16,6 +16,7 @@ const STARTUP_TIMEOUT_MS = 45_000;
 let mainWindow;
 let dshProcess;
 let startPromise;
+let nodeInstallPromise;
 let serviceLog = '';
 let updater;
 const service = {
@@ -25,6 +26,7 @@ const service = {
   startedByClient: false,
   lastCheckedAt: 0,
   lastError: '',
+  runtimePrepared: false,
 };
 
 const settingsPath = () => path.join(app.getPath('userData'), 'settings.json');
@@ -115,6 +117,96 @@ function appendServiceLog(line) {
   }
 }
 
+function findCommand(command, candidates = []) {
+  const resolvedCandidates = candidates.filter((candidate) => candidate && fs.existsSync(candidate));
+  if (resolvedCandidates.length) return resolvedCandidates[0];
+  if (process.platform !== 'win32') return command;
+  const result = spawnSync('where.exe', [command], {
+    encoding: 'utf8',
+    windowsHide: true,
+    stdio: ['ignore', 'pipe', 'ignore'],
+  });
+  if (result.status === 0) {
+    const match = String(result.stdout || '').split(/\r?\n/).map((item) => item.trim()).find(Boolean);
+    if (match) return match;
+  }
+  return '';
+}
+
+function findNpxCommand() {
+  return findCommand(process.platform === 'win32' ? 'npx.cmd' : 'npx', [
+    path.join(process.env.LOCALAPPDATA || '', 'Programs', 'nodejs', 'npx.cmd'),
+    path.join(process.env.ProgramFiles || '', 'nodejs', 'npx.cmd'),
+    path.join(process.env['ProgramFiles(x86)'] || '', 'nodejs', 'npx.cmd'),
+  ]);
+}
+
+function findWingetCommand() {
+  return findCommand('winget.exe', [
+    path.join(process.env.LOCALAPPDATA || '', 'Microsoft', 'WindowsApps', 'winget.exe'),
+  ]);
+}
+
+function runCommand(executable, args, timeoutMs = 10 * 60_000) {
+  return new Promise((resolve, reject) => {
+    let output = '';
+    const child = spawn(executable, args, {
+      windowsHide: true,
+      stdio: ['ignore', 'pipe', 'pipe'],
+    });
+    const timer = setTimeout(() => {
+      child.kill();
+      reject(new Error('命令执行超时。'));
+    }, timeoutMs);
+    const capture = (chunk) => {
+      output = (output + String(chunk)).slice(-8_000);
+    };
+    child.stdout?.on('data', capture);
+    child.stderr?.on('data', capture);
+    child.once('error', (error) => {
+      clearTimeout(timer);
+      reject(error);
+    });
+    child.once('close', (code) => {
+      clearTimeout(timer);
+      if (code === 0) resolve(output);
+      else reject(new Error(output.trim() || `退出代码：${code}`));
+    });
+  });
+}
+
+async function ensureNpxCommand() {
+  const existing = findNpxCommand();
+  if (existing) return existing;
+  if (nodeInstallPromise) return nodeInstallPromise;
+  nodeInstallPromise = (async () => {
+    if (process.platform !== 'win32') {
+      throw new Error('未检测到 npx。请先安装 Node.js LTS 后重试。');
+    }
+    const winget = findWingetCommand();
+    if (!winget) {
+      throw new Error('未检测到 Node.js 或 winget，无法自动安装 Node.js LTS。');
+    }
+    setServiceState('starting', '正在自动安装 Node.js LTS（首次需要网络）…');
+    appendServiceLog('未检测到 Node.js/npx，正在通过 winget 自动安装 Node.js LTS。');
+    await runCommand(winget, [
+      'install', '--id', 'OpenJS.NodeJS.LTS', '--exact', '--silent', '--scope', 'user',
+      '--accept-package-agreements', '--accept-source-agreements',
+    ]);
+    const installed = findNpxCommand();
+    if (!installed) {
+      throw new Error('Node.js 已安装，但当前进程尚未识别 npx。请重新启动 DeepSeek Harness Client。');
+    }
+    appendServiceLog(`Node.js LTS 安装完成，已定位 npx：${installed}`);
+    return installed;
+  })();
+  try {
+    return await nodeInstallPromise;
+  } finally {
+    nodeInstallPromise = undefined;
+  }
+}
+
 function readServiceLog() {
   if (serviceLog) return serviceLog;
   try {
@@ -149,9 +241,10 @@ function probeServer(timeout = 1_200) {
 async function refreshBackendStatus() {
   const probe = await probeServer();
   if (probe.online) {
-    return setServiceState('online', `本地 DSH Web 已连接 · ${probe.latencyMs} ms`, {
-      lastError: '',
-      pid: dshProcess?.pid || service.pid || null,
+      return setServiceState('online', `本地 DSH Web 已连接 · ${probe.latencyMs} ms`, {
+        lastError: '',
+        runtimePrepared: true,
+        pid: dshProcess?.pid || service.pid || null,
     });
   }
   if (dshProcess && !dshProcess.killed) {
@@ -168,11 +261,14 @@ function attachServiceLogs(process) {
   process.stdout?.on('data', (chunk) => appendServiceLog(chunk));
   process.stderr?.on('data', (chunk) => appendServiceLog(chunk));
   process.once('error', (error) => {
-    appendServiceLog(`启动失败：${error.message}`);
+    const detail = error.code === 'ENOENT'
+      ? '未检测到 Node.js/npx，无法自动安装 DSH Web。请先安装 Node.js LTS 后重试。'
+      : `无法自动安装或启动 DSH Web：${error.message}`;
+    appendServiceLog(`启动失败：${detail}`);
     dshProcess = undefined;
-    setServiceState('error', `无法启动 DSH Web：${error.message}`, {
+    setServiceState('error', detail, {
       pid: null,
-      lastError: error.message,
+      lastError: detail,
     });
   });
   process.once('exit', (code, signal) => {
@@ -197,13 +293,14 @@ function waitForServer() {
         clearInterval(timer);
         resolve(setServiceState('online', `本地 DSH Web 已连接 · ${probe.latencyMs} ms`, {
           lastError: '',
+          runtimePrepared: true,
           pid: dshProcess?.pid || null,
         }));
         return;
       }
       if (Date.now() >= deadline) {
         clearInterval(timer);
-        const detail = '等待 DSH Web 超时。请确认 Node.js、npx 与网络环境可用。';
+        const detail = '自动安装或启动 DSH Web 超时。请确认 Node.js、npx 与网络环境可用。';
         appendServiceLog(detail);
         resolve(setServiceState('error', detail, {
           pid: dshProcess?.pid || null,
@@ -228,12 +325,16 @@ async function startBackend({ force = false } = {}) {
       return setServiceState('starting', 'DSH Web 正在启动，请稍候…', { pid: dshProcess.pid });
     }
 
-    setServiceState('starting', '正在后台启动 DSH Web…');
-    appendServiceLog(`启动命令：npx --yes @deepseek-ai/dsh web --host ${SERVICE_HOST} --port ${SERVICE_PORT}`);
+    const preparationDetail = service.runtimePrepared
+      ? '正在后台启动已准备好的 DSH Web…'
+      : '正在自动安装并启动 DeepSeek Harness 运行组件（首次需要网络）…';
+    setServiceState('starting', preparationDetail);
+    appendServiceLog(`自动准备命令：npx --yes @deepseek-ai/dsh@latest web --host ${SERVICE_HOST} --port ${SERVICE_PORT}`);
     try {
+      const npxCommand = await ensureNpxCommand();
       dshProcess = spawn(
-        process.platform === 'win32' ? 'npx.cmd' : 'npx',
-        ['--yes', '@deepseek-ai/dsh', 'web', '--host', SERVICE_HOST, '--port', String(SERVICE_PORT)],
+        npxCommand,
+        ['--yes', '@deepseek-ai/dsh@latest', 'web', '--host', SERVICE_HOST, '--port', String(SERVICE_PORT)],
         {
           detached: false,
           windowsHide: true,
