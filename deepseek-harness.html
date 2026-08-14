@@ -32,7 +32,7 @@
           <span class="tag">开发移交 · 2026-08-14</span>
           <span class="status-badge" data-status="implemented">本地开发版</span>
         </div>
-        <h2>DeepSeek Harness Client · v1.0.0</h2>
+        <h2>DeepSeek Harness Client · <span id="deepseekVersion">正在读取版本…</span></h2>
         <p>启动时检查 <code>127.0.0.1:3080</code>；若服务未就绪，会在后台执行 <code>npx @deepseek-ai/dsh web</code>。API Key 不会传给嵌入网页，仅由 Electron 主进程通过 Windows safeStorage 加密保存并用于余额查询。</p>
         <div class="entry-meta">
           <span class="tag">Windows</span>
@@ -52,7 +52,7 @@
 
     <section class="panel tool-introduction" style="margin-top: 18px">
       <h2>运行要求</h2>
-      <p>需要 Windows、Node.js 与 <code>npx</code>。首次启动本地服务可能需要更长时间；客户端会持续显示加载状态，直到本地 Web 服务可用。当前为目录式构建，运行时需保留 <code>win-unpacked</code> 的完整目录结构。</p>
+      <p>需要 Windows、Node.js 与 <code>npx</code>。首次启动本地服务可能需要更长时间；客户端会持续显示加载状态，直到本地 Web 服务可用。推荐下载 Windows 安装版；兼容便携 EXE 可直接运行。</p>
     </section>
   </main>
   <footer><span>UltraTech Static Blog</span><a class="button" href="./index.html">UltraTech</a></footer>
@@ -66,12 +66,15 @@
         const release = await response.json();
         const setup = document.getElementById('deepseekSetup');
         const portable = document.getElementById('deepseekPortable');
+        const version = document.getElementById('deepseekVersion');
         setup.href = release.installer_url;
         portable.href = release.download_url;
         setup.hidden = false;
         portable.hidden = false;
+        version.textContent = `v${release.version}`;
         state.textContent = `当前发布 v${release.version} · ${release.published_at || ''}`;
       } catch {
+        document.getElementById('deepseekVersion').textContent = '发布信息加载失败';
         state.textContent = '首个公开发布正在准备中。';
       }
     })();
