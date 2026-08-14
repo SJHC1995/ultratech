@@ -303,12 +303,19 @@ code { font: 12px ui-monospace, Consolas, monospace; }
   background: linear-gradient(105deg, #f5f7ff, #f1fbff);
   box-shadow: 0 8px 22px #294b7a0c;
 }
+#updateBanner { display: none !important; }
 .update-banner-icon { display: grid; place-items: center; width: 31px; height: 31px; border-radius: 9px; background: linear-gradient(135deg, #586ee8, #28a9df); color: #fff; font-size: 18px; font-weight: 700; }
 .update-banner-content { display: grid; min-width: 0; gap: 1px; }
 .update-banner-content .eyebrow { margin: 0; }
 .update-banner-content strong { color: #334465; font-size: 13px; }
 .update-banner-content span { overflow: hidden; max-width: 680px; color: #6d7d96; font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
 .update-banner .primary-btn { margin-left: auto; white-space: nowrap; }
+.update-progress-row { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+.update-progress { width: min(210px, 32vw); height: 5px; overflow: hidden; border-radius: 999px; background: #dce6f6; }
+.update-progress i { display: block; width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #28a8df, #5967e9); transition: width .24s ease; }
+.update-progress i.indeterminate { animation: update-travel 1.05s ease-in-out infinite; }
+.update-progress-row b { min-width: 30px; color: #61708c; font: 700 10px ui-monospace, Consolas, monospace; text-align: right; }
+@keyframes update-travel { from { transform: translateX(-110%); } to { transform: translateX(290%); } }
 
 .web-window { position: relative; min-height: 0; flex: 1; overflow: hidden; border: 1px solid #d7e2ef; border-radius: 16px; background: #edf2f9; box-shadow: 0 10px 28px #24466e10, inset 0 1px #fff; }
 .browser-bar { height: 44px; display: flex; align-items: center; gap: 12px; padding: 0 14px; border-bottom: 1px solid #e2e8f1; background: linear-gradient(180deg, #fff, #f8fbff); }
@@ -483,6 +490,8 @@ html[data-theme="dark"] .loading.error { background: linear-gradient(135deg, #29
 html[data-theme="dark"] .update-banner { border-color: #344365; background: linear-gradient(105deg, #18213b, #172731); }
 html[data-theme="dark"] .update-banner-content strong { color: #e3eafb; }
 html[data-theme="dark"] .update-banner-content span { color: #aab6cc; }
+html[data-theme="dark"] .update-progress { background: #2b3850; }
+html[data-theme="dark"] .update-progress-row b { color: #aab6cc; }
 html[data-theme="dark"] .settings-dialog { border-color: #30394a; background: #1a202b; color: #dbe3f0; }
 html[data-theme="dark"] .first-run-dialog { border-color: #30394a; background: radial-gradient(circle at 82% -18%, #24365c 0, transparent 38%), #171d28; color: #edf2fa; }
 html[data-theme="dark"] .welcome-mark { border-color: #304052; background: #f7f9fc; }

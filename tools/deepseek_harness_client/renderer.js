@@ -28,6 +28,8 @@ const updateBannerTitle = document.getElementById('updateBannerTitle');
 const updateBannerDetail = document.getElementById('updateBannerDetail');
 const installUpdateButton = document.getElementById('installUpdate');
 const updateDot = document.getElementById('updateDot');
+const updateProgressFill = document.getElementById('updateProgressFill');
+const updatePercent = document.getElementById('updatePercent');
 
 let loaded = false;
 let savedKey = false;
@@ -207,6 +209,13 @@ function setUpdateVisual(status) {
     installing_update: t('installingUpdate'),
   };
   updateDot.dataset.state = state;
+  // Keep the workspace clean: update details stay on the compact header control.
+  updateBanner.hidden = true;
+  const percent = Math.max(0, Math.min(100, Number(status?.percent || 0)));
+  const indeterminate = state === 'checking_update';
+  updateProgressFill.style.width = `${indeterminate ? 38 : percent}%`;
+  updateProgressFill.classList.toggle('indeterminate', indeterminate);
+  updatePercent.textContent = indeterminate ? '…' : `${percent}%`;
   if (state === 'up_to_date') {
     updateBanner.hidden = true;
     document.getElementById('checkUpdate').title = t('upToDate');
@@ -215,27 +224,23 @@ function setUpdateVisual(status) {
   }
   if (state === 'update_available' && update?.version) {
     pendingUpdate = update;
-    updateBanner.hidden = false;
-    updateBannerEyebrow.textContent = t('updateAvailable');
-    updateBannerTitle.textContent = `${t('updateReady')}${update.version}`;
-    updateBannerDetail.textContent = update.notes || (currentLanguage === 'zh' ? '已验证官方签名，更新将自动下载、校验并安装。' : 'The official signature has been verified. Download, validation and installation are automatic.');
-    installUpdateButton.hidden = false;
-    installUpdateButton.disabled = false;
     document.getElementById('checkUpdate').title = `${t('updateAvailable')} v${update.version}`;
+    document.getElementById('checkUpdate').setAttribute('aria-label', `${t('updateAvailable')} v${update.version}`);
+    showToast(`${t('updateAvailable')} v${update.version}`, 'success');
     return;
   }
   if (['checking_update', 'downloading_update', 'verifying_update', 'installing_update'].includes(state)) {
-    updateBanner.hidden = true;
-    document.getElementById('checkUpdate').title = labels[state] || t('checkingUpdate');
+    const detail = labels[state] || t('checkingUpdate');
+    document.getElementById('checkUpdate').title = `${detail} ${indeterminate ? '' : `${percent}%`}`.trim();
+    document.getElementById('checkUpdate').setAttribute('aria-label', status.detail || detail);
     return;
   }
   if (state === 'failed') {
-    updateBanner.hidden = false;
-    updateBannerEyebrow.textContent = t('updateFailed');
-    updateBannerTitle.textContent = t('updateFailed');
-    updateBannerDetail.textContent = status.detail || '';
-    installUpdateButton.hidden = true;
+    updateProgressFill.style.width = '100%';
+    updateProgressFill.classList.remove('indeterminate');
+    updatePercent.textContent = '失败';
     document.getElementById('checkUpdate').title = t('updateFailed');
+    showToast(status.detail || t('updateFailed'), 'error');
   }
 }
 
@@ -378,6 +383,7 @@ async function checkForUpdate() {
       detail: info.available ? `v${info.version}` : '',
       update: info,
     });
+    if (info.available) await installUpdate();
   } catch (error) {
     setUpdateVisual({ state: 'failed', detail: error.message });
     showToast(error.message, 'error');

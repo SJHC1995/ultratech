@@ -417,7 +417,7 @@ ipcMain.handle('install-update', async (_event, info) => {
     throw new Error('更新任务已失效，请重新检查更新。');
   }
   const installer = await updater.download(updater.pending);
-  updater.install(updater.pending, installer);
+  await updater.install(updater.pending, installer);
   // Keep the hand-off state visible briefly, then force a clean exit so the
   // external updater can reliably replace the running EXE before relaunching.
   setTimeout(() => {

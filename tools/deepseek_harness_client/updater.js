@@ -152,6 +152,22 @@ function requestUrl(url, onResponse, redirects = 0) {
   });
 }
 
+function runWindowsCommand(executable, args) {
+  return new Promise((resolve, reject) => {
+    let stderr = '';
+    const child = spawn(executable, args, {
+      windowsHide: true,
+      stdio: ['ignore', 'ignore', 'pipe'],
+    });
+    child.stderr?.on('data', (chunk) => { stderr = (stderr + chunk).slice(-2_000); });
+    child.once('error', reject);
+    child.once('close', (code) => {
+      if (code === 0) resolve();
+      else reject(new Error(`${path.basename(executable)} 执行失败（${code}）：${stderr.trim() || '未知错误'}`));
+    });
+  });
+}
+
 async function fetchManifest() {
   const fetchOne = async (url) => requestUrl(url, (response) => new Promise((resolve, reject) => {
     if (response.statusCode !== 200) {
@@ -274,13 +290,14 @@ class DeepSeekUpdater {
     return target;
   }
 
-  install(info, payload) {
+  async install(info, payload) {
     const updates = updateDirectory(this.app);
     const transactionId = crypto.randomBytes(16).toString('hex');
     const pendingPath = path.join(updates, 'pending-startup.json');
     const ackPath = path.join(updates, `startup-ack-${transactionId}.json`);
     const resultPath = path.join(updates, 'last-update-result.json');
     const scriptPath = path.join(updates, `install-${Date.now()}.ps1`);
+    const taskName = `UltraTechDeepSeekUpdate_${transactionId}`;
     const portable = this.isPortable();
     const currentExecutable = portable
       ? (process.env.PORTABLE_EXECUTABLE_FILE || this.app.getPath('exe'))
@@ -303,70 +320,84 @@ $pending = '${quote(pendingPath)}'
 $result = '${quote(resultPath)}'
 $transaction = '${transactionId}'
 $targetVersion = '${info.version}'
+$taskName = '${taskName}'
 function Write-Result([string] $status, [string] $detail) {
   $tmp = "$result.$([Guid]::NewGuid().ToString('N')).tmp"
   @{ status = $status; detail = $detail; target_version = $targetVersion; transaction_id = $transaction; timestamp = [DateTimeOffset]::UtcNow.ToUnixTimeSeconds() } | ConvertTo-Json -Compress | Set-Content -LiteralPath $tmp -Encoding utf8
   Move-Item -LiteralPath $tmp -Destination $result -Force
 }
-Start-Sleep -Milliseconds 700
-try { Wait-Process -Id $parentPid -Timeout 45 -ErrorAction Stop } catch {}
-if (-not (Test-Path -LiteralPath $payload)) {
-  Write-Result 'failed' 'update_payload_missing'
-  if (Test-Path -LiteralPath $current) { Start-Process -FilePath $current | Out-Null }
-  exit 2
+function Remove-UpdateTask {
+  & schtasks.exe /Delete /TN $taskName /F | Out-Null
 }
-if ($portable) {
-  $backup = "$current.previous"
-  try {
-    Remove-Item -LiteralPath $backup -Force -ErrorAction SilentlyContinue
-    Move-Item -LiteralPath $current -Destination $backup -Force
-    Move-Item -LiteralPath $payload -Destination $current -Force
-  } catch {
-    if ((-not (Test-Path -LiteralPath $current)) -and (Test-Path -LiteralPath $backup)) {
-      Move-Item -LiteralPath $backup -Destination $current -Force
-    }
-    Write-Result 'failed' 'portable_replace_failed'
+try {
+  Start-Sleep -Milliseconds 700
+  try { Wait-Process -Id $parentPid -Timeout 45 -ErrorAction Stop } catch {}
+  if (-not (Test-Path -LiteralPath $payload)) {
+    Write-Result 'failed' 'update_payload_missing'
     if (Test-Path -LiteralPath $current) { Start-Process -FilePath $current | Out-Null }
-    exit 3
+    exit 2
   }
-} else {
-  $setup = Start-Process -FilePath $payload -ArgumentList @('/S') -Wait -PassThru
-  if ($setup.ExitCode -ne 0) {
-    Write-Result 'failed' "installer_exit_$($setup.ExitCode)"
-    if (Test-Path -LiteralPath $current) { Start-Process -FilePath $current | Out-Null }
-    exit $setup.ExitCode
-  }
-}
-if (Test-Path -LiteralPath $current) { Start-Process -FilePath $current | Out-Null }
-$deadline = [DateTime]::UtcNow.AddSeconds(${ACK_TIMEOUT_SECONDS})
-$acknowledged = $false
-while (([DateTime]::UtcNow -lt $deadline) -and (-not $acknowledged)) {
-  if (Test-Path -LiteralPath $ack) {
+  if ($portable) {
+    $backup = "$current.previous"
     try {
-      $payload = Get-Content -LiteralPath $ack -Raw | ConvertFrom-Json
-      $acknowledged = ([string]$payload.transaction_id -eq $transaction) -and ([string]$payload.version -eq $targetVersion)
-    } catch {}
+      Remove-Item -LiteralPath $backup -Force -ErrorAction SilentlyContinue
+      Move-Item -LiteralPath $current -Destination $backup -Force
+      Move-Item -LiteralPath $payload -Destination $current -Force
+    } catch {
+      if ((-not (Test-Path -LiteralPath $current)) -and (Test-Path -LiteralPath $backup)) {
+        Move-Item -LiteralPath $backup -Destination $current -Force
+      }
+      Write-Result 'failed' 'portable_replace_failed'
+      if (Test-Path -LiteralPath $current) { Start-Process -FilePath $current | Out-Null }
+      exit 3
+    }
+  } else {
+    $setup = Start-Process -FilePath $payload -ArgumentList @('/S') -Wait -PassThru
+    if ($setup.ExitCode -ne 0) {
+      Write-Result 'failed' "installer_exit_$($setup.ExitCode)"
+      if (Test-Path -LiteralPath $current) { Start-Process -FilePath $current | Out-Null }
+      exit $setup.ExitCode
+    }
   }
-  if (-not $acknowledged) { Start-Sleep -Milliseconds 300 }
-}
-if ($acknowledged) {
-  Write-Result 'success' 'startup_acknowledged'
-  if ($portable -and (Test-Path -LiteralPath "$current.previous")) {
-    Remove-Item -LiteralPath "$current.previous" -Force -ErrorAction SilentlyContinue
+  if (Test-Path -LiteralPath $current) { Start-Process -FilePath $current | Out-Null }
+  $deadline = [DateTime]::UtcNow.AddSeconds(${ACK_TIMEOUT_SECONDS})
+  $acknowledged = $false
+  while (([DateTime]::UtcNow -lt $deadline) -and (-not $acknowledged)) {
+    if (Test-Path -LiteralPath $ack) {
+      try {
+        $payload = Get-Content -LiteralPath $ack -Raw | ConvertFrom-Json
+        $acknowledged = ([string]$payload.transaction_id -eq $transaction) -and ([string]$payload.version -eq $targetVersion)
+      } catch {}
+    }
+    if (-not $acknowledged) { Start-Sleep -Milliseconds 300 }
   }
-} else {
-  Write-Result 'failed' 'startup_ack_timeout'
+  if ($acknowledged) {
+    Write-Result 'success' 'startup_acknowledged'
+    if ($portable -and (Test-Path -LiteralPath "$current.previous")) {
+      Remove-Item -LiteralPath "$current.previous" -Force -ErrorAction SilentlyContinue
+    }
+  } else {
+    Write-Result 'failed' 'startup_ack_timeout'
+  }
+} finally {
+  Remove-Item -LiteralPath $pending -Force -ErrorAction SilentlyContinue
+  Remove-Item -LiteralPath $ack -Force -ErrorAction SilentlyContinue
+  Remove-UpdateTask
+  Remove-Item -LiteralPath $PSCommandPath -Force -ErrorAction SilentlyContinue
 }
-Remove-Item -LiteralPath $pending -Force -ErrorAction SilentlyContinue
-Remove-Item -LiteralPath $ack -Force -ErrorAction SilentlyContinue
-Remove-Item -LiteralPath $PSCommandPath -Force -ErrorAction SilentlyContinue
 `;
     fs.writeFileSync(scriptPath, script, 'utf8');
+    const powerShell = path.join(process.env.SystemRoot || 'C:\\Windows', 'System32', 'WindowsPowerShell', 'v1.0', 'powershell.exe');
+    const taskCommand = `"${powerShell}" -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File "${scriptPath}"`;
+    try {
+      await runWindowsCommand('schtasks.exe', ['/Create', '/TN', taskName, '/TR', taskCommand, '/SC', 'ONCE', '/ST', '23:59', '/F']);
+      await runWindowsCommand('schtasks.exe', ['/Run', '/TN', taskName]);
+    } catch (error) {
+      fs.rmSync(pendingPath, { force: true });
+      fs.rmSync(scriptPath, { force: true });
+      throw new Error(`无法启动独立更新程序：${error.message}`);
+    }
     this.report('installing_update', `正在安装 v${info.version}，应用将自动重启。`, 100, { update: info });
-    const updater = spawn('powershell.exe', [
-      '-NoProfile', '-ExecutionPolicy', 'Bypass', '-WindowStyle', 'Hidden', '-File', scriptPath,
-    ], { detached: true, windowsHide: true, stdio: 'ignore' });
-    updater.unref();
   }
 
   acknowledgeStartup() {
