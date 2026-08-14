@@ -41,9 +41,12 @@
           <span class="tag">本地安全存储</span>
         </div>
         <div class="card-actions">
+          <a id="deepseekSetup" class="link-button primary" href="#" hidden>下载 Windows 安装版 Setup.exe</a>
+          <a id="deepseekPortable" class="link-button" href="#" hidden>下载兼容便携 EXE</a>
           <a class="link-button primary" href="https://github.com/SJHC1995/ultratech/tree/codex/deepseek-harness-client/tools/deepseek_harness_client">查看源码</a>
           <a class="link-button" href="https://www.deepseek.com/harness">访问 DeepSeek Harness</a>
         </div>
+        <p id="deepseekReleaseState">正在加载最新发布信息…</p>
       </article>
     </section>
 
@@ -54,5 +57,24 @@
   </main>
   <footer><span>UltraTech Static Blog</span><a class="button" href="./index.html">UltraTech</a></footer>
   <script src="./site-nav.js"></script>
+  <script>
+    (async () => {
+      const state = document.getElementById('deepseekReleaseState');
+      try {
+        const response = await fetch('./releases/deepseek-harness-client/manifest.json', { cache: 'no-store' });
+        if (!response.ok) throw new Error('release unavailable');
+        const release = await response.json();
+        const setup = document.getElementById('deepseekSetup');
+        const portable = document.getElementById('deepseekPortable');
+        setup.href = release.installer_url;
+        portable.href = release.download_url;
+        setup.hidden = false;
+        portable.hidden = false;
+        state.textContent = `当前发布 v${release.version} · ${release.published_at || ''}`;
+      } catch {
+        state.textContent = '首个公开发布正在准备中。';
+      }
+    })();
+  </script>
 </body>
 </html>
