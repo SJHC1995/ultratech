@@ -1,22 +1,22 @@
 {
-  "published_at": "2026-08-13",
-  "notes": "OTA 更新进度条升级为真实缓动与流光动画，百分比变化更直观，校验阶段也保持动态反馈。",
-  "version": "1.7.713",
-  "sha256": "0370b9a053523f8388e737ff855ff90b8d5a4fafaa663059bef3ea59018e2f7a",
-  "patches": [],
-  "installer_sha256": "c0b0c83cfb1f6e308817a5e62ac2a2f6b33c7d47b3adbe46a22af092eeb7890b",
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.713/UltraTextureStudio-Setup-1.7.713.exe",
+  "installer_sha256": "aecfcf10ee2a6a5eb65858d0459a0579bf58ce5b582b71c0ce05d535d326b340",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.714/UltraTextureStudio.exe",
   "delivery": {
     "channel": "stable",
-    "latest_version": "1.7.713",
+    "latest_version": "1.7.714",
     "emergency": false,
     "bootstrap": false,
     "global": true
   },
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.713/UltraTextureStudio.exe",
+  "sha256": "abaf56b283b8033e8804c0cc17a621dbe98dd98e13896bce46096c4e09797d5f",
+  "patches": [],
+  "published_at": "2026-08-14",
+  "notes": "修复完整安装 OTA 启动确认误报，升级状态栏为生成、检查、下载、校验、安装等真实状态，并优化更新失败提示。",
+  "version": "1.7.714",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.714/UltraTextureStudio-Setup-1.7.714.exe",
   "signature": {
     "algorithm": "ed25519",
     "key_id": "ultratexture-ed25519-2026-08-r3",
-    "value": "IV5GeiAG3YrbFzaT7sB4zqMKIlKehk8qDxXhRLi4HoWgXPPEA/jwlQ2quGQbrq5EYOdbiLvuQ1zz9/I3dcglAQ=="
+    "value": "U9MLofObMV9G+zwb7H9+u65XL3Z4Bxedb7ZZNeMSx7k8f4omN47IppG3SB+KdihJ2QZ83tAYLVxeHpQTd4jfAA=="
   }
 }
