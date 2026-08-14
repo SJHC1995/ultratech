@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DeepSeek Harness Client</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-head">
+    <div class="identity">
+      <span class="logo" aria-hidden="true"><span></span><span></span><span></span></span>
+      <div><strong>DeepSeek Harness</strong><small>LOCAL DESKTOP CLIENT</small></div>
+    </div>
+    <div class="head-actions">
+      <span id="followState" class="follow-chip">跟随网页 · 浅色 · 中文</span>
+      <button id="diagnosticsButton" class="icon-btn" title="系统诊断" aria-label="系统诊断">⌁</button>
+      <button id="openBrowser" class="icon-btn" title="在浏览器中打开" aria-label="在浏览器中打开">↗</button>
+      <button id="refreshPage" class="icon-btn" title="刷新工作区" aria-label="刷新工作区">↻</button>
+    </div>
+  </header>
+
+  <main class="app-frame">
+    <aside class="control-panel">
+      <section class="panel-heading">
+        <span class="title-icon">◌</span>
+        <div>
+          <p class="eyebrow">Service control</p>
+          <h1 data-i18n="controlTitle">本地控制中心</h1>
+        </div>
+      </section>
+
+      <section class="service-overview">
+        <div class="service-heading">
+          <div>
+            <span class="label" data-i18n="service">本地服务</span>
+            <strong id="serviceState">正在检测</strong>
+          </div>
+          <span id="serviceDot" class="status-dot checking"></span>
+        </div>
+        <div class="endpoint"><span>⌁</span><code>http://127.0.0.1:3080</code></div>
+        <p id="serviceDetail">正在检测本地 DSH Web 服务…</p>
+        <div class="service-actions">
+          <button id="restartService" class="primary-btn" data-i18n="restart">启动服务</button>
+          <button id="openDataFolder" class="subtle-btn" data-i18n="openData">打开数据目录</button>
+        </div>
+        <ol class="service-steps" aria-label="本地服务状态">
+          <li id="stepProbe"><i></i><span data-i18n="stepProbe">检测本地端口</span></li>
+          <li id="stepBoot"><i></i><span data-i18n="stepBoot">启动 DSH Web</span></li>
+          <li id="stepReady"><i></i><span data-i18n="stepReady">连接工作区</span></li>
+        </ol>
+      </section>
+
+      <section class="setting-card">
+        <div class="card-title-row">
+          <div>
+            <span class="label" data-i18n="settingsTitle">本地设置</span>
+            <p data-i18n="settingsDesc">凭据仅保存在此设备</p>
+          </div>
+          <span class="secure-pill">⌁ <span data-i18n="protected">受保护</span></span>
+        </div>
+        <label for="apiKey">DeepSeek API Key</label>
+        <div class="key-row">
+          <input id="apiKey" type="password" autocomplete="off" placeholder="sk-…" spellcheck="false">
+          <button id="toggleKey" class="field-btn" title="显示或隐藏 API Key" aria-label="显示或隐藏 API Key">◉</button>
+        </div>
+        <p id="keyHint" class="hint" data-i18n="keyHint">仅用于查询 DeepSeek API 余额，不会发送给本地 DSH 网页。</p>
+        <button id="saveSettings" class="wide-btn" data-i18n="save">安全保存本地设置</button>
+      </section>
+
+      <section class="security-note">
+        <span>◈</span>
+        <p data-i18n="secure">API Key 由 Electron 主进程使用 Windows 安全存储加密保存。网页工作区无法读取此凭据。</p>
+      </section>
+    </aside>
+
+    <section class="workspace-panel">
+      <div class="workspace-top">
+        <div class="workspace-title">
+          <span class="title-icon">▣</span>
+          <div><p class="eyebrow">Workspace</p><h2 data-i18n="webTitle">DeepSeek Harness 工作区</h2></div>
+        </div>
+        <div id="balanceCard" class="balance-card">
+          <span id="balanceDot" class="status-dot muted"></span>
+          <span id="balanceLabel" data-i18n="waitingKey">余额：等待 API Key</span>
+          <span id="balanceTime" class="balance-time">—</span>
+          <button id="refreshBalance" title="刷新余额" aria-label="刷新余额">↻</button>
+        </div>
+      </div>
+
+      <div class="web-window">
+        <div class="browser-bar">
+          <span class="traffic"><i></i><i></i><i></i></span>
+          <span class="address"><span>⌁</span> 127.0.0.1:3080</span>
+          <span id="webState" class="web-state">CHECKING</span>
+        </div>
+        <webview id="content" title="DeepSeek Harness" partition="persist:deepseek-harness" allowpopups></webview>
+        <div id="loading" class="loading">
+          <div class="loading-mark"><span></span><span></span><span></span></div>
+          <p class="eyebrow" data-i18n="bootEyebrow">Local runtime</p>
+          <h3 id="loadingTitle" data-i18n="booting">正在准备 DeepSeek Harness</h3>
+          <p id="loadingDetail" data-i18n="waitingServer">正在等待本地网页服务就绪</p>
+          <div class="loading-progress"><i></i></div>
+          <button id="retryService" class="loading-action" data-i18n="retry">重新连接</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span id="footerDot" class="status-dot checking"></span>
+    <span id="footerStatus" data-i18n="connecting">正在连接本地服务…</span>
+    <span class="footer-separator">•</span>
+    <span>DeepSeek Harness Client</span>
+  </footer>
+
+  <dialog id="diagnosticsDialog" class="diagnostics-dialog">
+    <form method="dialog">
+      <div class="dialog-head"><div><p class="eyebrow">Diagnostics</p><h2 data-i18n="diagnostics">系统诊断</h2></div><button class="icon-btn" value="cancel" aria-label="关闭">×</button></div>
+      <div id="diagnosticsSummary" class="diagnostics-summary"></div>
+      <pre id="diagnosticsLog" class="diagnostics-log"></pre>
+      <div class="dialog-actions"><button id="clearLog" type="button" class="subtle-btn" data-i18n="clearLog">清空服务日志</button><button class="primary-btn" value="cancel" data-i18n="close">关闭</button></div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="renderer.js"></script>
+</body>
+</html>
