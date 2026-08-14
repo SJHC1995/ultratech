@@ -1,19 +1,19 @@
 {
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.2.0/DeepSeek-Harness-Client-Setup-1.2.0.exe",
+  "sha256": "c4cf9065647e4547d60c84cb8c6e3f24fa880986d7a28cf45f620f9aa2eca24b",
   "published_at": "2026-08-14",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.2.0/DeepSeek-Harness-Client-1.2.0-Portable.exe",
-  "installer_sha256": "0d1fba401377b4541f21673c428f7bfb3e5f3656cab0e181e0047e08601b4e83",
-  "sha256": "7651d14b6b60133fdbeeba6bcd491641ee490174f876406b7d07f93a462a339a",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.2.1/DeepSeek-Harness-Client-Setup-1.2.1.exe",
+  "notes": "采用 DeepSeek 标志，并将本地服务控制与 API Key 配置收纳至设置页。",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.2.1/DeepSeek-Harness-Client-1.2.1-Portable.exe",
+  "version": "1.2.1",
   "delivery": {
     "channel": "stable",
-    "latest_version": "1.2.0",
+    "latest_version": "1.2.1",
     "global": true
   },
-  "version": "1.2.0",
-  "notes": "产品化界面、服务状态机、签名 OTA，以及安装版与兼容便携 EXE 并行发布。",
+  "installer_sha256": "ad16e608eb2740cc0cd3e5de4f79dbcf172d9f8faa5e4c345439ba68504458db",
   "signature": {
     "algorithm": "ed25519",
     "key_id": "ultratexture-ed25519-2026-08-r3",
-    "value": "fm9VX62ctXsouDZ45VuhxdhgAaH6ao14u153xs7/HSoftFYfGWg6/VEo2x7szYWbxY2FY52U4AQfhY1jnFRUCw=="
+    "value": "gpeUTYDziYCtPOqHGKijKExlxcZ4J+UQnZSNSzYHhUlMGAI4t7xJeKWKQOC7h9cJx5eOnQJ84KwIjSnR/PFQAA=="
   }
 }
