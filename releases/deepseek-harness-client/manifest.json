@@ -1,19 +1,19 @@
 {
-  "sha256": "c4cf9065647e4547d60c84cb8c6e3f24fa880986d7a28cf45f620f9aa2eca24b",
-  "published_at": "2026-08-14",
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.2.1/DeepSeek-Harness-Client-Setup-1.2.1.exe",
-  "notes": "采用 DeepSeek 标志，并将本地服务控制与 API Key 配置收纳至设置页。",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.2.1/DeepSeek-Harness-Client-1.2.1-Portable.exe",
-  "version": "1.2.1",
+  "notes": "更新应用图标为 DeepSeek 鲸鱼标志，并同步优化顶部品牌标志清晰度。",
+  "version": "1.2.2",
   "delivery": {
     "channel": "stable",
-    "latest_version": "1.2.1",
+    "latest_version": "1.2.2",
     "global": true
   },
-  "installer_sha256": "ad16e608eb2740cc0cd3e5de4f79dbcf172d9f8faa5e4c345439ba68504458db",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.2.2/DeepSeek-Harness-Client-Setup-1.2.2.exe",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.2.2/DeepSeek-Harness-Client-1.2.2-Portable.exe",
+  "installer_sha256": "22d4afd9c1320f33d022f686186d6be5752ae1d83fb42d37b16e395af011f6e3",
+  "sha256": "d023c8a9cd49329cdee315416d9a7fc1980d00fa80f8a170e2653dc0ed3faaf1",
+  "published_at": "2026-08-14",
   "signature": {
     "algorithm": "ed25519",
     "key_id": "ultratexture-ed25519-2026-08-r3",
-    "value": "gpeUTYDziYCtPOqHGKijKExlxcZ4J+UQnZSNSzYHhUlMGAI4t7xJeKWKQOC7h9cJx5eOnQJ84KwIjSnR/PFQAA=="
+    "value": "cgUa8M7x9A8NYkw+sJRX8OZkIuyDSFzwyVoqx9bzzpRQeGoLvvm0+JQVP+cEfH0QYnpcWNy4GocRPIKFQMr4Aw=="
   }
 }
