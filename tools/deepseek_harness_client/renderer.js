@@ -18,6 +18,7 @@ const loadingTitle = document.getElementById('loadingTitle');
 const loadingDetail = document.getElementById('loadingDetail');
 const toast = document.getElementById('toast');
 const diagnosticsDialog = document.getElementById('diagnosticsDialog');
+const settingsDialog = document.getElementById('settingsDialog');
 const diagnosticsSummary = document.getElementById('diagnosticsSummary');
 const diagnosticsLog = document.getElementById('diagnosticsLog');
 const updateBanner = document.getElementById('updateBanner');
@@ -39,7 +40,7 @@ const strings = {
   zh: {
     controlTitle: '本地控制中心', service: '本地服务', restart: '启动服务', restartNow: '重新启动服务',
     openData: '打开数据目录', stepProbe: '检测本地端口', stepBoot: '启动 DSH Web', stepReady: '连接工作区',
-    settingsTitle: '本地设置', settingsDesc: '凭据仅保存在此设备', protected: '受保护',
+    settingsDialog: '设置', settingsTitle: '本地设置', settingsDesc: '凭据仅保存在此设备', protected: '受保护',
     keyHint: '仅用于查询 DeepSeek API 余额，不会发送给本地 DSH 网页。', save: '安全保存本地设置',
     secure: 'API Key 由 Electron 主进程使用 Windows 安全存储加密保存。网页工作区无法读取此凭据。',
     webTitle: 'DeepSeek Harness 工作区', waitingKey: '余额：等待 API Key', bootEyebrow: '本地运行环境',
@@ -58,7 +59,7 @@ const strings = {
   en: {
     controlTitle: 'Local control center', service: 'Local service', restart: 'Start service', restartNow: 'Restart service',
     openData: 'Open data folder', stepProbe: 'Check local port', stepBoot: 'Start DSH Web', stepReady: 'Connect workspace',
-    settingsTitle: 'Local settings', settingsDesc: 'Credentials stay on this device', protected: 'Protected',
+    settingsDialog: 'Settings', settingsTitle: 'Local settings', settingsDesc: 'Credentials stay on this device', protected: 'Protected',
     keyHint: 'Used only for DeepSeek API balance queries. It is never sent to the local DSH web page.', save: 'Save local settings',
     secure: 'The Electron main process encrypts this API key with Windows secure storage. The web workspace cannot read it.',
     webTitle: 'DeepSeek Harness workspace', waitingKey: 'Balance: API key required', bootEyebrow: 'Local runtime',
@@ -335,6 +336,7 @@ content.addEventListener('did-fail-load', (_event, code, description) => {
 });
 document.getElementById('openBrowser').onclick = () => window.desktop.openHarness();
 document.getElementById('refreshPage').onclick = refreshPage;
+document.getElementById('settingsButton').onclick = () => settingsDialog.showModal();
 document.getElementById('restartService').onclick = restartService;
 document.getElementById('retryService').onclick = restartService;
 document.getElementById('openDataFolder').onclick = async () => {

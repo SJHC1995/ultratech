@@ -1,6 +1,6 @@
 {
   "name": "deepseek-harness-client",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "private": true,
   "author": "UltraTech",
   "description": "A polished and secure local desktop client for DeepSeek Harness Web.",
@@ -33,6 +33,7 @@
       "styles.css",
       "renderer.js",
       "updater.js",
+      "assets/deepseek-mark.png",
       "package.json"
     ],
     "directories": {
