@@ -19,6 +19,7 @@ const loadingDetail = document.getElementById('loadingDetail');
 const toast = document.getElementById('toast');
 const diagnosticsDialog = document.getElementById('diagnosticsDialog');
 const settingsDialog = document.getElementById('settingsDialog');
+const firstRunDialog = document.getElementById('firstRunDialog');
 const diagnosticsSummary = document.getElementById('diagnosticsSummary');
 const diagnosticsLog = document.getElementById('diagnosticsLog');
 const updateBanner = document.getElementById('updateBanner');
@@ -33,6 +34,8 @@ let savedKey = false;
 let balanceBusy = false;
 let currentLanguage = 'zh';
 let lastServiceState = 'checking';
+let lastServiceSignature = '';
+let webPreferenceSignature = '';
 let toastTimer;
 let pendingUpdate = null;
 
@@ -43,7 +46,7 @@ const strings = {
     settingsDialog: '设置', settingsTitle: '本地设置', settingsDesc: '凭据仅保存在此设备', protected: '受保护',
     keyHint: '仅用于查询 DeepSeek API 余额，不会发送给本地 DSH 网页。', save: '安全保存本地设置',
     secure: 'API Key 由 Electron 主进程使用 Windows 安全存储加密保存。网页工作区无法读取此凭据。',
-    webTitle: 'DeepSeek Harness 工作区', waitingKey: '余额：等待 API Key', bootEyebrow: '本地运行环境',
+    webTitle: 'DeepSeek Harness 工作区', waitingKey: '余额：等待 API Key', keyNotConfigured: '余额：未配置 API Key', bootEyebrow: '本地运行环境',
     booting: '正在准备 DeepSeek Harness', waitingServer: '正在等待本地网页服务就绪', retry: '重新连接',
     connecting: '正在连接本地服务…', running: '运行中', starting: '启动中', checking: '检测中',
     offline: '未连接', failed: '服务异常', connected: '本地服务已连接', saved: '设置已安全保存，API Key 仅用于余额查询。',
@@ -55,6 +58,11 @@ const strings = {
     checkUpdate: '检查更新', installUpdate: '下载并安装', checkingUpdate: '正在检查更新', updateAvailable: '发现新版本', upToDate: '已是最新版本',
     downloadingUpdate: '正在下载更新', verifyingUpdate: '正在校验更新', installingUpdate: '正在安装更新', updateReady: '已准备好 v',
     updateFinished: '已更新到 v', updateFailed: '更新未完成',
+    welcomeTitle: '欢迎使用', welcomeDesc: '只需三步，即可准备好本地 DeepSeek Harness 工作区。',
+    welcomeStepOne: '确认本地服务', welcomeStepOneDesc: '程序会自动检测并启动 DSH Web。',
+    welcomeStepTwo: '配置 API Key（可稍后）', welcomeStepTwoDesc: '仅用于安全查询余额，始终保存在本机。',
+    welcomeStepThree: '开始工作', welcomeStepThreeDesc: '在右侧工作区直接使用 DeepSeek Harness。',
+    welcomeLater: '稍后配置', welcomeStart: '开始配置',
   },
   en: {
     controlTitle: 'Local control center', service: 'Local service', restart: 'Start service', restartNow: 'Restart service',
@@ -62,7 +70,7 @@ const strings = {
     settingsDialog: 'Settings', settingsTitle: 'Local settings', settingsDesc: 'Credentials stay on this device', protected: 'Protected',
     keyHint: 'Used only for DeepSeek API balance queries. It is never sent to the local DSH web page.', save: 'Save local settings',
     secure: 'The Electron main process encrypts this API key with Windows secure storage. The web workspace cannot read it.',
-    webTitle: 'DeepSeek Harness workspace', waitingKey: 'Balance: API key required', bootEyebrow: 'Local runtime',
+    webTitle: 'DeepSeek Harness workspace', waitingKey: 'Balance: API key required', keyNotConfigured: 'Balance: API key not configured', bootEyebrow: 'Local runtime',
     booting: 'Preparing DeepSeek Harness', waitingServer: 'Waiting for the local web service', retry: 'Reconnect',
     connecting: 'Connecting to local service…', running: 'Running', starting: 'Starting', checking: 'Checking',
     offline: 'Offline', failed: 'Service error', connected: 'Local service connected', saved: 'Settings saved securely. The API key is used only for balance queries.',
@@ -74,6 +82,11 @@ const strings = {
     checkUpdate: 'Check update', installUpdate: 'Download & install', checkingUpdate: 'Checking for updates', updateAvailable: 'Update available', upToDate: 'Up to date',
     downloadingUpdate: 'Downloading update', verifyingUpdate: 'Verifying update', installingUpdate: 'Installing update', updateReady: 'Ready: v',
     updateFinished: 'Updated to v', updateFailed: 'Update incomplete',
+    welcomeTitle: 'Welcome', welcomeDesc: 'Prepare your local DeepSeek Harness workspace in three steps.',
+    welcomeStepOne: 'Confirm local service', welcomeStepOneDesc: 'The client automatically detects and starts DSH Web.',
+    welcomeStepTwo: 'Add an API key (optional)', welcomeStepTwoDesc: 'Used only for secure balance queries and kept on this device.',
+    welcomeStepThree: 'Start working', welcomeStepThreeDesc: 'Use DeepSeek Harness directly in the workspace.',
+    welcomeLater: 'Set up later', welcomeStart: 'Configure now',
   },
 };
 
@@ -93,17 +106,28 @@ function applyLanguage(language) {
   currentLanguage = String(language || '').toLowerCase().startsWith('zh') ? 'zh' : 'en';
   document.documentElement.lang = currentLanguage === 'zh' ? 'zh-CN' : 'en';
   document.querySelectorAll('[data-i18n]').forEach((node) => { node.textContent = t(node.dataset.i18n); });
+  document.getElementById('checkUpdate').title = t('checkUpdate');
+  document.getElementById('checkUpdate').setAttribute('aria-label', t('checkUpdate'));
+  document.getElementById('settingsButton').title = t('settingsDialog');
+  document.getElementById('settingsButton').setAttribute('aria-label', t('settingsDialog'));
   if (savedKey) {
     keyInput.placeholder = t('savedKey');
     keyHint.textContent = t('keepKey');
+  } else if (balanceCard.dataset.state === 'muted') {
+    setBalance(t('keyNotConfigured'));
+    balanceTime.textContent = '—';
   }
   updateServiceLabels(lastServiceState);
 }
 
 function setTheme(theme, language) {
   const normalizedTheme = String(theme).toLowerCase().includes('dark') ? 'dark' : 'light';
+  const normalizedLanguage = String(language || '').toLowerCase().startsWith('zh') ? 'zh' : 'en';
+  const signature = `${normalizedTheme}:${normalizedLanguage}`;
+  if (signature === webPreferenceSignature) return;
+  webPreferenceSignature = signature;
   document.documentElement.dataset.theme = normalizedTheme;
-  applyLanguage(language);
+  applyLanguage(normalizedLanguage);
   const languageName = currentLanguage === 'zh' ? t('chinese') : t('english');
   followState.textContent = `${currentLanguage === 'zh' ? '跟随网页' : 'Follows web'} · ${normalizedTheme === 'dark' ? t('themeDark') : t('themeLight')} · ${languageName}`;
 }
@@ -142,13 +166,17 @@ function updateSteps(state) {
 
 function setServiceVisual(status) {
   const state = status?.state || 'checking';
+  const detail = status?.detail || t('connecting');
+  const signature = `${state}|${detail}|${status?.endpoint || ''}`;
+  if (signature === lastServiceSignature) return;
+  lastServiceSignature = signature;
   lastServiceState = state;
   document.body.dataset.serviceState = state;
   updateServiceLabels(state);
-  serviceDetail.textContent = status?.detail || t('connecting');
+  serviceDetail.textContent = detail;
   serviceDot.className = `status-dot ${state}`;
   footerDot.className = `status-dot ${state}`;
-  footerStatus.textContent = status?.detail || t('connecting');
+  footerStatus.textContent = state === 'online' ? t('connected') : detail;
   webState.textContent = state === 'online' ? 'LIVE' : state.toUpperCase();
   webState.dataset.state = state;
   updateSteps(state);
@@ -181,6 +209,7 @@ function setUpdateVisual(status) {
   updateDot.dataset.state = state;
   if (state === 'up_to_date') {
     updateBanner.hidden = true;
+    document.getElementById('checkUpdate').title = t('upToDate');
     showToast(t('upToDate'), 'success');
     return;
   }
@@ -192,14 +221,12 @@ function setUpdateVisual(status) {
     updateBannerDetail.textContent = update.notes || (currentLanguage === 'zh' ? '已验证官方签名，更新将自动下载、校验并安装。' : 'The official signature has been verified. Download, validation and installation are automatic.');
     installUpdateButton.hidden = false;
     installUpdateButton.disabled = false;
+    document.getElementById('checkUpdate').title = `${t('updateAvailable')} v${update.version}`;
     return;
   }
   if (['checking_update', 'downloading_update', 'verifying_update', 'installing_update'].includes(state)) {
-    updateBanner.hidden = false;
-    updateBannerEyebrow.textContent = labels[state] || t('checkingUpdate');
-    updateBannerTitle.textContent = labels[state] || t('checkingUpdate');
-    updateBannerDetail.textContent = status.detail || '';
-    installUpdateButton.hidden = true;
+    updateBanner.hidden = true;
+    document.getElementById('checkUpdate').title = labels[state] || t('checkingUpdate');
     return;
   }
   if (state === 'failed') {
@@ -208,6 +235,7 @@ function setUpdateVisual(status) {
     updateBannerTitle.textContent = t('updateFailed');
     updateBannerDetail.textContent = status.detail || '';
     installUpdateButton.hidden = true;
+    document.getElementById('checkUpdate').title = t('updateFailed');
   }
 }
 
@@ -215,7 +243,32 @@ async function readWebPreferences() {
   if (!loaded) return;
   try {
     const state = await content.executeJavaScript(
-      `({theme: document.documentElement.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'), lang: document.documentElement.lang || navigator.language})`,
+      `(() => {
+        const root = document.documentElement;
+        const body = document.body;
+        const classes = [root.className, body && body.className].filter(Boolean).join(' ').toLowerCase();
+        const attrTheme = [
+          root.dataset.theme,
+          root.dataset.colorScheme,
+          root.getAttribute('data-color-mode'),
+          root.getAttribute('data-theme-mode'),
+          body && body.dataset.theme,
+          body && body.getAttribute('data-theme'),
+        ].find(Boolean);
+        let stored = '';
+        try {
+          stored = Object.keys(localStorage)
+            .filter((key) => /theme|color|appearance|lang|locale/i.test(key))
+            .map((key) => String(localStorage.getItem(key) || ''))
+            .join(' ');
+        } catch {}
+        const source = [attrTheme, classes, stored].filter(Boolean).join(' ').toLowerCase();
+        const theme = /dark|night|black/.test(source)
+          ? 'dark'
+          : (/light|day|white/.test(source) ? 'light' : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+        const language = root.lang || (body && body.lang) || navigator.language || 'zh-CN';
+        return { theme, lang: /(^|[^a-z])zh|cn|chinese/i.test(language + ' ' + stored) ? 'zh-CN' : language };
+      })()`,
       true,
     );
     setTheme(state.theme, state.lang);
@@ -230,6 +283,15 @@ async function loadSettings() {
   if (savedKey) {
     keyInput.placeholder = t('savedKey');
     keyHint.textContent = t('keepKey');
+    refreshBalance();
+  } else {
+    setBalance(t('keyNotConfigured'));
+    balanceTime.textContent = '—';
+  }
+  if (!settings.onboardingComplete) {
+    setTimeout(() => {
+      if (!firstRunDialog.open) firstRunDialog.showModal();
+    }, 420);
   }
 }
 
@@ -259,6 +321,11 @@ function formatBalance(data) {
 
 async function refreshBalance() {
   if (balanceBusy) return;
+  if (!savedKey) {
+    setBalance(t('keyNotConfigured'));
+    balanceTime.textContent = '—';
+    return;
+  }
   balanceBusy = true;
   setBalance(t('checkingBalance'), 'checking');
   try {
@@ -329,6 +396,15 @@ async function installUpdate() {
   }
 }
 
+async function completeOnboarding(openSettings = false) {
+  try {
+    await window.desktop.completeOnboarding();
+  } finally {
+    firstRunDialog.close();
+    if (openSettings) settingsDialog.showModal();
+  }
+}
+
 content.addEventListener('dom-ready', readWebPreferences);
 content.addEventListener('did-navigate-in-page', readWebPreferences);
 content.addEventListener('did-fail-load', (_event, code, description) => {
@@ -337,6 +413,8 @@ content.addEventListener('did-fail-load', (_event, code, description) => {
 document.getElementById('openBrowser').onclick = () => window.desktop.openHarness();
 document.getElementById('refreshPage').onclick = refreshPage;
 document.getElementById('settingsButton').onclick = () => settingsDialog.showModal();
+document.getElementById('skipOnboarding').onclick = () => completeOnboarding(false);
+document.getElementById('startOnboarding').onclick = () => completeOnboarding(true);
 document.getElementById('restartService').onclick = restartService;
 document.getElementById('retryService').onclick = restartService;
 document.getElementById('openDataFolder').onclick = async () => {
@@ -390,6 +468,13 @@ async function surfacePreviousUpdateResult() {
   }
 }
 surfacePreviousUpdateResult().catch(() => {});
-setInterval(pollServer, 2_500);
-setInterval(readWebPreferences, 2_000);
-setInterval(() => { if (savedKey) refreshBalance(); }, 30_000);
+setInterval(pollServer, 5_000);
+setInterval(readWebPreferences, 700);
+setInterval(() => { if (savedKey) refreshBalance(); }, 60_000);
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) {
+    pollServer();
+    readWebPreferences();
+    if (savedKey) refreshBalance();
+  }
+});

@@ -7,6 +7,7 @@ contextBridge.exposeInMainWorld('desktop', {
   restartBackend: () => ipcRenderer.invoke('restart-backend'),
   getSettings: () => ipcRenderer.invoke('get-settings'),
   saveSettings: (settings) => ipcRenderer.invoke('save-settings', settings),
+  completeOnboarding: () => ipcRenderer.invoke('complete-onboarding'),
   queryBalance: () => ipcRenderer.invoke('query-balance'),
   diagnostics: () => ipcRenderer.invoke('get-diagnostics'),
   openDataFolder: () => ipcRenderer.invoke('open-data-folder'),

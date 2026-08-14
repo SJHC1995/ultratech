@@ -14,26 +14,25 @@
     </div>
     <div class="head-actions">
       <span id="followState" class="follow-chip">跟随网页 · 浅色 · 中文</span>
-      <button id="checkUpdate" class="update-btn" title="检查软件更新" aria-label="检查软件更新"><span id="updateDot"></span><span data-i18n="checkUpdate">检查更新</span></button>
-      <button id="settingsButton" class="icon-btn" title="设置" aria-label="设置">⚙</button>
+      <button id="checkUpdate" class="icon-btn update-btn" title="检查软件更新" aria-label="检查软件更新">
+        <span id="updateDot"></span>
+        <span class="theme-icon" aria-hidden="true"><img class="theme-icon-light" src="assets/ui/refresh-light.png" alt=""><img class="theme-icon-dark" src="assets/ui/refresh-dark.png" alt=""></span>
+      </button>
+      <button id="settingsButton" class="icon-btn" title="设置" aria-label="设置"><span class="theme-icon" aria-hidden="true"><img class="theme-icon-light" src="assets/ui/settings-light.png" alt=""><img class="theme-icon-dark" src="assets/ui/settings-dark.png" alt=""></span></button>
       <button id="diagnosticsButton" class="icon-btn" title="系统诊断" aria-label="系统诊断">⌁</button>
-      <button id="openBrowser" class="icon-btn" title="在浏览器中打开" aria-label="在浏览器中打开">↗</button>
-      <button id="refreshPage" class="icon-btn" title="刷新工作区" aria-label="刷新工作区">↻</button>
+      <button id="openBrowser" class="icon-btn" title="在浏览器中打开" aria-label="在浏览器中打开"><span class="theme-icon" aria-hidden="true"><img class="theme-icon-light" src="assets/ui/browser-light.png" alt=""><img class="theme-icon-dark" src="assets/ui/browser-dark.png" alt=""></span></button>
+      <button id="refreshPage" class="icon-btn" title="刷新工作区" aria-label="刷新工作区"><span class="theme-icon" aria-hidden="true"><img class="theme-icon-light" src="assets/ui/refresh-light.png" alt=""><img class="theme-icon-dark" src="assets/ui/refresh-dark.png" alt=""></span></button>
     </div>
   </header>
 
   <main class="app-frame">
     <section class="workspace-panel">
-      <div class="workspace-top">
-        <div class="workspace-title">
-          <span class="title-icon">▣</span>
-          <div><p class="eyebrow">Workspace</p><h2 data-i18n="webTitle">DeepSeek Harness 工作区</h2></div>
-        </div>
+      <div class="workspace-top workspace-top-compact">
         <div id="balanceCard" class="balance-card">
           <span id="balanceDot" class="status-dot muted"></span>
-          <span id="balanceLabel" data-i18n="waitingKey">余额：等待 API Key</span>
+          <span id="balanceLabel" data-i18n="keyNotConfigured">余额：未配置 API Key</span>
           <span id="balanceTime" class="balance-time">—</span>
-          <button id="refreshBalance" title="刷新余额" aria-label="刷新余额">↻</button>
+          <button id="refreshBalance" title="刷新余额" aria-label="刷新余额"><span class="theme-icon" aria-hidden="true"><img class="theme-icon-light" src="assets/ui/refresh-light.png" alt=""><img class="theme-icon-dark" src="assets/ui/refresh-dark.png" alt=""></span></button>
         </div>
       </div>
       <div id="updateBanner" class="update-banner" hidden>
@@ -140,6 +139,24 @@
       </div>
       <div class="dialog-actions"><button class="primary-btn" value="cancel" data-i18n="close">关闭</button></div>
     </form>
+  </dialog>
+
+  <dialog id="firstRunDialog" class="first-run-dialog">
+    <div class="first-run-content">
+      <div class="welcome-mark"><img src="assets/deepseek-mark.png" alt=""></div>
+      <p class="eyebrow">DeepSeek Harness Client</p>
+      <h2 data-i18n="welcomeTitle">欢迎使用</h2>
+      <p class="welcome-copy" data-i18n="welcomeDesc">只需三步，即可准备好本地 DeepSeek Harness 工作区。</p>
+      <ol class="welcome-steps">
+        <li><span>1</span><div><strong data-i18n="welcomeStepOne">确认本地服务</strong><p data-i18n="welcomeStepOneDesc">程序会自动检测并启动 DSH Web。</p></div></li>
+        <li><span>2</span><div><strong data-i18n="welcomeStepTwo">配置 API Key（可稍后）</strong><p data-i18n="welcomeStepTwoDesc">仅用于安全查询余额，始终保存在本机。</p></div></li>
+        <li><span>3</span><div><strong data-i18n="welcomeStepThree">开始工作</strong><p data-i18n="welcomeStepThreeDesc">在右侧工作区直接使用 DeepSeek Harness。</p></div></li>
+      </ol>
+      <div class="dialog-actions welcome-actions">
+        <button id="skipOnboarding" type="button" class="subtle-btn" data-i18n="welcomeLater">稍后配置</button>
+        <button id="startOnboarding" type="button" class="primary-btn" data-i18n="welcomeStart">开始配置</button>
+      </div>
+    </div>
   </dialog>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>

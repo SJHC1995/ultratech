@@ -72,6 +72,7 @@ function publicSettings() {
   const settings = readSettings();
   return {
     hasApiKey: Boolean(settings.apiKey),
+    onboardingComplete: Boolean(settings.onboardingComplete),
     host: SERVICE_HOST,
     port: SERVICE_PORT,
     endpoint: TARGET_URL,
@@ -393,6 +394,12 @@ ipcMain.handle('save-settings', (_, { apiKey } = {}) => {
   if (typeof apiKey === 'string' && apiKey.trim()) {
     settings.apiKey = encrypt(apiKey.trim());
   }
+  writeSettings(settings);
+  return publicSettings();
+});
+ipcMain.handle('complete-onboarding', () => {
+  const settings = readSettings();
+  settings.onboardingComplete = true;
   writeSettings(settings);
   return publicSettings();
 });
