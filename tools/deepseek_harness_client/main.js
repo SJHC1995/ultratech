@@ -4,6 +4,7 @@ const fs = require('fs');
 const http = require('http');
 const https = require('https');
 const { spawn } = require('child_process');
+const { DeepSeekUpdater } = require('./updater');
 
 const SERVICE_HOST = '127.0.0.1';
 const SERVICE_PORT = 3080;
@@ -16,6 +17,7 @@ let mainWindow;
 let dshProcess;
 let startPromise;
 let serviceLog = '';
+let updater;
 const service = {
   state: 'checking',
   detail: '正在检测本地 DSH Web 服务…',
@@ -376,6 +378,11 @@ function createWindow() {
   mainWindow.loadFile('index.html');
 }
 
+function notifyUpdate(status) {
+  if (!mainWindow || mainWindow.isDestroyed()) return;
+  mainWindow.webContents.send('update-status-changed', status);
+}
+
 ipcMain.handle('open-harness', () => shell.openExternal(TARGET_URL));
 ipcMain.handle('backend-status', refreshBackendStatus);
 ipcMain.handle('start-backend', () => startBackend());
@@ -397,9 +404,25 @@ ipcMain.handle('clear-service-log', () => {
   try { fs.rmSync(logsPath(), { force: true }); } catch {}
   return diagnostics();
 });
+ipcMain.handle('check-for-update', () => updater.check());
+ipcMain.handle('install-update', async (_event, info) => {
+  if (!info || typeof info !== 'object' || !updater.pending || info.version !== updater.pending.version) {
+    throw new Error('更新任务已失效，请重新检查更新。');
+  }
+  const installer = await updater.download(updater.pending);
+  updater.install(updater.pending, installer);
+  setTimeout(() => app.quit(), 450);
+  return { accepted: true };
+});
+ipcMain.handle('get-previous-update-result', () => updater.consumeResult());
 
 app.whenReady().then(() => {
   app.setAppUserModelId('com.deepseek.harnessclient');
+  updater = new DeepSeekUpdater(app, notifyUpdate);
+  // Complete installer hand-off before the UI and embedded service perform
+  // their heavier startup work.  The detached updater still verifies that
+  // this exact version wrote a matching acknowledgement.
+  updater.acknowledgeStartup();
   createWindow();
   startBackend().catch((error) => {
     const message = error instanceof Error ? error.message : String(error);

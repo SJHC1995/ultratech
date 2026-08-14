@@ -10,7 +10,7 @@
 ## 功能概述
 
 这是一个 Windows Electron 客户端壳，用于在单一桌面界面中运行 DeepSeek Harness Web。当前
-工作区已升级为产品化 1.1.0 界面与状态机：
+工作区已升级为产品化 1.2.0 界面、状态机与签名 OTA：
 
 1. 软件打开时，先检查 `http://127.0.0.1:3080/`。
 2. 若服务未启动，则隐藏执行：`npx @deepseek-ai/dsh web --host 127.0.0.1 --port 3080`。
@@ -82,6 +82,22 @@ npx electron-builder --win --dir --config.directories.output=dist-next
 ```text
 dist-next\win-unpacked\DeepSeek Harness Client.exe
 ```
+
+### 发布构建
+
+```powershell
+# Windows 安装版 Setup.exe
+npm run package:installer
+
+# 兼容便携 EXE
+npm run package:portable
+
+# 两种发布物并行构建
+npm run package:release
+```
+
+安装版与兼容便携 EXE 会并行发布；客户端 OTA 优先下载经过签名清单和 SHA-256 校验的
+安装版，便携 EXE 作为兼容下载与手动恢复渠道。
 
 ## 可配置项
 

@@ -20,6 +20,12 @@ const toast = document.getElementById('toast');
 const diagnosticsDialog = document.getElementById('diagnosticsDialog');
 const diagnosticsSummary = document.getElementById('diagnosticsSummary');
 const diagnosticsLog = document.getElementById('diagnosticsLog');
+const updateBanner = document.getElementById('updateBanner');
+const updateBannerEyebrow = document.getElementById('updateBannerEyebrow');
+const updateBannerTitle = document.getElementById('updateBannerTitle');
+const updateBannerDetail = document.getElementById('updateBannerDetail');
+const installUpdateButton = document.getElementById('installUpdate');
+const updateDot = document.getElementById('updateDot');
 
 let loaded = false;
 let savedKey = false;
@@ -27,6 +33,7 @@ let balanceBusy = false;
 let currentLanguage = 'zh';
 let lastServiceState = 'checking';
 let toastTimer;
+let pendingUpdate = null;
 
 const strings = {
   zh: {
@@ -44,6 +51,9 @@ const strings = {
     themeLight: '浅色', themeDark: '深色', chinese: '中文', english: 'English',
     diagnostics: '系统诊断', clearLog: '清空服务日志', close: '关闭', diagnosticEmpty: '暂未产生服务日志。',
     serviceStarted: '本地服务已就绪。', serviceRetrying: '正在重新启动本地服务…', dataOpened: '已打开应用数据目录。',
+    checkUpdate: '检查更新', installUpdate: '下载并安装', checkingUpdate: '正在检查更新', updateAvailable: '发现新版本', upToDate: '已是最新版本',
+    downloadingUpdate: '正在下载更新', verifyingUpdate: '正在校验更新', installingUpdate: '正在安装更新', updateReady: '已准备好 v',
+    updateFinished: '已更新到 v', updateFailed: '更新未完成',
   },
   en: {
     controlTitle: 'Local control center', service: 'Local service', restart: 'Start service', restartNow: 'Restart service',
@@ -60,6 +70,9 @@ const strings = {
     themeLight: 'Light', themeDark: 'Dark', chinese: '中文', english: 'English',
     diagnostics: 'System diagnostics', clearLog: 'Clear service log', close: 'Close', diagnosticEmpty: 'No service log has been written yet.',
     serviceStarted: 'Local service is ready.', serviceRetrying: 'Restarting local service…', dataOpened: 'Application data folder opened.',
+    checkUpdate: 'Check update', installUpdate: 'Download & install', checkingUpdate: 'Checking for updates', updateAvailable: 'Update available', upToDate: 'Up to date',
+    downloadingUpdate: 'Downloading update', verifyingUpdate: 'Verifying update', installingUpdate: 'Installing update', updateReady: 'Ready: v',
+    updateFinished: 'Updated to v', updateFailed: 'Update incomplete',
   },
 };
 
@@ -150,6 +163,50 @@ function setServiceVisual(status) {
   if (state === 'online' && !loaded) {
     content.src = status.endpoint || targetUrl;
     loaded = true;
+  }
+}
+
+function setUpdateVisual(status) {
+  const state = status?.state || 'idle';
+  const update = status?.update;
+  const labels = {
+    checking_update: t('checkingUpdate'),
+    update_available: t('updateAvailable'),
+    up_to_date: t('upToDate'),
+    downloading_update: t('downloadingUpdate'),
+    verifying_update: t('verifyingUpdate'),
+    installing_update: t('installingUpdate'),
+  };
+  updateDot.dataset.state = state;
+  if (state === 'up_to_date') {
+    updateBanner.hidden = true;
+    showToast(t('upToDate'), 'success');
+    return;
+  }
+  if (state === 'update_available' && update?.version) {
+    pendingUpdate = update;
+    updateBanner.hidden = false;
+    updateBannerEyebrow.textContent = t('updateAvailable');
+    updateBannerTitle.textContent = `${t('updateReady')}${update.version}`;
+    updateBannerDetail.textContent = update.notes || (currentLanguage === 'zh' ? '已验证官方签名，更新将自动下载、校验并安装。' : 'The official signature has been verified. Download, validation and installation are automatic.');
+    installUpdateButton.hidden = false;
+    installUpdateButton.disabled = false;
+    return;
+  }
+  if (['checking_update', 'downloading_update', 'verifying_update', 'installing_update'].includes(state)) {
+    updateBanner.hidden = false;
+    updateBannerEyebrow.textContent = labels[state] || t('checkingUpdate');
+    updateBannerTitle.textContent = labels[state] || t('checkingUpdate');
+    updateBannerDetail.textContent = status.detail || '';
+    installUpdateButton.hidden = true;
+    return;
+  }
+  if (state === 'failed') {
+    updateBanner.hidden = false;
+    updateBannerEyebrow.textContent = t('updateFailed');
+    updateBannerTitle.textContent = t('updateFailed');
+    updateBannerDetail.textContent = status.detail || '';
+    installUpdateButton.hidden = true;
   }
 }
 
@@ -244,6 +301,33 @@ async function showDiagnostics() {
   diagnosticsDialog.showModal();
 }
 
+async function checkForUpdate() {
+  try {
+    setUpdateVisual({ state: 'checking_update', detail: t('checkingUpdate') });
+    const info = await window.desktop.checkForUpdate();
+    setUpdateVisual({
+      state: info.available ? 'update_available' : 'up_to_date',
+      detail: info.available ? `v${info.version}` : '',
+      update: info,
+    });
+  } catch (error) {
+    setUpdateVisual({ state: 'failed', detail: error.message });
+    showToast(error.message, 'error');
+  }
+}
+
+async function installUpdate() {
+  if (!pendingUpdate) return;
+  installUpdateButton.disabled = true;
+  try {
+    await window.desktop.installUpdate(pendingUpdate);
+  } catch (error) {
+    installUpdateButton.disabled = false;
+    setUpdateVisual({ state: 'failed', detail: error.message });
+    showToast(error.message, 'error');
+  }
+}
+
 content.addEventListener('dom-ready', readWebPreferences);
 content.addEventListener('did-navigate-in-page', readWebPreferences);
 content.addEventListener('did-fail-load', (_event, code, description) => {
@@ -276,6 +360,8 @@ document.getElementById('saveSettings').onclick = async () => {
   }
 };
 document.getElementById('diagnosticsButton').onclick = showDiagnostics;
+document.getElementById('checkUpdate').onclick = checkForUpdate;
+installUpdateButton.onclick = installUpdate;
 document.getElementById('clearLog').onclick = async () => {
   const data = await window.desktop.clearServiceLog();
   diagnosticsLog.textContent = data.logTail || t('diagnosticEmpty');
@@ -283,8 +369,25 @@ document.getElementById('clearLog').onclick = async () => {
 };
 
 window.desktop.onBackendStatus(setServiceVisual);
+window.desktop.onUpdateStatus(setUpdateVisual);
 loadSettings();
 pollServer();
+let updateResultRetryCount = 0;
+async function surfacePreviousUpdateResult() {
+  const result = await window.desktop.previousUpdateResult();
+  if (!result && updateResultRetryCount < 16) {
+    updateResultRetryCount += 1;
+    setTimeout(() => surfacePreviousUpdateResult().catch(() => {}), 750);
+    return;
+  }
+  if (!result) return;
+  if (result.status === 'success') {
+    showToast(`${t('updateFinished')}${result.target_version}`, 'success');
+  } else {
+    setUpdateVisual({ state: 'failed', detail: result.detail || t('updateFailed') });
+  }
+}
+surfacePreviousUpdateResult().catch(() => {});
 setInterval(pollServer, 2_500);
 setInterval(readWebPreferences, 2_000);
 setInterval(() => { if (savedKey) refreshBalance(); }, 30_000);

@@ -1,12 +1,16 @@
 {
   "name": "deepseek-harness-client",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
+  "author": "UltraTech",
   "description": "A polished and secure local desktop client for DeepSeek Harness Web.",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "package": "electron-builder --win --dir"
+    "package": "electron-builder --win --dir",
+    "package:installer": "electron-builder --win nsis --publish never",
+    "package:portable": "electron-builder --win portable --publish never",
+    "package:release": "electron-builder --win nsis portable --publish never"
   },
   "devDependencies": {
     "electron": "^43.4.0",
@@ -15,17 +19,41 @@
   "build": {
     "appId": "com.deepseek.harnessclient",
     "productName": "DeepSeek Harness Client",
-    "icon": "build/icon.ico",
+    "icon": "assets/icon.ico",
+    "compression": "maximum",
+    "asar": true,
+    "electronLanguages": [
+      "zh-CN",
+      "en-US"
+    ],
     "files": [
       "main.js",
       "preload.js",
       "index.html",
       "styles.css",
       "renderer.js",
+      "updater.js",
       "package.json"
     ],
     "directories": {
       "output": "dist"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": false,
+      "perMachine": false,
+      "deleteAppDataOnUninstall": false,
+      "artifactName": "DeepSeek-Harness-Client-Setup-${version}.${ext}",
+      "packElevateHelper": false,
+      "differentialPackage": false,
+      "installerLanguages": [
+        "zh_CN"
+      ],
+      "multiLanguageInstaller": false,
+      "language": "2052"
+    },
+    "portable": {
+      "artifactName": "DeepSeek-Harness-Client-${version}-Portable.${ext}"
     }
   }
 }

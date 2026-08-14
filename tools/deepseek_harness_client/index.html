@@ -14,6 +14,7 @@
     </div>
     <div class="head-actions">
       <span id="followState" class="follow-chip">跟随网页 · 浅色 · 中文</span>
+      <button id="checkUpdate" class="update-btn" title="检查软件更新" aria-label="检查软件更新"><span id="updateDot"></span><span data-i18n="checkUpdate">检查更新</span></button>
       <button id="diagnosticsButton" class="icon-btn" title="系统诊断" aria-label="系统诊断">⌁</button>
       <button id="openBrowser" class="icon-btn" title="在浏览器中打开" aria-label="在浏览器中打开">↗</button>
       <button id="refreshPage" class="icon-btn" title="刷新工作区" aria-label="刷新工作区">↻</button>
@@ -86,6 +87,15 @@
           <span id="balanceTime" class="balance-time">—</span>
           <button id="refreshBalance" title="刷新余额" aria-label="刷新余额">↻</button>
         </div>
+      </div>
+      <div id="updateBanner" class="update-banner" hidden>
+        <div class="update-banner-icon">↑</div>
+        <div class="update-banner-content">
+          <p id="updateBannerEyebrow" class="eyebrow">Software update</p>
+          <strong id="updateBannerTitle">正在检查更新</strong>
+          <span id="updateBannerDetail">更新会在后台下载、校验并自动安装。</span>
+        </div>
+        <button id="installUpdate" class="primary-btn" hidden data-i18n="installUpdate">下载并安装</button>
       </div>
 
       <div class="web-window">

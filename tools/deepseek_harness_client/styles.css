@@ -66,6 +66,25 @@ body {
 .logo span:nth-child(3), .loading-mark span:nth-child(3) { height: 11px; opacity: .85; }
 
 .head-actions { gap: 8px; }
+.update-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 37px;
+  border: 1px solid #dfe5ef;
+  border-radius: 11px;
+  padding: 0 11px;
+  background: #fff;
+  color: #586982;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.update-btn:hover { border-color: #aebcf1; color: #4d58c9; }
+.update-btn span:first-child { width: 7px; height: 7px; border-radius: 50%; background: #98a4b6; }
+.update-btn span:first-child[data-state="checking_update"], .update-btn span:first-child[data-state="downloading_update"] { background: #5b8ff0; box-shadow: 0 0 8px #5b8ff0; }
+.update-btn span:first-child[data-state="update_available"] { background: #f0a13f; box-shadow: 0 0 8px #f0a13f; }
+.update-btn span:first-child[data-state="failed"] { background: #e96868; box-shadow: 0 0 8px #e96868; }
 .follow-chip, .secure-pill {
   border: 1px solid #dfe6f2;
   border-radius: 9px;
@@ -237,6 +256,23 @@ code { font: 12px ui-monospace, Consolas, monospace; }
 .balance-card button { border: 0; padding: 0 1px; background: transparent; color: inherit; font-size: 15px; cursor: pointer; }
 .balance-time { overflow: hidden; max-width: 64px; color: #98a4b5; font: 10px ui-monospace, Consolas, monospace; text-overflow: ellipsis; white-space: nowrap; }
 
+.update-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 14px;
+  border: 1px solid #d8e0f5;
+  border-radius: 12px;
+  padding: 11px 12px;
+  background: linear-gradient(105deg, #f5f7ff, #f1fbff);
+}
+.update-banner-icon { display: grid; place-items: center; width: 31px; height: 31px; border-radius: 9px; background: linear-gradient(135deg, #586ee8, #28a9df); color: #fff; font-size: 18px; font-weight: 700; }
+.update-banner-content { display: grid; min-width: 0; gap: 1px; }
+.update-banner-content .eyebrow { margin: 0; }
+.update-banner-content strong { color: #334465; font-size: 13px; }
+.update-banner-content span { overflow: hidden; max-width: 680px; color: #6d7d96; font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
+.update-banner .primary-btn { margin-left: auto; white-space: nowrap; }
+
 .web-window { position: relative; min-height: 0; flex: 1; overflow: hidden; border: 1px solid #d5dfed; border-radius: 14px; background: #edf2f9; }
 .browser-bar { height: 42px; display: flex; align-items: center; gap: 12px; padding: 0 13px; border-bottom: 1px solid #e2e8f1; background: #fafcff; }
 .traffic { display: flex; gap: 5px; }
@@ -342,11 +378,15 @@ html[data-theme="dark"] body { background: radial-gradient(circle at 76% -25%, #
 html[data-theme="dark"] .identity small, html[data-theme="dark"] .eyebrow, html[data-theme="dark"] .label, html[data-theme="dark"] .service-overview > p, html[data-theme="dark"] .hint, html[data-theme="dark"] .security-note p, html[data-theme="dark"] .card-title-row p, html[data-theme="dark"] footer { color: #9ca9bd; }
 html[data-theme="dark"] .identity strong, html[data-theme="dark"] .service-heading strong, html[data-theme="dark"] .panel-heading h1, html[data-theme="dark"] .workspace-title h2, html[data-theme="dark"] .setting-card label, html[data-theme="dark"] .dialog-head h2 { color: #f3f6fb; }
 html[data-theme="dark"] .follow-chip, html[data-theme="dark"] .icon-btn, html[data-theme="dark"] .service-overview, html[data-theme="dark"] .setting-card, html[data-theme="dark"] .workspace-panel, html[data-theme="dark"] .subtle-btn, html[data-theme="dark"] .loading-action, html[data-theme="dark"] .diagnostics-dialog, html[data-theme="dark"] .toast { border-color: #30394a; background: #1a202b; color: #dbe3f0; }
+html[data-theme="dark"] .update-btn { border-color: #30394a; background: #1a202b; color: #dbe3f0; }
 html[data-theme="dark"] .endpoint, html[data-theme="dark"] .key-row input, html[data-theme="dark"] .field-btn, html[data-theme="dark"] .balance-card, html[data-theme="dark"] .browser-bar, html[data-theme="dark"] .address, html[data-theme="dark"] .diagnostics-summary, html[data-theme="dark"] .diagnostics-log { border-color: #303a4b; background: #141a24; color: #c8d3e5; }
 html[data-theme="dark"] .secure-pill { border-color: #294c3b; background: #16261f; color: #8ed4ab; }
 html[data-theme="dark"] .web-window { border-color: #354154; background: #121823; }
 html[data-theme="dark"] .loading { background: radial-gradient(circle at 50% 25%, #1d2a46, transparent 30%), #121722; }
 html[data-theme="dark"] .loading.error { background: linear-gradient(135deg, #29191d, #16151a); }
+html[data-theme="dark"] .update-banner { border-color: #344365; background: linear-gradient(105deg, #18213b, #172731); }
+html[data-theme="dark"] .update-banner-content strong { color: #e3eafb; }
+html[data-theme="dark"] .update-banner-content span { color: #aab6cc; }
 html[data-theme="dark"] footer { border-color: #293342; }
 
 @media (max-width: 1120px) {

@@ -11,9 +11,17 @@ contextBridge.exposeInMainWorld('desktop', {
   diagnostics: () => ipcRenderer.invoke('get-diagnostics'),
   openDataFolder: () => ipcRenderer.invoke('open-data-folder'),
   clearServiceLog: () => ipcRenderer.invoke('clear-service-log'),
+  checkForUpdate: () => ipcRenderer.invoke('check-for-update'),
+  installUpdate: (info) => ipcRenderer.invoke('install-update', info),
+  previousUpdateResult: () => ipcRenderer.invoke('get-previous-update-result'),
   onBackendStatus: (callback) => {
     const listener = (_event, payload) => callback(payload);
     ipcRenderer.on('backend-status-changed', listener);
     return () => ipcRenderer.removeListener('backend-status-changed', listener);
+  },
+  onUpdateStatus: (callback) => {
+    const listener = (_event, payload) => callback(payload);
+    ipcRenderer.on('update-status-changed', listener);
+    return () => ipcRenderer.removeListener('update-status-changed', listener);
   },
 });
