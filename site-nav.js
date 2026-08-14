@@ -24,7 +24,13 @@
       children: [
         { label: "历史模组版本", href: "versions.html" },
         { label: "更新与文档", href: "archive.html" },
-        { label: "开发工具", href: "tool.html" },
+        {
+          label: "开发工具",
+          children: [
+            { label: "UltraTexture Studio", href: "tool.html" },
+            { label: "DeepSeek Harness Client", href: "deepseek-harness.html" }
+          ]
+        },
         { label: "开发看板", href: "dashboard.html" },
         { label: "管理控制台", href: "admin.html" }
       ]
@@ -39,12 +45,20 @@
   ];
 
   const currentLink = (href) => current === href ? ' aria-current="page"' : "";
-  const navItem = (entry) => {
+  const navItem = (entry, level = 1) => {
     if (!entry.children) return `<li class="ut-nav-item"><a class="ut-nav-link" href="./${entry.href}"${currentLink(entry.href)}>${entry.label}</a></li>`;
-    const childIsCurrent = entry.children.some((child) => current === child.href);
+    const childIsCurrent = entry.children.some((child) => current === child.href || child.children?.some((grandchild) => current === grandchild.href));
+    const submenu = entry.children.map((child) => {
+      if (!child.children) return `<a href="./${child.href}"${currentLink(child.href)}>${child.label}</a>`;
+      const grandchildIsCurrent = child.children.some((grandchild) => current === grandchild.href);
+      return `<div class="ut-nav-submenu-item${grandchildIsCurrent ? " is-current-section" : ""}">
+        <button class="ut-nav-subdisclosure" type="button" aria-expanded="false">${child.label}</button>
+        <div class="ut-nav-submenu">${child.children.map((grandchild) => `<a href="./${grandchild.href}"${currentLink(grandchild.href)}>${grandchild.label}</a>`).join("")}</div>
+      </div>`;
+    }).join("");
     return `<li class="ut-nav-item${childIsCurrent ? " is-current-section" : ""}">
       <button class="ut-nav-disclosure" type="button" aria-expanded="false">${entry.label}</button>
-      <div class="ut-nav-menu">${entry.children.map((child) => `<a href="./${child.href}"${currentLink(child.href)}>${child.label}</a>`).join("")}</div>
+      <div class="ut-nav-menu">${submenu}</div>
     </li>`;
   };
 
@@ -80,6 +94,21 @@
       header.querySelectorAll(".ut-nav-item.is-open").forEach((node) => {
         node.classList.remove("is-open");
         node.querySelector(".ut-nav-disclosure")?.setAttribute("aria-expanded", "false");
+      });
+      if (!wasOpen) {
+        item.classList.add("is-open");
+        button.setAttribute("aria-expanded", "true");
+      }
+    });
+  });
+  header.querySelectorAll(".ut-nav-subdisclosure").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const item = button.closest(".ut-nav-submenu-item");
+      const wasOpen = item.classList.contains("is-open");
+      item.parentElement.querySelectorAll(".ut-nav-submenu-item.is-open").forEach((node) => {
+        node.classList.remove("is-open");
+        node.querySelector(".ut-nav-subdisclosure")?.setAttribute("aria-expanded", "false");
       });
       if (!wasOpen) {
         item.classList.add("is-open");

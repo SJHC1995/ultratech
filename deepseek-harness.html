@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DeepSeek Harness Client 的开发说明与本地运行指引。">
+  <title>DeepSeek Harness Client · UltraTech 开发工具</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./portal.css">
+  <link rel="stylesheet" href="./site-nav.css">
+  <style>
+    .tool-release-grid { grid-template-columns: minmax(0, 1fr); max-width: 900px; }
+    .tool-release-grid .version-card { min-height: 0; padding: 24px; }
+    .tool-release-grid .version-card > p, .tool-introduction { max-width: 900px; font-size: 15px; line-height: 1.75; }
+  </style>
+</head>
+<body>
+  <header class="site-header"></header>
+  <main class="portal-main">
+    <section class="page-heading">
+      <div>
+        <p class="eyebrow">Developer Tool</p>
+        <h1>DeepSeek Harness Client</h1>
+        <p>用于运行本地 DeepSeek Harness Web 的 Windows Electron 客户端壳，提供本地服务启动、内嵌窗口、主题语言同步与本地加密保存的 API Key/余额查询。</p>
+      </div>
+      <a class="link-button" href="./archive.html">返回文档目录</a>
+    </section>
+
+    <section class="version-grid tool-release-grid" aria-label="DeepSeek Harness Client">
+      <article class="version-card">
+        <div class="tag-row">
+          <span class="tag">开发移交 · 2026-08-14</span>
+          <span class="status-badge" data-status="implemented">本地开发版</span>
+        </div>
+        <h2>DeepSeek Harness Client · v1.0.0</h2>
+        <p>启动时检查 <code>127.0.0.1:3080</code>；若服务未就绪，会在后台执行 <code>npx @deepseek-ai/dsh web</code>。API Key 不会传给嵌入网页，仅由 Electron 主进程通过 Windows safeStorage 加密保存并用于余额查询。</p>
+        <div class="entry-meta">
+          <span class="tag">Windows</span>
+          <span class="tag">Electron</span>
+          <span class="tag">DeepSeek Harness Web</span>
+          <span class="tag">本地安全存储</span>
+        </div>
+        <div class="card-actions">
+          <a class="link-button primary" href="https://github.com/SJHC1995/ultratech/tree/codex/deepseek-harness-client/tools/deepseek_harness_client">查看源码</a>
+          <a class="link-button" href="https://www.deepseek.com/harness">访问 DeepSeek Harness</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="panel tool-introduction" style="margin-top: 18px">
+      <h2>运行要求</h2>
+      <p>需要 Windows、Node.js 与 <code>npx</code>。首次启动本地服务可能需要更长时间；客户端会持续显示加载状态，直到本地 Web 服务可用。当前为目录式构建，运行时需保留 <code>win-unpacked</code> 的完整目录结构。</p>
+    </section>
+  </main>
+  <footer><span>UltraTech Static Blog</span><a class="button" href="./index.html">UltraTech</a></footer>
+  <script src="./site-nav.js"></script>
+</body>
+</html>
