@@ -1,19 +1,19 @@
 {
-  "installer_sha256": "41283197c0d6e56ce053528bd018cb6947d4a80397af01a669b709f6179ba0b7",
-  "version": "1.4.2",
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.4.2/DeepSeek-Harness-Client-Setup-1.4.2.exe",
-  "notes": "轨迹视图补齐官方事件密度：权限、上下文注入、Think、工具调用、工具结果、任务清单与目标变更以统一时间线呈现；隔离 DSH 冒烟测试改为随机端口，降低测试串扰。",
+  "notes": "更新引导程序优化：窗口标题改为“DeepSeek Harness Client 更新引导程序”，显示安装进度并在完成后 60 秒自动关闭；本地 DSH 可在设置中关闭，官方 DSH 设置入口合并到软件设置页。",
+  "sha256": "44b1f1d64486b3d07ca3541ec2abe6fbe76dd95532b87c6e8708af1f280f2b9b",
+  "installer_sha256": "d2cf172be1b57e4e5bf0c8fb067cf2fbe2b50f31128c863834a9b2aef6b9ea5e",
   "published_at": "2026-08-15",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.4.2/DeepSeek-Harness-Client-1.4.2-Portable.exe",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.4.5/DeepSeek-Harness-Client-Setup-1.4.5.exe",
+  "version": "1.4.5",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.4.5/DeepSeek-Harness-Client-1.4.5-Portable.exe",
   "delivery": {
     "channel": "stable",
-    "latest_version": "1.4.2",
+    "latest_version": "1.4.5",
     "global": true
   },
-  "sha256": "1506b81c063433a51b3f6f6c4847503708cca10c44746a9931162915a57d1615",
   "signature": {
     "algorithm": "ed25519",
     "key_id": "ultratexture-ed25519-2026-08-r3",
-    "value": "tUud3Dh4r9R7U/KsJiYZ6JI9p26F/duXVnVAiCHUJpKUboRA9g8t8m0fD6NqfaLNeIHWe3EFLrB9dp9b+X9GAg=="
+    "value": "cI+8LMiCwDgkuNWa/FJpeGM0x5mCEGJKE3hS9Az4atioeZABZWZDaGmYUEJJS8vZSXXEqAi4CmXXsSOMlVRIDw=="
   }
 }
