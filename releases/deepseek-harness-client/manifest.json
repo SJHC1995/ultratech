@@ -1,19 +1,19 @@
 {
+  "installer_sha256": "41283197c0d6e56ce053528bd018cb6947d4a80397af01a669b709f6179ba0b7",
+  "version": "1.4.2",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.4.2/DeepSeek-Harness-Client-Setup-1.4.2.exe",
+  "notes": "轨迹视图补齐官方事件密度：权限、上下文注入、Think、工具调用、工具结果、任务清单与目标变更以统一时间线呈现；隔离 DSH 冒烟测试改为随机端口，降低测试串扰。",
   "published_at": "2026-08-15",
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.4.1/DeepSeek-Harness-Client-Setup-1.4.1.exe",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.4.1/DeepSeek-Harness-Client-1.4.1-Portable.exe",
-  "sha256": "3f77549d94e28f258aed74ae7fa1e1e2621e00c4020653657f49949f3638ec7b",
-  "installer_sha256": "6ec47b29e9334698c77830edb7a93e1305dbf2df4f3c0356081bb715ef45c5bc",
-  "notes": "对齐官方会话信息架构：左侧工作区、顶部对话/轨迹双视图、轨迹中集中呈现工具步骤、审批、目标、技能与子 Agent；模型/Agent 控制移入输入区，保留原生 RPC 与无网页嵌入。",
-  "version": "1.4.1",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.4.2/DeepSeek-Harness-Client-1.4.2-Portable.exe",
   "delivery": {
     "channel": "stable",
-    "latest_version": "1.4.1",
+    "latest_version": "1.4.2",
     "global": true
   },
+  "sha256": "1506b81c063433a51b3f6f6c4847503708cca10c44746a9931162915a57d1615",
   "signature": {
     "algorithm": "ed25519",
     "key_id": "ultratexture-ed25519-2026-08-r3",
-    "value": "Of/GSkYkhCgmTVkUk5alBw8u4E2yWsTVTTsLN0F/RGi8ihvuyGZ8PhxPTn5LqEJP8bP+nSHeP5izw2pjg5eGAg=="
+    "value": "tUud3Dh4r9R7U/KsJiYZ6JI9p26F/duXVnVAiCHUJpKUboRA9g8t8m0fD6NqfaLNeIHWe3EFLrB9dp9b+X9GAg=="
   }
 }
