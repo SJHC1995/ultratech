@@ -1,19 +1,19 @@
 {
+  "notes": "原生会话界面：彻底移除 WebView/iframe 网页嵌入，DSH 仅作为本地后台服务；底部状态栏新增动态版本号显示。",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.3.1/DeepSeek-Harness-Client-Setup-1.3.1.exe",
+  "sha256": "2df54506dc434b9518a053440b5cdb9c8cd913202386974d7420cb8abbf1014f",
+  "version": "1.3.1",
+  "installer_sha256": "2667f319aa7e53e62d02ea6783bb5bd574c6200bf19a42e6bb48df797a9e859f",
+  "published_at": "2026-08-15",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.3.1/DeepSeek-Harness-Client-1.3.1-Portable.exe",
   "delivery": {
     "channel": "stable",
-    "latest_version": "1.2.9",
+    "latest_version": "1.3.1",
     "global": true
   },
-  "published_at": "2026-08-15",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.2.9/DeepSeek-Harness-Client-1.2.9-Portable.exe",
-  "version": "1.2.9",
-  "sha256": "91907bd5bfee16031d2a1e7120aac7ccf20092d9d30f813d47dfdb8e85c4ca8d",
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.2.9/DeepSeek-Harness-Client-Setup-1.2.9.exe",
-  "notes": "修复 Windows Node.js 24 下 npx.cmd 的 spawn EINVAL 启动异常；DSH 运行时固定为已验证版本并启用单实例保护，避免多个客户端争抢本地服务端口。包含原生余额、官方充值入口与累计 Token/CNY 显示。",
-  "installer_sha256": "b9d576cf6eead77bb0e796be592ea9e77495d3116fa9967c72fa5713a2f48423",
   "signature": {
     "algorithm": "ed25519",
     "key_id": "ultratexture-ed25519-2026-08-r3",
-    "value": "627Ivs0wSvL+0kw42UmdpwJp7+HweTfnUz6yLXR1eUpmIyYQmfsF5gBGflFDIt7YY4fx/OtrfonpPXLETh6dCg=="
+    "value": "hmWnwxkCc5k60at5tvdJ0gT8+w0G4kjtME27ZG7bMWNFKxX060fZDCDdkB++zP3XM5fw69h4sSCwuWuqPDPsBA=="
   }
 }
