@@ -1,19 +1,19 @@
 {
-  "notes": "更新引导程序优化：窗口标题改为“DeepSeek Harness Client 更新引导程序”，显示安装进度并在完成后 60 秒自动关闭；本地 DSH 可在设置中关闭，官方 DSH 设置入口合并到软件设置页。",
-  "sha256": "44b1f1d64486b3d07ca3541ec2abe6fbe76dd95532b87c6e8708af1f280f2b9b",
-  "installer_sha256": "d2cf172be1b57e4e5bf0c8fb067cf2fbe2b50f31128c863834a9b2aef6b9ea5e",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.4.6/DeepSeek-Harness-Client-1.4.6-Portable.exe",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.4.6/DeepSeek-Harness-Client-Setup-1.4.6.exe",
+  "version": "1.4.6",
+  "sha256": "fcdde2361129061f8625b2d5ff0d49bdfb52bbd15a223d2e16081b57ee6bd490",
+  "installer_sha256": "8a57fddfbe7f13811b37a54086039a308c9a896aac34be69906b46d454381c63",
+  "notes": "余额区域视觉统一：充值改为与客户端主色一致的浅靛蓝次级操作，新增深浅主题余额查询图标，避免单独黑色按钮造成突兀。",
   "published_at": "2026-08-15",
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.4.5/DeepSeek-Harness-Client-Setup-1.4.5.exe",
-  "version": "1.4.5",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.4.5/DeepSeek-Harness-Client-1.4.5-Portable.exe",
   "delivery": {
     "channel": "stable",
-    "latest_version": "1.4.5",
+    "latest_version": "1.4.6",
     "global": true
   },
   "signature": {
     "algorithm": "ed25519",
     "key_id": "ultratexture-ed25519-2026-08-r3",
-    "value": "cI+8LMiCwDgkuNWa/FJpeGM0x5mCEGJKE3hS9Az4atioeZABZWZDaGmYUEJJS8vZSXXEqAi4CmXXsSOMlVRIDw=="
+    "value": "TziUHrKZhFLgavZtYntlcqT0re3Hkd6n3fjK+Pd84V3vfZ7DsH0LD6w2RLQGe8W4R8uIuZIkjOjmWHpp98SABg=="
   }
 }
