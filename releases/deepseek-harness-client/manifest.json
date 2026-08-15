@@ -1,19 +1,19 @@
 {
-  "notes": "原生余额与官方充值入口；设置页可切换累计 Token 或累计 CNY；安装版与兼容便携 EXE 并行发布。",
-  "published_at": "2026-08-15",
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.2.8/DeepSeek-Harness-Client-Setup-1.2.8.exe",
-  "version": "1.2.8",
-  "sha256": "ac719c591c5816770b4357805598d4812272941194b27994e30e06643d9025b3",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.2.8/DeepSeek-Harness-Client-1.2.8-Portable.exe",
   "delivery": {
     "channel": "stable",
-    "latest_version": "1.2.8",
+    "latest_version": "1.2.9",
     "global": true
   },
-  "installer_sha256": "26d15c56f2b582f6400a0d113a2145d14e179b59ad7d0ba28e034017e1ca6ced",
+  "published_at": "2026-08-15",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.2.9/DeepSeek-Harness-Client-1.2.9-Portable.exe",
+  "version": "1.2.9",
+  "sha256": "91907bd5bfee16031d2a1e7120aac7ccf20092d9d30f813d47dfdb8e85c4ca8d",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.2.9/DeepSeek-Harness-Client-Setup-1.2.9.exe",
+  "notes": "修复 Windows Node.js 24 下 npx.cmd 的 spawn EINVAL 启动异常；DSH 运行时固定为已验证版本并启用单实例保护，避免多个客户端争抢本地服务端口。包含原生余额、官方充值入口与累计 Token/CNY 显示。",
+  "installer_sha256": "b9d576cf6eead77bb0e796be592ea9e77495d3116fa9967c72fa5713a2f48423",
   "signature": {
     "algorithm": "ed25519",
     "key_id": "ultratexture-ed25519-2026-08-r3",
-    "value": "Vvbw035GsA3sA6Pg7yMc59vfPgEIT0/yvUbBQrfRSJna6H6frUDoRJ4+vHgWK7sg0L2DL3N9IBLo7IkZriz6DQ=="
+    "value": "627Ivs0wSvL+0kw42UmdpwJp7+HweTfnUz6yLXR1eUpmIyYQmfsF5gBGflFDIt7YY4fx/OtrfonpPXLETh6dCg=="
   }
 }
