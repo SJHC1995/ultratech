@@ -1,19 +1,19 @@
 {
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.4.6/DeepSeek-Harness-Client-1.4.6-Portable.exe",
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.4.6/DeepSeek-Harness-Client-Setup-1.4.6.exe",
-  "version": "1.4.6",
-  "sha256": "fcdde2361129061f8625b2d5ff0d49bdfb52bbd15a223d2e16081b57ee6bd490",
-  "installer_sha256": "8a57fddfbe7f13811b37a54086039a308c9a896aac34be69906b46d454381c63",
-  "notes": "余额区域视觉统一：充值改为与客户端主色一致的浅靛蓝次级操作，新增深浅主题余额查询图标，避免单独黑色按钮造成突兀。",
-  "published_at": "2026-08-15",
+  "notes": "v1.5.0：设置升级为可点击的三级编辑窗口；移除冗余 DSH 配置入口；优化对话轨迹为紧凑缩略行；支持 Markdown 表格与链接排版。",
+  "sha256": "17df0cdf38dd3eae66230448fb810b8c661ea8fa7956c0a58db96c0ea54b8b77",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.5.0/DeepSeek-Harness-Client-1.5.0-Portable.exe",
   "delivery": {
     "channel": "stable",
-    "latest_version": "1.4.6",
+    "latest_version": "1.5.0",
     "global": true
   },
+  "version": "1.5.0",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/deepseek-harness-client-v1.5.0/DeepSeek-Harness-Client-Setup-1.5.0.exe",
+  "installer_sha256": "bd266c5f0a895d6b22a2243a4ef31386be7964cd2c015b86ee57c7086b70fbb3",
+  "published_at": "2026-08-16",
   "signature": {
     "algorithm": "ed25519",
     "key_id": "ultratexture-ed25519-2026-08-r3",
-    "value": "TziUHrKZhFLgavZtYntlcqT0re3Hkd6n3fjK+Pd84V3vfZ7DsH0LD6w2RLQGe8W4R8uIuZIkjOjmWHpp98SABg=="
+    "value": "DjuyovKGabkkBKkpetUfyDTKKZ9ga0xJgUQteumnX/TA+kP9jrmGKyknX6u1jCIvCU6JwMMI6QFk6+jshcxdDA=="
   }
 }
