@@ -1,21 +1,21 @@
 {
-  "installer_sha256": "aecfcf10ee2a6a5eb65858d0459a0579bf58ce5b582b71c0ce05d535d326b340",
-  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.714/UltraTextureStudio.exe",
+  "published_at": "2026-09-06",
   "delivery": {
     "channel": "priority",
-    "latest_version": "1.7.714",
+    "latest_version": "1.7.716",
     "emergency": false,
     "bootstrap": false
   },
-  "sha256": "abaf56b283b8033e8804c0cc17a621dbe98dd98e13896bce46096c4e09797d5f",
+  "installer_sha256": "8f6acbeca7d956c855303b6ac77141117118f8173150d224341e1c81e5c39c17",
+  "version": "1.7.716",
+  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.716/UltraTextureStudio-Setup-1.7.716.exe",
+  "download_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.716/UltraTextureStudio.exe",
   "patches": [],
-  "published_at": "2026-08-14",
-  "notes": "修复完整安装 OTA 启动确认误报，升级状态栏为生成、检查、下载、校验、安装等真实状态，并优化更新失败提示。",
-  "version": "1.7.714",
-  "installer_url": "https://github.com/SJHC1995/ultratech/releases/download/ultratexture-studio-v1.7.714/UltraTextureStudio-Setup-1.7.714.exe",
+  "sha256": "7c6a96f23399721ff443e5efd8a78ce4d79db6fda293702205e48b65edad663f",
+  "notes": "后台挂机稳定性专项修复：暂停后台非必要轮询，前台恢复采用错峰任务链；优化 MCP 健康检查、配置原子读写、日志轮转与 UI 心跳诊断，降低长时间运行后的卡顿和卡死风险。",
   "signature": {
     "algorithm": "ed25519",
     "key_id": "ultratexture-ed25519-2026-08-r3",
-    "value": "Y3x19ZNV17rxzXqG4i53D0gJN8fjjtTsnL2Y752CysS0dNPNN+tyqES0Ed6/kpsCtftd/nX10g5Dix88jRjbAg=="
+    "value": "yrE7x9uv3CL9ok3gel/QaSBT3oboYh68AKTy60rVUzCoDHp5rxF/7BBTziIlqAlq7Qe2mjBDJ+E0vMtlTwcfBA=="
   }
 }
